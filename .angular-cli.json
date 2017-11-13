@@ -19,9 +19,18 @@
             "testTsconfig": "tsconfig.spec.json",
             "prefix": "app",
             "styles": [
-                "styles.scss"
+                "styles.scss",
+                "../node_modules/font-awesome/css/font-awesome.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+                "../node_modules/jquery/dist/jquery.js",
+                "../node_modules/moment/moment.js",
+                "../node_modules/chart.js/dist/Chart.js",
+                "../node_modules/fullcalendar/dist/fullcalendar.js",
+                "../node_modules/quill/dist/quill.js",
+                "../node_modules/prismjs/prism.js",
+                "../node_modules/prismjs/components/prism-typescript.js"
+            ],
             "environmentSource": "environments/environment.ts",
             "environments": {
                 "dev": "environments/environment.ts",
@@ -44,9 +53,18 @@
             "testTsconfig": "tsconfig.spec.json",
             "prefix": "app",
             "styles": [
-                "styles.scss"
+                "styles.scss",
+                "../node_modules/font-awesome/css/font-awesome.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+                "../node_modules/jquery/dist/jquery.js",
+                "../node_modules/moment/moment.js",
+                "../node_modules/chart.js/dist/Chart.js",
+                "../node_modules/fullcalendar/dist/fullcalendar.js",
+                "../node_modules/quill/dist/quill.js",
+                "../node_modules/prismjs/prism.js",
+                "../node_modules/prismjs/components/prism-typescript.js"
+            ],
             "environmentSource": "environments/environment.ts",
             "environments": {
                 "dev": "environments/environment.ts",
