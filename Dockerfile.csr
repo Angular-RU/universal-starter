@@ -1,0 +1,14 @@
+FROM node::8-alpine as buildContainer
+
+COPY . /app
+WORKDIR /app
+RUN yarn install
+RUN npm run build:prod
+
+FROM nginx:alpine
+COPY --from=buildContainer /app/dist /app
+COPY --from=buildContainer /app/nginx.conf /etc/nginx/nginx.conf
+COPY --from=buildContainer /app/mime.types /etc/nginx/mime.types
+COPY --from=buildContainer /app/gzip.conf /etc/nginx/gzip.conf
+
+EXPOSE  9000/tcp
