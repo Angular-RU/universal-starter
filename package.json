@@ -13,7 +13,10 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "universal": "ng build --prod && ng build --prod --app 1 && ts-node server"
+        "universal": "ng build --prod && ng build --prod --app 1 && ts-node server",
+        "client:watch": "ng build --watch --prod --aot",
+        "server:watch": "ng build --app 1 --watch --prod --aot",
+        "webpack:watch": "webpack --watch"
     },
     "private": true,
     "dependencies": {
