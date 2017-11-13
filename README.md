@@ -3,6 +3,10 @@
 
 - публичный чат https://t.me/angular_universal_ru
 
+- http://ssr.gorniv.com/ - серверный рендеринг
+
+- http://csr.gorniv.com/ - клиенский рендеринг
+
 ## Как запустить
 - `yarn` или `npm install`
 - `npm run start` - для клиенского рендеринга
@@ -50,6 +54,8 @@ providers: [
   global['CSS'] = null;
 ```
 это позволяет убрать часть проблем при работе с `undefined`.
+
+[![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
 
 
