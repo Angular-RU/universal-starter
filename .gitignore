@@ -2,3 +2,5 @@ dist-server
 node_modules
 dist
 server.js
+package-lock.json
+yarn.lock
