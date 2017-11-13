@@ -2,15 +2,15 @@
 
 <h2>Autocomplete</h2>
 <mat-autocomplete>
-  <mat-option>Grace Hopper</mat-option>
-  <mat-option>Anita Borg</mat-option>
-  <mat-option>Ada Lovelace</mat-option>
+    <mat-option>Grace Hopper</mat-option>
+    <mat-option>Anita Borg</mat-option>
+    <mat-option>Ada Lovelace</mat-option>
 </mat-autocomplete>
 
 <mat-autocomplete #auto="matAutocomplete">
-  <mat-option *ngFor="let option of options" [value]="option">
-     {{ option }}
-  </mat-option>
+    <mat-option *ngFor="let option of options" [value]="option">
+        {{ option }}
+    </mat-option>
 </mat-autocomplete>
 
 <h2>Button</h2>
@@ -31,16 +31,16 @@
 
 <h3>Single selection</h3>
 <mat-button-toggle-group>
-  <mat-button-toggle>Ketchup</mat-button-toggle>
-  <mat-button-toggle>Mustard</mat-button-toggle>
-  <mat-button-toggle>Mayo</mat-button-toggle>
+    <mat-button-toggle>Ketchup</mat-button-toggle>
+    <mat-button-toggle>Mustard</mat-button-toggle>
+    <mat-button-toggle>Mayo</mat-button-toggle>
 </mat-button-toggle-group>
 
 <h3>Multi selection</h3>
 <mat-button-toggle-group multiple>
-  <mat-button-toggle>Ketchup</mat-button-toggle>
-  <mat-button-toggle>Mustard</mat-button-toggle>
-  <mat-button-toggle>Mayo</mat-button-toggle>
+    <mat-button-toggle>Ketchup</mat-button-toggle>
+    <mat-button-toggle>Mustard</mat-button-toggle>
+    <mat-button-toggle>Mayo</mat-button-toggle>
 </mat-button-toggle-group>
 
 <h3>Standalone</h3>
@@ -49,23 +49,23 @@
 <h3>Card</h3>
 
 <mat-card>
-  Simple card
+    Simple card
 </mat-card>
 
 <mat-card>
-  <mat-card-title>Complicated card</mat-card-title>
-  <mat-card-subtitle>Subtitle</mat-card-subtitle>
-  <mat-card-content>
-    <p>This is some stuff</p>
-    <p>And more stuff</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-  <mat-card-footer>
-    Hurray
-  </mat-card-footer>
+    <mat-card-title>Complicated card</mat-card-title>
+    <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    <mat-card-content>
+        <p>This is some stuff</p>
+        <p>And more stuff</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <mat-card-footer>
+        Hurray
+    </mat-card-footer>
 </mat-card>
 
 <h2>Checkbox</h2>
@@ -76,32 +76,32 @@
 <h2>Chips</h2>
 
 <mat-chip-list>
-  <mat-chip>Barbeque Cheddar</mat-chip>
-  <mat-chip>Sea Salt and Vinegar</mat-chip>
-  <mat-chip>Manta Ray</mat-chip>
+    <mat-chip>Barbeque Cheddar</mat-chip>
+    <mat-chip>Sea Salt and Vinegar</mat-chip>
+    <mat-chip>Manta Ray</mat-chip>
 </mat-chip-list>
 
 <mat-chip-list>
-  <mat-basic-chip>Tomato</mat-basic-chip>
-  <mat-basic-chip>Scallion</mat-basic-chip>
-  <mat-basic-chip>Cilantro</mat-basic-chip>
+    <mat-basic-chip>Tomato</mat-basic-chip>
+    <mat-basic-chip>Scallion</mat-basic-chip>
+    <mat-basic-chip>Cilantro</mat-basic-chip>
 </mat-chip-list>
 
 <h2>Datepicker</h2>
 
 <mat-form-field>
-  <input type="text" matInput [matDatepicker]="birthday" placeholder="Birthday">
-  <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
-  <mat-datepicker #birthday></mat-datepicker>
+    <input type="text" matInput [matDatepicker]="birthday" placeholder="Birthday">
+    <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+    <mat-datepicker #birthday></mat-datepicker>
 </mat-form-field>
 
 <h2>Grid list</h2>
 
 <mat-grid-list cols="4">
-  <mat-grid-tile>Fry</mat-grid-tile>
-  <mat-grid-tile>Leela</mat-grid-tile>
-  <mat-grid-tile>Amy</mat-grid-tile>
-  <mat-grid-tile>Bender</mat-grid-tile>
+    <mat-grid-tile>Fry</mat-grid-tile>
+    <mat-grid-tile>Leela</mat-grid-tile>
+    <mat-grid-tile>Amy</mat-grid-tile>
+    <mat-grid-tile>Bender</mat-grid-tile>
 </mat-grid-list>
 
 <h2>Icon</h2>
@@ -110,25 +110,25 @@
 <h2>Input</h2>
 
 <mat-form-field>
-  <input type="number" matInput placeholder="amount">
-  <span matPrefix>$&nbsp;</span>
-  <span matSuffix>.00</span>
-  <mat-hint>Dolla dolla bills</mat-hint>
-  <mat-error>Recession</mat-error>
+    <input type="number" matInput placeholder="amount">
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
+    <mat-hint>Dolla dolla bills</mat-hint>
+    <mat-error>Recession</mat-error>
 </mat-form-field>
 
 <h2>List</h2>
 
 <mat-list>
-  <mat-list-item>Robot</mat-list-item>
-  <mat-list-item>Android</mat-list-item>
-  <mat-list-item>Cyborg</mat-list-item>
+    <mat-list-item>Robot</mat-list-item>
+    <mat-list-item>Android</mat-list-item>
+    <mat-list-item>Cyborg</mat-list-item>
 </mat-list>
 
 <mat-nav-list>
-  <a mat-list-item href="#">Search</a>
-  <a mat-list-item href="#">Find</a>
-  <a mat-list-item href="#">Seek</a>
+    <a mat-list-item href="#">Search</a>
+    <a mat-list-item href="#">Find</a>
+    <a mat-list-item href="#">Seek</a>
 </mat-nav-list>
 
 
@@ -136,9 +136,9 @@
 
 <button mat-button [matMenuTriggerFor]="menu">Open</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Mercy</button>
-  <button mat-menu-item>Lucio</button>
-  <button mat-menu-item disabled>Sombra</button>
+    <button mat-menu-item>Mercy</button>
+    <button mat-menu-item>Lucio</button>
+    <button mat-menu-item disabled>Sombra</button>
 </mat-menu>
 
 <h2>Progress bar</h2>
@@ -153,9 +153,9 @@
 
 <h3>Radio group</h3>
 <mat-radio-group>
-  <mat-radio-button>Charmander</mat-radio-button>
-  <mat-radio-button>Squirtle</mat-radio-button>
-  <mat-radio-button>Bulbasaur</mat-radio-button>
+    <mat-radio-button>Charmander</mat-radio-button>
+    <mat-radio-button>Squirtle</mat-radio-button>
+    <mat-radio-button>Bulbasaur</mat-radio-button>
 </mat-radio-group>
 
 <h3>Standalone radios</h3>
@@ -166,15 +166,15 @@
 
 <h2>Select</h2>
 <mat-select value="ceramic">
-  <mat-option value="glass">Glass</mat-option>
-  <mat-option value="ceramic">Ceramic</mat-option>
-  <mat-option value="steel">Steel</mat-option>
+    <mat-option value="glass">Glass</mat-option>
+    <mat-option value="ceramic">Ceramic</mat-option>
+    <mat-option value="steel">Steel</mat-option>
 </mat-select>
 
 <h2>Sidenav</h2>
 <mat-sidenav-container>
-  <mat-sidenav>On the side</mat-sidenav>
-  Main content
+    <mat-sidenav>On the side</mat-sidenav>
+    Main content
 </mat-sidenav-container>
 
 <h2>Slide-toggle</h2>
@@ -188,53 +188,52 @@
 
 <h2>Tabs</h2>
 <mat-tab-group>
-  <mat-tab label="Overview">
-    The overview
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      API docs
-    </ng-template>
-    The API docs
-  </mat-tab>
+    <mat-tab label="Overview">
+        The overview
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            API docs
+        </ng-template>
+        The API docs
+    </mat-tab>
 </mat-tab-group>
 
 <nav mat-tab-nav-bar>
- <a mat-tab-link href="#">Google</a>
- <a mat-tab-link href="#" active>Also Google</a>
+    <a mat-tab-link href="#">Google</a>
+    <a mat-tab-link href="#" active>Also Google</a>
 </nav>
 
 <h2>Paginator</h2>
 
-<mat-paginator [length]="100"
-              [pageSizeOptions]="[5, 10, 25, 100]">
+<mat-paginator [length]="100" [pageSizeOptions]="[5, 10, 25, 100]">
 </mat-paginator>
 
 <h2>Toolbar</h2>
 <mat-toolbar>Basic toolbar</mat-toolbar>
 <mat-toolbar>
-  <mat-toolbar-row>Multi row</mat-toolbar-row>
-  <mat-toolbar-row>Toolbar</mat-toolbar-row>
+    <mat-toolbar-row>Multi row</mat-toolbar-row>
+    <mat-toolbar-row>Toolbar</mat-toolbar-row>
 </mat-toolbar>
 
 <h2>Sort</h2>
 
 <table matSort>
-  <tr>
-    <th mat-sort-header="name">Name</th>
-    <th mat-sort-header="calories">Calories</th>
-    <th mat-sort-header="fat">Fat</th>
-    <th mat-sort-header="carbs">Carbs</th>
-    <th mat-sort-header="protein">Protein</th>
-  </tr>
+    <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="calories">Calories</th>
+        <th mat-sort-header="fat">Fat</th>
+        <th mat-sort-header="carbs">Carbs</th>
+        <th mat-sort-header="protein">Protein</th>
+    </tr>
 
-  <tr>
-    <td>Cupcake</td>
-    <td>305</td>
-    <td>4</td>
-    <td>67</td>
-    <td>4</td>
-  </tr>
+    <tr>
+        <td>Cupcake</td>
+        <td>305</td>
+        <td>4</td>
+        <td>67</td>
+        <td>4</td>
+    </tr>
 </table>
 
 <h2>Tooltip</h2>
@@ -246,22 +245,22 @@
 
 <h2>Expansion Panel</h2>
 <mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-description>This is a panel description.</mat-panel-description>
-    <mat-panel-title>Panel Title</mat-panel-title>
-  </mat-expansion-panel-header>
-  This is the content text that makes sense here.
-  <mat-action-row>Action</mat-action-row>
+    <mat-expansion-panel-header>
+        <mat-panel-description>This is a panel description.</mat-panel-description>
+        <mat-panel-title>Panel Title</mat-panel-title>
+    </mat-expansion-panel-header>
+    This is the content text that makes sense here.
+    <mat-action-row>Action</mat-action-row>
 </mat-expansion-panel>
 
 <h2>Material Table</h2>
 
 <mat-table [dataSource]="tableDataSource">
-  <ng-container cdkColumnDef="userId">
-    <mat-header-cell *cdkHeaderCellDef>ID</mat-header-cell>
-    <mat-cell *cdkCellDef="let row"> {{row.userId}} </mat-cell>
-  </ng-container>
+    <ng-container cdkColumnDef="userId">
+        <mat-header-cell *cdkHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.userId}} </mat-cell>
+    </ng-container>
 
-  <mat-header-row *cdkHeaderRowDef="tableColumns"></mat-header-row>
-  <mat-row *cdkRowDef="let row; columns: tableColumns;"></mat-row>
+    <mat-header-row *cdkHeaderRowDef="tableColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: tableColumns;"></mat-row>
 </mat-table>

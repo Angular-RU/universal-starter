@@ -35,6 +35,8 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
 } from '@angular/material';
 import {
   CdkTableModule,
@@ -49,9 +51,9 @@ import 'rxjs/add/observable/of';
     MatAutocompleteModule,
     MatButtonModule,
     // Button toggle and checkbox can't work due to https://github.com/angular/angular/issues/17050
-    // MatButtonToggleModule,
+    MatButtonToggleModule,
     MatCardModule,
-    // MatCheckboxModule,
+    MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,
     MatDialogModule,
