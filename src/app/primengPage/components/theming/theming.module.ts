@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ThemingComponent} from './theming.component';
-import {ThemingRoutingModule} from './theming-routing.module';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ThemingComponent } from './theming.component';
+import { ThemingRoutingModule } from './theming-routing.module';
 
 @NgModule({
   imports: [
@@ -12,4 +12,4 @@ import {ThemingRoutingModule} from './theming-routing.module';
     ThemingComponent
   ]
 })
-export class ThemingModule {}
+export class ThemingModule { }

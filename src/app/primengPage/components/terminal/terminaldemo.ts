@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
     providers: [TerminalService]
 })
 
+// tslint:disable-next-line:component-class-suffix
 export class TerminalDemo implements OnDestroy {
 
     subscription: Subscription;

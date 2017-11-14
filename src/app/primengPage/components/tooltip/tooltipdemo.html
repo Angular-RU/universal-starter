@@ -9,7 +9,7 @@
     <h3 class="first">Positions</h3>
     <div class="ui-g ui-fluid">
         <div class="ui-g-12 ui-md-3">
-            <input type="text" pInputText pTooltip="Enter your username" placeholder="Right">                
+            <input type="text" pInputText pTooltip="Enter your username" placeholder="Right">
         </div>
         <div class="ui-g-12 ui-md-3">
             <input type="text" pInputText pTooltip="Enter your username" tooltipPosition="top" placeholder="Top">
@@ -21,7 +21,7 @@
             <input type="text" pInputText pTooltip="Enter your username" tooltipPosition="left" placeholder="Left">
         </div>
     </div>
-    
+
     <h3>Focus and Blur</h3>
     <input type="text" pInputText pTooltip="Enter your username" placeholder="Right" tooltipEvent="focus" style="margin-left:.5em">
 </div>
@@ -29,61 +29,64 @@
 <div class="content-section documentation">
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
-                    <h3>Import</h3>
-<pre>
+            <h3>Import</h3>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;TooltipModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
             <h3>Getting Started</h3>
-            <p>Tooltip is applied to an element with pTooltip directive where the value of the directive defines the text to display.</p>
-            
-<pre>
+            <p>Tooltip is applied to an element with pTooltip directive where the value of the directive defines the text to
+                display.</p>
+
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;input type="text" pTooltip="Enter your username"&gt;
 </code>
 </pre>
 
             <h3>Position</h3>
-            <p>There are four choices to position the tooltip, default value is "right" and alternatives are "top", "bottom", "left". Position is 
-            specified using tooltipPosition attribute.</p>
-            
-<pre>
+            <p>There are four choices to position the tooltip, default value is "right" and alternatives are "top", "bottom",
+                "left". Position is specified using tooltipPosition attribute.</p>
+
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;input type="text" pTooltip="Enter your username" tooltipPosition="top"&gt;
 </code>
 </pre>
 
             <h3>Events</h3>
-            <p>Tooltip gets displayed on hover event of its target by default, other option is the focus event to display and blur to hide.</p>
+            <p>Tooltip gets displayed on hover event of its target by default, other option is the focus event to display and
+                blur to hide.</p>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;input type="text" pTooltip="Enter your username" tooltipPosition="top" tooltipEvent="focus"&gt;
 </code>
 </pre>
 
             <h3>Delay</h3>
-            <p>Tooltip is displayed or hidden instantly by default however you may add delays using showDelay and hideDelay properties which accept a number value in terms of milliseconds.</p>
+            <p>Tooltip is displayed or hidden instantly by default however you may add delays using showDelay and hideDelay
+                properties which accept a number value in terms of milliseconds.</p>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;input type="text" pTooltip="Enter your username" tooltipPosition="top" tooltipEvent="focus" showDelay="1000" hideDelay="500"&gt;
 </code>
 </pre>
 
             <h3>Scrolling Containers</h3>
-            <p>When placed inside a scrolling container like an overflown div, tooltip must be appended to another element that has
-                relative positioning instead of document body which is the default.</p>
-<pre>
+            <p>When placed inside a scrolling container like an overflown div, tooltip must be appended to another element that
+                has relative positioning instead of document body which is the default.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;div #container style="display:inline-block;position:relative"&gt;
     &lt;input type="text" pInputText pTooltip="Enter your username" placeholder="Right" [appendTo]="container"&gt;
 &lt;/div&gt;
 </code>
 </pre>
-            
+
             <h3>Properties</h3>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
@@ -130,7 +133,8 @@ import &#123;TooltipModule&#125; from 'primeng/primeng';
                             <td>appendTo</td>
                             <td>string</td>
                             <td>any</td>
-                            <td>Target element to attach the overlay, valid values are "body", "target" or a local ng-template variable of another element.</td>
+                            <td>Target element to attach the overlay, valid values are "body", "target" or a local ng-template
+                                variable of another element.</td>
                         </tr>
                         <tr>
                             <td>hideDelay</td>
@@ -160,7 +164,8 @@ import &#123;TooltipModule&#125; from 'primeng/primeng';
                             <td>escape</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>By default the tooltip contents are rendered as text. Set to false to support html tags in the content</td>
+                            <td>By default the tooltip contents are rendered as text. Set to false to support html tags in the
+                                content</td>
                         </tr>
                         <tr>
                             <td>tooltipZIndex</td>
@@ -173,7 +178,8 @@ import &#123;TooltipModule&#125; from 'primeng/primeng';
             </div>
 
             <h3>Styling</h3>
-            <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
+            <p>Following is the list of structural style classes, for theming classes visit
+                <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
@@ -202,13 +208,13 @@ import &#123;TooltipModule&#125; from 'primeng/primeng';
             <h3>Dependencies</h3>
             <p>None.</p>
         </p-tabPanel>
-        
+
         <p-tabPanel header="Source">
             <a href="https://github.com/primefaces/primeng/tree/master/src/app/showcase/components/tooltip" class="btn-viewsource" target="_blank">
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;h3 class="first"&gt;Positions&lt;/h3&gt;
 &lt;div class="ui-g ui-fluid"&gt;
@@ -232,5 +238,5 @@ import &#123;TooltipModule&#125; from 'primeng/primeng';
 </pre>
 
         </p-tabPanel>
-     </p-tabView >
+    </p-tabView>
 </div>

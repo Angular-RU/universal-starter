@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { ScheduleDemo } from './scheduledemo';
 
 @NgModule({

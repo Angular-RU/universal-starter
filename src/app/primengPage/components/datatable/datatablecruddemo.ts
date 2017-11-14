@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from '../../components/domain/car';
 import { CarService } from '../../service/carservice';
 
+class PrimeCar implements Car {
+
+    constructor(public vin?, public year?, public brand?, public color?) { }
+}
+
 @Component({
     templateUrl: './datatablecruddemo.html',
     styles: [`
@@ -14,6 +19,7 @@ import { CarService } from '../../service/carservice';
         }
   `]
 })
+
 // tslint:disable-next-line:component-class-suffix
 export class DataTableCrudDemo implements OnInit {
 
@@ -77,9 +83,4 @@ export class DataTableCrudDemo implements OnInit {
     findSelectedCarIndex(): number {
         return this.cars.indexOf(this.selectedCar);
     }
-}
-
-class PrimeCar implements Car {
-
-    constructor(public vin?, public year?, public brand?, public color?) { }
 }

@@ -1,15 +1,15 @@
-import {NgModule}     from '@angular/core';
-import {RouterModule} from '@angular/router'
-import {TriStateCheckboxDemo} from './tristatecheckboxdemo';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TriStateCheckboxDemo } from './tristatecheckboxdemo';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild([
-			{path:'',component: TriStateCheckboxDemo}
-		])
-	],
-	exports: [
-		RouterModule
-	]
+    imports: [
+        RouterModule.forChild([
+            { path: '', component: TriStateCheckboxDemo }
+        ])
+    ],
+    exports: [
+        RouterModule
+    ]
 })
-export class TriStateCheckboxDemoRoutingModule {}
+export class TriStateCheckboxDemoRoutingModule { }

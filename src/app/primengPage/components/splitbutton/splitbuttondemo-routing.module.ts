@@ -1,15 +1,15 @@
-import {NgModule}     from '@angular/core';
-import {RouterModule} from '@angular/router'
-import {SplitButtonDemo} from './splitbuttondemo';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { SplitButtonDemo } from './splitbuttondemo';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild([
-			{path:'',component: SplitButtonDemo}
-		])
-	],
-	exports: [
-		RouterModule
-	]
+    imports: [
+        RouterModule.forChild([
+            { path: '', component: SplitButtonDemo }
+        ])
+    ],
+    exports: [
+        RouterModule
+    ]
 })
-export class SplitButtonDemoRoutingModule {}
+export class SplitButtonDemoRoutingModule { }

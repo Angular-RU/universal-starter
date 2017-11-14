@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {SetupComponent} from './setup.component';
-import {SetupRoutingModule} from './setup-routing.module';
-import {CodeHighlighterModule} from 'primeng/components/codehighlighter/codehighlighter';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SetupComponent } from './setup.component';
+import { SetupRoutingModule } from './setup-routing.module';
+import { CodeHighlighterModule } from 'primeng/components/codehighlighter/codehighlighter';
 
 @NgModule({
   imports: [
@@ -14,4 +14,4 @@ import {CodeHighlighterModule} from 'primeng/components/codehighlighter/codehigh
     SetupComponent
   ]
 })
-export class SetupModule {}
+export class SetupModule { }

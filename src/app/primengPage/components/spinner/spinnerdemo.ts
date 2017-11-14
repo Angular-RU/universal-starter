@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './spinnerdemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class SpinnerDemo {
 
     val1: number;

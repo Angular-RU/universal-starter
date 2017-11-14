@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
-import {MenuItem} from 'primeng/components/common/api';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/components/common/api';
 
 @Component({
     templateUrl: './tieredmenudemo.html'
 })
-export class TieredMenuDemo {
+// tslint:disable-next-line:component-class-suffix
+export class TieredMenuDemo implements OnInit {
 
     items: MenuItem[];
 
@@ -14,24 +15,24 @@ export class TieredMenuDemo {
                 label: 'File',
                 icon: 'fa-file-o',
                 items: [{
-                        label: 'New', 
-                        icon: 'fa-plus',
-                        items: [
-                            {label: 'Project'},
-                            {label: 'Other'},
-                        ]
-                    },
-                    {label: 'Open'},
-                    {separator:true},
-                    {label: 'Quit'}
+                    label: 'New',
+                    icon: 'fa-plus',
+                    items: [
+                        { label: 'Project' },
+                        { label: 'Other' },
+                    ]
+                },
+                { label: 'Open' },
+                { separator: true },
+                { label: 'Quit' }
                 ]
             },
             {
                 label: 'Edit',
                 icon: 'fa-edit',
                 items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
+                    { label: 'Undo', icon: 'fa-mail-forward' },
+                    { label: 'Redo', icon: 'fa-mail-reply' }
                 ]
             },
             {
@@ -42,11 +43,11 @@ export class TieredMenuDemo {
                         label: 'Contents'
                     },
                     {
-                        label: 'Search', 
-                        icon: 'fa-search', 
+                        label: 'Search',
+                        icon: 'fa-search',
                         items: [
                             {
-                                label: 'Text', 
+                                label: 'Text',
                                 items: [
                                     {
                                         label: 'Workspace'
@@ -56,7 +57,8 @@ export class TieredMenuDemo {
                             {
                                 label: 'File'
                             }
-                    ]}
+                        ]
+                    }
                 ]
             },
             {
@@ -67,20 +69,20 @@ export class TieredMenuDemo {
                         label: 'Edit',
                         icon: 'fa-refresh',
                         items: [
-                            {label: 'Save', icon: 'fa-save'},
-                            {label: 'Update', icon: 'fa-save'},
+                            { label: 'Save', icon: 'fa-save' },
+                            { label: 'Update', icon: 'fa-save' },
                         ]
                     },
                     {
                         label: 'Other',
                         icon: 'fa-phone',
                         items: [
-                            {label: 'Delete', icon: 'fa-minus'}
+                            { label: 'Delete', icon: 'fa-minus' }
                         ]
                     }
                 ]
             },
-            {separator:true},
+            { separator: true },
             {
                 label: 'Quit', icon: 'fa-minus'
             }
