@@ -4,33 +4,41 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '', component: PrimengPageComponent, children: [
-      { path: 'setup', loadChildren: './components/setup/setup.module#SetupModule' },
-      { path: 'theming', loadChildren: './components/theming/theming.module#ThemingModule' },
-      { path: 'accorsdion', loadChildren: './components/accordion/accordiondemo.module#AccordionDemoModule' },
-      // document.createElement is not a function
-      { path: 'autocomplete', loadChildren: './components/autocomplete/autocompletedemo.module#AutoCompleteDemoModule' },
-      { path: 'blockui', loadChildren: './components/blockui/blockuidemo.module#BlockUIDemoModule' },
-      { path: 'breadcrumb', loadChildren: './components/breadcrumb/breadcrumbdemo.module#BreadcrumbDemoModule' },
-      { path: 'button', loadChildren: './components/button/buttondemo.module#ButtonDemoModule' },
-      { path: 'calendar', loadChildren: './components/calendar/calendardemo.module#CalendarDemoModule' },
-      { path: 'captcha', loadChildren: './components/captcha/captchademo.module#CaptchaDemoModule' },
+      // { path: 'setup', loadChildren: './components/setup/setup.module#SetupModule' },
+      // { path: 'theming', loadChildren: './components/theming/theming.module#ThemingModule' },
+      // { path: 'accorsdion', loadChildren: './components/accordion/accordiondemo.module#AccordionDemoModule' },
+      // // document.createElement is not a function
+      // { path: 'autocomplete', loadChildren: './components/autocomplete/autocompletedemo.module#AutoCompleteDemoModule' },
+      // { path: 'blockui', loadChildren: './components/blockui/blockuidemo.module#BlockUIDemoModule' },
+      // { path: 'breadcrumb', loadChildren: './components/breadcrumb/breadcrumbdemo.module#BreadcrumbDemoModule' },
+      // { path: 'button', loadChildren: './components/button/buttondemo.module#ButtonDemoModule' },
+      // { path: 'calendar', loadChildren: './components/calendar/calendardemo.module#CalendarDemoModule' },
+      // { path: 'captcha', loadChildren: './components/captcha/captchademo.module#CaptchaDemoModule' },
 
-      // NotworkingModule
-      // { path: 'carousel', loadChildren: './components/carousel/carouseldemo.module#CarouselDemoModule' },
-      { path: 'carousel', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
+      // // NotworkingModule
+      // // { path: 'carousel', loadChildren: './components/carousel/carouseldemo.module#CarouselDemoModule' },
+      // { path: 'carousel', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
 
-      { path: 'chart', loadChildren: './components/chart/chartdemo.module#ChartDemoModule' },
-      { path: 'checkbox', loadChildren: './components/checkbox/checkboxdemo.module#CheckboxDemoModule' },
-      { path: 'chips', loadChildren: './components/chips/chipsdemo.module#ChipsDemoModule' },
-      { path: 'codehighlighter', loadChildren: './components/codehighlighter/codehighlighterdemo.module#CodeHighlighterDemoModule' },
+      // { path: 'chart', loadChildren: './components/chart/chartdemo.module#ChartDemoModule' },
+      // { path: 'checkbox', loadChildren: './components/checkbox/checkboxdemo.module#CheckboxDemoModule' },
+      // { path: 'chips', loadChildren: './components/chips/chipsdemo.module#ChipsDemoModule' },
+      // { path: 'codehighlighter', loadChildren: './components/codehighlighter/codehighlighterdemo.module#CodeHighlighterDemoModule' },
       // need test
       // { path: 'colorpicker', loadChildren: './components/colorpicker/colorpickerdemo.module#ColorPickerDemoModule' },
       // { path: 'confirmdialog', loadChildren: './components/confirmdialog/confirmdialogdemo.module#ConfirmDialogDemoModule' },
-      // { path: 'contextmenu', loadChildren: './components/contextmenu/contextmenudemo.module#ContextMenuDemoModule' },
+      // // NotworkingModule - need provider?
+      // // { path: 'contextmenu', loadChildren: './components/contextmenu/contextmenudemo.module#ContextMenuDemoModule' },
+      // { path: 'contextmenu', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
+      // // XMLHttpRequest is not defined
       // { path: 'datagrid', loadChildren: './components/datagrid/datagriddemo.module#DataGridDemoModule' },
-      // { path: 'datalist', loadChildren: './components/datalist/datalistdemo.module#DataListDemoModule' },
-      // { path: 'datascroller', loadChildren: './components/datascroller/datascrollerdemo.module#DataScrollerDemoModule' },
-      // { path: 'datatable', loadChildren: './components/datatable/datatabledemo.module#DataTableDemoModule' },
+      // // XMLHttpRequest is not defined
+      // // { path: 'datalist', loadChildren: './components/datalist/datalistdemo.module#DataListDemoModule' },
+      // { path: 'datalist', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
+      // // XMLHttpRequest is not defined
+      // // { path: 'datascroller', loadChildren: './components/datascroller/datascrollerdemo.module#DataScrollerDemoModule' },
+      // { path: 'datascroller', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
+      // // XMLHttpRequest is not defined
+      { path: 'datatable', loadChildren: './components/datatable/datatabledemo.module#DataTableDemoModule' },
       // { path: 'defer', loadChildren: './components/defer/deferdemo.module#DeferDemoModule' },
       // { path: 'dialog', loadChildren: './components/dialog/dialogdemo.module#DialogDemoModule' },
       // { path: 'dragdrop', loadChildren: './components/dragdrop/dragdropdemo.module#DragDropDemoModule' },
