@@ -4,3 +4,5 @@ dist
 server.js
 package-lock.json
 yarn.lock
+prerender.js
+prerender.js
