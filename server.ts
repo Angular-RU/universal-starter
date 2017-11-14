@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
   global['document'] = template;
   global['navigator'] = req['headers']['user-agent'];
   global['CSS'] = null;
-  global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
+  // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
   res.render('../dist/index', {
     req: req,
     res: res,

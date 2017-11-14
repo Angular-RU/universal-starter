@@ -26,7 +26,8 @@ export class DragDropDemo implements OnInit {
 
     async ngOnInit() {
         this.selectedCars = [];
-        this.availableCars = await this.carService.getCarsSmallAsync().then(cars => cars);
+        this.availableCars = await this.carService.getCarsSmallAsync();
+        console.log(this.availableCars);
     }
 
     dragStart(event, car: Car) {

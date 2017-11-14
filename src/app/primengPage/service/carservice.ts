@@ -12,17 +12,20 @@ export class CarService {
   constructor(private http: TransferHttp) { }
 
   async getCarsSmallAsync() {
-    return await this.http.get('http://localhost:4000/assets/showcase/data/cars-small.json')
+    const result = await this.http.get('http://localhost:4000/assets/showcase/data/cars-small.json')
       .toPromise();
+    return result.data;
   }
 
   async getCarsMediumAsync() {
-    return await this.http.get('http://localhost:4000/assets/showcase/data/cars-medium.json')
+    const result = await this.http.get('http://localhost:4000/assets/showcase/data/cars-medium.json')
       .toPromise();
+    return result.data;
   }
 
   async getCarsLargeAsync() {
-    return await this.http.get('http://localhost:4000/assets/showcase/data/cars-large.json')
+    const result = await this.http.get('http://localhost:4000/assets/showcase/data/cars-large.json')
       .toPromise();
+    return result.data;
   }
 }

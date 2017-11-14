@@ -23,18 +23,16 @@ export class AutoCompleteDemo {
 
     constructor(private countryService: CountryService) { }
 
-    filterCountrySingle(event) {
+    async filterCountrySingle(event) {
         const query = event.query;
-        this.countryService.getCountries().then(countries => {
-            this.filteredCountriesSingle = this.filterCountry(query, countries);
-        });
+        const countries = await this.countryService.getCountriesAsync();
+        this.filteredCountriesSingle = this.filterCountry(query, countries);
     }
 
-    filterCountryMultiple(event) {
+    async filterCountryMultiple(event) {
         const query = event.query;
-        this.countryService.getCountries().then(countries => {
-            this.filteredCountriesMultiple = this.filterCountry(query, countries);
-        });
+        const countries = await this.countryService.getCountriesAsync();
+        this.filteredCountriesMultiple = this.filterCountry(query, countries);
     }
 
     filterCountry(query, countries: any[]): any[] {

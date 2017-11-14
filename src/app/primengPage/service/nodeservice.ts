@@ -12,22 +12,26 @@ export class NodeService {
   constructor(private http: TransferHttp) { }
 
   async getFilesAsync() {
-    return await this.http.get('assets/showcase/data/files.json')
+    const result = await this.http.get('assets/showcase/data/files.json')
       .toPromise();
+    return result.data;
   }
 
   async getLazyFilesAsync() {
-    return await this.http.get('assets/showcase/data/files-lazy.json')
+    const result = await this.http.get('assets/showcase/data/files-lazy.json')
       .toPromise();
+    return result.data;
   }
 
   async getFilesystemAsync() {
-    return await this.http.get('assets/showcase/data/filesystem.json')
+    const result = await this.http.get('assets/showcase/data/filesystem.json')
       .toPromise();
+    return result.data;
   }
 
   async getLazyFilesystemAsync() {
-    return await this.http.get('assets/showcase/data/filesystem-lazy.json')
+    const result = await this.http.get('assets/showcase/data/filesystem-lazy.json')
       .toPromise();
+    return result.data;
   }
 }

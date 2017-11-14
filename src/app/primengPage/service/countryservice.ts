@@ -7,10 +7,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CountryService {
 
-    constructor(private http: TransferHttp) { }
+  constructor(private http: TransferHttp) { }
 
-    async getCountriesAsync() {
-    return await this.http.get('assets/showcase/data/countries.json')
+  async getCountriesAsync() {
+    const result = await this.http.get('assets/showcase/data/countries.json')
       .toPromise();
-    }
+    return result.data;
+  }
 }

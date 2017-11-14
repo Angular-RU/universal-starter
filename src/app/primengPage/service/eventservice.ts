@@ -10,7 +10,8 @@ export class EventService {
   constructor(private http: TransferHttp) { }
 
   async getEvents() {
-    return await this.http.get('assets/showcase/data/scheduleevents.json')
+    const result = await this.http.get('assets/showcase/data/scheduleevents.json')
       .toPromise();
+    return result.data;
   }
 }
