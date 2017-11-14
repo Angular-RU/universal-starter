@@ -1,5 +1,7 @@
-# angular-universal-starter
-Репозиторий с angular cli и universal
+# Angular Universal starter kit
+[![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
+
+Репозиторий с Angular CLI и Angular Universal
 
 - публичный чат https://t.me/angular_universal_ru
 
@@ -55,7 +57,6 @@ providers: [
 ```
 это позволяет убрать часть проблем при работе с `undefined`.
 
-[![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
 
 
