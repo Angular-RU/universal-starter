@@ -1,10 +1,12 @@
-import {Component} from '@angular/core';
-import {MenuItem} from 'primeng/components/common/api';
+import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/components/common/api';
+import { OnInit } from '@angular/core';
 
 @Component({
     templateUrl: './menubardemo.html'
 })
-export class MenubarDemo {
+// tslint:disable-next-line:component-class-suffix
+export class MenubarDemo implements OnInit {
 
     items: MenuItem[];
 
@@ -14,24 +16,24 @@ export class MenubarDemo {
                 label: 'File',
                 icon: 'fa-file-o',
                 items: [{
-                        label: 'New', 
-                        icon: 'fa-plus',
-                        items: [
-                            {label: 'Project'},
-                            {label: 'Other'},
-                        ]
-                    },
-                    {label: 'Open'},
-                    {separator: true},
-                    {label: 'Quit'}
+                    label: 'New',
+                    icon: 'fa-plus',
+                    items: [
+                        { label: 'Project' },
+                        { label: 'Other' },
+                    ]
+                },
+                { label: 'Open' },
+                { separator: true },
+                { label: 'Quit' }
                 ]
             },
             {
                 label: 'Edit',
                 icon: 'fa-edit',
                 items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
+                    { label: 'Undo', icon: 'fa-mail-forward' },
+                    { label: 'Redo', icon: 'fa-mail-reply' }
                 ]
             },
             {
@@ -42,11 +44,11 @@ export class MenubarDemo {
                         label: 'Contents'
                     },
                     {
-                        label: 'Search', 
-                        icon: 'fa-search', 
+                        label: 'Search',
+                        icon: 'fa-search',
                         items: [
                             {
-                                label: 'Text', 
+                                label: 'Text',
                                 items: [
                                     {
                                         label: 'Workspace'
@@ -56,7 +58,8 @@ export class MenubarDemo {
                             {
                                 label: 'File'
                             }
-                    ]}
+                        ]
+                    }
                 ]
             },
             {
@@ -67,15 +70,15 @@ export class MenubarDemo {
                         label: 'Edit',
                         icon: 'fa-refresh',
                         items: [
-                            {label: 'Save', icon: 'fa-save'},
-                            {label: 'Update', icon: 'fa-save'},
+                            { label: 'Save', icon: 'fa-save' },
+                            { label: 'Update', icon: 'fa-save' },
                         ]
                     },
                     {
                         label: 'Other',
                         icon: 'fa-phone',
                         items: [
-                            {label: 'Delete', icon: 'fa-minus'}
+                            { label: 'Delete', icon: 'fa-minus' }
                         ]
                     }
                 ]

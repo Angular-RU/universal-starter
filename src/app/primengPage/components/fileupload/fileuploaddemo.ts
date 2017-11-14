@@ -1,31 +1,32 @@
-import {Component} from '@angular/core';
-import {Message} from 'primeng/components/common/api';
+import { Component } from '@angular/core';
+import { Message } from 'primeng/components/common/api';
 
 @Component({
     templateUrl: './fileuploaddemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class FileUploadDemo {
 
     msgs: Message[];
-    
+
     uploadedFiles: any[] = [];
 
     onUpload(event) {
-        for(let file of event.files) {
+        for (const file of event.files) {
             this.uploadedFiles.push(file);
         }
-        
+
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'File Uploaded'});
+        this.msgs.push({ severity: 'info', summary: 'Success', detail: 'File Uploaded' });
     }
-    
-    onBasicUpload(event) {        
+
+    onBasicUpload(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode'});
+        this.msgs.push({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
     }
-    
-    onBasicUploadAuto(event) {        
+
+    onBasicUploadAuto(event) {
         this.msgs = [];
-        this.msgs.push({severity: 'info', summary: 'Success', detail: 'File Uploaded with Auto Mode'});
+        this.msgs.push({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Auto Mode' });
     }
 }

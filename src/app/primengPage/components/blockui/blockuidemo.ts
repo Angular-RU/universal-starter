@@ -3,6 +3,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 @Component({
     templateUrl: './blockuidemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class BlockUIDemo {
 
     blockedPanel: boolean = false;

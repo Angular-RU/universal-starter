@@ -1,23 +1,23 @@
-import {NgModule}     from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule}    from '@angular/forms';
-import {DropdownDemo} from './dropdowndemo';
-import {DropdownDemoRoutingModule} from './dropdowndemo-routing.module';
-import {DropdownModule} from 'primeng/components/dropdown/dropdown';
-import {TabViewModule} from 'primeng/components/tabview/tabview';
-import {CodeHighlighterModule} from 'primeng/components/codehighlighter/codehighlighter';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { DropdownDemo } from './dropdowndemo';
+import { DropdownDemoRoutingModule } from './dropdowndemo-routing.module';
+import { DropdownModule } from 'primeng/components/dropdown/dropdown';
+import { TabViewModule } from 'primeng/components/tabview/tabview';
+import { CodeHighlighterModule } from 'primeng/components/codehighlighter/codehighlighter';
 
 @NgModule({
-	imports: [
-		CommonModule,
+    imports: [
+        CommonModule,
         FormsModule,
-		DropdownDemoRoutingModule,
+        DropdownDemoRoutingModule,
         DropdownModule,
         TabViewModule,
         CodeHighlighterModule
-	],
-	declarations: [
-		DropdownDemo
-	]
+    ],
+    declarations: [
+        DropdownDemo
+    ]
 })
-export class DropdownDemoModule {}
+export class DropdownDemoModule { }

@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'datascroller-demos',
     template: `
         <div id="datatable-submenu" class="content-section SubSubMenu ui-helper-clearfix">
@@ -13,5 +14,7 @@ import {Component} from '@angular/core';
         </div>
     `
 })
+
+// tslint:disable-next-line:component-class-suffix
 export class DataScrollerSubMenu {
 }

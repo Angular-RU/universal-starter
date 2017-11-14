@@ -8,9 +8,8 @@
 
 <div class="content-section implementation">
     <p-growl [value]="msgs"></p-growl>
-    
-    <p-gmap #gmap [style]="&#123;'width':'100%','height':'320px'&#125;" [options]="options" [overlays]="overlays" 
-       (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)" (onOverlayDragEnd)="handleDragEnd($event)"></p-gmap>
+
+    <p-gmap #gmap [style]="&#123;'width':'100%','height':'320px'&#125;" [options]="options" [overlays]="overlays" (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)" (onOverlayDragEnd)="handleDragEnd($event)"></p-gmap>
     <button type="button" pButton label="Clear" icon="fa-close" (click)="clear()" style="margin-top:10px"></button>
     <button type="button" pButton label="Zoom In" icon="fa-search-plus" (click)="zoomIn(gmap.getMap())" style="margin-top:10px"></button>
     <button type="button" pButton label="Zoom Out" icon="fa-search-minus" (click)="zoomOut(gmap.getMap())" style="margin-top:10px"></button>
@@ -19,15 +18,17 @@
         <div class="ui-g ui-fluid" *ngIf="selectedPosition">
             <div class="ui-g-2"><label for="title">Label</label></div>
             <div class="ui-g-10"><input type="text" pInputText id="title" [(ngModel)]="markerTitle"></div>
-            
+
             <div class="ui-g-2"><label for="lat">Lat</label></div>
             <div class="ui-g-10"><input id="lat" type="text" readonly pInputText [ngModel]="selectedPosition.lat()"></div>
-            
+
             <div class="ui-g-2"><label for="lng">Lng</label></div>
             <div class="ui-g-10"><input id="lng" type="text" readonly pInputText [ngModel]="selectedPosition.lng()"></div>
-            
+
             <div class="ui-g-2"><label for="drg">Drag</label></div>
-            <div class="ui-g-10"><p-checkbox [(ngModel)]="draggable" binary="true" [style]="{'margin-top':'.25em'}"></p-checkbox></div>
+            <div class="ui-g-10">
+                <p-checkbox [(ngModel)]="draggable" binary="true" [style]="{'margin-top':'.25em'}"></p-checkbox>
+            </div>
         </div>
         <p-footer>
             <div class="ui-dialog-buttonpane ui-helper-clearfix">
@@ -41,7 +42,7 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;GMapModule&#125; from 'primeng/primeng';
 </code>
@@ -49,13 +50,13 @@ import &#123;GMapModule&#125; from 'primeng/primeng';
 
             <h3>Getting Started</h3>
             <p>A map is initialized with options and dimensions. Refer to the google maps api for the list of available options.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-gmap [options]="options" [style]="&#123;'width':'100%','height':'320px'&#125;" &gt;&lt;/p-gmap&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
 
@@ -75,15 +76,14 @@ export class MyModel &#123;
 </pre>
 
             <h3>Overlays</h3>
-            <p>GMap can display any type of overlay such as markers, polygons and circles. Overlay instances are bound using the overlays property array. Overlays are aware
-            of one-way binding so whenever the array changes, gmap updates itself.</p>
-<pre>
+            <p>GMap can display any type of overlay such as markers, polygons and circles. Overlay instances are bound using the overlays property array. Overlays are aware of one-way binding so whenever the array changes, gmap updates itself.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-gmap [options]="options" [overlays]="overlays" [style]="&#123;'width':'100%','height':'320px'&#125;" &gt;&lt;/p-gmap&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
 
@@ -115,14 +115,14 @@ export class MyModel &#123;
 
             <h3>Events</h3>
             <p>GMap provides common callbacks to hook into events including map click, overlay click and overlay dragging.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-gmap [options]="options" [overlays]="overlays" [style]="&#123;'width':'100%','height':'320px'&#125;"
             (onMapClick)="handleMapClick($event)" (onOverlayClick)="handleOverlayClick($event)"&gt;&lt;/p-gmap&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
 
@@ -164,7 +164,7 @@ export class MyModel &#123;
 
             <h3>Google Maps API</h3>
             <p>In case you need to access the map instance directly, use the getMap() method.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-gmap #gmap [options]="options"&gt;&lt;/p-gmap&gt;
 
@@ -172,7 +172,7 @@ export class MyModel &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
 
@@ -193,16 +193,15 @@ export class MyModel &#123;
 &#125;
 </code>
 </pre>
-            <p>Another option is to to get the map object directly after init via (onMapReady) event.
-               In the example below, google.maps.Map is used for adjusting map bounds to markers.</p>
-<pre>
+            <p>Another option is to to get the map object directly after init via (onMapReady) event. In the example below, google.maps.Map is used for adjusting map bounds to markers.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-gmap #gmap [options]="options" [overlays]="overlays" [style]="mapStyle"
     (onMapReady)="setMap($event)"&gt;&lt;/p-gmap&gt;
 </code>
 </pre>
             <p>Then from your component you would write</p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
 
@@ -240,12 +239,12 @@ export class MyModel &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -275,7 +274,7 @@ export class MyModel &#123;
                     </tbody>
                 </table>
             </div>
-            
+
             <h3>Events</h3>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
@@ -304,30 +303,22 @@ export class MyModel &#123;
                         </tr>
                         <tr>
                             <td>onOverlayClick</td>
-                            <td>originalEvent: Google Maps MouseEvent <br>
-                                overlay: Clicked overlay <br>
-                                map: Map instance <br></td>
+                            <td>originalEvent: Google Maps MouseEvent <br> overlay: Clicked overlay <br> map: Map instance <br></td>
                             <td>Callback to invoke when an overlay is clicked.</td>
                         </tr>
                         <tr>
                             <td>onOverlayDrag</td>
-                            <td>originalEvent: Google Maps MouseEvent <br>
-                                overlay: Clicked overlay <br>
-                                map: Map instance <br></td>
+                            <td>originalEvent: Google Maps MouseEvent <br> overlay: Clicked overlay <br> map: Map instance <br></td>
                             <td>Callback to invoke when an overlay is being dragged.</td>
                         </tr>
                         <tr>
                             <td>onOverlayDragEnd</td>
-                            <td>originalEvent: Google Maps MouseEvent <br>
-                                overlay: Clicked overlay <br>
-                                map: Map instance <br></td>
+                            <td>originalEvent: Google Maps MouseEvent <br> overlay: Clicked overlay <br> map: Map instance <br></td>
                             <td>Callback to invoke when an overlay drag ends.</td>
                         </tr>
                         <tr>
                             <td>onOverlayDragStart</td>
-                            <td>originalEvent: Google Maps MouseEvent <br>
-                                overlay: Clicked overlay <br>
-                                map: Map instance <br></td>
+                            <td>originalEvent: Google Maps MouseEvent <br> overlay: Clicked overlay <br> map: Map instance <br></td>
                             <td>Callback to invoke when an overlay drag starts.</td>
                         </tr>
                         <tr>
@@ -348,7 +339,7 @@ export class MyModel &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-growl [value]="msgs"&gt;&lt;/p-growl&gt;
 
@@ -381,7 +372,7 @@ export class MyModel &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class GMapDemo implements OnInit &#123;
 

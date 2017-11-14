@@ -1,23 +1,23 @@
-import {NgModule}     from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule}    from '@angular/forms'
-import {CalendarDemo} from './calendardemo';
-import {CalendarDemoRoutingModule} from './calendardemo-routing.module';
-import {CalendarModule} from 'primeng/components/calendar/calendar';
-import {TabViewModule} from 'primeng/components/tabview/tabview';
-import {CodeHighlighterModule} from 'primeng/components/codehighlighter/codehighlighter';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CalendarDemo } from './calendardemo';
+import { CalendarDemoRoutingModule } from './calendardemo-routing.module';
+import { CalendarModule } from 'primeng/components/calendar/calendar';
+import { TabViewModule } from 'primeng/components/tabview/tabview';
+import { CodeHighlighterModule } from 'primeng/components/codehighlighter/codehighlighter';
 
 @NgModule({
-	imports: [
-		CommonModule,
+    imports: [
+        CommonModule,
         FormsModule,
-		CalendarDemoRoutingModule,
+        CalendarDemoRoutingModule,
         CalendarModule,
         TabViewModule,
         CodeHighlighterModule
-	],
-	declarations: [
-		CalendarDemo
-	]
+    ],
+    declarations: [
+        CalendarDemo
+    ]
 })
-export class CalendarDemoModule {}
+export class CalendarDemoModule { }

@@ -9,6 +9,7 @@ import {Component} from '@angular/core';
         }
     `]
 })
+// tslint:disable-next-line:component-class-suffix
 export class RadioButtonDemo {
 
     val1: string;

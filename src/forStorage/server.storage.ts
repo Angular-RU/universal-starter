@@ -1,6 +1,6 @@
 
 import { Inject, Injectable } from '@angular/core';
-import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 @Injectable()
 export class UniversalStorage implements Storage {
@@ -10,7 +10,7 @@ export class UniversalStorage implements Storage {
     length: number;
     cookies: any;
 
-    constructor( @Inject(REQUEST) private request: any, @Inject(RESPONSE) private response: Response) {
+    constructor( @Inject(REQUEST) private request: any) {
         this.cookies = request.cookies;
     }
 

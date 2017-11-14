@@ -8,7 +8,7 @@
 </div>
 
 <div class="content-section implementation">
-    
+
     <p-dataTable #dt [value]="cars" exportFilename="cars" [(selection)]="selectedCars" selectionMode="multiple" [metaKeySelection]="false">
         <p-header>
             <div class="ui-helper-clearfix">
@@ -20,8 +20,8 @@
         <p-column field="year" header="Year"></p-column>
         <p-column field="brand" header="Brand"></p-column>
         <p-column field="color" header="Color"></p-column>
-    </p-dataTable>    
-    
+    </p-dataTable>
+
 </div>
 
 <div class="content-section documentation">
@@ -31,7 +31,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableExportDemo implements OnInit &#123;
 
@@ -47,7 +47,7 @@ export class DataTableExportDemo implements OnInit &#123;
 
 &#125;
 </code>
-</pre>            
+</pre>
         </p-tabPanel>
 
         <p-tabPanel header="datatableexportdemo.html">
@@ -55,7 +55,7 @@ export class DataTableExportDemo implements OnInit &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable #dt [value]="cars" exportFilename="cars" [(selection)]="selectedCars" selectionMode="multiple" [metaKeySelection]="false"&gt;
     &lt;p-header&gt;

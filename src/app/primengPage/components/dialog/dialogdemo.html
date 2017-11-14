@@ -12,10 +12,10 @@
            Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, 
            kind and benevolent to those who give respect,
            but given to ruthless violence whenever anything stands against the good of the family.</span>
-           <p-footer>
-               <button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
-               <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
-           </p-footer>
+        <p-footer>
+            <button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
+            <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+        </p-footer>
     </p-dialog>
 
     <button type="button" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
@@ -25,7 +25,7 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;DialogModule&#125; from 'primeng/primeng';
 </code>
@@ -33,8 +33,8 @@ import &#123;DialogModule&#125; from 'primeng/primeng';
 
             <h3>Getting Started</h3>
             <p>Dialog is used as a container and visibility is controlled with visible property.</p>
-                    
-<pre>
+
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dialog header="Title" [(visible)]="display"&gt;
     Content
@@ -44,7 +44,7 @@ import &#123;DialogModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class ModelComponent &#123;
 
@@ -58,13 +58,11 @@ export class ModelComponent &#123;
 </code>
 </pre>
 
-            <p>By default dialog is hidden and enabling the visible property displays the dialog. As visible supports
-            two-way binding, hiding the dialog with close button updates the visible state as false.</p>
-            
+            <p>By default dialog is hidden and enabling the visible property displays the dialog. As visible supports two-way binding, hiding the dialog with close button updates the visible state as false.</p>
+
             <h3>Width</h3>
-            <p>When the content of the dialog is fluid, dialog width may grow unexpectedly, in this case define a fixed width to the dialog
-                or the content.</p>
-<pre>
+            <p>When the content of the dialog is fluid, dialog width may grow unexpectedly, in this case define a fixed width to the dialog or the content.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dialog header="Title" [(visible)]="display" [width]="300"&gt;
     Content
@@ -73,9 +71,8 @@ export class ModelComponent &#123;
 </pre>
 
             <h3>Header and Footer</h3>
-            <p>Header and Footer sections are useful to include custom content. Note that Header and Footer components should be imported and defined
-            at directives section of your component for this to work.</p>
-<pre>
+            <p>Header and Footer sections are useful to include custom content. Note that Header and Footer components should be imported and defined at directives section of your component for this to work.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dialog [(visible)]="display"&gt;
     &lt;p-header&gt;
@@ -90,9 +87,8 @@ export class ModelComponent &#123;
 </pre>
 
             <h3>Overlays Inside</h3>
-            <p>When dialog includes other components with overlays such as dropdown, the overlay part cannot exceed dialog boundaries due to overflow. In order to solve this, you can 
-            either append the overlay to the body or allow overflow in dialog.</p>
-<pre>
+            <p>When dialog includes other components with overlays such as dropdown, the overlay part cannot exceed dialog boundaries due to overflow. In order to solve this, you can either append the overlay to the body or allow overflow in dialog.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dialog&gt;
     &lt;p-dropdown appendTo="body"&gt;&lt;/p-dropdown&gt;
@@ -100,7 +96,7 @@ export class ModelComponent &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dialog [contentStyle]="&#123;'overflow':'visible'&#125;"&gt;
     &lt;p-dropdown&gt;&lt;/p-dropdown&gt;
@@ -110,7 +106,7 @@ export class ModelComponent &#123;
 
             <h3>RTL Support</h3>
             <p>RTL orientation is enabled by adding "ui-rtl" to an ancestor element of dialog in combination with standard dir="rtl" option.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;div class="ui-rtl" dir="rtl"&gt;
     &lt;p-dialog [(visible)]="display"&gt;
@@ -363,7 +359,7 @@ export class ModelComponent &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dialog header="Godfather I" [(visible)]="display" modal="modal" width="300" [responsive]="true"&gt;
     &lt;p&gt;The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
@@ -381,7 +377,7 @@ export class ModelComponent &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DialogDemo &#123;
 

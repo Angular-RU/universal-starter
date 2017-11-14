@@ -1,3 +1,4 @@
+import { TransferHttp } from './../../../modules/transfer-http/transfer-http';
 import 'rxjs/add/operator/toPromise';
 
 import { HttpClient } from '@angular/common/http';
@@ -6,12 +7,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CountryService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: TransferHttp) { }
 
-    getCountries() {
-    return this.http.get<any>('assets/showcase/data/countries.json')
-      .toPromise()
-      .then(res => <any[]>res.data)
-      .then(data => data);
+    async getCountriesAsync() {
+    return await this.http.get('assets/showcase/data/countries.json')
+      .toPromise();
     }
 }

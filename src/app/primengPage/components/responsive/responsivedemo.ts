@@ -1,9 +1,9 @@
-import {Component,OnInit,ViewEncapsulation} from '@angular/core';
-import {Car} from '../../components/domain/car';
-import {CarService} from '../../service/carservice';
-import {NodeService} from '../../service/nodeservice';
-import {CountryService} from '../../service/countryservice';
-import {SelectItem,MenuItem,TreeNode} from 'primeng/components/common/api';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Car } from '../../components/domain/car';
+import { CarService } from '../../service/carservice';
+import { NodeService } from '../../service/nodeservice';
+import { CountryService } from '../../service/countryservice';
+import { SelectItem, MenuItem, TreeNode } from 'primeng/components/common/api';
 
 @Component({
     templateUrl: './responsivedemo.html',
@@ -11,13 +11,14 @@ import {SelectItem,MenuItem,TreeNode} from 'primeng/components/common/api';
         .ui-datagrid .ui-datagrid-column {
             text-align: center;
         }
-        
+
         .radiobuttons > * {
             vertical-align: middle;
         }
     `],
     encapsulation: ViewEncapsulation.None
 })
+// tslint:disable-next-line:component-class-suffix
 export class ResponsiveDemo implements OnInit {
 
     cities: SelectItem[];
@@ -53,46 +54,46 @@ export class ResponsiveDemo implements OnInit {
     text: string;
 
     filteredCountriesSingle: any[];
-    
+
     items1: MenuItem[];
-    
+
     items2: MenuItem[];
-    
+
     splitMenuItems: MenuItem[];
-    
+
     country: any;
-    
+
     showDialog() {
         this.display = true;
     }
 
     constructor(private carService: CarService, private countryService: CountryService, private nodeService: NodeService) {
         this.cars2 = [
-            {vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black'},
-            {vin: 'jhto2g2', year: 2015, brand: 'BMW', color: 'White'},
-            {vin: 'h453w54', year: 2012, brand: 'Honda', color: 'Blue'},
-            {vin: 'g43gwwg', year: 1998, brand: 'Renault', color: 'White'},
-            {vin: 'gf45wg5', year: 2011, brand: 'VW', color: 'Red'},
-            {vin: 'bhv5y5w', year: 2015, brand: 'Jaguar', color: 'Blue'},
-            {vin: 'ybw5fsd', year: 2012, brand: 'Ford', color: 'Yellow'},
-            {vin: '45665e5', year: 2011, brand: 'Mercedes', color: 'Brown'},
-            {vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black'}
+            { vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black' },
+            { vin: 'jhto2g2', year: 2015, brand: 'BMW', color: 'White' },
+            { vin: 'h453w54', year: 2012, brand: 'Honda', color: 'Blue' },
+            { vin: 'g43gwwg', year: 1998, brand: 'Renault', color: 'White' },
+            { vin: 'gf45wg5', year: 2011, brand: 'VW', color: 'Red' },
+            { vin: 'bhv5y5w', year: 2015, brand: 'Jaguar', color: 'Blue' },
+            { vin: 'ybw5fsd', year: 2012, brand: 'Ford', color: 'Yellow' },
+            { vin: '45665e5', year: 2011, brand: 'Mercedes', color: 'Brown' },
+            { vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black' }
         ];
 
         this.cities = [];
-        this.cities.push({label:'Select Cities', value:'Select Cities'});
-        this.cities.push({label:'New York', value:'New York'});
-        this.cities.push({label:'Rome', value:'Rome'});
-        this.cities.push({label:'London', value:'London'});
-        this.cities.push({label:'Istanbul', value:'Istanbul'});
-        this.cities.push({label:'Paris', value:'Paris'});
+        this.cities.push({ label: 'Select Cities', value: 'Select Cities' });
+        this.cities.push({ label: 'New York', value: 'New York' });
+        this.cities.push({ label: 'Rome', value: 'Rome' });
+        this.cities.push({ label: 'London', value: 'London' });
+        this.cities.push({ label: 'Istanbul', value: 'Istanbul' });
+        this.cities.push({ label: 'Paris', value: 'Paris' });
 
         this.options = [];
-        this.options.push({label:'Option 1', value:'Option 1'});
-        this.options.push({label:'Option 2', value:'Option 2'});
-        this.options.push({label:'Option 3', value:'Option 3'});
-        this.options.push({label:'Option 4', value:'Option 4'});
-        this.options.push({label:'Option 5', value:'Option 5'});
+        this.options.push({ label: 'Option 1', value: 'Option 1' });
+        this.options.push({ label: 'Option 2', value: 'Option 2' });
+        this.options.push({ label: 'Option 3', value: 'Option 3' });
+        this.options.push({ label: 'Option 4', value: 'Option 4' });
+        this.options.push({ label: 'Option 5', value: 'Option 5' });
 
         this.data = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -118,53 +119,53 @@ export class ResponsiveDemo implements OnInit {
                     data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]
-        }
+        };
     }
 
-    ngOnInit() {
-        this.carService.getCarsMedium().then(cars => this.cars = cars);
-        this.nodeService.getFiles().then(files => this.files = files);
-        this.carService.getCarsSmall().then(cars1 => this.cars1 = cars1);
-        this.carService.getCarsSmall().then(cars3 => this.sourceCars = cars3);
+    async ngOnInit() {
+        this.cars = await this.carService.getCarsMediumAsync();
+        this.files = await this.nodeService.getFilesAsync();
+        this.cars1 = await this.carService.getCarsSmallAsync();
+        this.sourceCars = await this.carService.getCarsSmallAsync();
         this.targetCars = [];
-        
+
         this.items1 = [{
             label: 'File',
             items: [
-                {label: 'New', icon: 'fa-plus'},
-                {label: 'Open', icon: 'fa-download'}
+                { label: 'New', icon: 'fa-plus' },
+                { label: 'Open', icon: 'fa-download' }
             ]
         },
         {
             label: 'Edit',
             items: [
-                {label: 'Undo', icon: 'fa-refresh'},
-                {label: 'Redo', icon: 'fa-repeat'}
+                { label: 'Undo', icon: 'fa-refresh' },
+                { label: 'Redo', icon: 'fa-repeat' }
             ]
         }];
-        
+
         this.items2 = [
             {
                 label: 'File',
                 icon: 'fa-file-o',
                 items: [{
-                        label: 'New', 
-                        icon: 'fa-plus',
-                        items: [
-                            {label: 'Project'},
-                            {label: 'Other'},
-                        ]
-                    },
-                    {label: 'Open'},
-                    {label: 'Quit'}
+                    label: 'New',
+                    icon: 'fa-plus',
+                    items: [
+                        { label: 'Project' },
+                        { label: 'Other' },
+                    ]
+                },
+                { label: 'Open' },
+                { label: 'Quit' }
                 ]
             },
             {
                 label: 'Edit',
                 icon: 'fa-edit',
                 items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
+                    { label: 'Undo', icon: 'fa-mail-forward' },
+                    { label: 'Redo', icon: 'fa-mail-reply' }
                 ]
             },
             {
@@ -175,11 +176,11 @@ export class ResponsiveDemo implements OnInit {
                         label: 'Contents'
                     },
                     {
-                        label: 'Search', 
-                        icon: 'fa-search', 
+                        label: 'Search',
+                        icon: 'fa-search',
                         items: [
                             {
-                                label: 'Text', 
+                                label: 'Text',
                                 items: [
                                     {
                                         label: 'Workspace'
@@ -189,7 +190,8 @@ export class ResponsiveDemo implements OnInit {
                             {
                                 label: 'File'
                             }
-                    ]}
+                        ]
+                    }
                 ]
             },
             {
@@ -200,42 +202,42 @@ export class ResponsiveDemo implements OnInit {
                         label: 'Edit',
                         icon: 'fa-refresh',
                         items: [
-                            {label: 'Save', icon: 'fa-save'},
-                            {label: 'Update', icon: 'fa-save'},
+                            { label: 'Save', icon: 'fa-save' },
+                            { label: 'Update', icon: 'fa-save' },
                         ]
                     },
                     {
                         label: 'Other',
                         icon: 'fa-phone',
                         items: [
-                            {label: 'Delete', icon: 'fa-minus'}
+                            { label: 'Delete', icon: 'fa-minus' }
                         ]
                     }
                 ]
             }
         ];
-        
+
         this.splitMenuItems = [
-            {label: 'Update', icon: 'fa-refresh'},
-            {label: 'Delete', icon: 'fa-close'},
-            {label: 'Angular.io', icon: 'fa-link', url: 'http://angular.io'},
-            {label: 'Theming', icon: 'fa-paint-brush', routerLink: ['/theming']}
+            { label: 'Update', icon: 'fa-refresh' },
+            { label: 'Delete', icon: 'fa-close' },
+            { label: 'Angular.io', icon: 'fa-link', url: 'http://angular.io' },
+            { label: 'Theming', icon: 'fa-paint-brush', routerLink: ['/theming'] }
         ];
     }
 
-    filterCountrySingle(event) {
-        let query = event.query;
-        this.countryService.getCountries().then(countries => {
-            this.filteredCountriesSingle = this.filterCountry(query, countries);
-        });
+    async filterCountrySingle(event) {
+        const query = event.query;
+        const countries = await this.countryService.getCountriesAsync();
+        this.filteredCountriesSingle = this.filterCountry(query, countries);
     }
 
-    filterCountry(query, countries: any[]):any[] {
-        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-        let filtered : any[] = [];
-        for(let i = 0; i < countries.length; i++) {
-            let country = countries[i];
-            if(country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+    filterCountry(query, countries: any[]): any[] {
+        // tslint:disable-next-line:max-line-length
+        // in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+        const filtered: any[] = [];
+        for (let i = 0; i < countries.length; i++) {
+            const country = countries[i];
+            if (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0) {
                 filtered.push(country);
             }
         }

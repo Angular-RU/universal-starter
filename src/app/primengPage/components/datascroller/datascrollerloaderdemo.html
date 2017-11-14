@@ -43,7 +43,7 @@
             <button #loadButton type="text" icon="fa-refresh" pButton label="Load"></button>
         </p-footer>
     </p-dataScroller>
-        
+
     <p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
         <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="selectedCar" style="font-size:16px;text-align:center;padding:20px">
             <div class="ui-grid-row">
@@ -77,7 +77,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataScrollerLoaderDemo implements OnInit &#123;
 
@@ -103,7 +103,7 @@ export class DataScrollerLoaderDemo implements OnInit &#123;
     &#125;
 &#125;
 </code>
-</pre>            
+</pre>
         </p-tabPanel>
 
         <p-tabPanel header="datascrollerinlinedemo.html">
@@ -111,7 +111,7 @@ export class DataScrollerLoaderDemo implements OnInit &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataScroller [value]="cars" [rows]="5" [loader]="loadButton"&gt;
     &lt;p-header&gt;

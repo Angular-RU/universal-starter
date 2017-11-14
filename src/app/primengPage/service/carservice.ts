@@ -1,3 +1,4 @@
+import { TransferHttp } from './../../../modules/transfer-http/transfer-http';
 import 'rxjs/add/operator/toPromise';
 
 import { HttpClient } from '@angular/common/http';
@@ -8,26 +9,20 @@ import { Car } from '../domain/car';
 @Injectable()
 export class CarService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: TransferHttp) { }
 
-  getCarsSmall() {
-    return this.http.get<any>('assets/showcase/data/cars-small.json')
-      .toPromise()
-      .then(res => <Car[]>res.data)
-      .then(data => data);
+  async getCarsSmallAsync() {
+    return await this.http.get('http://localhost:4000/assets/showcase/data/cars-small.json')
+      .toPromise();
   }
 
-  getCarsMedium() {
-    return this.http.get<any>('assets/showcase/data/cars-medium.json')
-      .toPromise()
-      .then(res => <Car[]>res.data)
-      .then(data => data);
+  async getCarsMediumAsync() {
+    return await this.http.get('http://localhost:4000/assets/showcase/data/cars-medium.json')
+      .toPromise();
   }
 
-  getCarsLarge() {
-    return this.http.get<any>('assets/showcase/data/cars-large.json')
-      .toPromise()
-      .then(res => <Car[]>res.data)
-      .then(data => data);
+  async getCarsLargeAsync() {
+    return await this.http.get('http://localhost:4000/assets/showcase/data/cars-large.json')
+      .toPromise();
   }
 }

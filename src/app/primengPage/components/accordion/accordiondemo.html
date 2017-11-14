@@ -112,7 +112,7 @@ import &#123;AccordionModule&#125; from 'primeng/primeng';
         Content 2
     &lt;/p-accordionTab&gt;
     &lt;p-accordionTab header="Header 3"&gt;
-        Content 3    
+        Content 3
     &lt;/p-accordionTab&gt;
 &lt;/p-accordion&gt;
 </code>
@@ -148,7 +148,7 @@ import &#123;AccordionModule&#125; from 'primeng/primeng';
         Content 2
     &lt;/p-accordionTab&gt;
     &lt;p-accordionTab header="Header 3"&gt;
-        Content 3    
+        Content 3
     &lt;/p-accordionTab&gt;
 &lt;/p-accordion&gt;
 </code>
@@ -167,7 +167,7 @@ import &#123;AccordionModule&#125; from 'primeng/primeng';
         Content 2
     &lt;/p-accordionTab&gt;
     &lt;p-accordionTab header="Header 3"&gt;
-        Content 3    
+        Content 3
     &lt;/p-accordionTab&gt;
 &lt;/p-accordion&gt;
 </code>
@@ -198,7 +198,7 @@ import &#123;SharedModule&#125; from 'primeng/primeng';
 <code class="language-markup" pCode ngNonBindable>
 &lt;button type="button" pButton icon="fa fa-chevron-up" (click)="openPrev()"&gt;&lt;/button&gt;
 &lt;button type="button" pButton icon="fa fa-chevron-down" (click)="openNext()"&gt;&lt;/button&gt;
-        
+
 &lt;p-accordion [activeIndex]="index"&gt;
     &lt;p-accordionTab header="Header 1"&gt;
        Content 1
@@ -207,7 +207,7 @@ import &#123;SharedModule&#125; from 'primeng/primeng';
         Content 2
     &lt;/p-accordionTab&gt;
     &lt;p-accordionTab header="Header 3"&gt;
-        Content 3    
+        Content 3
     &lt;/p-accordionTab&gt;
 &lt;/p-accordion&gt;
 </code>
@@ -216,13 +216,13 @@ import &#123;SharedModule&#125; from 'primeng/primeng';
             <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class AccordionDemo &#123;
-    
+
     index: number = 0;
 
     openNext() &#123;
         this.index = (this.index === 2) ? 0 : this.index + 1;
     &#125;
-    
+
     openPrev() &#123;
         this.index = (this.index === 0) ? 2 : this.index - 1;
     &#125;

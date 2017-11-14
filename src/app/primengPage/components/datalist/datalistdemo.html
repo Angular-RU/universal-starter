@@ -19,13 +19,13 @@
                     <div class="ui-g">
                         <div class="ui-g-2 ui-sm-6">Vin: </div>
                         <div class="ui-g-10 ui-sm-6">{{car.vin}}</div>
-                        
+
                         <div class="ui-g-2 ui-sm-6">Year: </div>
                         <div class="ui-g-10 ui-sm-6">{{car.year}}</div>
-                        
+
                         <div class="ui-g-2 ui-sm-6">Brand: </div>
                         <div class="ui-g-10 ui-sm-6">{{car.brand}}</div>
-                        
+
                         <div class="ui-g-2 ui-sm-6">Color: </div>
                         <div class="ui-g-10 ui-sm-6">{{car.color}}</div>
                     </div>
@@ -39,20 +39,17 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;DataListModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
             <h3>Getting Started</h3>
-            <p>DataList requires a collection of items as its value and a ng-template content to display
-                where each item can be accessed using the implicit variable.</p>
-                
-            <p>Throughout the samples, a car interface having vin, brand, year and color properties are 
-                used to define an object to be displayed by the datalist.  Cars are loaded by a CarService that 
-                connects to a server to fetch the cars with a Promise.</p>
-<pre>
+            <p>DataList requires a collection of items as its value and a ng-template content to display where each item can be accessed using the implicit variable.</p>
+
+            <p>Throughout the samples, a car interface having vin, brand, year and color properties are used to define an object to be displayed by the datalist. Cars are loaded by a CarService that connects to a server to fetch the cars with a Promise.</p>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export interface Car &#123;
     vin;
@@ -63,7 +60,7 @@ export interface Car &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;Injectable&#125; from 'angular2/core';
 import &#123;Http, Response&#125; from 'angular2/http';
@@ -83,9 +80,9 @@ export class CarService &#123;
 &#125;
 </code>
 </pre>
-        
+
             <p>Here is a sample DataList that displays a list of cars.</p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataListDemo implements OnInit &#123;
 
@@ -100,7 +97,7 @@ export class DataListDemo implements OnInit &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataList [value]="cars"&gt;
     &lt;ng-template let-car pTemplate="item"&gt;
@@ -111,7 +108,7 @@ export class DataListDemo implements OnInit &#123;
 </pre>
 
             <p>Index of the row is available at the ng-template.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataList [value]="cars"&gt;
     &lt;ng-template let-car let-i="index" pTemplate="item"&gt;
@@ -122,23 +119,21 @@ export class DataListDemo implements OnInit &#123;
 </pre>
 
             <h3>Change Detection</h3>
-            <p>DataList either uses setter based checking or ngDoCheck to realize if the underlying data has changed to update the UI. This is configured using the immutable
-                property, when enabled (default) setter based detection is utilized so your data changes such as adding or removing a record 
-                should always create a new array reference instead of manipulating an existing array as Angular does not trigger setters if the reference does not change. 
-                For example, use slice instead of splice when removing an item or use spread operator instead of push method when adding an item. On the other hand, setting immutable property to false removes
-                this restriction by using ngDoCheck with IterableDiffers to listen changes without the need to create a new reference of data. Setter based method is faster however
-                both methods can be used depending on your preference.
+            <p>DataList either uses setter based checking or ngDoCheck to realize if the underlying data has changed to update the UI. This is configured using the immutable property, when enabled (default) setter based detection is utilized so your data
+                changes such as adding or removing a record should always create a new array reference instead of manipulating an existing array as Angular does not trigger setters if the reference does not change. For example, use slice instead of splice
+                when removing an item or use spread operator instead of push method when adding an item. On the other hand, setting immutable property to false removes this restriction by using ngDoCheck with IterableDiffers to listen changes without
+                the need to create a new reference of data. Setter based method is faster however both methods can be used depending on your preference.
             </p>
 
             <h3>Facets</h3>
             <p>Header and Footer are the two sections aka facets that are capable of displaying custom content.</p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;Header&#125; from 'primeng/primeng';
 import &#123;Footer&#125; from 'primeng/primeng';
 </code>
 </pre>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataList [value]="cars"&gt;
     &lt;p-header&gt;List of Cars&lt;/p-header&gt;
@@ -149,11 +144,10 @@ import &#123;Footer&#125; from 'primeng/primeng';
 &lt;/p-dataList&gt;
 </code>
 </pre>
-            
+
             <h3>Paginator</h3>
-            <p>Pagination is enabled by setting paginator property to true, rows attribute defines the number of rows per page and pageLinks specify the the number
-                of page links to display.</p>
-<pre>
+            <p>Pagination is enabled by setting paginator property to true, rows attribute defines the number of rows per page and pageLinks specify the the number of page links to display.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataList [value]="cars" [paginator]="true" [rows]="10"&gt;
     &lt;ng-template let-car pTemplate="item"&gt;
@@ -162,14 +156,13 @@ import &#123;Footer&#125; from 'primeng/primeng';
 &lt;/p-dataList&gt;
 </code>
 </pre>
-    
+
             <h3>Lazy Loading</h3>
-            <p>Lazy mode is handy to deal with large datasets, instead of loading the entire data, small chunks of data is loaded by invoking
-             onLazyLoad callback everytime paging happens. To implement lazy loading,
-            enable lazy attribute and provide a method callback using onLazyLoad that actually loads the data from a remote datasource. onLazyLoad gets an event object 
-            that contains information about what to load. It is also important to assign the logical number of rows to totalRecords by doing a projection query for paginator configuration so that paginator 
-            displays the UI assuming there are actually records of totalRecords size although in reality they aren't as in lazy mode, only the records that are displayed on the current page exist.</p>
-<pre>
+            <p>Lazy mode is handy to deal with large datasets, instead of loading the entire data, small chunks of data is loaded by invoking onLazyLoad callback everytime paging happens. To implement lazy loading, enable lazy attribute and provide a method
+                callback using onLazyLoad that actually loads the data from a remote datasource. onLazyLoad gets an event object that contains information about what to load. It is also important to assign the logical number of rows to totalRecords by
+                doing a projection query for paginator configuration so that paginator displays the UI assuming there are actually records of totalRecords size although in reality they aren't as in lazy mode, only the records that are displayed on the
+                current page exist.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataList [value]="cars" [paginator]="true" [rows]="9" [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalRecords"&gt;
     &lt;ng-template let-car pTemplate="item"&gt;
@@ -179,7 +172,7 @@ import &#123;Footer&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 loadData(event) &#123;
     //event.first = First row offset
@@ -304,23 +297,21 @@ loadData(event) &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Parameters</th>
+                            <th>Description</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>onLazyLoad</td>
-                            <td>event.first = First row offset <br>
-                                event.rows = Number of rows per page <br></td>
+                            <td>event.first = First row offset <br> event.rows = Number of rows per page <br></td>
                             <td>Callback to invoke when paging, sorting or filtering happens in lazy mode.</td>
                         </tr>
                         <tr>
                             <td>onPage</td>
-                            <td>event.first: Index of first record in page<br>
-                                event.rows: Number of rows on the page</td>
+                            <td>event.first: Index of first record in page<br> event.rows: Number of rows on the page</td>
                             <td>Callback to invoke when pagination occurs.</td>
                         </tr>
                     </tbody>
@@ -332,10 +323,10 @@ loadData(event) &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Element</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Element</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -375,7 +366,7 @@ loadData(event) &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataList [value]="cars" [paginator]="true" [rows]="5"&gt;
     &lt;p-header&gt;
@@ -406,7 +397,7 @@ loadData(event) &#123;
 &lt;/p-dataList&gt;
 </code>
 </pre>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataListDemo implements OnInit &#123;
 

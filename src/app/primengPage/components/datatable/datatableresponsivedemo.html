@@ -11,7 +11,7 @@
 
 <div class="content-section implementation">
     <button pButton type="button" (click)="toggle()" style="margin-bottom:10px" label="Toggle" icon="fa-list"></button>
-    
+
     <p-dataTable [value]="cars" [rows]="10" [paginator]="true" [pageLinks]="3" [responsive]="true" [stacked]="stacked">
         <p-header>Responsive</p-header>
         <p-column field="vin" header="Vin"></p-column>
@@ -28,7 +28,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableResponsiveDemo implements OnInit &#123;
 
@@ -47,7 +47,7 @@ export class DataTableResponsiveDemo implements OnInit &#123;
     &#125;
 &#125;
 </code>
-</pre>            
+</pre>
         </p-tabPanel>
 
         <p-tabPanel header="datatableresponsivedemo.html">
@@ -55,7 +55,7 @@ export class DataTableResponsiveDemo implements OnInit &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;button pButton type="button" (click)="toggle()" style="margin-bottom:10px" label="Toggle" icon="fa-list"&gt;&lt;/button&gt;
 

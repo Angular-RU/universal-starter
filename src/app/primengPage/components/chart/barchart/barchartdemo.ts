@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './barchartdemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class BarChartDemo {
 
     data: any;
@@ -24,6 +25,6 @@ export class BarChartDemo {
                     data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]
-        }
+        };
     }
 }

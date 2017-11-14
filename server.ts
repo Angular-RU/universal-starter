@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
-import { platformServer, renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import * as compression from 'compression';
@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
   global['document'] = template;
   global['navigator'] = req['headers']['user-agent'];
   global['CSS'] = null;
-
+  global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
   res.render('../dist/index', {
     req: req,
     res: res,

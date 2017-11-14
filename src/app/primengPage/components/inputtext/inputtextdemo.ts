@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './inputtextdemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class InputTextDemo {
 
     text: string;

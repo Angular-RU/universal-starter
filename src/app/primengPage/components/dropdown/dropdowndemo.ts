@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
-import {SelectItem} from 'primeng/components/common/api';
+import { Component } from '@angular/core';
+import { SelectItem } from 'primeng/components/common/api';
 
 interface City {
-    name: string,
-    code: string
+    name: string;
+    code: string;
 }
 
 @Component({
     templateUrl: './dropdowndemo.html',
 })
+// tslint:disable-next-line:component-class-suffix
 export class DropdownDemo {
 
     cities: City[];
@@ -18,29 +19,29 @@ export class DropdownDemo {
     cars: SelectItem[];
 
     selectedCar: string;
-    
+
     selectedCar2: string = 'BMW';
 
     constructor() {
         this.cities = [
-            {name: 'New York', code: 'NY'},
-            {name: 'Rome', code: 'RM'},
-            {name: 'London', code: 'LDN'},
-            {name: 'Istanbul', code: 'IST'},
-            {name: 'Paris', code: 'PRS'}
+            { name: 'New York', code: 'NY' },
+            { name: 'Rome', code: 'RM' },
+            { name: 'London', code: 'LDN' },
+            { name: 'Istanbul', code: 'IST' },
+            { name: 'Paris', code: 'PRS' }
         ];
 
         this.cars = [
-            {label: 'Audi', value: 'Audi'},
-            {label: 'BMW', value: 'BMW'},
-            {label: 'Fiat', value: 'Fiat'},
-            {label: 'Ford', value: 'Ford'},
-            {label: 'Honda', value: 'Honda'},
-            {label: 'Jaguar', value: 'Jaguar'},
-            {label: 'Mercedes', value: 'Mercedes'},
-            {label: 'Renault', value: 'Renault'},
-            {label: 'VW', value: 'VW'},
-            {label: 'Volvo', value: 'Volvo'}
+            { label: 'Audi', value: 'Audi' },
+            { label: 'BMW', value: 'BMW' },
+            { label: 'Fiat', value: 'Fiat' },
+            { label: 'Ford', value: 'Ford' },
+            { label: 'Honda', value: 'Honda' },
+            { label: 'Jaguar', value: 'Jaguar' },
+            { label: 'Mercedes', value: 'Mercedes' },
+            { label: 'Renault', value: 'Renault' },
+            { label: 'VW', value: 'VW' },
+            { label: 'Volvo', value: 'Volvo' }
         ];
     }
 }

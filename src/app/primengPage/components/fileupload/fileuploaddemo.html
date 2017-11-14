@@ -8,20 +8,19 @@
 
 <div class="content-section implementation">
     <p-growl [value]="msgs"></p-growl>
-        
+
     <h3 class="first">Advanced</h3>
-    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" 
-            multiple="multiple" accept="image/*" maxFileSize="1000000"> 
-            <ng-template pTemplate="content">
-                <ul *ngIf="uploadedFiles.length">
-                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                </ul>
-            </ng-template>    
+    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000">
+        <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+            </ul>
+        </ng-template>
     </p-fileUpload>
-    
+
     <h3>Basic</h3>
     <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)"></p-fileUpload>
-    
+
     <h3>Basic with Auto</h3>
     <p-fileUpload #fubauto mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)" auto="true" chooseLabel="Browse"></p-fileUpload>
 </div>
@@ -30,7 +29,7 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;FileUploadModule&#125; from 'primeng/primeng';
 </code>
@@ -38,7 +37,7 @@ import &#123;FileUploadModule&#125; from 'primeng/primeng';
 
             <h3>Getting Started</h3>
             <p>FileUpload requires a url property as the upload target and a name to identify the files at backend.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" url="./upload.php"&gt;&lt;/p-fileUpload&gt;
 </code>
@@ -46,7 +45,7 @@ import &#123;FileUploadModule&#125; from 'primeng/primeng';
 
             <h3>Multiple Uploads</h3>
             <p>Only one file can be selected at a time, to allow selecting multiples enable multiple option.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"&gt;&lt;/p-fileUpload&gt;
 </code>
@@ -54,10 +53,10 @@ import &#123;FileUploadModule&#125; from 'primeng/primeng';
 
             <h3>DragDrop</h3>
             <p>File selection can also be done by dragging and dropping one or more to the content section of the component.</p>
-            
+
             <h3>Auto Uploads</h3>
             <p>When auto property is enabled, upload begins as soon as file selection is completed or a file is dropped on the drop area.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
         accept="image/*" auto="auto"&gt;&lt;/p-fileUpload&gt;
@@ -65,9 +64,8 @@ import &#123;FileUploadModule&#125; from 'primeng/primeng';
 </pre>
 
             <h3>File Types</h3>
-            <p>Selectable file types can be restricted with accept property, example below only allows images to be uploaded.
-            Read more about other possible values <a href="http://www.w3schools.com/tags/att_input_accept.asp">here</a>.</p>
-<pre>
+            <p>Selectable file types can be restricted with accept property, example below only allows images to be uploaded. Read more about other possible values <a href="http://www.w3schools.com/tags/att_input_accept.asp">here</a>.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
         accept="image/*"&gt;&lt;/p-fileUpload&gt;
@@ -76,25 +74,23 @@ import &#123;FileUploadModule&#125; from 'primeng/primeng';
 
             <h3>File Size</h3>
             <p>Maximium file size can be restricted using maxFileSize property defined in bytes.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
         accept="image/*" maxFileSize="1000000"&gt;&lt;/p-fileUpload&gt;
 </code>
 </pre>
 
-            <p>In order to customize the default messages use invalidFileSizeMessageSummary and invalidFileSizeMessageDetail options. 
-            In summary &#123;0&#125; placeholder refers to the filename and in detail, file size.</p>
+            <p>In order to customize the default messages use invalidFileSizeMessageSummary and invalidFileSizeMessageDetail options. In summary &#123;0&#125; placeholder refers to the filename and in detail, file size.</p>
             <ul>
                 <li>invalidFileSizeMessageSummary: '&#123;0&#125;: Invalid file size, '</li>
                 <li>invalidFileSizeMessageDetail: string = 'maximum upload size is &#123;0&#125;.'</li>
             </ul>
-            
+
             <h3>Templating</h3>
-            <p>File list UI is customizable using a ng-template called "file" that gets the <a href="https://www.w3.org/TR/FileAPI/">File</a> instance as the implicit variable.
-                Second ng-template named "content" can be used to place custom content inside the content section which would be useful to implement a user interface to manage the uploaded files such as removing them.  
-                Third and final ng-template option is "toolbar" to display custom content at toolbar.</p>
-<pre>
+            <p>File list UI is customizable using a ng-template called "file" that gets the <a href="https://www.w3.org/TR/FileAPI/">File</a> instance as the implicit variable. Second ng-template named "content" can be used to place custom content inside
+                the content section which would be useful to implement a user interface to manage the uploaded files such as removing them. Third and final ng-template option is "toolbar" to display custom content at toolbar.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
         accept="image/*" maxFileSize="1000000"&gt;
@@ -112,32 +108,31 @@ import &#123;FileUploadModule&#125; from 'primeng/primeng';
 </pre>
 
             <h3>Request Customization</h3>
-            <p>XHR request to upload the files can be customized using the onBeforeUpload callback that passes
-                the xhr instance and FormData object as event parameters.</p>
-                
+            <p>XHR request to upload the files can be customized using the onBeforeUpload callback that passes the xhr instance and FormData object as event parameters.</p>
+
             <h3>Basic UI</h3>
             <p>FileUpload basic mode provides a simpler UI as an alternative to advanced mode.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)" auto="true"&gt;&lt;/p-fileUpload&gt;
 </code>
 </pre>
             <h3>Custom Upload</h3>
             <p>Uploading implementation can be overriden by enabling customMode property and defining a custom upload handler event.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-fileUpload name="myfile[]" customUpload="true" (uploadHandler)="myUploader($event)"&gt;&lt;/p-fileUpload&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 myUploader(event) &#123;
     //event.files == files to upload
 &#125;
 </code>
 </pre>
-            
+
             <h3>Properties</h3>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
@@ -276,7 +271,7 @@ myUploader(event) &#123;
                             <td>false</td>
                             <td>Whether to use the default upload or a manual implementation defined in uploadHandler callback.</td>
                         </tr>
-                      <tr>
+                        <tr>
                             <td>showUploadButton</td>
                             <td>boolean</td>
                             <td>true</td>
@@ -311,28 +306,22 @@ myUploader(event) &#123;
                     <tbody>
                         <tr>
                             <td>onBeforeUpload</td>
-                            <td>event.xhr: XmlHttpRequest instance. <br/>
-                                event.formData: FormData object.</td>
-                            <td>Callback to invoke before file upload begins to customize the request
-                                such as post parameters before the files.</td>
+                            <td>event.xhr: XmlHttpRequest instance. <br/> event.formData: FormData object.</td>
+                            <td>Callback to invoke before file upload begins to customize the request such as post parameters before the files.</td>
                         </tr>
-						<tr>
+                        <tr>
                             <td>onBeforeSend</td>
-                            <td>event.xhr: XmlHttpRequest instance. <br/>
-                                event.formData: FormData object.</td>
-                            <td>Callback to invoke before file send begins to customize the request
-                                such as adding headers.</td>
+                            <td>event.xhr: XmlHttpRequest instance. <br/> event.formData: FormData object.</td>
+                            <td>Callback to invoke before file send begins to customize the request such as adding headers.</td>
                         </tr>
                         <tr>
                             <td>onUpload</td>
-                            <td>event.xhr: XmlHttpRequest instance.<br />
-                                event.files: Uploaded files.</td>
+                            <td>event.xhr: XmlHttpRequest instance.<br /> event.files: Uploaded files.</td>
                             <td>Callback to invoke when file upload is complete.</td>
                         </tr>
                         <tr>
                             <td>onError</td>
-                            <td>event.xhr: XmlHttpRequest instance.<br />
-                                event.files: Files that are not uploaded.</td>
+                            <td>event.xhr: XmlHttpRequest instance.<br /> event.files: Files that are not uploaded.</td>
                             <td>Callback to invoke if file upload fails.</td>
                         </tr>
                         <tr>
@@ -342,20 +331,17 @@ myUploader(event) &#123;
                         </tr>
                         <tr>
                             <td>onRemove</td>
-                            <td>event.originalEvent: Original browser event. <br />
-                                event.file: Selected file.</td>
+                            <td>event.originalEvent: Original browser event. <br /> event.file: Selected file.</td>
                             <td>Callback to invoke when a file is removed without uploading using clear button of a file.</td>
                         </tr>
                         <tr>
                             <td>onSelect</td>
-                            <td>event.originalEvent: Original browser event. <br />
-                                event.files: List of selected files.</td>
+                            <td>event.originalEvent: Original browser event. <br /> event.files: List of selected files.</td>
                             <td>Callback to invoke when files are selected.</td>
                         </tr>
                         <tr>
                             <td>onProgress</td>
-                            <td>event.originalEvent: Original browser event. <br />
-                                event.progress: Calculated progress value.</td>
+                            <td>event.originalEvent: Original browser event. <br /> event.progress: Calculated progress value.</td>
                             <td>Callback to invoke when files are selected.</td>
                         </tr>
                         <tr>
@@ -366,7 +352,7 @@ myUploader(event) &#123;
                     </tbody>
                 </table>
             </div>
-            
+
             <h3>Methods</h3>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
@@ -428,7 +414,7 @@ myUploader(event) &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-growl [value]="msgs"&gt;&lt;/p-growl&gt;
     
@@ -450,7 +436,7 @@ myUploader(event) &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class FileUploadDemo &#123;
 

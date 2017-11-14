@@ -1,5 +1,5 @@
-import {Component,OnInit,ViewEncapsulation} from '@angular/core';
-import {Message,TreeNode} from 'primeng/components/common/api';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Message, TreeNode } from 'primeng/components/common/api';
 
 @Component({
     templateUrl: './organizationchartdemo.html',
@@ -8,75 +8,76 @@ import {Message,TreeNode} from 'primeng/components/common/api';
             padding: 0;
             border: 0 none;
         }
-        
+
         .node-header,.node-content {
             padding: .5em .7em;
         }
-        
+
         .node-header {
             background-color: #495ebb;
             color: #ffffff;
         }
-        
+
         .node-content {
             text-align: center;
             border: 1px solid #495ebb;
         }
-        
+
         .node-content img {
             border-radius: 50%;
         }
-        
+
         .ui-organizationchart-node-content.department-cfo {
             background-color: #7247bc;
             color: #ffffff;
         }
-        
+
         .ui-organizationchart-node-content.department-coo {
             background-color: #a534b6;
             color: #ffffff;
         }
-        
+
         .ui-organizationchart-node-content.department-cto {
             background-color: #e9286f;
             color: #ffffff;
         }
-        
+
         .ui-person .ui-node-toggler {
             color: #495ebb !important;
         }
-        
+
         .department-cto .ui-node-toggler {
             color: #8a0a39 !important;
         }
     `],
     encapsulation: ViewEncapsulation.None
 })
+// tslint:disable-next-line:component-class-suffix
 export class OrganizationChartDemo implements OnInit {
 
     data1: TreeNode[];
-    
+
     data2: TreeNode[];
-    
+
     selectedNode: TreeNode;
-    
+
     messages: Message[];
-    
+
     ngOnInit() {
         this.data1 = [{
             label: 'CEO',
             type: 'person',
             styleClass: 'ui-person',
             expanded: true,
-            data: {name:'Walter White', 'avatar': 'walter.jpg'},
+            data: { name: 'Walter White', 'avatar': 'walter.jpg' },
             children: [
                 {
                     label: 'CFO',
                     type: 'person',
                     styleClass: 'ui-person',
                     expanded: true,
-                    data: {name:'Saul Goodman', 'avatar': 'saul.jpg'},
-                    children:[{
+                    data: { name: 'Saul Goodman', 'avatar': 'saul.jpg' },
+                    children: [{
                         label: 'Tax',
                         styleClass: 'department-cfo'
                     },
@@ -90,8 +91,8 @@ export class OrganizationChartDemo implements OnInit {
                     type: 'person',
                     styleClass: 'ui-person',
                     expanded: true,
-                    data: {name:'Mike E.', 'avatar': 'mike.jpg'},
-                    children:[{
+                    data: { name: 'Mike E.', 'avatar': 'mike.jpg' },
+                    children: [{
                         label: 'Operations',
                         styleClass: 'department-coo'
                     }]
@@ -101,12 +102,12 @@ export class OrganizationChartDemo implements OnInit {
                     type: 'person',
                     styleClass: 'ui-person',
                     expanded: true,
-                    data: {name:'Jesse Pinkman', 'avatar': 'jesse.jpg'},
-                    children:[{
+                    data: { name: 'Jesse Pinkman', 'avatar': 'jesse.jpg' },
+                    children: [{
                         label: 'Development',
                         styleClass: 'department-cto',
                         expanded: true,
-                        children:[{
+                        children: [{
                             label: 'Analysis',
                             styleClass: 'department-cto'
                         },
@@ -130,7 +131,7 @@ export class OrganizationChartDemo implements OnInit {
                 }
             ]
         }];
-        
+
         this.data2 = [{
             label: 'F.C Barcelona',
             expanded: true,
@@ -162,8 +163,8 @@ export class OrganizationChartDemo implements OnInit {
             ]
         }];
     }
-    
+
     onNodeSelect(event) {
-        this.messages = [{severity: 'success', summary: 'Node Selected', detail: event.node.label}];
+        this.messages = [{ severity: 'success', summary: 'Node Selected', detail: event.node.label }];
     }
 }

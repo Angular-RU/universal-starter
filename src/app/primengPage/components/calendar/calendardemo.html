@@ -11,57 +11,57 @@
             <h3>Basic</h3>
             <p-calendar [(ngModel)]="date1" tabindex="0"></p-calendar> {{date1|date}}
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Spanish</h3>
             <p-calendar [(ngModel)]="date2" [locale]="es" dateFormat="dd/mm/yy"></p-calendar> {{date2|date}}
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Icon</h3>
             <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar> <span style="margin-left:35px">{{date3|date}}</span>
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Min-Max</h3>
             <p-calendar [(ngModel)]="date4" [minDate]="minDate" [maxDate]="maxDate" readonlyInput="true"></p-calendar> {{date4|date}}
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Disable Days</h3>
             <p-calendar [(ngModel)]="date5" tabindex="0" [disabledDates]="invalidDates" [disabledDays]="[0,6]" readonlyInput="true"></p-calendar> {{date5|date}}
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Navigators</h3>
             <p-calendar [(ngModel)]="date6" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030"></p-calendar> {{date6|date}}
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Time</h3>
             <p-calendar [(ngModel)]="date7" [showTime]="true"></p-calendar> {{date7}}
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Time Only</h3>
             <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Multiple</h3>
             <p-calendar [(ngModel)]="dates" selectionMode="multiple" readonlyInput="true"></p-calendar>
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Range</h3>
             <p-calendar [(ngModel)]="rangeDates" selectionMode="range" readonlyInput="true"></p-calendar>
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Button Bar</h3>
             <p-calendar [(ngModel)]="date9" showButtonBar="true"></p-calendar>
         </div>
-        
+
         <div class="ui-g-12 ui-md-4">
             <h3>Date Template</h3>
             <p-calendar [(ngModel)]="date10">
@@ -71,16 +71,16 @@
             </p-calendar>
         </div>
     </div>
-    
+
     <h3>Inline</h3>
-    <p-calendar [(ngModel)]="date11" [inline]="true"></p-calendar> 
+    <p-calendar [(ngModel)]="date11" [inline]="true"></p-calendar>
 </div>
 
 <div class="content-section documentation">
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;CalendarModule&#125; from 'primeng/primeng';
 </code>
@@ -89,13 +89,13 @@ import &#123;CalendarModule&#125; from 'primeng/primeng';
             <h3>Getting Started</h3>
             <p>Two-way value binding is defined using the standard ngModel directive referencing to a Date property.</p>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="value"&gt;&lt;/p-calendar&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
 
@@ -107,7 +107,7 @@ export class MyModel &#123;
 
             <h3>Model Driven Forms</h3>
             <p>Calendar can be used in a model driven form as well.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar formControlName="date"&gt;&lt;/p-calendar&gt;
 </code>
@@ -115,21 +115,20 @@ export class MyModel &#123;
 
             <h3>Popup and Inline</h3>
             <p>Calendar is displayed in a popup by default and inline property needs to be enabled for inline mode.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="value" [inline]="true"&gt;&lt;/p-calendar&gt;
 </code>
 </pre>
 
             <h3>Selection Mode</h3>
-            <p>By default calendar allows selecting one date and multiple dates can be selected by setting selectionMode to multiple. In this
-            case calendar updates the value with an array of dates where optionally number of selectable dates can be restricted with maxDateCount property.
-            Third alternative is the range mode that allows selecting a range based on an array of two values where first value is the start date and second value
-            is the end date. Note that time is not currently supported in multiple and range modes.</p>
+            <p>By default calendar allows selecting one date and multiple dates can be selected by setting selectionMode to multiple. In this case calendar updates the value with an array of dates where optionally number of selectable dates can be restricted
+                with maxDateCount property. Third alternative is the range mode that allows selecting a range based on an array of two values where first value is the start date and second value is the end date. Note that time is not currently supported
+                in multiple and range modes.</p>
 
             <h3>DateFormat</h3>
             <p>Default date format is mm/dd/yy, to customize this use dateFormat property.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="dateValue" dateFormat="dd.mm.yy"&gt;&lt;/p-calendar&gt;
 </code>
@@ -137,28 +136,28 @@ export class MyModel &#123;
 
             <p>Following options can be a part of the format.</p>
             <ul>
-    			<li>d - day of month (no leading zero)</li>
-    			<li>dd - day of month (two digit)</li>
-    			<li>o - day of the year (no leading zeros)</li>
-    			<li>oo - day of the year (three digit)</li>
-    			<li>D - day name short</li>
-    			<li>DD - day name long</li>
-    			<li>m - month of year (no leading zero)</li>
-    			<li>mm - month of year (two digit)</li>
-    			<li>M - month name short</li>
-    			<li>MM - month name long</li>
-    			<li>y - year (two digit)</li>
-    			<li>yy - year (four digit)</li>
-    			<li>@ - Unix timestamp (ms since 01/01/1970)</li>
-    			<li> ! - Windows ticks (100ns since 01/01/0001)</li>
-    			<li>'...' - literal text</li>
-    			<li>'' - single quote</li>
-    			<li>anything else - literal text</li>
-		    </ul>
+                <li>d - day of month (no leading zero)</li>
+                <li>dd - day of month (two digit)</li>
+                <li>o - day of the year (no leading zeros)</li>
+                <li>oo - day of the year (three digit)</li>
+                <li>D - day name short</li>
+                <li>DD - day name long</li>
+                <li>m - month of year (no leading zero)</li>
+                <li>mm - month of year (two digit)</li>
+                <li>M - month name short</li>
+                <li>MM - month name long</li>
+                <li>y - year (two digit)</li>
+                <li>yy - year (four digit)</li>
+                <li>@ - Unix timestamp (ms since 01/01/1970)</li>
+                <li> ! - Windows ticks (100ns since 01/01/0001)</li>
+                <li>'...' - literal text</li>
+                <li>'' - single quote</li>
+                <li>anything else - literal text</li>
+            </ul>
 
             <h3>Time</h3>
             <p>TimePicker is enabled with showTime property and 24 (default) or 12 hour mode is configured using hourFormat option.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="value" showTime="true" hourFormat="12"&gt;&lt;/p-calendar&gt;
 &lt;p-calendar [(ngModel)]="value" showTime="true" hourFormat="24"&gt;&lt;/p-calendar&gt;
@@ -166,9 +165,8 @@ export class MyModel &#123;
 </pre>
 
             <h3>Date Restriction</h3>
-            <p>To disable entering dates manually, set readonlyInput to true and to restrict selectable dates use minDate
-                and maxDate options.</p>
-<pre>
+            <p>To disable entering dates manually, set readonlyInput to true and to restrict selectable dates use minDate and maxDate options.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="dateValue" [minDate]="minDateValue" [maxDate]="maxDateValue" readonlyInput="true"&gt;&lt;/p-calendar&gt;
 </code>
@@ -176,7 +174,7 @@ export class MyModel &#123;
 
             <h3>Disable specific dates and/or days</h3>
             <p>To disable specific dates or days, set readonlyInput to true and to restrict selectable dates use disabledDates and/or disabledDays options.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="dateValue" [disabledDates]="invalidDates" [disabledDays]="[0,6]" readonlyInput="true"&gt;&lt;/p-calendar&gt;
 </code>
@@ -184,7 +182,7 @@ export class MyModel &#123;
 
             <h3>Button Bar</h3>
             <p>Button bar displays today and clear buttons and enabled using showButtonBar property.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="dateValue" showButtonBar="true"&gt;&lt;/p-calendar&gt;
 </code>
@@ -192,13 +190,13 @@ export class MyModel &#123;
 
             <h3>Localization</h3>
             <p>Localization for different languages and formats is defined by binding the locale settings object to the locale property. Following is the default values for English.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="dateValue" [locale]="en"&gt;&lt;/p-calendar&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MyModel &#123;
     
@@ -222,7 +220,7 @@ export class MyModel &#123;
 
             <h3>Custom Content</h3>
             <p>Calendar UI accepts custom content using p-header and p-footer components.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="dateValue"&gt;
     &lt;p-header&gt;Header&lt;/p-header&gt;
@@ -231,11 +229,10 @@ export class MyModel &#123;
 </code>
 </pre>
 
-            <p>In addition, cell contents can be templated using an ng-template with a pTemplate directive whose value is "date". This is a handy feature to highlight specific dates. Note that the implicit
-            variable passed to the template is not a date instance but a metadata object to represent a Date with "day", "month" and "year" properties. Example below
-            changes the background color of dates between 10th and 21st of each month.</p>
+            <p>In addition, cell contents can be templated using an ng-template with a pTemplate directive whose value is "date". This is a handy feature to highlight specific dates. Note that the implicit variable passed to the template is not a date instance
+                but a metadata object to represent a Date with "day", "month" and "year" properties. Example below changes the background color of dates between 10th and 21st of each month.</p>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-calendar [(ngModel)]="date10"&gt;
     &lt;ng-template pTemplate="date" let-date&gt;
@@ -244,7 +241,7 @@ export class MyModel &#123;
 &lt;/p-calendar&gt;
 </code>
 </pre>
-            
+
 
             <h3>Properties</h3>
             <div class="doc-tablewrapper">
@@ -348,7 +345,7 @@ export class MyModel &#123;
                             <td>false</td>
                             <td>When enabled, displays a button with icon next to input.</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>showOnFocus</td>
                             <td>boolean</td>
                             <td>true</td>
@@ -413,7 +410,7 @@ export class MyModel &#123;
                             <td>boolean</td>
                             <td>false</td>
                             <td>Whether the year should be rendered as a dropdown instead of text.</td>
-                        </tr>                        
+                        </tr>
                         <tr>
                             <td>yearRange</td>
                             <td>string</td>
@@ -587,8 +584,7 @@ export class MyModel &#123;
                         </tr>
                         <tr>
                             <td>onMonthChange</td>
-                            <td>event.month: New month <br />
-                                event.year: New year
+                            <td>event.month: New month <br /> event.year: New year
                             </td>
                             <td>Callback to invoke when a month is changed using the navigators.</td>
                         </tr>
@@ -628,7 +624,7 @@ export class MyModel &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;div class="ui-g ui-fluid"&gt;
     &lt;div class="ui-g-12 ui-md-4"&gt;
@@ -701,7 +697,7 @@ export class MyModel &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class CalendarDemo &#123;
 

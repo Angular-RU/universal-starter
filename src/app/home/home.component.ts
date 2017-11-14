@@ -10,7 +10,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 export class HomeComponent implements OnInit {
   result: any;
 
-  constructor(private http: TransferHttp, @Inject(AppStorage) private appStorage: Storage) { }
+  constructor(
+    private http: TransferHttp, @Inject(AppStorage) private appStorage: Storage
+  ) { }
 
   ngOnInit(): void {
     this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {

@@ -1,3 +1,4 @@
+import { TransferHttp } from './../../../modules/transfer-http/transfer-http';
 import 'rxjs/add/operator/toPromise';
 
 import { HttpClient } from '@angular/common/http';
@@ -6,12 +7,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class EventService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: TransferHttp) { }
 
-  getEvents() {
-    return this.http.get<any>('assets/showcase/data/scheduleevents.json')
-      .toPromise()
-      .then(res => <any[]>res.data)
-      .then(data => data);
+  async getEvents() {
+    return await this.http.get('assets/showcase/data/scheduleevents.json')
+      .toPromise();
   }
 }

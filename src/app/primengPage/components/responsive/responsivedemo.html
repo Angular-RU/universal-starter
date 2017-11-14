@@ -39,8 +39,7 @@
                     Suggest
                 </div>
                 <div class="ui-g-8">
-                    <p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" field="name" [size]="30"
-                    placeholder="Countries" [minLength]="1"></p-autoComplete>
+                    <p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountriesSingle" (completeMethod)="filterCountrySingle($event)" field="name" [size]="30" placeholder="Countries" [minLength]="1"></p-autoComplete>
                 </div>
             </div>
             <div class="ui-g-12 ui-md-6">
@@ -48,7 +47,7 @@
                     Button
                 </div>
                 <div class="ui-g-8">
-                    <button pButton label="Save"type="button"></button>
+                    <button pButton label="Save" type="button"></button>
                 </div>
             </div>
             <div class="ui-g-12 ui-md-6">
@@ -90,10 +89,14 @@
                 </div>
                 <div class="ui-g-8">
                     <div class="ui-g radiobuttons">
-                        <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 1</label></div>
-                        <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 2</label></div>
-                        <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 3</label></div>
-                        <div class="ui-g-12"><p-radioButton name="group1" value="Option 4" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 4</label></div>
+                        <div class="ui-g-12">
+                            <p-radioButton name="group1" value="Option 1" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 1</label></div>
+                        <div class="ui-g-12">
+                            <p-radioButton name="group1" value="Option 2" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 2</label></div>
+                        <div class="ui-g-12">
+                            <p-radioButton name="group1" value="Option 3" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 3</label></div>
+                        <div class="ui-g-12">
+                            <p-radioButton name="group1" value="Option 4" [(ngModel)]="val"></p-radioButton><label class="ui-widget">Option 4</label></div>
                     </div>
                 </div>
             </div>
@@ -106,19 +109,14 @@
         </div>
 
         <p-dialog header="Godfather 1" [(visible)]="display" [responsive]="true" [resizable]="false" [width]="300">
-            <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-                His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-                Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-                kind and benevolent to those who give respect,
-                but given to ruthless violence whenever anything stands against the good of the family.</p>
+            <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. His beloved son Michael has just come home from the war, but does not intend to become part of his father's business. Through Michael's
+                life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good
+                of the family.</p>
         </p-dialog>
 
         <p-panel header="Panel" [style]="{'margin-top':'20px'}">
-            The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-            His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-            Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-            kind and benevolent to those who give respect,
-            but given to ruthless violence whenever anything stands against the good of the family.
+            The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. His beloved son Michael has just come home from the war, but does not intend to become part of his father's business. Through Michael's life the
+            nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
         </p-panel>
 
         <p-dataTable [style]="{'margin-top':'20px'}" [value]="cars" [rows]="10" [paginator]="true" [pageLinks]="3" [responsive]="true">
@@ -159,18 +157,17 @@
                     <div class="ui-g-12"><img src="assets/showcase/images/demo/car/{{car.brand}}.png" width="60"></div>
                     <div class="ui-g-6">Vin</div>
                     <div class="ui-g-6">{{car.vin}}</div>
-                    
+
                     <div class="ui-g-6">Year</div>
                     <div class="ui-g-6">{{car.year}}</div>
-                    
+
                     <div class="ui-g-6">Color</div>
                     <div class="ui-g-6">{{car.color}}</div>
                 </div>
             </ng-template>
         </p-carousel>
 
-        <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true" 
-            [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" [style]="{'margin-top':'20px','margin-bottom':'20px'}">
+        <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" [style]="{'margin-top':'20px','margin-bottom':'20px'}">
             <ng-template let-car pTemplate="item">
                 <img src="assets/showcase/images/demo/car/{{car.brand}}.png" style="display:inline-block;margin:2px 0 2px 2px" width="48">
                 <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}</div>
@@ -194,7 +191,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;div class="ui-g"&gt;
     &lt;div class="ui-g-12 ui-md-6"&gt;
@@ -374,7 +371,7 @@
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class ResponsiveDemo implements OnInit &#123;
 

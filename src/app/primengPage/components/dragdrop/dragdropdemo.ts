@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
-import {Car} from '../../components/domain/car';
-import {CarService} from '../../service/carservice';
+import { Component } from '@angular/core';
+import { Car } from '../../components/domain/car';
+import { CarService } from '../../service/carservice';
+import { OnInit } from '@angular/core';
 
 @Component({
     templateUrl: './dragdropdemo.html',
@@ -12,42 +13,43 @@ import {CarService} from '../../service/carservice';
         }
     `]
 })
-export class DragDropDemo {
-    
+// tslint:disable-next-line:component-class-suffix
+export class DragDropDemo implements OnInit {
+
     availableCars: Car[];
-    
+
     selectedCars: Car[];
-    
+
     draggedCar: Car;
-    
+
     constructor(private carService: CarService) { }
-    
-    ngOnInit() {
+
+    async ngOnInit() {
         this.selectedCars = [];
-        this.carService.getCarsSmall().then(cars => this.availableCars = cars);
+        this.availableCars = await this.carService.getCarsSmallAsync().then(cars => cars);
     }
-    
-    dragStart(event,car: Car) {
+
+    dragStart(event, car: Car) {
         this.draggedCar = car;
     }
-    
+
     drop(event) {
-        if(this.draggedCar) {
-            let draggedCarIndex = this.findIndex(this.draggedCar);
+        if (this.draggedCar) {
+            const draggedCarIndex = this.findIndex(this.draggedCar);
             this.selectedCars = [...this.selectedCars, this.draggedCar];
-            this.availableCars = this.availableCars.filter((val,i) => i!=draggedCarIndex);
+            this.availableCars = this.availableCars.filter((val, i) => i !== draggedCarIndex);
             this.draggedCar = null;
         }
     }
-    
+
     dragEnd(event) {
         this.draggedCar = null;
     }
-    
+
     findIndex(car: Car) {
         let index = -1;
-        for(let i = 0; i < this.availableCars.length; i++) {
-            if(car.vin === this.availableCars[i].vin) {
+        for (let i = 0; i < this.availableCars.length; i++) {
+            if (car.vin === this.availableCars[i].vin) {
                 index = i;
                 break;
             }

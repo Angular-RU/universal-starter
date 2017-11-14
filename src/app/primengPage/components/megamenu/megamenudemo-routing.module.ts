@@ -1,15 +1,15 @@
-import {NgModule}     from '@angular/core';
-import {RouterModule} from '@angular/router'
-import {MegaMenuDemo} from './megamenudemo';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'
+import { MegaMenuDemo } from './megamenudemo';
 
 @NgModule({
-	imports: [
-		RouterModule.forChild([
-			{path:'',component: MegaMenuDemo}
-		])
-	],
-	exports: [
-		RouterModule
-	]
+    imports: [
+        RouterModule.forChild([
+            { path: '', component: MegaMenuDemo }
+        ])
+    ],
+    exports: [
+        RouterModule
+    ]
 })
-export class MegaMenuDemoRoutingModule {}
+export class MegaMenuDemoRoutingModule { }

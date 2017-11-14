@@ -1,20 +1,21 @@
-import {Component} from '@angular/core';
-import {Car} from '../../components/domain/car';
-import {CarService} from '../../service/carservice';
+import { Component, OnInit } from '@angular/core';
+import { Car } from '../../components/domain/car';
+import { CarService } from '../../service/carservice';
 
 @Component({
     templateUrl: './picklistdemo.html'
 })
-export class PickListDemo {
+// tslint:disable-next-line:component-class-suffix
+export class PickListDemo implements OnInit {
 
     sourceCars: Car[];
-    
+
     targetCars: Car[];
-    
+
     constructor(private carService: CarService) { }
 
-    ngOnInit() {
-        this.carService.getCarsSmall().then(cars => this.sourceCars = cars);
+    async ngOnInit() {
+        this.sourceCars = await this.carService.getCarsSmallAsync();
         this.targetCars = [];
     }
 }

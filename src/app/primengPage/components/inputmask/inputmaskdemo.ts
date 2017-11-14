@@ -1,14 +1,15 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './inputmaskdemo.html',
-    styles: [`
+    styles:  [`
         .ui-g-12 > span {
             display: block;
             margin-bottom: 4px;
         }
     `]
 })
+// tslint:disable-next-line:component-class-suffix
 export class InputMaskDemo {
 
     val1: string;
@@ -20,6 +21,6 @@ export class InputMaskDemo {
     val4: string;
 
     val5: string;
-    
+
     val6: string;
 }

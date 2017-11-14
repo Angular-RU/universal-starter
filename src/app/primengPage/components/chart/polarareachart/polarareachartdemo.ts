@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './polarareachartdemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class PolarAreaChartDemo {
 
     data: any;
@@ -18,21 +19,21 @@ export class PolarAreaChartDemo {
                     14
                 ],
                 backgroundColor: [
-                    "#FF6384",
-                    "#4BC0C0",
-                    "#FFCE56",
-                    "#E7E9ED",
-                    "#36A2EB"
+                    '#FF6384',
+                    '#4BC0C0',
+                    '#FFCE56',
+                    '#E7E9ED',
+                    '#36A2EB'
                 ],
                 label: 'My dataset'
             }],
             labels: [
-                "Red",
-                "Green",
-                "Yellow",
-                "Grey",
-                "Blue"
+                'Red',
+                'Green',
+                'Yellow',
+                'Grey',
+                'Blue'
             ]
-        }
+        };
     }
 }

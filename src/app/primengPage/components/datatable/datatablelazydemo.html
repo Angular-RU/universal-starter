@@ -11,8 +11,7 @@
 </div>
 
 <div class="content-section implementation">
-    <p-dataTable [value]="cars" [lazy]="true" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5,10,20]"
-                [totalRecords]="totalRecords" (onLazyLoad)="loadCarsLazy($event)">
+    <p-dataTable [value]="cars" [lazy]="true" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [totalRecords]="totalRecords" (onLazyLoad)="loadCarsLazy($event)">
         <p-header>List of Cars</p-header>
         <p-column field="vin" header="Vin"></p-column>
         <p-column field="year" header="Year"></p-column>
@@ -28,7 +27,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableLazyDemo implements OnInit &#123;
 
@@ -66,7 +65,7 @@ export class DataTableLazyDemo implements OnInit &#123;
     &#125;
 &#125;
 </code>
-</pre>            
+</pre>
         </p-tabPanel>
 
         <p-tabPanel header="datatablelazydemo.html">
@@ -74,7 +73,7 @@ export class DataTableLazyDemo implements OnInit &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [lazy]="true" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[5,10,20]"
             [totalRecords]="totalRecords" (onLazyLoad)="loadCarsLazy($event)"&gt;

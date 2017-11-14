@@ -22,22 +22,22 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;LightboxModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
             <h3>Getting Started</h3>
-            <p>Lightbox has two modes; <i>image</i> and <i>custom content</i> defined using type property. In image mode a collection of
-            images are required to display where an image object in the collection defines the source of the original image, thumbnail image and the title.</p>
-<pre>
+            <p>Lightbox has two modes; <i>image</i> and <i>custom content</i> defined using type property. In image mode a collection of images are required to display where an image object in the collection defines the source of the original image, thumbnail
+                image and the title.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-lightbox [images]="images"&gt;&lt;/p-lightbox&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class LightboxDemo &#123;
 
@@ -54,7 +54,7 @@ export class LightboxDemo &#123;
 </code>
 </pre>
             <p>Content mode is enabled by setting type property to "content", providing an anchor to open the lightbox and content to display inside lightbox.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-lightbox type="content"&gt;
     &lt;a class="group" href="#"&gt;
@@ -66,10 +66,9 @@ export class LightboxDemo &#123;
 </pre>
 
             <h3>Effects</h3>
-            <p>The easing function to use between image transitions is "ease-out" by default and this can be customized using easing property. 
-                See <a href="http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">here</a> for possible alternative values. Duration
-            of the effect can be changed using effectDuration option.</p>
-<pre>
+            <p>The easing function to use between image transitions is "ease-out" by default and this can be customized using easing property. See <a href="http://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">here</a> for possible alternative
+                values. Duration of the effect can be changed using effectDuration option.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-lightbox [images]="images" easing="ease-in" effectDuration="1500ms"&gt;&lt;/p-lightbox&gt;
 </code>
@@ -132,10 +131,10 @@ export class LightboxDemo &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Element</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Element</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -179,7 +178,7 @@ export class LightboxDemo &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;h3 class="first"&gt;Basic&lt;/h3&gt;
 &lt;p-lightbox [images]="images"&gt;&lt;/p-lightbox&gt;
@@ -194,7 +193,7 @@ export class LightboxDemo &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class LightboxDemo &#123;
 

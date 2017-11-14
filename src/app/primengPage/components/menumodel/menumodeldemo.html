@@ -7,22 +7,21 @@
 
 <div class="content-section documentation">
     <h3 class="first">MenuItem</h3>
-    <p>Core of the api is MenuItem class that defines various options such as the label, icon and children of an item in a menu. Example below
-    is a sample configuration with Menu component.</p>
+    <p>Core of the api is MenuItem class that defines various options such as the label, icon and children of an item in a menu. Example below is a sample configuration with Menu component.</p>
 
-<pre>
+    <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-menu [model]="items"&gt;&lt;/p-menu&gt;
 </code>
 </pre>
 
-<pre>
+    <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;MenuModule,MenuItem&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-<pre>
+    <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MenuDemo &#123;
     
@@ -177,10 +176,10 @@ export class MenuDemo &#123;
             </tbody>
         </table>
     </div>
-    
+
     <h4>Command</h4>
     <p>The function to invoke when an item is clicked is defined using the command property.</p>
-<pre>
+    <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MenuDemo &#123;
     
@@ -202,9 +201,9 @@ export class MenuDemo &#123;
 </pre>
 
     <h4>Navigation</h4>
-    <p>Navigation is specified using url property for external links and with routerLink for internal ones. If a menuitem has an active route, <i>ui-state-active</i> style class is added as an indicator. Active route link can be
-    configured with routerLinkActiveOptions property of MenuItem API.</p>
-<pre>
+    <p>Navigation is specified using url property for external links and with routerLink for internal ones. If a menuitem has an active route, <i>ui-state-active</i> style class is added as an indicator. Active route link can be configured with routerLinkActiveOptions
+        property of MenuItem API.</p>
+    <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class MenuDemo &#123;
     

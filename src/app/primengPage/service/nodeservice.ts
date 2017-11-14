@@ -1,3 +1,4 @@
+import { TransferHttp } from './../../../modules/transfer-http/transfer-http';
 import 'rxjs/add/operator/toPromise';
 
 import { HttpClient } from '@angular/common/http';
@@ -8,29 +9,25 @@ import { TreeNode } from 'primeng/components/common/api';
 @Injectable()
 export class NodeService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: TransferHttp) { }
 
-  getFiles() {
-    return this.http.get<any>('assets/showcase/data/files.json')
-      .toPromise()
-      .then(res => <TreeNode[]>res.data);
+  async getFilesAsync() {
+    return await this.http.get('assets/showcase/data/files.json')
+      .toPromise();
   }
 
-  getLazyFiles() {
-    return this.http.get<any>('assets/showcase/data/files-lazy.json')
-      .toPromise()
-      .then(res => <TreeNode[]>res.data);
+  async getLazyFilesAsync() {
+    return await this.http.get('assets/showcase/data/files-lazy.json')
+      .toPromise();
   }
 
-  getFilesystem() {
-    return this.http.get<any>('assets/showcase/data/filesystem.json')
-      .toPromise()
-      .then(res => <TreeNode[]>res.data);
+  async getFilesystemAsync() {
+    return await this.http.get('assets/showcase/data/filesystem.json')
+      .toPromise();
   }
 
-  getLazyFilesystem() {
-    return this.http.get<any>('assets/showcase/data/filesystem-lazy.json')
-      .toPromise()
-      .then(res => <TreeNode[]>res.data);
+  async getLazyFilesystemAsync() {
+    return await this.http.get('assets/showcase/data/filesystem-lazy.json')
+      .toPromise();
   }
 }

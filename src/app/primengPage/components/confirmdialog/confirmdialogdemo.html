@@ -8,11 +8,11 @@
 
 <div class="content-section implementation">
     <p-growl [value]="msgs"></p-growl>
-    
+
     <p-confirmDialog></p-confirmDialog>
 
     <button type="button" (click)="confirm1()" pButton icon="fa-check" label="Confirm"></button>
-    
+
     <button type="button" (click)="confirm2()" pButton icon="fa-trash" label="Delete"></button>
 </div>
 
@@ -20,17 +20,16 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;ConfirmDialogModule,ConfirmationService&#125; from 'primeng/primeng';
 </code>
 </pre>
 
             <h3>Getting Started</h3>
-            <p>ConfirmDialog is defined using p-confirmDialog tag and an instance of ConfirmationService is required to display it by 
-                calling confirm method.</p>
-                    
-<pre>
+            <p>ConfirmDialog is defined using p-confirmDialog tag and an instance of ConfirmationService is required to display it by calling confirm method.</p>
+
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="425"&gt;&lt;/p-confirmDialog&gt;
 
@@ -38,7 +37,7 @@ import &#123;ConfirmDialogModule,ConfirmationService&#125; from 'primeng/primeng
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class ConfirmDialogDemo &#123; 
            
@@ -107,16 +106,15 @@ export class ConfirmDialogDemo &#123;
                     </tbody>
                 </table>
             </div>
-            
-            <h3>Customization</h3>
-            <p>Properties of the dialog are defined in two ways, message, icon and header properties can either
-            be defined using confirm method or declaratively on p-confirmDialog ng-template. If these values are unlikely to change then
-            declarative approach would be useful, still properties defined in a ng-template can be overriden with confirm method call.</p>
-            
-            <p>In addition, buttons at footer section can be customized by passing your own UI, important note to make confirmation work with
-            a custom UI is defining a local ng-template variable for the dialog and assign accept()-reject() methods to your own buttons.</p>
 
-<pre>
+            <h3>Customization</h3>
+            <p>Properties of the dialog are defined in two ways, message, icon and header properties can either be defined using confirm method or declaratively on p-confirmDialog ng-template. If these values are unlikely to change then declarative approach
+                would be useful, still properties defined in a ng-template can be overriden with confirm method call.</p>
+
+            <p>In addition, buttons at footer section can be customized by passing your own UI, important note to make confirmation work with a custom UI is defining a local ng-template variable for the dialog and assign accept()-reject() methods to your
+                own buttons.</p>
+
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="425" #cd&gt;
     &lt;p-footer&gt;
@@ -139,17 +137,17 @@ export class ConfirmDialogDemo &#123;
                         </tr>
                     </thead>
                     <tbody>
-                         <tr>
+                        <tr>
                             <td>header</td>
                             <td>string</td>
                             <td>null</td>
                             <td>Title text of the dialog.</td>
-                         </tr>
-                         <tr>
-                           <td>message</td>
-                           <td>string</td>
-                           <td>null</td>
-                           <td>Message of the confirmation.</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>string</td>
+                            <td>null</td>
+                            <td>Message of the confirmation.</td>
                         </tr>
                         <tr>
                             <td>key</td>
@@ -158,46 +156,46 @@ export class ConfirmDialogDemo &#123;
                             <td>Optional key to match the key of confirm object, necessary to use when component tree has multiple confirm dialogs.</td>
                         </tr>
                         <tr>
-                          <td>icon</td>
-                          <td>string</td>
-                          <td>null</td>
-                          <td>Icon to display next to message.</td>
+                            <td>icon</td>
+                            <td>string</td>
+                            <td>null</td>
+                            <td>Icon to display next to message.</td>
                         </tr>
                         <tr>
-                          <td>acceptLabel</td>
-                          <td>string</td>
-                          <td>Yes</td>
-                          <td>Label of the accept button.</td>
+                            <td>acceptLabel</td>
+                            <td>string</td>
+                            <td>Yes</td>
+                            <td>Label of the accept button.</td>
                         </tr>
                         <tr>
-                          <td>acceptIcon</td>
-                          <td>string</td>
-                          <td>fa-check</td>
-                          <td>Icon of the accept button.</td>
+                            <td>acceptIcon</td>
+                            <td>string</td>
+                            <td>fa-check</td>
+                            <td>Icon of the accept button.</td>
                         </tr>
                         <tr>
-                          <td>acceptVisible</td>
-                          <td>boolean</td>
-                          <td>true</td>
-                          <td>Visibility of the accept button.</td>
+                            <td>acceptVisible</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>Visibility of the accept button.</td>
                         </tr>
                         <tr>
-                          <td>rejectLabel</td>
-                          <td>string</td>
-                          <td>No</td>
-                          <td>Label of the reject button.</td>
+                            <td>rejectLabel</td>
+                            <td>string</td>
+                            <td>No</td>
+                            <td>Label of the reject button.</td>
                         </tr>
                         <tr>
-                          <td>rejectIcon</td>
-                          <td>string</td>
-                          <td>fa-close</td>
-                          <td>Icon of the reject button.</td>
+                            <td>rejectIcon</td>
+                            <td>string</td>
+                            <td>fa-close</td>
+                            <td>Icon of the reject button.</td>
                         </tr>
                         <tr>
-                          <td>rejectVisible</td>
-                          <td>boolean</td>
-                          <td>true</td>
-                          <td>Visibility of the reject button.</td>
+                            <td>rejectVisible</td>
+                            <td>boolean</td>
+                            <td>true</td>
+                            <td>Visibility of the reject button.</td>
                         </tr>
                         <tr>
                             <td>width</td>
@@ -297,7 +295,7 @@ export class ConfirmDialogDemo &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-growl [value]="msgs"&gt;&lt;/p-growl&gt;
     
@@ -309,7 +307,7 @@ export class ConfirmDialogDemo &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 @Component(&#123;
     templateUrl: 'showcase/demo/confirmdialog/confirmdialogdemo.html',

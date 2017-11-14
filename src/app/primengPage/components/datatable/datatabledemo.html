@@ -21,18 +21,17 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;DataTableModule,SharedModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
             <h3>Getting Started</h3>
-            <p>DataTable requires a value as an array of objects and columns defined with p-column component. Throughout the samples, a car interface having
-            vin, brand, year and color properties is used to define an object to be displayed by the datatable. Cars are loaded by a CarService that
-            connects to a server to fetch the cars with a Promise.
+            <p>DataTable requires a value as an array of objects and columns defined with p-column component. Throughout the samples, a car interface having vin, brand, year and color properties is used to define an object to be displayed by the datatable.
+                Cars are loaded by a CarService that connects to a server to fetch the cars with a Promise.
             </p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export interface Car &#123;
     vin;
@@ -43,7 +42,7 @@ export interface Car &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;Injectable&#125; from 'angular2/core';
 import &#123;Http, Response&#125; from 'angular2/http';
@@ -65,7 +64,7 @@ export class CarService &#123;
 </pre>
             <p>Following sample datatable has 4 columns and retrieves the data from a service on init.</p>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 
@@ -80,8 +79,8 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-        <p>List of cars are bound to the value property and columns are defined using p-column component.</p>
-<pre>
+            <p>List of cars are bound to the value property and columns are defined using p-column component.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -296,7 +295,7 @@ export class DataTableDemo implements OnInit &#123;
                 </table>
             </div>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-column field="vin" header="Vin" [sortable]="true"&gt;&lt;/p-column&gt;
 </code>
@@ -304,7 +303,7 @@ export class DataTableDemo implements OnInit &#123;
 
             <h3>Dynamic Colums</h3>
             <p>Columns can be instantiated using an array as well by iterating with ngFor.</p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 
@@ -328,7 +327,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars"&gt;
     &lt;p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"&gt;&lt;/p-column&gt;
@@ -337,23 +336,19 @@ export class DataTableDemo implements OnInit &#123;
 </pre>
 
             <h3>Change Detection</h3>
-            <p>DataTable either uses setter based checking or ngDoCheck to realize if the underlying data has changed to update the UI. This is configured using the immutable
-                property, when enabled (default) setter based detection is utilized so your data changes such as adding or removing a record
-                should always create a new array reference instead of manipulating an existing array as Angular does not trigger setters if the reference does not change.
-                For example, use slice instead of splice when removing an item or use spread operator instead of push method when adding an item. On the other hand, setting immutable property to false removes
-                this restriction by using ngDoCheck with IterableDiffers to listen changes without the need to create a new reference of data. Setter based method is faster however
-                both methods can be used depending on your preference. Note that immutable property also defines how DataTable treats the data, for example
-                when immutable is enabled sorting does not mutate the original data but creates a new array of sorted data.
+            <p>DataTable either uses setter based checking or ngDoCheck to realize if the underlying data has changed to update the UI. This is configured using the immutable property, when enabled (default) setter based detection is utilized so your data
+                changes such as adding or removing a record should always create a new array reference instead of manipulating an existing array as Angular does not trigger setters if the reference does not change. For example, use slice instead of splice
+                when removing an item or use spread operator instead of push method when adding an item. On the other hand, setting immutable property to false removes this restriction by using ngDoCheck with IterableDiffers to listen changes without
+                the need to create a new reference of data. Setter based method is faster however both methods can be used depending on your preference. Note that immutable property also defines how DataTable treats the data, for example when immutable
+                is enabled sorting does not mutate the original data but creates a new array of sorted data.
             </p>
 
             <h3>Templates</h3>
-            <p>Field data of a corresponding row is displayed as the cell content by default, this can be customized using templating where the implicit variable passed to the ng-template
-                is the column definition and data of current row is the rowData property. In addition index of the current can be accessed using the optional rowIndex variable.
-                Similarly, custom content can be placed at the header and footer of a column with templating.</p>
+            <p>Field data of a corresponding row is displayed as the cell content by default, this can be customized using templating where the implicit variable passed to the ng-template is the column definition and data of current row is the rowData property.
+                In addition index of the current can be accessed using the optional rowIndex variable. Similarly, custom content can be placed at the header and footer of a column with templating.</p>
 
-            <p>A ng-template inside a column must be decorated with pTemplate directive along with the type to indicate where the ng-template belongs to. Possible values
-            are "header", "body" and "footer".</p>
-<pre>
+            <p>A ng-template inside a column must be decorated with pTemplate directive along with the type to indicate where the ng-template belongs to. Possible values are "header", "body" and "footer".</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-column field="color" header="Color"&gt;
     &lt;ng-template let-col let-car="rowData" let-ri="rowIndex" pTemplate="body"&gt;
@@ -372,7 +367,7 @@ export class DataTableDemo implements OnInit &#123;
 </pre>
 
             <p>Index of the row is available at the ng-template.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
     &lt;p-column&gt;
         &lt;ng-template let-car="rowData" let-i="rowIndex" pTemplate="body"&gt;
@@ -386,13 +381,13 @@ export class DataTableDemo implements OnInit &#123;
 
             <h3>Facets</h3>
             <p>Header and Footer are the two sections aka facets that are capable of displaying custom content.</p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;Header&#125; from 'primeng/primeng';
 import &#123;Footer&#125; from 'primeng/primeng';
 </code>
 </pre>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars"&gt;
     &lt;p-header&gt;List of Cars&lt;/p-header&gt;
@@ -407,9 +402,8 @@ import &#123;Footer&#125; from 'primeng/primeng';
             <p>See the <a [routerLink]="['/datatable/facets']">live example.</a></p>
 
             <h3>Column Grouping</h3>
-            <p>Columns can be grouped at header and footer using headerColumnGroup and footerColumnGroup components containing rows with
-                columns. Templating is also supported inside grouped columns.</p>
-<pre>
+            <p>Columns can be grouped at header and footer using headerColumnGroup and footerColumnGroup components containing rows with columns. Templating is also supported inside grouped columns.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="sales"&gt;
     &lt;p-headerColumnGroup&gt;
@@ -449,7 +443,7 @@ import &#123;Footer&#125; from 'primeng/primeng';
 
             <h3>Row Grouping</h3>
             <p>Rows can either be grouped by a separate grouping row or using rowspan. In both cases, data has to be sorted by the grouping field initially.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars1" sortField="brand" rowGroupMode="subheader" groupField="brand"&gt;
     &lt;p-header&gt;Subheader&lt;/p-header&gt;
@@ -469,10 +463,9 @@ import &#123;Footer&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-            <p>Visibility of a group can be toggled using an icon placed next to the group name using expandableRowGroups property.
-            By default all groups are collapsed and expandadRowGroups property needs to be populated with the group field values
-            to show particular groups as expanded by default.</p>
-<pre>
+            <p>Visibility of a group can be toggled using an icon placed next to the group name using expandableRowGroups property. By default all groups are collapsed and expandadRowGroups property needs to be populated with the group field values to show
+                particular groups as expanded by default.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" sortField="brand" rowGroupMode="subheader" groupField="brand" expandableRowGroups="true"&gt;
     &lt;p-header&gt;Subheader&lt;/p-header&gt;
@@ -485,7 +478,7 @@ import &#123;Footer&#125; from 'primeng/primeng';
 </pre>
 
             <p>A footer for a row can be defined using the rowgroupfooter ng-template.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" sortField="brand" rowGroupMode="subheader" groupField="brand" expandableRowGroups="true"
         [sortableRowGroup]="false"&gt;
@@ -512,9 +505,9 @@ import &#123;Footer&#125; from 'primeng/primeng';
             <p>See the <a [routerLink]="['/datatable/rowgroup']">live example.</a></p>
 
             <h3>Paginator</h3>
-            <p>Pagination is enabled by setting paginator property to true, rows attribute defines the number of rows per page and pageLinks specify the the number
-                of page links to display. See <a [routerLink]="['/paginator']">paginator</a> component for more information.</p>
-<pre>
+            <p>Pagination is enabled by setting paginator property to true, rows attribute defines the number of rows per page and pageLinks specify the the number of page links to display. See <a [routerLink]="['/paginator']">paginator</a> component for
+                more information.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [rows]="10" [paginator]="true"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -525,9 +518,9 @@ import &#123;Footer&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-            <p>Paginator can also be controlled via model using a binding to the first property where changes trigger a pagination. Optionaly this property supports
-            two-way binding so that model value can be updated on pagination as well. Here is an example to reset the paginator externally.</p>
-<pre>
+            <p>Paginator can also be controlled via model using a binding to the first property where changes trigger a pagination. Optionaly this property supports two-way binding so that model value can be updated on pagination as well. Here is an example
+                to reset the paginator externally.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [rows]="10" [paginator]="true" [(first)]="first"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -540,7 +533,7 @@ import &#123;Footer&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 
@@ -565,23 +558,21 @@ export class DataTableDemo implements OnInit &#123;
             <p>See the <a [routerLink]="['/datatable/paginator']">live example.</a></p>
 
             <h3>Sorting</h3>
-            <p>Simply enabling sortable property at column object is enough to make a column sortable. The property to use when
-            sorting is field by default and this can be customized using sortField.</p>
-<pre>
+            <p>Simply enabling sortable property at column object is enough to make a column sortable. The property to use when sorting is field by default and this can be customized using sortField.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-column field="vin" header="Vin" sortable="true"&gt;&lt;/p-column&gt;
 </code>
 </pre>
-            <p>By default sorting is executed on the clicked column. To do multiple field sorting, set sortMode property to "multiple" and use metakey
-            when clicking on another column.</p>
-<pre>
+            <p>By default sorting is executed on the clicked column. To do multiple field sorting, set sortMode property to "multiple" and use metakey when clicking on another column.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [sortMode]="multiple"&gt;
 </code>
 </pre>
 
             <p>In case you'd like to display the table as sorted by default initially on load, use the sortField-sortOrder properties in single mode.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" sortField="year" [sortOrder]="1"&gt;
     &lt;p-column field="vin" header="Vin" sortable="true"&gt;&lt;/p-column&gt;
@@ -592,7 +583,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
             <p>In multiple mode, use the multiSortMeta property and bind an array of SortMeta objects.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [multiSortMeta]="multiSortMeta"&gt;
     &lt;p-column field="vin" header="Vin" sortable="true"&gt;&lt;/p-column&gt;
@@ -603,7 +594,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 this.multiSortMeta = [];
 this.multiSortMeta.push(&#123;field: 'year', order: 1&#125;);
@@ -612,7 +603,7 @@ this.multiSortMeta.push(&#123;field: 'brand', order: -1&#125;);
 </pre>
 
             <p>To customize sorting, set sortable option to <i>custom</i> and define a sortFunction that sorts the list.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [multiSortMeta]="multiSortMeta"&gt;
     &lt;p-column field="vin" header="Vin" sortable="true"&gt;&lt;/p-column&gt;
@@ -623,7 +614,7 @@ this.multiSortMeta.push(&#123;field: 'brand', order: -1&#125;);
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 mysort(event) &#123;
     //event.field = Field to sort
@@ -635,9 +626,8 @@ mysort(event) &#123;
             <p>See the <a [routerLink]="['/datatable/sort']">live example.</a></p>
 
             <h3>Filtering</h3>
-            <p>Filtering is enabled by setting the filter property as true on a column. Default match mode is "startsWith" and this can be configured
-            using filterMatchMode property that also accepts "contains", "endsWith", "equals" and "in".</p>
-<pre>
+            <p>Filtering is enabled by setting the filter property as true on a column. Default match mode is "startsWith" and this can be configured using filterMatchMode property that also accepts "contains", "endsWith", "equals" and "in".</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-column field="vin" header="Vin (startsWith)" [filter]="true" filterPlaceholder="Search"&gt;&lt;/p-column&gt;
 &lt;p-column field="year" header="Year (contains)" [filter]="true" filterMatchMode="contains"&gt;&lt;/p-column&gt;
@@ -645,18 +635,18 @@ mysort(event) &#123;
 &lt;p-column field="color" header="Color (endsWith)" [filter]="true" filterMatchMode="endsWith"&gt;&lt;/p-column&gt;
 </code>
 </pre>
-            <p>An optional global filter feature is available to search all fields with the same keyword, to enable this place an input component whose keyup event would be
-            listened for filtering and bind the local ng-template variable name of it to the global filter property.</p>
-<pre>
+            <p>An optional global filter feature is available to search all fields with the same keyword, to enable this place an input component whose keyup event would be listened for filtering and bind the local ng-template variable name of it to the
+                global filter property.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;input #gb type="text" placeholder="Global search"&gt;
 &lt;p-dataTable [value]="cars" [rows]="10" [globalFilter]="gb"&gt;
 </code>
 </pre>
 
-            <p>By default, input fields are used as filter elements and this can be customized using templating. It is important to use the on change callback
-                of the filter component to call the filter method of datatable by passing the value, field and matchmode properties.</p>
-<pre>
+            <p>By default, input fields are used as filter elements and this can be customized using templating. It is important to use the on change callback of the filter component to call the filter method of datatable by passing the value, field and
+                matchmode properties.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-column field="brand" header="Brand (Custom)" [filter]="true" [style]="&#123;'overflow':'visible'&#125;" filterMatchMode="equals"&gt;
     &lt;ng-template pTemplate="filter" let-col&gt;
@@ -669,11 +659,11 @@ mysort(event) &#123;
             <p>See the <a [routerLink]="['/datatable/filter']">live example.</a></p>
 
             <h3>Selection</h3>
-            <p>DataTable provides single and multiple selection modes on click of a row. Selected rows are bound to the selection property and onRowSelect-onRowUnselect events
-            are provided as optional callbacks. Alternatively column based selection can be done using radio buttons or checkboxes using selectionMode of a particular column.</p>
+            <p>DataTable provides single and multiple selection modes on click of a row. Selected rows are bound to the selection property and onRowSelect-onRowUnselect events are provided as optional callbacks. Alternatively column based selection can be
+                done using radio buttons or checkboxes using selectionMode of a particular column.</p>
 
             <p>In single mode, selection binding is an object reference.</p>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 
@@ -690,7 +680,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" dataKey="vin"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -701,10 +691,9 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-        <p>In multiple mode, selection binding should be an array and multiple items can either be selected
-        using metaKey or toggled individually depending on the value of metaKeySelection property value which is true by default. On touch enabled
-        devices metaKeySelection is turned off automatically. Additionally ShiftKey is supported for range selection.</p>
-<pre>
+            <p>In multiple mode, selection binding should be an array and multiple items can either be selected using metaKey or toggled individually depending on the value of metaKeySelection property value which is true by default. On touch enabled devices
+                metaKeySelection is turned off automatically. Additionally ShiftKey is supported for range selection.</p>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 
@@ -720,7 +709,7 @@ export class DataTableDemo implements OnInit &#123;
 &#125;
 </code>
 </pre>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" selectionMode="multiple" [(selection)]="selectedCars" dataKey="vin"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -731,10 +720,10 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-            <p>If you prefer a radioButton or a checkbox instead of a row click, use the selectionMode of a column instead. Following datatable
-            displays a checkbox at the first column of each row and automatically adds a header checkbox to toggle selection of all rows.</p>
+            <p>If you prefer a radioButton or a checkbox instead of a row click, use the selectionMode of a column instead. Following datatable displays a checkbox at the first column of each row and automatically adds a header checkbox to toggle selection
+                of all rows.</p>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [(selection)]="selectedCars" dataKey="vin"&gt;
     &lt;p-column selectionMode="multiple"&gt;&lt;/p-column&gt;
@@ -746,17 +735,17 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-            <p>When resolving if a row is selected, by default DataTable compares selection array with the datasource which may cause a performance issue with huge datasets that do not use pagination.
-                If available the fastest way is to use dataKey property that identifies a unique row so that DataTable can avoid comparing arrays as internally a map instance is used instead of looping arrays, on the other hand
-                if dataKey cannot be provided consider using compareSelectionBy property as "equals" which uses reference comparison instead of the default "deepEquals" comparison. Latter is slower since it checks all properties.
-                </p>
+            <p>When resolving if a row is selected, by default DataTable compares selection array with the datasource which may cause a performance issue with huge datasets that do not use pagination. If available the fastest way is to use dataKey property
+                that identifies a unique row so that DataTable can avoid comparing arrays as internally a map instance is used instead of looping arrays, on the other hand if dataKey cannot be provided consider using compareSelectionBy property as "equals"
+                which uses reference comparison instead of the default "deepEquals" comparison. Latter is slower since it checks all properties.
+            </p>
 
             <p>See the <a [routerLink]="['/datatable/selection']">live example.</a></p>
 
             <h3>ContextMenu</h3>
-            <p>DataTable has exclusive integration with contextmenu component. In order to attach a menu to a datatable, define a local template
-            variable for the menu and bind it to the contextMenu property of the datatable. This enables showing the menu whenever a row is right clicked.</p>
-<pre>
+            <p>DataTable has exclusive integration with contextmenu component. In order to attach a menu to a datatable, define a local template variable for the menu and bind it to the contextMenu property of the datatable. This enables showing the menu
+                whenever a row is right clicked.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" [contextMenu]="cm"&gt;
     &lt;p-header&gt;Right Click on Rows for ContextMenu&lt;/p-header&gt;
@@ -773,9 +762,8 @@ export class DataTableDemo implements OnInit &#123;
             <p>See the <a [routerLink]="['/datatable/contextmenu']">live example.</a></p>
 
             <h3>Editing</h3>
-            <p>Incell editing is enabled by setting editable property true both on datatable and columns. Clicking a cell switches to edit mode
-            and hitting enter key or clicking another cell switches it back to view mode.</p>
-<pre>
+            <p>Incell editing is enabled by setting editable property true both on datatable and columns. Clicking a cell switches to edit mode and hitting enter key or clicking another cell switches it back to view mode.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [editable]="true"&gt;
     &lt;p-column field="vin" header="Vin" [editable]="true"&gt;&lt;/p-column&gt;
@@ -787,7 +775,7 @@ export class DataTableDemo implements OnInit &#123;
 </pre>
 
             <p>Simple input fields are used as the editor elements by default and this can be customized by adding a pTemplate named editor.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [editable]="true"&gt;
     &lt;p-column field="vin" header="Vin" [editable]="true"&gt;&lt;/p-column&gt;
@@ -813,9 +801,8 @@ export class DataTableDemo implements OnInit &#123;
             <p>See the <a [routerLink]="['/datatable/editable']">live example.</a></p>
 
             <h3>Expandable Rows</h3>
-            <p>Row expansion allows displaying detailed content for a particular row. To use this feature, enable expandableRows property, add an expander column and
-            to declare the expanded content provide a pTemplate with "rowexpansion" as the value.</p>
-<pre>
+            <p>Row expansion allows displaying detailed content for a particular row. To use this feature, enable expandableRows property, add an expander column and to declare the expanded content provide a pTemplate with "rowexpansion" as the value.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" expandableRows="true"&gt;
     &lt;p-column expander="true" [style]="&#123;'width':'22px'&#125;"&gt;&lt;/p-column&gt;
@@ -855,16 +842,14 @@ export class DataTableDemo implements OnInit &#123;
 &lt;/p-dataTable&gt;
 </code>
 </pre>
-            <p>By default all rows are collapsed and expandedRows property needs to be populated
-                with the row data instances to show particular rows as expanded by default.</p>
+            <p>By default all rows are collapsed and expandedRows property needs to be populated with the row data instances to show particular rows as expanded by default.</p>
             <p>See the <a [routerLink]="['/datatable/rowexpansion']">live example.</a></p>
 
             <h3>Column Resize</h3>
-            <p>Columns can be resized using drag drop by setting the resizableColumns to true. There are two resize modes; "fit" and "expand". Fit is the default one and
-            the overall table width does not change when a column is resized. In "expand" mode, table width also changes along with the column width. onColumnResize
-            is a callback that passes the resized column header as a parameter.</p>
+            <p>Columns can be resized using drag drop by setting the resizableColumns to true. There are two resize modes; "fit" and "expand". Fit is the default one and the overall table width does not change when a column is resized. In "expand" mode,
+                table width also changes along with the column width. onColumnResize is a callback that passes the resized column header as a parameter.</p>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [resizableColumns]="true"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -876,7 +861,7 @@ export class DataTableDemo implements OnInit &#123;
 </pre>
 
             <p>It is important to note that when you need to change column widths, since table width is 100%, giving fixed pixel widths does not work well as browsers scale them, instead give percentage widths.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [resizableColumns]="true"&gt;
     &lt;p-column field="vin" header="Vin" [style]="&#123;'width':'20%'&#125;"&gt;&lt;/p-column&gt;
@@ -891,7 +876,7 @@ export class DataTableDemo implements OnInit &#123;
 
             <h3>Column Reordering</h3>
             <p>Columns can be reordered using drag drop by setting the reorderableColumns to true. onColReorder is a callback that is invoked when a column is reordered.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [reorderableColumns]="true"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -905,7 +890,7 @@ export class DataTableDemo implements OnInit &#123;
 
             <h3>Data Export</h3>
             <p>DataTable can export its data in CSV format using exportCSV() method.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable #dt [value]="cars"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -919,7 +904,7 @@ export class DataTableDemo implements OnInit &#123;
 </pre>
 
             <p>By default whole data is exported, if you'd like to export only the selection then pass a config object with selectionOnly property as true.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;button type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV(&#123;selectionOnly:true&#125;)"&gt;&lt;/button&gt;
 </code>
@@ -929,10 +914,9 @@ export class DataTableDemo implements OnInit &#123;
             <p>See the <a [routerLink]="['/datatable/export']">live example.</a></p>
 
             <h3>Scrolling</h3>
-            <p>DataTable supports both horizontal and vertical scrolling by defining scrollWidth and scrollHeight options respectively. The properties can take
-            fixed pixels values or percentages to calculate scroll viewport relative to the parent of the datatable. Sample below uses vertical scrolling where
-            headers are fixed and data is scrollable. In horizontal scrolling, it is important to give fixed widths to columns.</p>
-<pre>
+            <p>DataTable supports both horizontal and vertical scrolling by defining scrollWidth and scrollHeight options respectively. The properties can take fixed pixels values or percentages to calculate scroll viewport relative to the parent of the
+                datatable. Sample below uses vertical scrolling where headers are fixed and data is scrollable. In horizontal scrolling, it is important to give fixed widths to columns.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [scrollable]="true" scrollHeight="200px"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -943,7 +927,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
             <p>In horizontal scrolling, certain columns can be fixed as well by enabling the frozen property at column level .</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [scrollable]="true" scrollHeight="200px" frozenWidth="100px" scrollWidth="600px"&gt;
     &lt;p-column field="vin" header="Vin" frozen="true"&gt;&lt;/p-column&gt;
@@ -954,9 +938,8 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-            <p>In this case, if frozen and scrollable cells have content with varying height, misalignment might occur. To avoid a performance hit, DataTable avoid expensive calculations
-                to align the row heights as it can be easily done with CSS manually.</p>
-<pre>
+            <p>In this case, if frozen and scrollable cells have content with varying height, misalignment might occur. To avoid a performance hit, DataTable avoid expensive calculations to align the row heights as it can be easily done with CSS manually.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 .ui-datatable .ui-datatable-frozen-view .ui-datatable-data > tr > td,
 .ui-datatable .ui-datatable-unfrozen-view .ui-datatable-data > tr > td &#123;
@@ -965,9 +948,8 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-            <p>Certain rows can be fixed at the top so that they get frozen and not included in the scrollable data. In order
-            to implement this functionality, define these rows using frozenValue property.</p>
-<pre>
+            <p>Certain rows can be fixed at the top so that they get frozen and not included in the scrollable data. In order to implement this functionality, define these rows using frozenValue property.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [frozenValue]="frozenCars" [scrollable]="true" scrollHeight="200px"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -983,12 +965,11 @@ export class DataTableDemo implements OnInit &#123;
             <p>See the <a [routerLink]="['/datatable/scroll']">live example.</a></p>
 
             <h3>Lazy Loading</h3>
-            <p>Lazy mode is handy to deal with large datasets, instead of loading the entire data, small chunks of data is loaded by invoking
-             onLazyLoad callback everytime paging, sorting and filtering happens. To implement lazy loading,
-            enable lazy attribute and provide a method callback using onLazyLoad that actually loads the data from a remote datasource. onLazyLoad gets an event object
-            that contains information about what to load. It is also important to assign the logical number of rows to totalRecords by doing a projection query for paginator configuration so that paginator
-            displays the UI assuming there are actually records of totalRecords size although in reality they aren't as in lazy mode, only the records that are displayed on the current page exist.</p>
-<pre>
+            <p>Lazy mode is handy to deal with large datasets, instead of loading the entire data, small chunks of data is loaded by invoking onLazyLoad callback everytime paging, sorting and filtering happens. To implement lazy loading, enable lazy attribute
+                and provide a method callback using onLazyLoad that actually loads the data from a remote datasource. onLazyLoad gets an event object that contains information about what to load. It is also important to assign the logical number of rows
+                to totalRecords by doing a projection query for paginator configuration so that paginator displays the UI assuming there are actually records of totalRecords size although in reality they aren't as in lazy mode, only the records that are
+                displayed on the current page exist.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [scrollable]="true" [lazy]="true" (onLazyLoad)="loadData($event)" [totalRecords]="totalRecords"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -999,7 +980,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 loadData(event: LazyLoadEvent) &#123;
     //event.first = First row offset
@@ -1016,9 +997,8 @@ loadData(event: LazyLoadEvent) &#123;
             <p>See the <a [routerLink]="['/datatable/lazy']">live example.</a></p>
 
             <h3>Responsive</h3>
-            <p>DataTable columns are displayed as stacked in responsive mode if the screen size becomes smaller than a certain breakpoint value. This feature is enabled
-            by setting responsive to true.</p>
-<pre>
+            <p>DataTable columns are displayed as stacked in responsive mode if the screen size becomes smaller than a certain breakpoint value. This feature is enabled by setting responsive to true.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [responsive]="true"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -1031,9 +1011,8 @@ loadData(event: LazyLoadEvent) &#123;
             <p>See the <a [routerLink]="['/datatable/responsive']">live example.</a></p>
 
             <h3>EmptyMessage</h3>
-            <p>When there is no data, DataTable displays a message text defined using the emptyMessage property where as custom content can be provided using
-                emptymessage template.</p>
-<pre>
+            <p>When there is no data, DataTable displays a message text defined using the emptyMessage property where as custom content can be provided using emptymessage template.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [responsive]="true"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -1048,9 +1027,8 @@ loadData(event: LazyLoadEvent) &#123;
 </pre>
 
             <h3>Overlays in Cells</h3>
-            <p>Cells of datatable hides the overflow by default, this prevents overlay of a component like dropdown to be displayed properly. In cases like these,
-            set the style of the column to allow overflow.</p>
-<pre>
+            <p>Cells of datatable hides the overflow by default, this prevents overlay of a component like dropdown to be displayed properly. In cases like these, set the style of the column to allow overflow.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-column field="color" [style]="&#123;'overflow':'visible'&#125;"&gt;
     &lt;ng-template let-col let-car="rowData"&gt;
@@ -1061,9 +1039,8 @@ loadData(event: LazyLoadEvent) &#123;
 </pre>
 
             <h3>Loading Status</h3>
-            <p>DataTable has a loading property, when enabled a spinner icon is displayed to indicate data load.
-                An optional loadingIcon property can be passed in case you'd like a different loading icon.</p>
-<pre>
+            <p>DataTable has a loading property, when enabled a spinner icon is displayed to indicate data load. An optional loadingIcon property can be passed in case you'd like a different loading icon.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" [loading]="loading" loadingIcon="fa-spinner"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -1074,7 +1051,7 @@ loadData(event: LazyLoadEvent) &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 
@@ -1245,8 +1222,7 @@ export class DataTableDemo implements OnInit &#123;
                             <td>boolean</td>
                             <td>false</td>
                             <td>
-                                When set to true, the header checkbox on paged DataTables with checkbox multiple
-                                selection enabled will toggle the selection of items across all pages. See the
+                                When set to true, the header checkbox on paged DataTables with checkbox multiple selection enabled will toggle the selection of items across all pages. See the
                                 <a [routerLink]="['/datatable/selection']">live example.</a>
                             </td>
                         </tr>
@@ -1281,10 +1257,10 @@ export class DataTableDemo implements OnInit &#123;
                             <td>Whether multiple rows can be expanded at any time. Valid values are "multiple" and "single".</td>
                         </tr>
                         <tr>
-                          <td>rowGroupExpandMode</td>
-                          <td>string</td>
-                          <td>multiple</td>
-                          <td>Whether multiple row groups can be expanded at any time. Valid values are "multiple" and "single".</td>
+                            <td>rowGroupExpandMode</td>
+                            <td>string</td>
+                            <td>multiple</td>
+                            <td>Whether multiple row groups can be expanded at any time. Valid values are "multiple" and "single".</td>
                         </tr>
                         <tr>
                             <td>expandedIcon</td>
@@ -1440,8 +1416,8 @@ export class DataTableDemo implements OnInit &#123;
                             <td>metaKeySelection</td>
                             <td>boolean</td>
                             <td>true</td>
-                            <td>Defines whether metaKey is requred or not for the selection. When true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item
-                            can be toggled individually. On touch enabled devices, metaKeySelection is turned off automatically.</td>
+                            <td>Defines whether metaKey is requred or not for the selection. When true metaKey needs to be pressed to select or unselect an item and when set to false selection of each item can be toggled individually. On touch enabled devices,
+                                metaKeySelection is turned off automatically.</td>
                         </tr>
                         <tr>
                             <td>dataKey</td>
@@ -1499,143 +1475,113 @@ export class DataTableDemo implements OnInit &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Parameters</th>
+                            <th>Description</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>onRowClick</td>
-                            <td>event.originalEvent: Browser event <br>
-                                event.data: Selected data </td>
+                            <td>event.originalEvent: Browser event <br> event.data: Selected data </td>
                             <td>Callback to invoke when a row is clicked.</td>
                         </tr>
                         <tr>
                             <td>onRowSelect</td>
-                            <td>event.originalEvent: Browser event <br>
-                                event.data: Selected data <br >
-                                event.type: Type of selection, valid values are "row", "radiobutton" and "checkbox"
+                            <td>event.originalEvent: Browser event <br> event.data: Selected data <br> event.type: Type of selection, valid values are "row", "radiobutton" and "checkbox"
                             </td>
                             <td>Callback to invoke when a row is selected.</td>
                         </tr>
                         <tr>
                             <td>onRowUnselect</td>
-                            <td>event.originalEvent: Browser event <br>
-                                event.data: Unselected data <br >
-                                event.type: Type of unselection, valid values are "row" and "checkbox"</td>
+                            <td>event.originalEvent: Browser event <br> event.data: Unselected data <br> event.type: Type of unselection, valid values are "row" and "checkbox"</td>
                             <td>Callback to invoke when a row is unselected with metakey.</td>
                         </tr>
                         <tr>
                             <td>onRowDblclick</td>
-                            <td>event.originalEvent: Browser event <br>
-                                event.data: Selected data </td>
+                            <td>event.originalEvent: Browser event <br> event.data: Selected data </td>
                             <td>Callback to invoke when a row is selected with double clicked.</td>
                         </tr>
                         <tr>
                             <td>onHeaderCheckboxToggle</td>
-                            <td>event.originalEvent: Browser event <br>
-                                event.checked: State of the header checkbox</td>
+                            <td>event.originalEvent: Browser event <br> event.checked: State of the header checkbox</td>
                             <td>Callback to invoke when state of header checkbox changes.</td>
                         </tr>
                         <tr>
                             <td>onContextMenuSelect</td>
-                            <td>event.originalEvent: Browser event <br>
-                                event.data: Selected data</td>
+                            <td>event.originalEvent: Browser event <br> event.data: Selected data</td>
                             <td>Callback to invoke when a row is selected with right click.</td>
                         </tr>
                         <tr>
                             <td>onColResize</td>
-                            <td>event.element: Resized column header <br>
-                                event.delta: Change of width in number of pixels</td>
+                            <td>event.element: Resized column header <br> event.delta: Change of width in number of pixels</td>
                             <td>Callback to invoke when a column is resized.</td>
                         </tr>
                         <tr>
                             <td>onColReorder</td>
-                            <td>event.dragIndex: Index of the dragged column <br>
-                                event.dropIndex: Index of the dropped column <br>
-                                event.columns: Columns array after reorder. <br></td>
+                            <td>event.dragIndex: Index of the dragged column <br> event.dropIndex: Index of the dropped column <br> event.columns: Columns array after reorder. <br></td>
                             <td>Callback to invoke when a column is reordered.</td>
                         </tr>
                         <tr>
                             <td>onLazyLoad</td>
-                            <td>event.first = First row offset <br>
-                                event.rows = Number of rows per page <br>
-                                event.sortField = Field name to sort with <br>
-                                event.sortOrder = Sort order as number, 1 for asc and -1 for dec <br>
-                                filters: FilterMetadata object having field as key and filter value, filter matchMode as value</td>
+                            <td>event.first = First row offset <br> event.rows = Number of rows per page <br> event.sortField = Field name to sort with <br> event.sortOrder = Sort order as number, 1 for asc and -1 for dec <br> filters: FilterMetadata object
+                                having field as key and filter value, filter matchMode as value</td>
                             <td>Callback to invoke when paging, sorting or filtering happens in lazy mode.</td>
                         </tr>
                         <tr>
                             <td>onEditInit</td>
-                            <td>event.column: Column object of the cell<br>
-                                event.data: Row data</td>
+                            <td>event.column: Column object of the cell<br> event.data: Row data</td>
                             <td>Callback to invoke when a cell switches to edit mode.</td>
                         </tr>
                         <tr>
                             <td>onEdit</td>
-                            <td>event.originalEvent: Browser event
-                                event.column: Column object of the cell<br>
-                                event.data: Row data <br />
-                                event.index: Row index</td>
+                            <td>event.originalEvent: Browser event event.column: Column object of the cell<br> event.data: Row data <br /> event.index: Row index</td>
                             <td>Callback to invoke when cell data is being edited.</td>
                         </tr>
                         <tr>
                             <td>onEditComplete</td>
-                            <td>event.column: Column object of the cell<br>
-                                event.data: Row data <br />
-                                event.index: Row index</td>
+                            <td>event.column: Column object of the cell<br> event.data: Row data <br /> event.index: Row index</td>
                             <td>Callback to invoke when cell edit is completed.</td>
                         </tr>
                         <tr>
                             <td>onEditCancel</td>
-                            <td>event.column: Column object of the cell<br>
-                                event.data: Row data <br />
-                                event.index: Row index</td>
+                            <td>event.column: Column object of the cell<br> event.data: Row data <br /> event.index: Row index</td>
                             <td>Callback to invoke when cell edit is cancelled with escape key.</td>
                         </tr>
                         <tr>
                             <td>onPage</td>
-                            <td>event.first: Index of first record in page<br>
-                                event.rows: Number of rows on the page</td>
+                            <td>event.first: Index of first record in page<br> event.rows: Number of rows on the page</td>
                             <td>Callback to invoke when pagination occurs.</td>
                         </tr>
                         <tr>
                             <td>onSort</td>
-                            <td>event.field: Field name of the sorted column<br>
-                                event.order: Sort order as 1 or -1<br>
-                                event.multisortmeta: Sort metadata in multi sort mode. See multiple sorting section for the structure of this object.</td>
+                            <td>event.field: Field name of the sorted column<br> event.order: Sort order as 1 or -1<br> event.multisortmeta: Sort metadata in multi sort mode. See multiple sorting section for the structure of this object.</td>
                             <td>Callback to invoke when a column gets sorted.</td>
                         </tr>
                         <tr>
                             <td>onFilter</td>
-                            <td>event.filters: Filters object having a field as the property key and an object with value, matchMode as the property value.<br>
-                                event.filteredValue: Filtered data after running the filtering.</td>
+                            <td>event.filters: Filters object having a field as the property key and an object with value, matchMode as the property value.<br> event.filteredValue: Filtered data after running the filtering.</td>
                             <td>Callback to invoke when data is filtered.</td>
                         </tr>
                         <tr>
                             <td>onRowExpand</td>
-                            <td>event.originalEvent: Browser event<br>
-                                data: Row data to expand.</td>
+                            <td>event.originalEvent: Browser event<br> data: Row data to expand.</td>
                             <td>Callback to invoke when a row is expanded.</td>
                         </tr>
                         <tr>
                             <td>onRowCollapse</td>
-                            <td>event.originalEvent: Browser event<br>
-                                data: Row data to collapse.</td>
+                            <td>event.originalEvent: Browser event<br> data: Row data to collapse.</td>
                             <td>Callback to invoke when a row is collapsed.</td>
                         </tr>
                         <tr>
                             <td>onRowGroupExpand</td>
-                            <td>event.originalEvent: Browser event<br>
-                                group: Value of the group.</td>
+                            <td>event.originalEvent: Browser event<br> group: Value of the group.</td>
                             <td>Callback to invoke when a row group is expanded.</td>
                         </tr>
                         <tr>
                             <td>onRowGroupCollapse</td>
-                            <td>event.originalEvent: Browser event<br>
-                                group: Value of the group.</td>
+                            <td>event.originalEvent: Browser event<br> group: Value of the group.</td>
                             <td>Callback to invoke when a row group is collapsed.</td>
                         </tr>
                         <tr>
@@ -1647,7 +1593,7 @@ export class DataTableDemo implements OnInit &#123;
                 </table>
             </div>
 
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -1658,7 +1604,7 @@ export class DataTableDemo implements OnInit &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 handleRowSelect(event) &#123;
     //event.data = Selected row data
@@ -1696,7 +1642,7 @@ handleRowSelect(event) &#123;
                 </table>
             </div>
 
-<pre>
+            <pre>
 <code #dt class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable #dt [value]="cars"&gt;
     &lt;p-column field="vin" header="Vin"&gt;&lt;/p-column&gt;
@@ -1709,7 +1655,7 @@ handleRowSelect(event) &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 update(dt: DataTable) &#123;
     dt.reset();
@@ -1722,10 +1668,10 @@ update(dt: DataTable) &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Element</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Element</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -1809,7 +1755,7 @@ update(dt: DataTable) &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;h3 class="first"&gt;Basic&lt;/h3&gt;
 &lt;p-dataTable [value]="cars" [loading]="true"&gt;
@@ -1826,7 +1772,7 @@ update(dt: DataTable) &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableDemo implements OnInit &#123;
 

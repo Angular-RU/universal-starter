@@ -4,6 +4,7 @@ import { Message } from 'primeng/components/common/api';
 @Component({
     templateUrl: './accordiondemo.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class AccordionDemo {
 
     msgs: Message[];

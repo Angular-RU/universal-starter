@@ -14,7 +14,9 @@
         <p-column field="year" header="Year" [sortable]="true"></p-column>
         <p-column field="brand" header="Brand" [sortable]="true"></p-column>
         <p-column field="color" header="Color" [sortable]="true"></p-column>
-        <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
+        <p-footer>
+            <div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div>
+        </p-footer>
     </p-dataTable>
 
     <p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
@@ -52,7 +54,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableCrudDemo implements OnInit &#123;
 
@@ -121,7 +123,7 @@ class PrimeCar implements Car &#123;
     constructor(public vin?, public year?, public brand?, public color?) &#123;&#125;
 &#125;
 </code>
-</pre>            
+</pre>
         </p-tabPanel>
 
         <p-tabPanel header="datatablecruddemo.html">
@@ -129,7 +131,7 @@ class PrimeCar implements Car &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true"&gt;
     &lt;p-header&gt;CRUD for Cars&lt;/p-header&gt;

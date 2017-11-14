@@ -16,12 +16,11 @@
                         First Name *:
                     </div>
                     <div class="ui-grid-col-6">
-                        <input pInputText type="text" formControlName="firstname" placeholder="Required"/>
+                        <input pInputText type="text" formControlName="firstname" placeholder="Required" />
                     </div>
                     <div class="ui-grid-col-4">
                         <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['firstname'].valid&&userform.controls['firstname'].dirty">
-                            <i class="fa fa-close"></i>
-                            Firstname is required
+                            <i class="fa fa-close"></i> Firstname is required
                         </div>
                     </div>
                 </div>
@@ -30,12 +29,11 @@
                         Last Name *:
                     </div>
                     <div class="ui-grid-col-6">
-                        <input pInputText type="text" formControlName="lastname" placeholder="Required"/>
+                        <input pInputText type="text" formControlName="lastname" placeholder="Required" />
                     </div>
                     <div class="ui-grid-col-4">
                         <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['lastname'].valid&&userform.controls['lastname'].dirty">
-                            <i class="fa fa-close"></i>
-                            Lastname is required
+                            <i class="fa fa-close"></i> Lastname is required
                         </div>
                     </div>
                 </div>
@@ -44,7 +42,7 @@
                         Password *:
                     </div>
                     <div class="ui-grid-col-6">
-                        <input pInputText type="password" formControlName="password" placeholder="Required - Min(6)"/>
+                        <input pInputText type="password" formControlName="password" placeholder="Required - Min(6)" />
                     </div>
                     <div class="ui-grid-col-4">
                         <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty">
@@ -72,8 +70,7 @@
                     </div>
                     <div class="ui-grid-col-4">
                         <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['gender'].valid&&userform.controls['gender'].dirty">
-                            <i class="fa fa-close"></i>
-                            Gender is required
+                            <i class="fa fa-close"></i> Gender is required
                         </div>
                     </div>
                 </div>
@@ -86,8 +83,7 @@
                 </div>
                 <div style="text-align:center;margin-top:20px" *ngIf="submitted">
                     Form Submitted
-                    <br>
-                    {{diagnostic}}
+                    <br> {{diagnostic}}
                 </div>
             </div>
         </p-panel>
@@ -102,7 +98,7 @@
 
     <p-tabView effect="fade">
         <p-tabPanel header="validationdemo.ts">
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;Component,OnInit&#125; from '@angular/core';
 import &#123;Validators,FormControl,FormGroup,FormBuilder&#125; from '@angular/forms';
@@ -154,7 +150,7 @@ export class ValidationDemo implements OnInit &#123;
         </p-tabPanel>
 
         <p-tabPanel header="validationdemo.html">
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-growl [value]="msgs" sticky="sticky"&gt;&lt;/p-growl&gt;
 

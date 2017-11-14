@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './checkboxdemo.html',
@@ -14,11 +14,12 @@ import {Component} from '@angular/core';
         }
     `]
 })
+// tslint:disable-next-line:component-class-suffix
 export class CheckboxDemo {
 
     selectedCities: string[] = [];
 
     selectedCategories: string[] = ['Technology', 'Sports'];
-    
+
     checked: boolean = false;
 }

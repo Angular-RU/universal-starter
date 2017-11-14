@@ -13,11 +13,11 @@
     <p-overlayPanel #op1>
         <img src="assets/showcase/images/demo/galleria/galleria1.jpg" alt="Galleria 1" />
     </p-overlayPanel>
-    
+
     <h3>Customized</h3>
     <p>This OverlayPanel gets displayed on hover of the icon, is not dismissable and displays a close icon.</p>
     <i class="fa fa-search" (mouseenter)="op2.show($event)" style="font-size:24px"></i>
-    
+
     <p-overlayPanel #op2 [showCloseIcon]="true" [dismissable]="false">
         <p-dataTable [value]="cars1" [style]="&#123;'width':'500px'&#125;">
             <p-column field="vin" header="Vin" [sortable]="true"></p-column>
@@ -26,7 +26,7 @@
             <p-column field="color" header="Color" [sortable]="true"></p-column>
         </p-dataTable>
     </p-overlayPanel>
-    
+
     <h3>DataTable Integration</h3>
     <p-dataTable [value]="cars2">
         <p-column [style]="&#123;'width':'10%','text-align':'center'&#125;" header="Logo">
@@ -39,9 +39,9 @@
         <p-column field="brand" header="Brand"></p-column>
         <p-column field="color" header="Color"></p-column>
     </p-dataTable>
-    
+
     <p-overlayPanel #op3>
-        <img src="assets/showcase/images/demo/car/{{selectedCar.brand}}.png" *ngIf="selectedCar"/>
+        <img src="assets/showcase/images/demo/car/{{selectedCar.brand}}.png" *ngIf="selectedCar" />
     </p-overlayPanel>
 </div>
 
@@ -49,7 +49,7 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
 </code>
@@ -57,7 +57,7 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
 
             <h3>Getting Started</h3>
             <p>OverlayPanel is defined using p-overlayPanel element and is displayed using the <i>show</i> or <i>toggle</i> method of a local ng-template variable.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-overlayPanel #op&gt;
     Content
@@ -67,10 +67,9 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
 </code>
 </pre>
             <h3>Show and Hide</h3>
-            <p><i>show</i> method takes two parameters, first one is the event and it is mandatory. By default the target component to align the overlay is the event target, 
-            if you'd like to align it to another element, provide it as the second parameter. Similarly calling <i>hide()</i> hides the overlay panel and the <i>toggle</i> method 
-            toggles the visibility of the panel. In example below, clicking the button displays the overlayPanel aligned to the actualTarget div, not the button itself.</p>
-<pre>
+            <p><i>show</i> method takes two parameters, first one is the event and it is mandatory. By default the target component to align the overlay is the event target, if you'd like to align it to another element, provide it as the second parameter.
+                Similarly calling <i>hide()</i> hides the overlay panel and the <i>toggle</i> method toggles the visibility of the panel. In example below, clicking the button displays the overlayPanel aligned to the actualTarget div, not the button itself.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-overlayPanel #op&gt;
     Content
@@ -80,12 +79,11 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
 &lt;div #actualTarget&gt;&lt;/div&gt;
 </code>
 </pre>
-        
-        
+
+
             <h3>Dismissable and CloseIcon</h3>
-            <p>Clicking outside the overlay hides the panel, setting dismissable to false disables this behavior. Additionally enablign showCloseIcon property 
-            displays a close icon at the top right corner to close the panel</p>
-<pre>
+            <p>Clicking outside the overlay hides the panel, setting dismissable to false disables this behavior. Additionally enablign showCloseIcon property displays a close icon at the top right corner to close the panel</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-overlayPanel #op [dismissable]="true" [showCloseIcon]="true"&gt;
     Content
@@ -173,7 +171,7 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
                     </tbody>
                 </table>
             </div>
-            
+
             <h3>Methods</h3>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
@@ -187,15 +185,13 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
                     <tbody>
                         <tr>
                             <td>toggle</td>
-                            <td>event: browser event <br>
-                                target?: target element to align the panel, defaults to event.target
+                            <td>event: browser event <br> target?: target element to align the panel, defaults to event.target
                             </td>
                             <td>Toggles the visibility of the panel.</td>
                         </tr>
                         <tr>
                             <td>show</td>
-                            <td>event: browser event <br>
-                                target?: target element to align the panel to
+                            <td>event: browser event <br> target?: target element to align the panel to
                             </td>
                             <td>Displays the panel.</td>
                         </tr>
@@ -207,7 +203,7 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
                     </tbody>
                 </table>
             </div>
-            
+
             <h3>Styling</h3>
             <p>Following is the list of structural style classes, for theming classes visit <a href="#" [routerLink]="['/theming']">theming page</a>.</p>
             <div class="doc-tablewrapper">
@@ -244,7 +240,7 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;h3 class="first"&gt;Basic&lt;/h3&gt;
 &lt;p&gt;Click the button to show the panel.&lt;/p&gt;
@@ -286,7 +282,7 @@ import &#123;OverlayPanelModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class OverlayPanelDemo &#123;
 

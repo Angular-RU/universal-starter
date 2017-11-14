@@ -15,9 +15,9 @@
         <p-column field="year" header="Year" [sortable]="true"></p-column>
         <p-column field="brand" header="Brand" [sortable]="true"></p-column>
         <p-column field="color" header="Color" [sortable]="true"></p-column>
-      <p-footer>
-        <button type="button" label="Sort by Year" (click)="changeSort($event)" pButton [ngStyle]="{'display':'flex'}"></button>
-      </p-footer>
+        <p-footer>
+            <button type="button" label="Sort by Year" (click)="changeSort($event)" pButton [ngStyle]="{'display':'flex'}"></button>
+        </p-footer>
     </p-dataTable>
 
     <h3>Multiple Columns</h3>
@@ -36,7 +36,7 @@
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DataTableSortDemo implements OnInit &#123;
 
@@ -68,7 +68,7 @@ export class DataTableSortDemo implements OnInit &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;h3 class="first"&gt;Single Column&lt;/h3&gt;
 &lt;p-dataTable [value]="cars1" [sortField]="sortF" [sortOrder]="sortO" (onSort)="changeSort($event)"&gt;

@@ -9,16 +9,16 @@
     <h3 class="first">Single</h3>
     <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"></p-dropdown>
     <p>Selected City: {{selectedCity ? selectedCity.name : 'none'}}</p>
-    
+
     <h3>Editable</h3>
     <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'150px'}" editable="true" placeholder="Select a Brand"></p-dropdown>
     <p>Selected Car: {{selectedCar || 'none'}}</p>
-    
+
     <h3>Content with Filters</h3>
     <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'150px'}" filter="true">
         <ng-template let-car pTemplate="item">
             <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
-                <img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>
+                <img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px" />
                 <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
             </div>
         </ng-template>
@@ -30,17 +30,17 @@
     <p-tabView effect="fade">
         <p-tabPanel header="Documentation">
             <h3>Import</h3>
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;DropdownModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
             <h3>Getting Started</h3>
-            <p>Dropdown requires a value to bind and a collection of options. There are two alternatives of how to define the options property; one way is providing a collection of SelectItem
-            instances whereas other way is providing an array of arbitrary objects along with the optionLabel property to specify the field name of the option. SelectItem API is designed to have more control on how 
-            the options are displayed such as grouping and disabling however in most cases an arbitrary object collection will suffice. Example below demonstrates both cases.</p>
-<pre>
+            <p>Dropdown requires a value to bind and a collection of options. There are two alternatives of how to define the options property; one way is providing a collection of SelectItem instances whereas other way is providing an array of arbitrary
+                objects along with the optionLabel property to specify the field name of the option. SelectItem API is designed to have more control on how the options are displayed such as grouping and disabling however in most cases an arbitrary object
+                collection will suffice. Example below demonstrates both cases.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"&gt;&lt;/p-dropdown&gt;
 
@@ -48,7 +48,7 @@ import &#123;DropdownModule&#125; from 'primeng/primeng';
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;SelectItem&#125; from 'primeng/primeng';
 
@@ -94,16 +94,16 @@ export class MyModel &#123;
 
             <h3>Model Driven Forms</h3>
             <p>Dropdown can be used in a model driven form as well.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dropdown [options]="cities" formControlName="selectedCity"&gt;&lt;/p-dropdown&gt;
 </code>
 </pre>
 
             <h3>Filtering</h3>
-            <p>Options can be filtered using an input field in the overlay by enabling the filter property. By default filtering is done against
-                label of the SelectItem and filterBy property is available to choose one or more properties of the SelectItem API.</p>
-<pre>
+            <p>Options can be filtered using an input field in the overlay by enabling the filter property. By default filtering is done against label of the SelectItem and filterBy property is available to choose one or more properties of the SelectItem
+                API.</p>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" [filter]="true"&gt;&lt;/p-dropdown&gt;
 &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" [filter]="true" filterBy="label,value.name"&gt;&lt;/p-dropdown&gt;
@@ -112,7 +112,7 @@ export class MyModel &#123;
 
             <h3>Custom Content</h3>
             <p>Label of an option is used as the display text of an item by default, for custom content support define a ng-template that gets the SelectItem as the local ng-template variable.</p>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="&#123;'width':'150px'&#125;"&gt;
     &lt;ng-template let-car pTemplate="item"&gt;
@@ -125,7 +125,7 @@ export class MyModel &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 import &#123;SelectItem&#125; from 'primeng/primeng'
 
@@ -317,17 +317,16 @@ export class MyModel &#123;
             <div class="doc-tablewrapper">
                 <table class="doc-table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Parameters</th>
-                        <th>Description</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Parameters</th>
+                            <th>Description</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>onChange</td>
-                            <td>event.originalEvent: Browser event<br />
-                                event.value: Selected option value
+                            <td>event.originalEvent: Browser event<br /> event.value: Selected option value
                             </td>
                             <td>Callback to invoke when value of dropdown changes.</td>
                         </tr>
@@ -344,7 +343,7 @@ export class MyModel &#123;
                     </tbody>
                 </table>
             </div>
-            
+
             <h3>Methods</h3>
             <div class="doc-tablewrapper">
                 <table class="doc-table">
@@ -364,15 +363,15 @@ export class MyModel &#123;
                     </tbody>
                 </table>
             </div>
-            
-<pre>
+
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;p-dropdown #dd [options]="cars" [(ngModel)]="selectedCar" filter="true"&gt;&lt;/p-dropdown&gt;
 &lt;button type="button" pButton label="Clear" (click)="clearFilter(dd)"&gt;&lt;/p-button&gt;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 clearFilter(dropdown: Dropdown) &#123;
     dropdown.resetFilter();
@@ -444,7 +443,7 @@ clearFilter(dropdown: Dropdown) &#123;
                 <i class="fa fa-github"></i>
                 <span>View on GitHub</span>
             </a>
-<pre>
+            <pre>
 <code class="language-markup" pCode ngNonBindable>
 &lt;h3 class="first"&gt;Single&lt;/h3&gt;
 &lt;p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a City" optionLabel="name"&gt;&lt;/p-dropdown&gt;
@@ -467,7 +466,7 @@ clearFilter(dropdown: Dropdown) &#123;
 </code>
 </pre>
 
-<pre>
+            <pre>
 <code class="language-typescript" pCode ngNonBindable>
 export class DropdownDemo &#123;
 
