@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', component: PrimengPageComponent, children: [
+    path: '', component: PrimengPageComponent,
+    children: [
+      { path: 'report', loadChildren: './components/report-of-work/report-of-work.module#ReportOfWorkModule' },
       { path: 'setup', loadChildren: './components/setup/setup.module#SetupModule' },
       { path: 'theming', loadChildren: './components/theming/theming.module#ThemingModule' },
       { path: 'accorsdion', loadChildren: './components/accordion/accordiondemo.module#AccordionDemoModule' },
-      // document.createElement is not a function
       { path: 'autocomplete', loadChildren: './components/autocomplete/autocompletedemo.module#AutoCompleteDemoModule' },
       { path: 'blockui', loadChildren: './components/blockui/blockuidemo.module#BlockUIDemoModule' },
       { path: 'breadcrumb', loadChildren: './components/breadcrumb/breadcrumbdemo.module#BreadcrumbDemoModule' },
@@ -23,47 +24,32 @@ const routes: Routes = [
       { path: 'checkbox', loadChildren: './components/checkbox/checkboxdemo.module#CheckboxDemoModule' },
       { path: 'chips', loadChildren: './components/chips/chipsdemo.module#ChipsDemoModule' },
       { path: 'codehighlighter', loadChildren: './components/codehighlighter/codehighlighterdemo.module#CodeHighlighterDemoModule' },
-      // need test
       { path: 'colorpicker', loadChildren: './components/colorpicker/colorpickerdemo.module#ColorPickerDemoModule' },
       { path: 'confirmdialog', loadChildren: './components/confirmdialog/confirmdialogdemo.module#ConfirmDialogDemoModule' },
-      // NotworkingModule - need provider?
       { path: 'contextmenu', loadChildren: './components/contextmenu/contextmenudemo.module#ContextMenuDemoModule' },
-      // { path: 'contextmenu', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
-      // XMLHttpRequest is not defined
       { path: 'datagrid', loadChildren: './components/datagrid/datagriddemo.module#DataGridDemoModule' },
-      // XMLHttpRequest is not defined
       { path: 'datalist', loadChildren: './components/datalist/datalistdemo.module#DataListDemoModule' },
-      // { path: 'datalist', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
-      // XMLHttpRequest is not defined
       { path: 'datascroller', loadChildren: './components/datascroller/datascrollerdemo.module#DataScrollerDemoModule' },
-      // { path: 'datascroller', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
-      // XMLHttpRequest is not defined
       { path: 'datatable', loadChildren: './components/datatable/datatabledemo.module#DataTableDemoModule' },
-      // { path: 'datatable', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
       { path: 'defer', loadChildren: './components/defer/deferdemo.module#DeferDemoModule' },
       { path: 'dialog', loadChildren: './components/dialog/dialogdemo.module#DialogDemoModule' },
-      // XMLHttpRequest is not defined
       { path: 'dragdrop', loadChildren: './components/dragdrop/dragdropdemo.module#DragDropDemoModule' },
-      // { path: 'dragdrop', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
       { path: 'dropdown', loadChildren: './components/dropdown/dropdowndemo.module#DropdownDemoModule' },
-      // need test
+
       { path: 'editor', loadChildren: './components/editor/editordemo.module#EditorDemoModule' },
       { path: 'fieldset', loadChildren: './components/fieldset/fieldsetdemo.module#FieldsetDemoModule' },
-      // document.createElement is not a function
       { path: 'fileupload', loadChildren: './components/fileupload/fileuploaddemo.module#FileUploadDemoModule' },
       { path: 'galleria', loadChildren: './components/galleria/galleriademo.module#GalleriaDemoModule' },
       // google is not defined
       // { path: 'gmap', loadChildren: './components/gmap/gmapdemo.module#GMapDemoModule' },
       { path: 'grid', loadChildren: './components/grid/griddemo.module#GridDemoModule' },
       { path: 'growl', loadChildren: './components/growl/growldemo.module#GrowlDemoModule' },
-      //  XMLHttpRequest is not defined
       { path: 'inplace', loadChildren: './components/inplace/inplacedemo.module#InplaceDemoModule' },
       { path: 'inputmask', loadChildren: './components/inputmask/inputmaskdemo.module#InputMaskDemoModule' },
       { path: 'inputswitch', loadChildren: './components/inputswitch/inputswitchdemo.module#InputSwitchDemoModule' },
       { path: 'inputtext', loadChildren: './components/inputtext/inputtextdemo.module#InputTextDemoModule' },
       { path: 'inputgroup', loadChildren: './components/inputgroup/inputgroupdemo.module#InputGroupDemoModule' },
       { path: 'inputtextarea', loadChildren: './components/inputtextarea/inputtextareademo.module#InputTextareaDemoModule' },
-      // need check:
       { path: 'lightbox', loadChildren: './components/lightbox/lightboxdemo.module#LightboxDemoModule' },
       { path: 'listbox', loadChildren: './components/listbox/listboxdemo.module#ListboxDemoModule' },
       { path: 'megamenu', loadChildren: './components/megamenu/megamenudemo.module#MegaMenuDemoModule' },
@@ -107,6 +93,7 @@ const routes: Routes = [
       { path: 'toolbar', loadChildren: './components/toolbar/toolbardemo.module#ToolbarDemoModule' },
       // // Event is not defined
       // { path: 'tooltip', loadChildren: './components/tooltip/tooltipdemo.module#TooltipDemoModule' },
+      { path: 'tooltip', loadChildren: './components/notworking/notworking.module#NotworkingModule' },
       { path: 'tree', loadChildren: './components/tree/treedemo.module#TreeDemoModule' },
       { path: 'treetable', loadChildren: './components/treetable/treetabledemo.module#TreeTableDemoModule' },
       { path: 'tristatecheckbox', loadChildren: './components/tristatecheckbox/tristatecheckboxdemo.module#TriStateCheckboxDemoModule' },

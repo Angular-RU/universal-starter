@@ -6,6 +6,7 @@
         "ng": "ng",
         "start": "ng serve",
         "ssr": "npm run build:universal && npm run server",
+        "ssr:debug": "ng build --dev --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true  && ng build --dev --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true --app 1 && webpack && node server.js",
         "build": "ng build",
         "build:prod": "ng build --prod",
         "build:universal": "ng build --prod && ng build --prod --app 1 && webpack",
@@ -13,10 +14,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "universal": "ng build --prod && ng build --prod --app 1 && ts-node server",
-        "client:watch": "ng build --watch --prod --aot",
-        "server:watch": "ng build --app 1 --watch --prod --aot",
-        "webpack:watch": "webpack --watch"
+        "universal": "ng build --prod && ng build --prod --app 1 && ts-node server"
     },
     "private": true,
     "dependencies": {

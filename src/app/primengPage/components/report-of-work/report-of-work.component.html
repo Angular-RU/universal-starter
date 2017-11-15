@@ -1,0 +1,19 @@
+<div class="mar">
+    <h2>Отчет:</h2>
+    <p>
+        <b>ok</b> - все работает без ошибок<br>
+        <b>work</b> - значит работает, но с ошибками<br>
+        <b>TypeError</b> - никак не работает<br>
+    </p>
+    не забываем перегружать страницу после перехода по ссылке для работы ssr 
+</div>
+<br>
+<div class="mar">
+    <div *ngFor="let report of reports">
+        <a [routerLink]="['/primeng'+ report.link]">{{report.link}}</a> - {{report.desc}}
+        <div *ngIf="report.error" class="error">
+            {{report.error}}
+        </div>
+        <hr>
+    </div>
+</div>

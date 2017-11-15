@@ -44,6 +44,8 @@ app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];
   global['CSS'] = null;
   // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
+  global['Prism'] = null;
+
   res.render('../dist/index', {
     req: req,
     res: res,

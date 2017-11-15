@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Message } from 'primeng/components/common/api';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     templateUrl: './progressbardemo.html'
@@ -11,15 +12,21 @@ export class ProgressBarDemo implements OnInit {
 
     msgs: Message[];
 
+    constructor( @Inject(PLATFORM_ID) private platformId: Object) {
+
+    }
+
     ngOnInit() {
-        const interval = setInterval(() => {
-            this.value = this.value + Math.floor(Math.random() * 10) + 1;
-            if (this.value >= 100) {
-                this.value = 100;
-                this.msgs = [{ severity: 'info', summary: 'Success', detail: 'Process Completed' }];
-                clearInterval(interval);
-            }
-        }, 2000);
+        if (isPlatformBrowser(this.platformId)) {
+            const interval = setInterval(() => {
+                this.value = this.value + Math.floor(Math.random() * 10) + 1;
+                if (this.value >= 100) {
+                    this.value = 100;
+                    this.msgs = [{ severity: 'info', summary: 'Success', detail: 'Process Completed' }];
+                    clearInterval(interval);
+                }
+            }, 2000);
+        }
     }
 
 }
