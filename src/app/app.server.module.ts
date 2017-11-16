@@ -11,6 +11,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { ServerTransferStateModule } from '@angular/platform-server';
+import { ServerPrebootModule } from 'preboot/server';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ServerTransferStateModule } from '@angular/platform-server';
     NoopAnimationsModule,
     ServerTransferStateModule,
     ServerModule,
-    ModuleMapLoaderModule
+    ModuleMapLoaderModule,
+    ServerPrebootModule.recordEvents({ appRoot: 'app-root' })
   ],
   bootstrap: [AppComponent],
   providers: [

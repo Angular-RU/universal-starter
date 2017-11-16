@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { BrowserPrebootModule } from 'preboot/browser';
 
 export function getRequest(): any {
   // the Request object only lives on the server
@@ -20,6 +21,7 @@ export function getRequest(): any {
     BrowserModule.withServerTransition({
       appId: 'my-app'
     }),
+    BrowserPrebootModule.replayEvents(),
     BrowserTransferStateModule,
     AppModule
   ],
