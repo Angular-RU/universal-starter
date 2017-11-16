@@ -10,7 +10,8 @@ import { environment } from '../../environments/environment';
 @NgModule({
   imports: [
     CommonModule,
-    environment.isServer ? [MockBrowserModule] : [MockServerModule]
+    MockServerBrowserRoutes,
+    environment.isServer ? [MockServerModule] : [MockBrowserModule]
   ],
   declarations: [MockServerBrowserComponent]
 })
