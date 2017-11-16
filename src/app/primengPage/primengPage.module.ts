@@ -23,6 +23,5 @@ import { HttpClientModule } from '@angular/common/http';
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     CarService, CountryService, EventService, NodeService
   ],
-  exports: [PrimengPageComponent]
 })
 export class PrimengPageModule { }

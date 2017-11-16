@@ -33,8 +33,8 @@
             ],
             "environmentSource": "environments/environment.ts",
             "environments": {
-                "dev": "environments/environment.ts",
-                "prod": "environments/environment.prod.ts"
+                "dev": "environments/browser/environment.ts",
+                "prod": "environments/browser/environment.prod.ts"
             }
         },
         {
@@ -67,8 +67,8 @@
             ],
             "environmentSource": "environments/environment.ts",
             "environments": {
-                "dev": "environments/environment.ts",
-                "prod": "environments/environment.prod.ts"
+                "dev": "environments/server/environment.ts",
+                "prod": "environments/server/environment.prod.ts"
             }
         }
     ],
