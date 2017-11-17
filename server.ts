@@ -1,3 +1,13 @@
+const domino = require('domino');
+const fs = require('fs');
+const path = require('path');
+const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
+const win = domino.createWindow(template);
+global['window'] = win;
+global['document'] = win.document;
+// global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
+global['Prism'] = null;
+
 import { HttpClient } from '@angular/common/http';
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
@@ -6,9 +16,6 @@ import * as express from 'express';
 import * as compression from 'compression';
 import * as cookieparser from 'cookie-parser';
 const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
-
-const fs = require('fs');
-const path = require('path');
 
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);
 const mainFiles = files.filter(file => file.startsWith('main'));
@@ -24,7 +31,6 @@ const app = express();
 app.use(compression());
 app.use(cookieparser());
 
-const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
@@ -39,12 +45,7 @@ app.set('views', 'src');
 app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
 
 app.get('*', (req, res) => {
-  global['window'] = global;
-  global['document'] = template;
   global['navigator'] = req['headers']['user-agent'];
-  global['CSS'] = null;
-  // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
-  global['Prism'] = null;
 
   res.render('../dist/index', {
     req: req,
