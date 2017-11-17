@@ -47,6 +47,8 @@ app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
 app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];
 
+  // tslint:disable-next-line:no-console
+  console.time(`GET: ${req.originalUrl}`);
   res.render('../dist/index', {
     req: req,
     res: res,
@@ -59,6 +61,8 @@ app.get('*', (req, res) => {
       }
     ]
   });
+  // tslint:disable-next-line:no-console
+  console.timeEnd(`GET: ${req.originalUrl}`);
 });
 
 app.listen(PORT, () => {
