@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'primeng', loadChildren: './primengPage/primengPage.module#PrimengPageModule' },
   { path: 'mock', loadChildren: './mock-server-browser/mock-server-browser.module#MockServerBrowserModule' },
   { path: 'ionic', loadChildren: './ionic-page/ionic-page.module#IonicPageModule' },
+  { path: 'back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule' },
 ];
 
 export const AppRoutes = RouterModule.forRoot(routes);
