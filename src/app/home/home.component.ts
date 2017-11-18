@@ -8,16 +8,13 @@ import { Component, OnInit, Inject } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  result: any;
 
   constructor(
     private http: TransferHttp, @Inject(AppStorage) private appStorage: Storage
   ) { }
 
   ngOnInit(): void {
-    this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
-      this.result = result;
-    });
+
     this.appStorage.setItem('test', 'test2');
     const resultCookie = this.appStorage.getItem('test');
     const t = window;

@@ -6,3 +6,4 @@ package-lock.json
 yarn.lock
 prerender.js
 prerender.js
+.DS_Store
