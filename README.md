@@ -5,9 +5,21 @@
 
 - публичный чат https://t.me/angular_universal_ru
 
-- http://ssr.gorniv.com/ - серверный рендеринг
+- http://master-ssr.gorniv.com/ - серверный рендеринг master
 
-- http://csr.gorniv.com/ - клиенский рендеринг
+- http://master-csr.gorniv.com/ - клиенский рендеринг master
+
+- http://ionic-ssr.gorniv.com/ - серверный рендеринг ionic
+
+- http://ionic-csr.gorniv.com/ - клиенский рендеринг ionic
+
+- http://material2-ssr.gorniv.com/ - серверный рендеринг material2
+
+- http://material2-csr.gorniv.com/ - клиенский рендеринг material2
+
+- http://primeng-ssr.gorniv.com/ - серверный рендеринг primeng
+
+- http://primeng-csr.gorniv.com/ - клиенский рендеринг primeng
 
 ## Как запустить
 - `yarn` или `npm install`
@@ -25,7 +37,7 @@
 - https://github.com/angular/universal/tree/master/modules/hapi-engine -  Hapi Engine альтернативный движок для рендеринга. В примере не используется, принципиально в схеме подключения не отличается от express-engine
 - https://github.com/angular/universal/tree/master/modules/module-map-ngfactory-loader - модуль поиска модулей для LazyLoading - вещь нужная и  используемая. Обратите внимание, что актуальная версия  не ниже 5.0.0-beta.5
 
-## Особенности
+## Особенности(Важно)
 - модуль для TransferHttp  использует `import { TransferState } from '@angular/platform-browser';` и необходим для реализации запроса rest api  на сервере и остутствия повторного запроса второй раз. Смотрите `home.component.ts` (задержка 3с)
 
 ```ts
@@ -33,6 +45,7 @@ this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
     this.result = result;
 });
 ```
+- `export const AppRoutes = RouterModule.forRoot(routes, { initialNavigation: 'enabled' });` -  чтобы не было мигания страницы!
 
 - для работы с куками написан `AppStorage`,  которыйй при помощи DI  позволяет отдавать разную реализацию для сервера и бразуера. Смотрите `server.storage.ts` и `browser.storage.ts` по реализациям. В `server.ts`  есть 
 ```ts
@@ -49,11 +62,37 @@ providers: [
 
 - webpack.config.js  прописан исключительно для сборки файла server.ts в  server.js, так как angular-cliт имеет [баг](https://github.com/angular/angular-cli/issues/7200) для работы с 3d зависимостями.
 - для решения части проблем используется следущий код в `server.ts`
+
+Решение проблем глобавльных переменных, в том числе `document is not defined` и `window is not defined`
 ```ts
-  global['window'] = global;
-  global['document'] = template;
-  global['navigator'] = req['headers']['user-agent'];
-  global['CSS'] = null;
+const domino = require('domino');
+const fs = require('fs');
+const path = require('path');
+const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
+const win = domino.createWindow(template);
+const files = fs.readdirSync(`${process.cwd()}/dist-server`);
+const styleFiles = files.filter(file => file.startsWith('styles'));
+const hashStyle = styleFiles[0].split('.')[1];
+const style = fs.readFileSync(path.join(__dirname, '.', 'dist-server', `styles.${hashStyle}.bundle.css`)).toString();
+
+global['window'] = win;
+Object.defineProperty(win.document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true
+    };
+  },
+});
+global['document'] = win.document;
+global['CSS'] = style;
+// global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
+global['Prism'] = null;
+
+```
+
+```ts
+global['navigator'] = req['headers']['user-agent'];
 ```
 это позволяет убрать часть проблем при работе с `undefined`.
 
