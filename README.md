@@ -5,9 +5,21 @@
 
 - публичный чат https://t.me/angular_universal_ru
 
-- http://ssr.gorniv.com/ - серверный рендеринг
+- http://master-ssr.gorniv.com/ - серверный рендеринг master
 
-- http://csr.gorniv.com/ - клиенский рендеринг
+- http://master-csr.gorniv.com/ - клиенский рендеринг master
+
+- http://ionic-ssr.gorniv.com/ - серверный рендеринг ionic
+
+- http://ionic-csr.gorniv.com/ - клиенский рендеринг ionic
+
+- http://material2-ssr.gorniv.com/ - серверный рендеринг material2
+
+- http://material2-csr.gorniv.com/ - клиенский рендеринг material2
+
+- http://primeng-ssr.gorniv.com/ - серверный рендеринг primeng
+
+- http://primeng-csr.gorniv.com/ - клиенский рендеринг primeng
 
 ## Как запустить
 - `yarn` или `npm install`
