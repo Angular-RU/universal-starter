@@ -10,7 +10,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 export class TransferBackComponent implements OnInit {
   result: any;
 
-  constructor(private http: TransferHttp, @Inject(AppStorage) private appStorage: Storage) { }
+  constructor(private http: TransferHttp, @Inject(AppStorage) private appStorage: Storage) {
+  }
 
   ngOnInit() {
     this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {

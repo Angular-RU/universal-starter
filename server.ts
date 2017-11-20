@@ -4,9 +4,9 @@ const path = require('path');
 const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 const win = domino.createWindow(template);
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);
-const styleFiles = files.filter(file => file.startsWith('styles'));
-const hashStyle = styleFiles[0].split('.')[1];
-const style = fs.readFileSync(path.join(__dirname, '.', 'dist-server', `styles.${hashStyle}.bundle.css`)).toString();
+// const styleFiles = files.filter(file => file.startsWith('styles'));
+// const hashStyle = styleFiles[0].split('.')[1];
+// const style = fs.readFileSync(path.join(__dirname, '.', 'dist-server', `styles.${hashStyle}.bundle.css`)).toString();
 
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
@@ -18,7 +18,7 @@ Object.defineProperty(win.document.body.style, 'transform', {
   },
 });
 global['document'] = win.document;
-global['CSS'] = style;
+global['CSS'] = null;
 // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
 global['Prism'] = null;
 

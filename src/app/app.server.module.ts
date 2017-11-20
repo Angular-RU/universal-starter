@@ -3,7 +3,6 @@ import { AppStorage } from './../forStorage/universal.inject';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, ApplicationRef, APP_BOOTSTRAP_LISTENER } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { BrowserModule } from '@angular/platform-browser';
