@@ -9,17 +9,15 @@
 
 - http://master-csr.gorniv.com/ - клиенский рендеринг master
 
-- http://ionic-ssr.gorniv.com/ - серверный рендеринг ionic
-
-- http://ionic-csr.gorniv.com/ - клиенский рендеринг ionic
-
-- http://material2-ssr.gorniv.com/ - серверный рендеринг material2
-
-- http://material2-csr.gorniv.com/ - клиенский рендеринг material2
-
-- http://primeng-ssr.gorniv.com/ - серверный рендеринг primeng
-
-- http://primeng-csr.gorniv.com/ - клиенский рендеринг primeng
+# Планы:
+- [x] Angular 5
+- [x] `document is not defined` и `window is not defined` - [тут](./defined.md)
+- [x] [Angular Material2](https://material.angular.io/) **UI компоненты** - [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
+- [x] [Primeng](https://www.primefaces.org/primeng/) **UI компоненты** - [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
+- [x] импорт модулей в зависимости от платформы (`MockServerBrowserModule`)
+- [x] выполнение запросов к api на сервере `TransferHttp`
+- [x] работа с Cookies на сервере `UniversalStorage`
+- [ ] Ionic - необходимо собрать веб версию, пока есть проблемы [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## Как запустить
 - `yarn` или `npm install`
