@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { MaterialPageComponent } from './materialPage.component';
 import { MaterialPageRoutes } from './materialPage.routing';
-import {Component, NgModule} from '@angular/core';
-import {ServerModule} from '@angular/platform-server';
-import {BrowserModule} from '@angular/platform-browser';
-import {Observable} from 'rxjs/Observable';
+import { Component, NgModule } from '@angular/core';
+import { ServerModule } from '@angular/platform-server';
+import { BrowserModule } from '@angular/platform-browser';
+import { Observable } from 'rxjs/Observable';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -43,6 +43,7 @@ import {
   DataSource
 } from '@angular/cdk/table';
 import 'rxjs/add/observable/of';
+import { PizzaComponent } from './pizza/pizza.component';
 
 @NgModule({
   imports: [
@@ -84,6 +85,9 @@ import 'rxjs/add/observable/of';
     // CDK Modules
     CdkTableModule
   ],
-  declarations: [MaterialPageComponent]
+  declarations: [MaterialPageComponent,
+    PizzaComponent
+  ],
+  entryComponents: [PizzaComponent]
 })
 export class MaterialPageModule { }

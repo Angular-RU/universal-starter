@@ -1,4 +1,7 @@
+import { PizzaComponent } from './pizza/pizza.component';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
+
 import {
   CdkTableModule,
   DataSource
@@ -31,4 +34,12 @@ export class MaterialPageComponent {
     'test2'
   ];
 
+  constructor(public snackBar: MatSnackBar) {
+  }
+
+  openSnackBar() {
+    this.snackBar.openFromComponent(PizzaComponent, {
+      duration: 500,
+    });
+  }
 }
