@@ -107,7 +107,7 @@ export class TransferHttp {
       responseType: 'arraybuffer';
       withCredentials?: boolean;
     }): Observable<any> => {
-      return this.httpClient.post(url, body.options);
+      return this.httpClient.post(url, body, options);
     });
   }
 
@@ -210,7 +210,7 @@ export class TransferHttp {
       responseType: 'arraybuffer';
       withCredentials?: boolean;
     }): Observable<any> => {
-      return this.httpClient.patch(url, body.options);
+      return this.httpClient.patch(url, body, options);
     });
   }
 
