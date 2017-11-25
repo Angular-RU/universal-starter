@@ -9,7 +9,8 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                "robots.txt"
+                "robots.txt",
+                "manifest.json"
             ],
             "index": "index.html",
             "main": "main.browser.ts",
@@ -27,7 +28,8 @@
             "environments": {
                 "dev": "environments/browser/environment.ts",
                 "prod": "environments/browser/environment.prod.ts"
-            }
+            },
+            "serviceWorker": true
         },
         {
             "platform": "server",
@@ -36,7 +38,8 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                "robots.txt"
+                "robots.txt",
+                "manifest.json"
             ],
             "index": "index.html",
             "main": "main.server.ts",
