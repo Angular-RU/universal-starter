@@ -19,5 +19,8 @@
   "include": [
     "src/**/*",
     "node_modules/preboot/browser.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
+  }
 }
