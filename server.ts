@@ -46,6 +46,7 @@ app.use(cookieparser());
 
 const redirectowww = false;
 const redirectohttps = false;
+const wwwredirecto = true;
 app.use((req, res, next) => {
   // for domain/index.html
   if (req.url === '/index.html') {
@@ -65,7 +66,13 @@ app.use((req, res, next) => {
 
   // www or not
   if (redirectowww && !req.hostname.startsWith('www.')) {
-    res.redirect(301, 'http://www.' + req.hostname + req.url);
+    res.redirect(301, 'https://www.' + req.hostname + req.url);
+  }
+
+  // www or not
+  if (wwwredirecto && req.hostname.startsWith('www.')) {
+    const host = req.hostname.slice(4, req.hostname.lenght);
+    res.redirect(301, 'https://' + host + req.url);
   }
 
   next();
