@@ -44,6 +44,33 @@ const app = express();
 app.use(compression());
 app.use(cookieparser());
 
+const redirectowww = false;
+const redirectohttps = false;
+app.use((req, res, next) => {
+  // for domain/index.html
+  if (req.url === '/index.html') {
+    res.redirect(301, 'https://' + req.hostname);
+  }
+
+  // check if it is a secure (https) request
+  // if not redirect to the equivalent https url
+  if (redirectohttps && req.headers['x-forwarded-proto'] !== 'https' && req.hostname !== 'localhost') {
+    // special for robots.txt
+    if (req.url === '/robots.txt') {
+      next();
+      return;
+    }
+    res.redirect(301, 'https://' + req.hostname + req.url);
+  }
+
+  // www or not
+  if (redirectowww && !req.hostname.startsWith('www.')) {
+    res.redirect(301, 'http://www.' + req.hostname + req.url);
+  }
+
+  next();
+}
+);
 
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
