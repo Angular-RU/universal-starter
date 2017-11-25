@@ -1,11 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/fromPromise';
+
 import { TransferState } from '@angular/platform-browser';
 
 @Injectable()
@@ -14,7 +12,6 @@ export class TransferHttp {
   }
 
   request(method: string, uri: string | Request, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -28,7 +25,6 @@ export class TransferHttp {
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
     return this.getData(method, uri, options, (method: string, url: string, options?: {
-      body?: any;
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -47,7 +43,6 @@ export class TransferHttp {
    * Performs a request with `get` http method.
    */
   get(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -60,8 +55,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('get', url, options, (method: string, url: string, options: {
-      body?: any;
+    return this.getData('get', url, options, (method: string, url: string, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -81,7 +75,6 @@ export class TransferHttp {
    * Performs a request with `post` http method.
    */
   post(url: string, body: any, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -94,8 +87,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getPostData('post', url, body, options, (url: string, body: any, options: {
-      body?: any;
+    return this.getPostData('post', url, body, options, (url: string, body: any, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -115,7 +107,6 @@ export class TransferHttp {
    * Performs a request with `put` http method.
    */
   put(url: string, body: any, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -128,8 +119,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('put', url, options, (methdo: string, url: string, options: {
-      body?: any;
+    return this.getData('put', url, options, (methdo: string, url: string, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -150,7 +140,6 @@ export class TransferHttp {
    * Performs a request with `delete` http method.
    */
   delete(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -163,8 +152,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('delete', url, options, (method: string, url: string, options: {
-      body?: any;
+    return this.getData('delete', url, options, (method: string, url: string, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -184,7 +172,6 @@ export class TransferHttp {
    * Performs a request with `patch` http method.
    */
   patch(url: string, body: any, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -197,8 +184,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getPostData('patch', url, body, options, (url: string, body: any, options: {
-      body?: any;
+    return this.getPostData('patch', url, body, options, (url: string, body: any, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -218,7 +204,6 @@ export class TransferHttp {
    * Performs a request with `head` http method.
    */
   head(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -231,8 +216,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('head', url, options, (method: string, url: string, options: {
-      body?: any;
+    return this.getData('head', url, options, (method: string, url: string, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -252,7 +236,6 @@ export class TransferHttp {
    * Performs a request with `options` http method.
    */
   options(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -265,8 +248,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('options', url, options, (method: string, url: string, options: {
-      body?: any;
+    return this.getData('options', url, options, (method: string, url: string, options?: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -287,7 +269,6 @@ export class TransferHttp {
     method: string,
     uri: string | Request,
     options: {
-      body?: any;
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -300,7 +281,6 @@ export class TransferHttp {
       withCredentials?: boolean;
     },
     callback: (method: string, uri: string | Request, options: {
-      body?: any;
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -337,7 +317,6 @@ export class TransferHttp {
     method: string,
     uri: string | Request,
     body: any, options: {
-      body?: any;
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
@@ -349,8 +328,7 @@ export class TransferHttp {
       responseType: 'arraybuffer';
       withCredentials?: boolean;
     },
-    callback: (uri: string | Request, body: any, options?: {
-      body?: any;
+    callback: (uri: string | Request, body: any, options: {
       headers?: HttpHeaders | {
         [header: string]: string | string[];
       };
