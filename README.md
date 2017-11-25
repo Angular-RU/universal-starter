@@ -17,7 +17,7 @@
 - [x] импорт модулей в зависимости от платформы (`MockServerBrowserModule`)
 - [x] выполнение запросов к api на сервере `TransferHttp`
 - [x] работа с Cookies на сервере `UniversalStorage`
-- [x] @angular/service-worke
+- [ ] @angular/service-worker
 - [ ] Ionic - необходимо собрать веб версию, пока есть проблемы [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## Как запустить

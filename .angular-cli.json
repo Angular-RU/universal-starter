@@ -29,7 +29,7 @@
                 "dev": "environments/browser/environment.ts",
                 "prod": "environments/browser/environment.prod.ts"
             },
-            "serviceWorker": true
+            "serviceWorker": false
         },
         {
             "platform": "server",

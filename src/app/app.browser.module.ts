@@ -24,7 +24,7 @@ export function getRequest(): any {
     }),
     BrowserPrebootModule.replayEvents(),
     BrowserTransferStateModule,
-    ServiceWorkerModule.register('/ngsw-worker.js'),
+    // ServiceWorkerModule.register('/ngsw-worker.js'),
     AppModule,
   ],
   providers: [
