@@ -12,12 +12,14 @@
         "ssr:server": "webpack && node server.js",
         "build": "ng build",
         "build:prod": "ng build --prod",
-        "build:universal": "ng build --prod && ng build --prod --app 1 && webpack",
+        "build:universal": "ng build --prod && ng build --prod --app 1 && webpack --progress --colors",
         "server": "node server.js",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "universal": "ng build --prod && ng build --prod --app 1 && ts-node server"
+        "universal": "ng build --prod && ng build --prod --app 1 && ts-node server",
+        "build:prerender": "npm run build:universal && npm run generate:prerender",
+        "generate:prerender": "node prerender.js"
     },
     "private": true,
     "dependencies": {

@@ -25,6 +25,7 @@
 - `npm run ssr` -  для серверного рендеринга
 - `npm run build:universal` - для сборки в релиз
 - `npm run server` - для запуска сервера
+- `npm run build:prerender` - для генерации статики по `static.paths.ts`
 - как запустить watch: один раз: `npm run ssr:cw`,один раз: `npm run ssr:sw`,после каждого изменения: `npm run ssr:server`
 ## Ссылки
 Официальный пример на анлийиском: https://github.com/angular/universal-starter 
