@@ -71,7 +71,7 @@ app.use((req, res, next) => {
 
   // www or not
   if (wwwredirecto && req.hostname.startsWith('www.')) {
-    const host = req.hostname.slice(4, req.hostname.lenght);
+    const host = req.hostname.slice(4, req.hostname.length);
     res.redirect(301, 'https://' + host + req.url);
   }
 
