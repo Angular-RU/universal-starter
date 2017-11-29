@@ -5,6 +5,8 @@ import { Component, NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { BrowserModule } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
+import {LayoutModule} from '@angular/cdk/layout';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -48,6 +50,7 @@ import { PizzaComponent } from './pizza/pizza.component';
 @NgModule({
   imports: [
     CommonModule,
+    LayoutModule,
     MaterialPageRoutes,
     MatAutocompleteModule,
     MatButtonModule,

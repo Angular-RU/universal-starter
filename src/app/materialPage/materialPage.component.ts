@@ -1,6 +1,7 @@
 import { PizzaComponent } from './pizza/pizza.component';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import {
   CdkTableModule,
@@ -18,6 +19,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MaterialPageComponent {
 
+
   /** List of columns for the CDK and Material table. */
   tableColumns = ['userId'];
 
@@ -34,7 +36,18 @@ export class MaterialPageComponent {
     'test2'
   ];
 
-  constructor(public snackBar: MatSnackBar) {
+  constructor(public snackBar: MatSnackBar, breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([
+      Breakpoints.HandsetLandscape,
+      Breakpoints.HandsetPortrait
+    ]).subscribe(result => {
+      if (result.matches) {
+        this.activateHandsetLayout();
+      }
+    });
+  }
+
+  activateHandsetLayout(): any {
   }
 
   openSnackBar() {
