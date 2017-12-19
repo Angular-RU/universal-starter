@@ -22,12 +22,12 @@
 
 ## Как запустить
 - `yarn` или `npm install`
-- `npm run start` - для клиенского рендеринга
-- `npm run ssr` -  для серверного рендеринга
-- `npm run build:universal` - для сборки в релиз
-- `npm run server` - для запуска сервера
-- `npm run build:prerender` - для генерации статики по `static.paths.ts`
-- как запустить watch: один раз: `npm run ssr:cw`,один раз: `npm run ssr:sw`,после каждого изменения: `npm run ssr:server`
+- `yarn start` или `npm run start` - для клиенского рендеринга
+- `yarn ssr` или `npm run ssr` -  для серверного рендеринга
+- `yarn build:universal` или `npm run build:universal` - для сборки в релиз
+- `yarn server` или `npm run server` - для запуска сервера
+- `yarn build:prerender` или `npm run build:prerender` - для генерации статики по `static.paths.ts`
+- как запустить watch: один раз: `yarn ssr:cw` или `npm run ssr:cw`, один раз: `yarn ssr:sw` или `npm run ssr:sw`, после каждого изменения: `yarn ssr:server` или `npm run ssr:server`
 ## Ссылки
 Официальный пример на анлийиском: https://github.com/angular/universal-starter 
 Модули используемые для universal:
@@ -95,7 +95,3 @@ global['Prism'] = null;
 global['navigator'] = req['headers']['user-agent'];
 ```
 это позволяет убрать часть проблем при работе с `undefined`.
-
-
-
-
