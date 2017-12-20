@@ -33,7 +33,11 @@ export function getRequest(): any {
         provide: REQUEST,
         useFactory: (getRequest)
     },
-    { provide: AppStorage, useClass: CookieStorage }
+    { provide: AppStorage, useClass: CookieStorage },
+    {
+      provide: 'ORIGIN_URL',
+      useValue: location.origin
+    }
   ]
 })
 export class BrowserAppModule {}

@@ -93,6 +93,7 @@ app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
 
 app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];
+  const http = req.headers['x-forwarded-proto'] === undefined ? 'http' : req.headers['x-forwarded-proto'];
 
   // tslint:disable-next-line:no-console
   console.time(`GET: ${req.originalUrl}`);
@@ -105,6 +106,10 @@ app.get('*', (req, res) => {
       },
       {
         provide: RESPONSE, useValue: (res)
+      },
+      {
+        provide: 'ORIGIN_URL',
+        useValue: (`${http}://${req.headers.host}`)
       }
     ]
   });

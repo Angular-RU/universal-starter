@@ -10,7 +10,12 @@ import { Component, OnInit, Inject } from '@angular/core';
 export class TransferBackComponent implements OnInit {
   result: any;
   resultPost: any;
-  constructor(private http: TransferHttp, @Inject(AppStorage) private appStorage: Storage) {
+  constructor(
+    private http: TransferHttp,
+    @Inject(AppStorage) private appStorage: Storage,
+    @Inject('ORIGIN_URL') private baseUrl: string
+  ) {
+    console.log(`ORIGIN_URL=${baseUrl}`);
   }
 
   ngOnInit() {
