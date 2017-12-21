@@ -11,12 +11,12 @@ const files = fs.readdirSync(`${process.cwd()}/dist-server`);
 
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
-  value: () => {
-    return {
-      enumerable: true,
-      configurable: true
-    };
-  },
+    value: () => {
+        return {
+            enumerable: true,
+            configurable: true
+        };
+    },
 });
 global['document'] = win.document;
 global['CSS'] = null;
@@ -73,6 +73,10 @@ ROUTES.forEach(route => {
             },
             {
                 provide: RESPONSE, useValue: null
+            },
+            {
+                provide: 'ORIGIN_URL',
+                useValue: 'http://localhost:4000'
             }
         ]
     })).then(html => writeFileSync(join(fullPath, 'index.html'), html));
