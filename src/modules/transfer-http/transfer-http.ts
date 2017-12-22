@@ -190,7 +190,7 @@ export class TransferHttp {
       url = uri.url;
     }
 
-    const key = url + JSON.stringify(options);
+    const key = url + (options ? JSON.stringify(options) : '');
 
     try {
       return this.resolveData(key);
@@ -216,7 +216,7 @@ export class TransferHttp {
       url = uri.url;
     }
 
-    const key = url + JSON.stringify(body) + JSON.stringify(options);
+    const key = url + (body ? JSON.stringify(body) : '') + (options ? JSON.stringify(options) : '');
 
     try {
 
