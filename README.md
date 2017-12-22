@@ -57,6 +57,14 @@
 ## Особенности(Важно)
 - модуль для TransferHttp  использует `import { TransferState } from '@angular/platform-browser';` и необходим для реализации запроса rest api  на сервере и остутствия повторного запроса второй раз. Смотрите `home.component.ts` (задержка 3с)
 
+- для работы preboot в `tsconfig.json` добавить
+```json
+  "include": [
+    "src/**/*",
+    "node_modules/preboot/browser.ts"
+  ],
+```
+
 ```ts
 this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
     this.result = result;
