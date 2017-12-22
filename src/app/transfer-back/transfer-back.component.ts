@@ -13,7 +13,7 @@ export class TransferBackComponent implements OnInit {
   constructor(
     private http: TransferHttp,
     @Inject(AppStorage) private appStorage: Storage,
-    @Inject('ORIGIN_URL') private baseUrl: string
+    @Inject('ORIGIN_URL') public baseUrl: string
   ) {
     console.log(`ORIGIN_URL=${baseUrl}`);
   }

@@ -1,3 +1,4 @@
+import { environment } from './src/environments/environment';
 
 const domino = require('domino');
 const fs = require('fs');
@@ -76,7 +77,7 @@ ROUTES.forEach(route => {
             },
             {
                 provide: 'ORIGIN_URL',
-                useValue: 'http://localhost:4000'
+                useValue: environment.host
             }
         ]
     })).then(html => writeFileSync(join(fullPath, 'index.html'), html));
