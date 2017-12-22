@@ -30,6 +30,21 @@
 - `yarn server` или `npm run server` - для запуска сервера
 - `yarn build:prerender` или `npm run build:prerender` - для генерации статики по `static.paths.ts`
 - как запустить watch: один раз: `yarn ssr:cw` или `npm run ssr:cw`, один раз: `yarn ssr:sw` или `npm run ssr:sw`, после каждого изменения: `yarn ssr:server` или `npm run ssr:server`
+
+## Как использовать этот репозиторий в своем проекте:
+Для переноса ssr в свой репозиторий вам необходимы файлы:
+ - .angular-cli.json
+ - server.ts
+ - prerender.ts
+ - webpack.config.js
+ - main.server.ts
+ - main.browser.ts
+ - modules/*
+ - forStorage/*
+ - environments/*
+ - app.browser.module.ts
+ - app.server.module.ts
+
 ## Ссылки
 Официальный пример на анлийиском: https://github.com/angular/universal-starter 
 Модули используемые для universal:
