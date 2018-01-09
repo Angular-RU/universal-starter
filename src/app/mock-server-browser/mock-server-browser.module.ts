@@ -6,12 +6,14 @@ import { MockServerBrowserRoutes } from './mock-server-browser.routing';
 import { MockBrowserModule } from './mock-browser/mock-browser.module';
 import { MockServerModule } from './mock-server/mock-server.module';
 import { environment } from '../../environments/environment';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     MockServerBrowserRoutes,
-    environment.isServer ? [MockServerModule] : [MockBrowserModule]
+    environment.isServer ? [MockServerModule] : [MockBrowserModule],
+    TranslateModule
   ],
   declarations: [MockServerBrowserComponent]
 })
