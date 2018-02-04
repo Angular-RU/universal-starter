@@ -6,8 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
-import { BrowserPrebootModule } from 'preboot/browser';
 // import { ServiceWorkerModule } from '@angular/service-worker';
+import { PrebootModule } from 'preboot';
 
 export function getRequest(): any {
   // the Request object only lives on the server
@@ -22,7 +22,7 @@ export function getRequest(): any {
     BrowserModule.withServerTransition({
       appId: 'my-app'
     }),
-    BrowserPrebootModule.replayEvents(),
+    PrebootModule.withConfig({ appRoot: 'app-root' }),
     BrowserTransferStateModule,
     // ServiceWorkerModule.register('/ngsw-worker.js'),
     AppModule,
