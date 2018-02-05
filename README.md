@@ -2,7 +2,7 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
-[Русская версия](/README-RU.md)
+[Русская версия](./README-RU.md)
 
 Repository with Angular CLI and Angular Universal
 
@@ -14,45 +14,45 @@ Repository with Angular CLI and Angular Universal
 
 # Plans:
 - [x] Angular 5
-- [x] `document is not defined` and` window is not defined` - [here] (./ defined.md)
-- [x] [Angular Material2] (https://material.angular.io/) ** UI components ** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/ tree / material2)
-- [x] [Primeng] (https://www.primefaces.org/primeng/) ** UI components ** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter / tree / primeng)
+- [x] `document is not defined` and` window is not defined` - [here](./defined.md)
+- [x] [Angular Material2] (https://material.angular.io/) ** UI components ** - [individual branch](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
+- [x] [Primeng] (https://www.primefaces.org/primeng/) ** UI components ** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
 - [x] modules import depending on the platform (`MockServerBrowserModule`)
 - [x] execution of queries to api on the server `TransferHttp`
 - [x] work with cookies on the server `UniversalStorage`
-- [x] Uses ** [ngx-meta] (https://github.com/fulls1z3/ngx-meta) ** for SEO (* title, meta tags, and Open Graph tags for social sharing *).
+- [x] Uses ** [ngx-meta](https://github.com/fulls1z3/ngx-meta) ** for SEO (*title, meta tags, and Open Graph tags for social sharing*).
 - [x] uses ngx-translate to support internationalization (i18n)
 - [x] uses ORIGIN_URL - for absolute queries
-- [] @ angular / service-worker
+- [] @ angular/service-worker
 - [] Ionic - it is necessary to compile the web version while there are problems [separate branch] (https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## How to start
-- `yarn` or` npm install`
-- `yarn start` or` npm run start` - for client rendering
-- `yarn ssr` or` npm run ssr` - for server-side rendering
-- `yarn build:universal` or` npm run build:universal` - for assembly in release
-- `yarn server` or` npm run server` - to start the server
-- `yarn build:prerender` or` npm run build:prerender` - to generate static by `static.paths.ts`
-- how to run watch: once: `yarn ssr: cw` or` npm run ssr:cw`, once: `yarn ssr:sw` or` npm run ssr:sw`, after each change: `yarn ssr:server `or` npm run ssr:server`
+- `yarn` or `npm install`
+- `yarn start` or `npm run start` - for client rendering
+- `yarn ssr` or `npm run ssr` - for server-side rendering
+- `yarn build:universal` or `npm run build:universal` - for assembly in release
+- `yarn server` or `npm run server` - to start the server
+- `yarn build:prerender` or `npm run build:prerender` - to generate static by `static.paths.ts`
+- how to run watch: once: `yarn ssr:cw` or `npm run ssr:cw`, once: `yarn ssr:sw` or `npm run ssr:sw`, after each change: `yarn ssr:server` or `npm run ssr:server`
 
 ## How to use this repository in your project:
 To transfer ssr to your repository, you need the following files:
- - .angular-cli.json
- - server.ts
- - prerender.ts
- - webpack.config.js
- - main.server.ts
- - main.browser.ts
- - modules / *
- - forStorage / *
- - environments / *
- - app.browser.module.ts
- - app.server.module.ts
+ - .angular-cli.json
+ - server.ts
+ - prerender.ts
+ - webpack.config.js
+ - main.server.ts
+ - main.browser.ts
+ - modules/*
+ - forStorage/*
+ - environments/*
+ - app.browser.module.ts
+ - app.server.module.ts
 
 ## References
 Official example in English: https://github.com/angular/universal-starter
 Modules used for universal:
-- https://github.com/angular/universal/tree/master/modules/aspnetcore-engine -web for .net core
+- https://github.com/angular/universal/tree/master/modules/aspnetcore-engine - web for .net core
 - https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule, at the moment I do not use it if you know where and why it should be installed - write to me or in issue, pull request
 - https://github.com/angular/universal/tree/master/modules/express-engine - Express Engine to run the rendering in node, in our application is used. Please note that the current version is not lower than 5.0.0-beta.5
 - https://github.com/angular/universal/tree/master/modules/hapi-engine - Hapi Engine is an alternative engine for rendering. In the example is not used, in principle in the connection scheme does not differ from express-engine
