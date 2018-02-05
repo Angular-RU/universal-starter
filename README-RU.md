@@ -79,7 +79,7 @@ providers: [
 ```
 для работы с REQUEST и RESPONSE через DI -  это необходимо для реализации UniversalStorage при работе с cookies.
 
-- webpack.config.js  прописан исключительно для сборки файла server.ts в  server.js, так как angular-cliт имеет [баг](https://github.com/angular/angular-cli/issues/7200) для работы с 3d зависимостями.
+- webpack.config.js  прописан исключительно для сборки файла server.ts в  server.js, так как angular-cli имеет [баг](https://github.com/angular/angular-cli/issues/7200) для работы с 3d зависимостями.
 - для решения части проблем используется следущий код в `server.ts`
 
 Решение проблем глобавльных переменных, в том числе `document is not defined` и `window is not defined`

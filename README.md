@@ -6,7 +6,7 @@
 
 Repository with Angular CLI and Angular Universal
 
-- public chat https://t.me/angular_universal_en
+- public chat https://t.me/angular_universal_ru
 
 - http://master-ssr.gorniv.com/ - server-side rendering of the master
 
@@ -14,17 +14,17 @@ Repository with Angular CLI and Angular Universal
 
 # Plans:
 - [x] Angular 5
-- [x] `document is not defined` and` window is not defined` - [here](./defined.md)
-- [x] [Angular Material2] (https://material.angular.io/) ** UI components ** - [individual branch](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
-- [x] [Primeng] (https://www.primefaces.org/primeng/) ** UI components ** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
+- [x] `document is not defined` and `window is not defined` - [here](./defined.md)
+- [x] [Angular Material2](https://material.angular.io/) **UI components** - [individual branch](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
+- [x] [Primeng](https://www.primefaces.org/primeng/) **UI components** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
 - [x] modules import depending on the platform (`MockServerBrowserModule`)
 - [x] execution of queries to api on the server `TransferHttp`
 - [x] work with cookies on the server `UniversalStorage`
-- [x] Uses ** [ngx-meta](https://github.com/fulls1z3/ngx-meta) ** for SEO (*title, meta tags, and Open Graph tags for social sharing*).
+- [x] Uses **[ngx-meta](https://github.com/fulls1z3/ngx-meta)** for SEO (*title, meta tags, and Open Graph tags for social sharing*).
 - [x] uses ngx-translate to support internationalization (i18n)
 - [x] uses ORIGIN_URL - for absolute queries
-- [] @ angular/service-worker
-- [] Ionic - it is necessary to compile the web version while there are problems [separate branch] (https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
+- [] @angular/service-worker
+- [] Ionic - it is necessary to compile the web version while there are problems [separate branch](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## How to start
 - `yarn` or `npm install`
@@ -68,7 +68,7 @@ this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
 ```
 - `export const AppRoutes = RouterModule.forRoot(routes, { initialNavigation: 'enabled' });`- so that there is no flashing of the page!
 
-- to work with cookies, it is written `AppStorage`, which with DI allows you to give different implementations for the server and the browser. See `server.storage.ts` and` browser.storage.ts` for implementations. In `server.ts` there is
+- to work with cookies, it is written `AppStorage`, which with DI allows you to give different implementations for the server and the browser. See `server.storage.ts` and `browser.storage.ts` for implementations. In `server.ts` there is
 
 ```ts
 providers: [
@@ -82,7 +82,7 @@ providers: [
 ```
 to work with REQUEST and RESPONSE via DI - this is necessary for implementing UniversalStorage when working with cookies.
 
-- webpack.config.js is written exclusively for building server.ts file in server.js, since angular-clit has [bug] (https: //github.com / angular / angular-cli / issues / 7200) to work with 3d dependencies. - To solve some problems, use the following code in `server.ts` Solving the problems of global variables, including` document is not defined` and `window is not defined`
+- `webpack.config.js` is written exclusively for building server.ts file in server.js, since angular-cli has [bug](https: //github.com / angular/angular-cli/issues/7200) to work with 3d dependencies. - To solve some problems, use the following code in `server.ts` Solving the problems of global variables, including `document is not defined` and `window is not defined`
 ```ts
 const domino = require('domino');
 const fs = require('fs');
