@@ -2,12 +2,15 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
-Репозиторий с Angular CLI и Angular Universal
+> Репозиторий с Angular CLI и Angular Universal
 
+**Переводы**:
+- [Русский](./README-RU.md)
+- [English](./README.md)
+
+**Ресурсы**:
 - публичный чат https://t.me/angular_universal_ru
-
 - http://master-ssr.gorniv.com/ - серверный рендеринг master
-
 - http://master-csr.gorniv.com/ - клиенский рендеринг master
 
 # Планы:
