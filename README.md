@@ -2,14 +2,15 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
-[Русская версия](./README-RU.md)
+> Repository with Angular CLI and Angular Universal
 
-Repository with Angular CLI and Angular Universal
+**Translations**:
+- [Русский](./README-RU.md)
+- [English](./README.md)
 
+**Resources**:
 - public chat https://t.me/angular_universal_ru
-
 - http://master-ssr.gorniv.com/ - server-side rendering of the master
-
 - http://master-csr.gorniv.com/ - client rendering master
 
 # Plans:
@@ -23,8 +24,8 @@ Repository with Angular CLI and Angular Universal
 - [x] Uses **[ngx-meta](https://github.com/fulls1z3/ngx-meta)** for SEO (*title, meta tags, and Open Graph tags for social sharing*).
 - [x] uses ngx-translate to support internationalization (i18n)
 - [x] uses ORIGIN_URL - for absolute queries
-- [] @angular/service-worker
-- [] Ionic - it is necessary to compile the web version while there are problems [separate branch](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
+- [ ] @angular/service-worker
+- [ ] Ionic - it is necessary to compile the web version while there are problems [separate branch](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## How to start
 - `yarn` or `npm install`
