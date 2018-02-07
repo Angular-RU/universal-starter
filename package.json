@@ -43,6 +43,7 @@
     "core-js": "2.5.3",
     "ngx-cookie-service": "1.0.10",
     "rxjs": "5.5.6",
+    "node-fetch": "^2.0.0",
     "zone.js": "0.8.20"
   },
   "devDependencies": {
