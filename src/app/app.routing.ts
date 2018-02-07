@@ -3,7 +3,7 @@ import { MetaGuard } from '@ngx-meta/core';
 
 const routes: Routes = [
   {
-    path: '', loadChildren: './home/home.module#HomeModule', pathMatch: 'full',
+    path: '', loadChildren: './home/home.module#HomeModule',
     data: {
       // for override default meta
       meta: {
@@ -19,6 +19,9 @@ const routes: Routes = [
   { path: 'mock', loadChildren: './mock-server-browser/mock-server-browser.module#MockServerBrowserModule' },
   // with meta
   { path: 'back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule', canActivateChild: [MetaGuard]},
+  // 404
+  { path: '404', loadChildren: './not-found/not-found.module#NotFoundModule' },
+  { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
 // must use {initialNavigation: 'enabled'}) - for one load page, without reload
 export const AppRoutes = RouterModule.forRoot(routes, { initialNavigation: 'enabled' });
