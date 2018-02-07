@@ -7,6 +7,7 @@
 **Переводы**:
 - [Русский](./README-RU.md)
 - [English](./README.md)
+- [Românesc](./README-RO.md)
 
 **Ресурсы**:
 - публичный чат https://t.me/angular_universal_ru
