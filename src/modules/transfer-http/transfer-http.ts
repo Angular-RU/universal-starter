@@ -17,7 +17,7 @@ export class TransferHttp {
       [header: string]: string | string[];
     };
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
@@ -36,7 +36,7 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
@@ -57,7 +57,7 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
@@ -100,7 +100,7 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
@@ -121,7 +121,7 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
@@ -142,7 +142,7 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
@@ -163,7 +163,7 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
