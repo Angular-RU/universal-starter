@@ -87,7 +87,7 @@ export class TransferHttp {
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('put', url, options, (methdo: string, url: string, options: any) => {
+    return this.getData('put', url, options, (method: string, url: string, options: any) => {
       return this.httpClient.put(url, options);
     });
   }
