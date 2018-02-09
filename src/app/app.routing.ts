@@ -15,10 +15,7 @@ const routes: Routes = [
     // need for default meta
     canActivateChild: [MetaGuard],
   },
-  // without meta
-  { path: 'mock', loadChildren: './mock-server-browser/mock-server-browser.module#MockServerBrowserModule' },
-  // with meta
-  { path: 'back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule', canActivateChild: [MetaGuard]},
+  { path: 'material', loadChildren: './materialPage/materialPage.module#MaterialPageModule' },
   // 404
   { path: '404', loadChildren: './not-found/not-found.module#NotFoundModule' },
   { path: '**', redirectTo: '404', pathMatch: 'full' }

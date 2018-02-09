@@ -1,0 +1,270 @@
+<h1>Kitchen sink app</h1>
+
+<h2>Autocomplete</h2>
+<mat-autocomplete>
+    <mat-option>Grace Hopper</mat-option>
+    <mat-option>Anita Borg</mat-option>
+    <mat-option>Ada Lovelace</mat-option>
+</mat-autocomplete>
+
+<mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of options" [value]="option">
+        {{ option }}
+    </mat-option>
+</mat-autocomplete>
+
+<button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+    Pizza party
+</button>
+
+<h2>Button</h2>
+
+<button mat-button>go</button>
+<button mat-icon-button>go</button>
+<button mat-raised-button>go</button>
+<button mat-fab>go</button>
+<button mat-mini-fab>go</button>
+
+<a mat-button href="#">Google</a>
+<a mat-icon-button href="#">Google</a>
+<a mat-raised-button href="#">Google</a>
+<a mat-fab href="#">Google</a>
+<a mat-mini-fab href="#">Google</a>
+
+<h2>Button toggle</h2>
+
+<h3>Single selection</h3>
+<mat-button-toggle-group>
+    <mat-button-toggle>Ketchup</mat-button-toggle>
+    <mat-button-toggle>Mustard</mat-button-toggle>
+    <mat-button-toggle>Mayo</mat-button-toggle>
+</mat-button-toggle-group>
+
+<h3>Multi selection</h3>
+<mat-button-toggle-group multiple>
+    <mat-button-toggle>Ketchup</mat-button-toggle>
+    <mat-button-toggle>Mustard</mat-button-toggle>
+    <mat-button-toggle>Mayo</mat-button-toggle>
+</mat-button-toggle-group>
+
+<h3>Standalone</h3>
+<mat-button-toggle>Hyperspinner enabled</mat-button-toggle>
+
+<h3>Card</h3>
+
+<mat-card>
+    Simple card
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Complicated card</mat-card-title>
+    <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    <mat-card-content>
+        <p>This is some stuff</p>
+        <p>And more stuff</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
+    <mat-card-footer>
+        Hurray
+    </mat-card-footer>
+</mat-card>
+
+<h2>Checkbox</h2>
+
+<mat-checkbox>With a label</mat-checkbox>
+<mat-checkbox></mat-checkbox>Without a label
+
+<h2>Chips</h2>
+
+<mat-chip-list>
+    <mat-chip>Barbeque Cheddar</mat-chip>
+    <mat-chip>Sea Salt and Vinegar</mat-chip>
+    <mat-chip>Manta Ray</mat-chip>
+</mat-chip-list>
+
+<mat-chip-list>
+    <mat-basic-chip>Tomato</mat-basic-chip>
+    <mat-basic-chip>Scallion</mat-basic-chip>
+    <mat-basic-chip>Cilantro</mat-basic-chip>
+</mat-chip-list>
+
+<h2>Datepicker</h2>
+
+<mat-form-field>
+    <input type="text" matInput [matDatepicker]="birthday" placeholder="Birthday">
+    <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+    <mat-datepicker #birthday></mat-datepicker>
+</mat-form-field>
+
+<h2>Grid list</h2>
+
+<mat-grid-list cols="4">
+    <mat-grid-tile>Fry</mat-grid-tile>
+    <mat-grid-tile>Leela</mat-grid-tile>
+    <mat-grid-tile>Amy</mat-grid-tile>
+    <mat-grid-tile>Bender</mat-grid-tile>
+</mat-grid-list>
+
+<h2>Icon</h2>
+<mat-icon>ligature</mat-icon>
+
+<h2>Input</h2>
+
+<mat-form-field>
+    <input type="number" matInput placeholder="amount">
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
+    <mat-hint>Dolla dolla bills</mat-hint>
+    <mat-error>Recession</mat-error>
+</mat-form-field>
+
+<h2>List</h2>
+
+<mat-list>
+    <mat-list-item>Robot</mat-list-item>
+    <mat-list-item>Android</mat-list-item>
+    <mat-list-item>Cyborg</mat-list-item>
+</mat-list>
+
+<mat-nav-list>
+    <a mat-list-item href="#">Search</a>
+    <a mat-list-item href="#">Find</a>
+    <a mat-list-item href="#">Seek</a>
+</mat-nav-list>
+
+
+<h2>Menu</h2>
+
+<button mat-button [matMenuTriggerFor]="menu">Open</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>Mercy</button>
+    <button mat-menu-item>Lucio</button>
+    <button mat-menu-item disabled>Sombra</button>
+</mat-menu>
+
+<h2>Progress bar</h2>
+
+<mat-progress-bar value="25"></mat-progress-bar>
+<mat-progress-bar mode="buffer" value="25" bufferValue="60"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar mode="query"></mat-progress-bar>
+
+
+<h2>Radio buttons</h2>
+
+<h3>Radio group</h3>
+<mat-radio-group>
+    <mat-radio-button>Charmander</mat-radio-button>
+    <mat-radio-button>Squirtle</mat-radio-button>
+    <mat-radio-button>Bulbasaur</mat-radio-button>
+</mat-radio-group>
+
+<h3>Standalone radios</h3>
+<mat-radio-button name="onions">White</mat-radio-button>
+<mat-radio-button name="onions">Yellow</mat-radio-button>
+<mat-radio-button name="onions">Green</mat-radio-button>
+<mat-radio-button name="onions" disabled>Red</mat-radio-button>
+
+<h2>Select</h2>
+<mat-select value="ceramic">
+    <mat-option value="glass">Glass</mat-option>
+    <mat-option value="ceramic">Ceramic</mat-option>
+    <mat-option value="steel">Steel</mat-option>
+</mat-select>
+
+<h2>Sidenav</h2>
+<mat-sidenav-container>
+    <mat-sidenav>On the side</mat-sidenav>
+    Main content
+</mat-sidenav-container>
+
+<h2>Slide-toggle</h2>
+<mat-slide-toggle>With a label</mat-slide-toggle>
+<mat-slide-toggle></mat-slide-toggle>Without a label
+
+<h2>Slider</h2>
+<mat-slider></mat-slider>
+<mat-slider value="50"></mat-slider>
+<mat-slider tickInterval="1" min="1" max="10" value="5" thumbLabel></mat-slider>
+
+<h2>Tabs</h2>
+<mat-tab-group>
+    <mat-tab label="Overview">
+        The overview
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            API docs
+        </ng-template>
+        The API docs
+    </mat-tab>
+</mat-tab-group>
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link href="#">Google</a>
+    <a mat-tab-link href="#" active>Also Google</a>
+</nav>
+
+<h2>Paginator</h2>
+
+<mat-paginator [length]="100" [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
+<h2>Toolbar</h2>
+<mat-toolbar>Basic toolbar</mat-toolbar>
+<mat-toolbar>
+    <mat-toolbar-row>Multi row</mat-toolbar-row>
+    <mat-toolbar-row>Toolbar</mat-toolbar-row>
+</mat-toolbar>
+
+<h2>Sort</h2>
+
+<table matSort>
+    <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="calories">Calories</th>
+        <th mat-sort-header="fat">Fat</th>
+        <th mat-sort-header="carbs">Carbs</th>
+        <th mat-sort-header="protein">Protein</th>
+    </tr>
+
+    <tr>
+        <td>Cupcake</td>
+        <td>305</td>
+        <td>4</td>
+        <td>67</td>
+        <td>4</td>
+    </tr>
+</table>
+
+<h2>Tooltip</h2>
+
+<button matTooltip="Action!">Go</button>
+
+<h2>Autosize textarea</h2>
+<textarea matTextareaAutosize matAutosizeMaxRows="10"></textarea>
+
+<h2>Expansion Panel</h2>
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-description>This is a panel description.</mat-panel-description>
+        <mat-panel-title>Panel Title</mat-panel-title>
+    </mat-expansion-panel-header>
+    This is the content text that makes sense here.
+    <mat-action-row>Action</mat-action-row>
+</mat-expansion-panel>
+
+<h2>Material Table</h2>
+
+<mat-table [dataSource]="tableDataSource">
+    <ng-container cdkColumnDef="userId">
+        <mat-header-cell *cdkHeaderCellDef>ID</mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.userId}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *cdkHeaderRowDef="tableColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: tableColumns;"></mat-row>
+</mat-table>
