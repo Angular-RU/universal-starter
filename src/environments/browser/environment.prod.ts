@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  isServer: false
+  isServer: false,
+  // for prerender
+  host: 'http://localhost:4000'
 };

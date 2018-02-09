@@ -3,13 +3,15 @@
     "project": {
         "name": "universal-demo"
     },
-    "apps": [{
+    "apps": [
+        {
             "root": "src",
             "outDir": "dist",
             "assets": [
                 "assets",
                 "favicon.ico",
-                "robots.txt"
+                "robots.txt",
+                "manifest.json"
             ],
             "index": "index.html",
             "main": "main.browser.ts",
@@ -26,7 +28,8 @@
             "environments": {
                 "dev": "environments/browser/environment.ts",
                 "prod": "environments/browser/environment.prod.ts"
-            }
+            },
+            "serviceWorker": false
         },
         {
             "platform": "server",
@@ -35,7 +38,8 @@
             "assets": [
                 "assets",
                 "favicon.ico",
-                "robots.txt"
+                "robots.txt",
+                "manifest.json"
             ],
             "index": "index.html",
             "main": "main.server.ts",
@@ -59,7 +63,8 @@
             "config": "./protractor.conf.js"
         }
     },
-    "lint": [{
+    "lint": [
+        {
             "project": "src/tsconfig.app.json",
             "exclude": "**/node_modules/**"
         },

@@ -1,11 +1,9 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/fromPromise';
+
 import { TransferState } from '@angular/platform-browser';
 
 @Injectable()
@@ -18,28 +16,16 @@ export class TransferHttp {
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    reportProgress?: boolean;
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
-    reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData(method, uri, options, (method: string, url: string, options?: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => {
+    return this.getData(method, uri, options, (method: string, url: string, options: any) => {
       return this.httpClient.request(method, url, options);
     });
   }
@@ -47,32 +33,19 @@ export class TransferHttp {
    * Performs a request with `get` http method.
    */
   get(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('get', url, options, (method: string, url: string, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => {
+    return this.getData('get', url, options, (method: string, url: string, options: any) => {
       return this.httpClient.get(url, options);
     });
   }
@@ -81,33 +54,20 @@ export class TransferHttp {
    * Performs a request with `post` http method.
    */
   post(url: string, body: any, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getPostData('post', url, body, options, (url: string, body: any, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }): Observable<any> => {
-      return this.httpClient.post(url, body.options);
+    return this.getPostData('post', url, body, options, (url: string, body: any, options: any): Observable<any> => {
+      return this.httpClient.post(url, body, options);
     });
   }
 
@@ -115,7 +75,6 @@ export class TransferHttp {
    * Performs a request with `put` http method.
    */
   put(url: string, body: any, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
@@ -124,23 +83,11 @@ export class TransferHttp {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('put', url, options, (methdo: string, url: string, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => {
+    return this.getData('put', url, options, (method: string, url: string, options: any) => {
       return this.httpClient.put(url, options);
     });
   }
@@ -150,32 +97,19 @@ export class TransferHttp {
    * Performs a request with `delete` http method.
    */
   delete(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('delete', url, options, (method: string, url: string, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => {
+    return this.getData('delete', url, options, (method: string, url: string, options: any) => {
       return this.httpClient.delete(url, options);
     });
   }
@@ -184,33 +118,20 @@ export class TransferHttp {
    * Performs a request with `patch` http method.
    */
   patch(url: string, body: any, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getPostData('patch', url, body, options, (url: string, body: any, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }): Observable<any> => {
-      return this.httpClient.patch(url, body.options);
+    return this.getPostData('patch', url, body, options, (url: string, body: any, options: any): Observable<any> => {
+      return this.httpClient.patch(url, body, options);
     });
   }
 
@@ -218,32 +139,19 @@ export class TransferHttp {
    * Performs a request with `head` http method.
    */
   head(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('head', url, options, (method: string, url: string, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => {
+    return this.getData('head', url, options, (method: string, url: string, options: any) => {
       return this.httpClient.head(url, options);
     });
   }
@@ -252,32 +160,19 @@ export class TransferHttp {
    * Performs a request with `options` http method.
    */
   options(url: string, options?: {
-    body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
     };
-    observe?: 'body';
+    observe?: 'response';
     params?: HttpParams | {
       [param: string]: string | string[];
     };
     reportProgress?: boolean;
-    responseType: 'arraybuffer';
+    responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<any> {
     // tslint:disable-next-line:no-shadowed-variable
-    return this.getData('options', url, options, (method: string, url: string, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => {
+    return this.getData('options', url, options, (method: string, url: string, options: any) => {
       return this.httpClient.options(url, options);
     });
   }
@@ -286,32 +181,8 @@ export class TransferHttp {
   private getData(
     method: string,
     uri: string | Request,
-    options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    },
-    callback: (method: string, uri: string | Request, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => Observable<any>) {
+    options: any,
+    callback: (method: string, uri: string | Request, options: any) => Observable<any>) {
 
     let url = uri;
 
@@ -319,7 +190,7 @@ export class TransferHttp {
       url = uri.url;
     }
 
-    const key = url + JSON.stringify(options);
+    const key = url + (options ? JSON.stringify(options) : '');
 
     try {
       return this.resolveData(key);
@@ -336,32 +207,8 @@ export class TransferHttp {
   private getPostData(
     method: string,
     uri: string | Request,
-    body: any, options: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    },
-    callback: (uri: string | Request, body: any, options?: {
-      body?: any;
-      headers?: HttpHeaders | {
-        [header: string]: string | string[];
-      };
-      observe?: 'body';
-      params?: HttpParams | {
-        [param: string]: string | string[];
-      };
-      reportProgress?: boolean;
-      responseType: 'arraybuffer';
-      withCredentials?: boolean;
-    }) => Observable<Response>) {
+    body: any, options: any,
+    callback: (uri: string | Request, body: any, options: any) => Observable<Response>) {
 
     let url = uri;
 
@@ -369,7 +216,7 @@ export class TransferHttp {
       url = uri.url;
     }
 
-    const key = url + JSON.stringify(body) + JSON.stringify(options);
+    const key = url + (body ? JSON.stringify(body) : '') + (options ? JSON.stringify(options) : '');
 
     try {
 

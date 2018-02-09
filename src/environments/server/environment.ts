@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  isServer: true
+  isServer: true,
+  // for prerender
+  host: 'http://localhost:4000'
 };

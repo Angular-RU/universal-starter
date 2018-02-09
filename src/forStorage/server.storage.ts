@@ -11,6 +11,10 @@ export class UniversalStorage implements Storage {
     cookies: any;
 
     constructor( @Inject(REQUEST) private request: any) {
+        if (request === null) {
+            this.cookies = [];
+            return;
+        }
         this.cookies = request.cookies;
     }
 

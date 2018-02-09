@@ -1,9 +1,9 @@
+.idea
 dist-server
 node_modules
 dist
+yarn-error.log
 server.js
-package-lock.json
-yarn.lock
 prerender.js
 prerender.js
 .DS_Store

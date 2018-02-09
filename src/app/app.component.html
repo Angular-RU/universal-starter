@@ -1,5 +1,9 @@
 <nav>
     <ul>
+        <li><button (click)="changeLang('en')">EN</button></li>
+        <li><button (click)="changeLang('ru')">RU</button></li>
+    </ul>
+    <ul>
         <li><a [routerLink]="['']" [routerLinkActive]="['router-link-active']">home</a></li>
         <li><a [routerLink]="['/material']" [routerLinkActive]="['router-link-active']">material</a></li>
     </ul>
