@@ -4,10 +4,12 @@ const path = require('path');
 const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 const win = domino.createWindow(template);
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);
+import fetch from 'node-fetch';
 // const styleFiles = files.filter(file => file.startsWith('styles'));
 // const hashStyle = styleFiles[0].split('.')[1];
 // const style = fs.readFileSync(path.join(__dirname, '.', 'dist-server', `styles.${hashStyle}.bundle.css`)).toString();
 
+win.fetch = fetch;
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
@@ -97,24 +99,31 @@ app.get('*', (req, res) => {
 
   // tslint:disable-next-line:no-console
   console.time(`GET: ${req.originalUrl}`);
-  res.render('../dist/index', {
-    req: req,
-    res: res,
-    providers: [
-      {
-        provide: REQUEST, useValue: (req)
-      },
-      {
-        provide: RESPONSE, useValue: (res)
-      },
-      {
-        provide: 'ORIGIN_URL',
-        useValue: (`${http}://${req.headers.host}`)
-      }
-    ]
-  });
-  // tslint:disable-next-line:no-console
-  console.timeEnd(`GET: ${req.originalUrl}`);
+  res.render(
+    '../dist/index',
+    {
+      req: req,
+      res: res,
+      providers: [
+        {
+          provide: REQUEST, useValue: (req)
+        },
+        {
+          provide: RESPONSE, useValue: (res)
+        },
+        {
+          provide: 'ORIGIN_URL',
+          useValue: (`${http}://${req.headers.host}`)
+        }
+      ]
+    },
+    (err, html) => {
+      if (!!err) throw err;
+
+      // tslint:disable-next-line:no-console
+      console.timeEnd(`GET: ${req.originalUrl}`);
+      res.send(html);
+    });
 });
 
 app.listen(PORT, () => {
