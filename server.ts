@@ -118,7 +118,7 @@ app.get('*', (req, res) => {
       ]
     },
     (err, html) => {
-      if (!!err) throw err;
+      if (!!err) { throw err; }
 
       // tslint:disable-next-line:no-console
       console.timeEnd(`GET: ${req.originalUrl}`);
