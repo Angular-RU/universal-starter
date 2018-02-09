@@ -11,8 +11,5 @@
     "test.ts",
     "**/*.spec.ts",
     "node_modules"
-  ],
-  "angularCompilerOptions": {
-    "enableIvy": false
-  }
+  ]
 }
