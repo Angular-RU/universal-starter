@@ -7,3 +7,5 @@ yarn.lock
 prerender.js
 prerender.js
 .DS_Store
+static/back/index.html
+static/index.html
