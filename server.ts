@@ -4,10 +4,12 @@ const path = require('path');
 const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 const win = domino.createWindow(template);
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);
+import fetch from 'node-fetch';
 // const styleFiles = files.filter(file => file.startsWith('styles'));
 // const hashStyle = styleFiles[0].split('.')[1];
 // const style = fs.readFileSync(path.join(__dirname, '.', 'dist-server', `styles.${hashStyle}.bundle.css`)).toString();
 
+win.fetch = fetch;
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
