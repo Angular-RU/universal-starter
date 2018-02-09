@@ -97,24 +97,31 @@ app.get('*', (req, res) => {
 
   // tslint:disable-next-line:no-console
   console.time(`GET: ${req.originalUrl}`);
-  res.render('../dist/index', {
-    req: req,
-    res: res,
-    providers: [
-      {
-        provide: REQUEST, useValue: (req)
-      },
-      {
-        provide: RESPONSE, useValue: (res)
-      },
-      {
-        provide: 'ORIGIN_URL',
-        useValue: (`${http}://${req.headers.host}`)
-      }
-    ]
-  });
-  // tslint:disable-next-line:no-console
-  console.timeEnd(`GET: ${req.originalUrl}`);
+  res.render(
+    '../dist/index',
+    {
+      req: req,
+      res: res,
+      providers: [
+        {
+          provide: REQUEST, useValue: (req)
+        },
+        {
+          provide: RESPONSE, useValue: (res)
+        },
+        {
+          provide: 'ORIGIN_URL',
+          useValue: (`${http}://${req.headers.host}`)
+        }
+      ]
+    },
+    (err, html) => {
+      if (!!err) throw err;
+
+      // tslint:disable-next-line:no-console
+      console.timeEnd(`GET: ${req.originalUrl}`);
+      res.send(html);
+    });
 });
 
 app.listen(PORT, () => {
