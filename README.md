@@ -35,7 +35,11 @@
 - `yarn build:universal` or `npm run build:universal` - for assembly in release
 - `yarn server` or `npm run server` - to start the server
 - `yarn build:prerender` or `npm run build:prerender` - to generate static by `static.paths.ts`
-- how to run watch: once: `yarn ssr:cw` or `npm run ssr:cw`, once: `yarn ssr:sw` or `npm run ssr:sw`, after each change: `yarn ssr:server` or `npm run ssr:server`
+- for watch with ssr:
+  - `npm run ssr:cw` - build client
+  - `npm run ssr:sw` - build server
+  - `npm run ssr:webpack` -build `server.js`
+  - `npm run ssr:server` - server with watch
 
 ## How to use this repository in your project:
 To transfer ssr to your repository, you need the following files:

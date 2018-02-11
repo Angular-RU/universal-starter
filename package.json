@@ -9,7 +9,8 @@
     "ssr:debug": "ng build --dev --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true  && ng build --dev --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true --app 1 && webpack && node server.js",
     "ssr:cw": "ng build --dev --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true --watch",
     "ssr:sw": "ng build --dev --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true --app 1 --watch",
-    "ssr:server": "webpack && node server.js",
+    "ssr:webpack": "webpack --watch",
+    "ssr:server": "nodemon server.js",
     "build": "ng build",
     "build:prod": "ng build --prod",
     "build:universal": "ng build --prod && ng build --prod --app 1 && webpack --progress --colors",
@@ -19,7 +20,7 @@
     "e2e": "ng e2e",
     "universal": "ng build --prod && ng build --prod --app 1 && ts-node server",
     "build:prerender": "npm run build:universal && npm run generate:prerender",
-    "generate:prerender": "node prerender.js"
+    "generate:prerender": "node prerender.js",
   },
   "private": true,
   "dependencies": {
@@ -43,7 +44,7 @@
     "core-js": "2.5.3",
     "ngx-cookie-service": "1.0.10",
     "rxjs": "5.5.6",
-    "node-fetch": "^2.0.0",
+    "node-fetch": "2.0.0",
     "zone.js": "0.8.20"
   },
   "devDependencies": {
@@ -56,7 +57,6 @@
     "@types/jasminewd2": "2.0.3",
     "@types/node": "9.4.3",
     "codelyzer": "4.1.0",
-    "concurrently": "3.5.1",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "2.0.0",
@@ -65,6 +65,7 @@
     "karma-coverage-istanbul-reporter": "1.4.1",
     "karma-jasmine": "1.1.1",
     "karma-jasmine-html-reporter": "0.2.2",
+    "nodemon": "1.14.12",
     "preboot": "6.0.0-beta.1",
     "protractor": "5.3.0",
     "tslint": "5.9.1",

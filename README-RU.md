@@ -35,7 +35,11 @@
 - `yarn build:universal` или `npm run build:universal` - для сборки в релиз
 - `yarn server` или `npm run server` - для запуска сервера
 - `yarn build:prerender` или `npm run build:prerender` - для генерации статики по `static.paths.ts`
-- как запустить watch: один раз: `yarn ssr:cw` или `npm run ssr:cw`, один раз: `yarn ssr:sw` или `npm run ssr:sw`, после каждого изменения: `yarn ssr:server` или `npm run ssr:server`
+- для запуска отслеживания изменения кода при ssr запустите:
+  - `npm run ssr:cw` - сборка client
+  - `npm run ssr:sw` - сборка server
+  - `npm run ssr:webpack` -сборка `server.js`
+  - `npm run ssr:server` - server с watch
 
 ## Как использовать этот репозиторий в своем проекте:
 Для переноса ssr в свой репозиторий вам необходимы файлы:
