@@ -20,7 +20,7 @@
     "e2e": "ng e2e",
     "universal": "ng build --prod && ng build --prod --app 1 && ts-node server",
     "build:prerender": "npm run build:universal && npm run generate:prerender",
-    "generate:prerender": "node prerender.js",
+    "generate:prerender": "node prerender.js"
   },
   "private": true,
   "dependencies": {
