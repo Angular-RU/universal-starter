@@ -13,6 +13,7 @@ import { MetaStaticLoader } from '@ngx-meta/core';
 import { PageTitlePositioning } from '@ngx-meta/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PrebootModule } from 'preboot';
 
 export function metaFactory(): MetaLoader {
   const setting: MetaSettings = {
@@ -43,6 +44,7 @@ export function httpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
+    PrebootModule.withConfig({ appRoot: 'app-root' }),
     HttpClientModule,
     RouterModule,
     AppRoutes,
