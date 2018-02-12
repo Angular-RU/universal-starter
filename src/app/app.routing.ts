@@ -20,8 +20,7 @@ const routes: Routes = [
   // with meta
   { path: 'back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule', canActivateChild: [MetaGuard]},
   // 404
-  { path: '404', loadChildren: './not-found/not-found.module#NotFoundModule' },
-  { path: '**', redirectTo: '404', pathMatch: 'full' }
+  { path: '**', loadChildren: './not-found/not-found.module#NotFoundModule' },
 ];
 // must use {initialNavigation: 'enabled'}) - for one load page, without reload
 export const AppRoutes = RouterModule.forRoot(routes, { initialNavigation: 'enabled' });
