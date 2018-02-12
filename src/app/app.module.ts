@@ -6,13 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CookieService } from 'ngx-cookie-service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MetaModule, MetaSettings } from '@ngx-meta/core';
 import { MetaLoader } from '@ngx-meta/core';
 import { MetaStaticLoader } from '@ngx-meta/core';
 import { PageTitlePositioning } from '@ngx-meta/core';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PrebootModule } from 'preboot';
 import { SharedModule } from '@shared/shared.module';
 
@@ -35,10 +33,6 @@ export function metaFactory(): MetaLoader {
   return new MetaStaticLoader(setting);
 }
 
-export function httpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,15 +50,7 @@ export function httpLoaderFactory(http: HttpClient) {
       provide: MetaLoader,
       useFactory: metaFactory,
       deps: []
-    }),
-    TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: httpLoaderFactory,
-          deps: [HttpClient]
-        }
-      }
-    )
+    })
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

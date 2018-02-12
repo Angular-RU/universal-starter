@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { TranslateService } from '@shared/translate/translate.service';
+import { TranslatesService } from '@shared/translates/translates.service';
 
 const LANGUAGES: any[] = [
   { value: 'ru', name: 'Русский' },
@@ -14,10 +14,10 @@ const LANGUAGES: any[] = [
 export class ToolbarComponent {
   public languages: any[] = LANGUAGES;
 
-  constructor(private _translateService: TranslateService) {
+  constructor(private _translatesService: TranslatesService) {
   }
 
   public changeLang(lang: string): void {
-    this._translateService.changeLang(lang);
+    this._translatesService.changeLang(lang);
   }
 }

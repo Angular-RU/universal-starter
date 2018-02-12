@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 const DEFAULT_LANG: string = 'ru';
 
 @Injectable()
-export class TranslateService {
+export class TranslatesService {
   constructor(private _translateService: TranslateService) {
     this._translateService.setDefaultLang(DEFAULT_LANG);
   }

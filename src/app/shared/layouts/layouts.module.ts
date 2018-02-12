@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { TranslateModule } from '@shared/translate/translate.module';
+import { TranslatesModule } from '@shared/translates/translates.module';
 
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -13,7 +13,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
   imports: [
     CommonModule,
     RouterModule,
-    TranslateModule
+    TranslatesModule
   ],
   declarations: [
     FooterComponent,
