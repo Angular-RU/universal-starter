@@ -14,6 +14,7 @@ import { PageTitlePositioning } from '@ngx-meta/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PrebootModule } from 'preboot';
+import { SharedModule } from '@shared/shared.module';
 
 export function metaFactory(): MetaLoader {
   const setting: MetaSettings = {
@@ -50,6 +51,7 @@ export function httpLoaderFactory(http: HttpClient) {
     AppRoutes,
     TransferHttpModule,
     BrowserAnimationsModule,
+    SharedModule.forRoot(),
     MetaModule.forRoot({
       provide: MetaLoader,
       useFactory: metaFactory,

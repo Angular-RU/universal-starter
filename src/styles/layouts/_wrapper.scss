@@ -1,0 +1,15 @@
+app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  #wrapper-content {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    padding: 70px 0 0 0;
+    main {
+      flex: auto;
+      padding: 0 15px;
+    }
+  }
+}
