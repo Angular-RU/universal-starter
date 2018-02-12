@@ -9,4 +9,15 @@ app-footer {
   font-size: 12px;
   margin: 0 15px;
   overflow: hidden;
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .footer__left {
+      flex: 1;
+    }
+    a {
+      padding: 15px 0 0 10px;
+    }
+  }
 }

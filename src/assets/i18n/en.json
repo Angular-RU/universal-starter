@@ -1,4 +1,9 @@
 {
+  "sidebar": {
+    "home": "Home",
+    "mock": "Mock",
+    "back-http": "Back http"
+  },
   "home": "This is some text in English at home page",
   "mock": "This is some text in English at mock page",
   "back-http": "This is some text in English at back http page"

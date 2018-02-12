@@ -4,10 +4,11 @@ import { MetaGuard } from '@ngx-meta/core';
 import { WrapperComponent } from '@shared/layouts/wrapper/wrapper.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '', component: WrapperComponent, children: [
       {
-        path: '', loadChildren: './home/home.module#HomeModule',
+        path: 'home', loadChildren: './home/home.module#HomeModule',
         data: {
           // for override default meta
           meta: {

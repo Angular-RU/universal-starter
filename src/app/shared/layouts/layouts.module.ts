@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-import { TranslatesModule } from '@shared/translates/translates.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -13,7 +12,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
   imports: [
     CommonModule,
     RouterModule,
-    TranslatesModule
+    TranslateModule.forChild()
   ],
   declarations: [
     FooterComponent,

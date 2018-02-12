@@ -1,7 +1,10 @@
 <nav>
     <ul>
-        <li><a [routerLink]="['']" [routerLinkActive]="['router-link-active']">home</a></li>
-        <li><a [routerLink]="['/mock']" [routerLinkActive]="['router-link-active']">mock</a></li>
-        <li><a [routerLink]="['/back']" [routerLinkActive]="['router-link-active']">back http</a></li>
+        <li *ngFor="let item of links">
+            <a [routerLink]="[item.link]" [routerLinkActive]="['active']">
+                <i class="material-icons">{{ item.icon }}</i>
+                {{ item.name | translate }}
+            </a>
+        </li>
     </ul>
 </nav>
