@@ -1,13 +1,19 @@
-<p>
-    {{"back-http" | translate}}
-</p>
-delay back get 3 sec =
+<h1>{{ "back-http.title" | translate }}</h1>
+<p>{{ "back-http.text" | translate }}</p>
+
+<hr>
+
+<strong>{{ "back-http.delay" | translate }}</strong>
+<pre *ngIf="result; else noResult">
+    {{ result | json }}
+</pre>
+<ng-template #noResult>
+    <p>{{ "loading" | translate }}...</p>
+</ng-template>
 <br/>
-{{result | json}}
+<strong>{{ "back-http.post" | translate }}</strong>
+<pre>
+    {{ resultPost | json }}
+</pre>
 <br/>
-back post  =
-<br/>
-{{resultPost | json}}
-<br/>
-ORIGIN_URL = {{baseUrl}}
-<br/>
+<strong>{{ "back-http.original-url" | translate }}</strong> {{ baseUrl }}

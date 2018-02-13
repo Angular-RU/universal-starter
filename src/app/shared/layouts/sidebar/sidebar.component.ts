@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 const LINKS: any[] = [
   { link: '/home', name: 'home', icon: 'home' },
-  { link: '/mock', name: 'mock', icon: 'accessibility' },
-  { link: '/back', name: 'back-http', icon: 'accessibility' },
+  { link: '/mock', name: 'mock', icon: 'info_outline' },
+  { link: '/back', name: 'back-http', icon: 'swap_vert' },
 ];
 
 @Component({
@@ -11,7 +11,7 @@ const LINKS: any[] = [
   templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
-  public links: any[];
+  public links: any[] = [];
 
   ngOnInit() {
     this.links = LINKS.map(link => {

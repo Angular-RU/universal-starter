@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { TranslatesService } from '@shared/translates/translates.service';
 
@@ -11,10 +11,15 @@ const LANGUAGES: any[] = [
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html'
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
   public languages: any[] = LANGUAGES;
+  public currentLang;
 
   constructor(private _translatesService: TranslatesService) {
+  }
+
+  ngOnInit() {
+    this.currentLang = this._translatesService.getCurrentLang();
   }
 
   public changeLang(lang: string): void {
