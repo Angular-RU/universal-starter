@@ -1,0 +1,39 @@
+app-sidebar {
+  display: block;
+  width: 200px;
+  ul {
+    margin: 0;
+    padding: 0;
+    border-right: 2px solid $color-primary;
+    li {
+      list-style-type: none;
+      a {
+        position: relative;
+        cursor: pointer;
+        display: block;
+        background-color: transparent;
+        color: #212121;
+        height: 48px;
+        line-height: 48px;
+        text-decoration: none;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0 16px 0 48px;
+        transition: all .3s ease-in-out;
+        &:hover {
+          background-color: #e0e0e0;
+        }
+        &.active {
+          background-color: #e0e0e0;
+        }
+        .material-icons {
+          position: absolute;
+          top: 10px;
+          left: 15px;
+        }
+      }
+    }
+  }
+}

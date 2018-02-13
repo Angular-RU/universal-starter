@@ -1,5 +1,26 @@
 {
-  "home": "This is some text in English at home page",
-  "mock": "This is some text in English at mock page",
-  "back-http": "This is some text in English at back http page"
+  "loading": "Loading",
+  "sidebar": {
+    "home": "Home",
+    "mock": "Mock",
+    "back-http": "Back http"
+  },
+  "home": {
+    "title": "Home page",
+    "text": "This is some text in English at home page"
+  },
+  "mock": {
+    "title": "Mock page",
+    "text": "This is some text in English at mock page"
+  },
+  "back-http": {
+    "title": "Http request page",
+    "text": "This is some text in English at back http page",
+    "delay": "delay back get 3 sec:",
+    "post": "POST request:",
+    "original-url": "Origin URL:"
+  },
+  "not-found": {
+    "title": "Not Found"
+  }
 }

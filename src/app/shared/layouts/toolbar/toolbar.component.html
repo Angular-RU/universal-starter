@@ -1,0 +1,15 @@
+<span class="toolbar__logo">Angular RU Universal Starter</span>
+
+<select class="toolbar__lang" (change)="changeLang($event.target.value)">
+    <option *ngFor="let lang of languages"
+            [value]="lang.value"
+            [selected]="lang.value === currentLang">
+        {{ lang.name }}
+    </option>
+</select>
+<a href="https://github.com/Angular-RU/angular-universal-starter"
+   class="toolbar__github">
+    <img alt="angular" class="docs-angular-logo"
+         src="/assets/img/github-circle-white-transparent.svg">
+    GitHub
+</a>

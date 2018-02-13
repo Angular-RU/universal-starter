@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+        <li *ngFor="let item of links">
+            <a [routerLink]="[item.link]" [routerLinkActive]="['active']">
+                <i class="material-icons">{{ item.icon }}</i>
+                {{ item.name | translate }}
+            </a>
+        </li>
+    </ul>
+</nav>

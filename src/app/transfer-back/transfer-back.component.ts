@@ -1,6 +1,6 @@
-import { AppStorage } from './../../forStorage/universal.inject';
-import { TransferHttp } from './../../modules/transfer-http/transfer-http';
 import { Component, OnInit, Inject } from '@angular/core';
+import { AppStorage } from '../../forStorage/universal.inject';
+import { TransferHttp } from '../../modules/transfer-http/transfer-http';
 
 @Component({
   selector: 'app-transfer-back',
@@ -8,13 +8,12 @@ import { Component, OnInit, Inject } from '@angular/core';
   styleUrls: ['./transfer-back.component.scss']
 })
 export class TransferBackComponent implements OnInit {
-  result: any;
-  resultPost: any;
-  constructor(
-    private http: TransferHttp,
-    @Inject(AppStorage) private appStorage: Storage,
-    @Inject('ORIGIN_URL') public baseUrl: string
-  ) {
+  public result: any;
+  public resultPost: any;
+
+  constructor(private http: TransferHttp,
+              @Inject(AppStorage) private appStorage: Storage,
+              @Inject('ORIGIN_URL') public baseUrl: string) {
     console.log(`ORIGIN_URL=${baseUrl}`);
   }
 
@@ -29,5 +28,4 @@ export class TransferBackComponent implements OnInit {
       this.resultPost = result;
     });
   }
-
 }

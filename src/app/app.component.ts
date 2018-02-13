@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  constructor(private readonly meta: MetaService,
-              private translate: TranslateService) {
-    this.translate.setDefaultLang('en');
+  constructor(private readonly meta: MetaService) {
     this.meta.setTag('og:title', 'home ctor');
-  }
-
-  changeLang(lang: string): void {
-    this.translate.use(lang);
   }
 }

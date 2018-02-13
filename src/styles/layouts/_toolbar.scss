@@ -1,0 +1,52 @@
+app-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $toolbar-height;
+  background-color: $color-primary;
+  color: #fafafa;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  padding: 0 10px;
+  z-index: 10;
+  .toolbar__logo {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .toolbar__lang {
+    background: inherit;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 2px;
+    padding: 5px 10px;
+  }
+  .toolbar__github {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    min-width: 88px;
+    color: #fafafa;
+    line-height: 36px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    border: none;
+    border-radius: 2px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    padding: 0 16px;
+    margin: 0;
+    transition: all .3s ease;
+    &:hover {
+      background-color: #394c9f;
+    }
+    img {
+      height: 26px;
+      vertical-align: middle;
+      margin: 0 4px 3px 0;
+    }
+  }
+}

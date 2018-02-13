@@ -1,0 +1,23 @@
+app-footer {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  height: $footer-height;
+  line-height: $footer-height;
+  color: #7d7d7d;
+  border-top: 1px solid #d5d5d5;
+  font-size: 12px;
+  margin: 10px 15px 0 15px;
+  overflow: hidden;
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .footer__left {
+      flex: 1;
+    }
+    a {
+      padding: 15px 0 0 10px;
+    }
+  }
+}
