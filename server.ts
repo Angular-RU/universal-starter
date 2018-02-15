@@ -49,6 +49,11 @@ app.use(cookieparser());
 const redirectowww = false;
 const redirectohttps = false;
 const wwwredirecto = true;
+
+// Cache control
+const staticFilesCache = '7d'; // 7 days
+const pageRenderCache = 14400; // in seconds
+
 app.use((req, res, next) => {
   // for domain/index.html
   if (req.url === '/index.html') {
@@ -91,12 +96,16 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', 'src');
 
-app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
+app.get('*.*', express.static(path.join(__dirname, '.', 'dist'), {
+  maxAge: staticFilesCache
+}));
 
 app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];
   const http = req.headers['x-forwarded-proto'] === undefined ? 'http' : req.headers['x-forwarded-proto'];
-
+  res.set({
+    'Cache-Control': `public, max-age=${pageRenderCache}`
+  });
   // tslint:disable-next-line:no-console
   console.time(`GET: ${req.originalUrl}`);
   res.render(
@@ -118,7 +127,7 @@ app.get('*', (req, res) => {
       ]
     },
     (err, html) => {
-      if (!!err) throw err;
+      if (!!err) { throw err; }
 
       // tslint:disable-next-line:no-console
       console.timeEnd(`GET: ${req.originalUrl}`);
