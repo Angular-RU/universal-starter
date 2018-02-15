@@ -1,33 +1,24 @@
-import { UniversalStorage } from './../forStorage/server.storage';
-import { AppStorage } from './../forStorage/universal.inject';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+// angular
 import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
-import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
+import { TransferState } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+// libs
+import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
-import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
-import { ServerTransferStateModule } from '@angular/platform-server';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { Observable } from 'rxjs/Observable';
+// shared
+import { UniversalStorage } from '../forStorage/server.storage';
+import { AppStorage } from '../forStorage/universal.inject';
+// components
+import { TranslateServerLoader } from './translate-server-loader.service';
+import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
-const fs = require('fs');
 
-export class TranslateUniversalLoader implements TranslateLoader {
-  constructor(private prefix: string = 'i18n', private suffix: string = '.json') {
-  }
-
-  public getTranslation(lang: string): Observable<any> {
-    return Observable.create(observer => {
-      observer.next(JSON.parse(fs.readFileSync(`${this.prefix}/${lang}${this.suffix}`, 'utf8')));
-      observer.complete();
-    });
-  }
-}
-
-export function translateFactory() {
-  return new TranslateUniversalLoader('./dist/assets/i18n', '.json');
+export function translateFactory(transferState: TransferState): TranslateServerLoader {
+  return new TranslateServerLoader('./dist/assets/i18n', '.json', transferState);
 }
 
 @NgModule({
@@ -40,7 +31,8 @@ export function translateFactory() {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: translateFactory
+        useFactory: translateFactory,
+        deps: [TransferState]
       }
     }),
   ],
@@ -51,4 +43,5 @@ export function translateFactory() {
     }
   ],
 })
-export class AppServerModule { }
+export class AppServerModule {
+}

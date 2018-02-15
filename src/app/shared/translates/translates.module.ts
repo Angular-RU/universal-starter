@@ -5,20 +5,20 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { TranslatesService } from './translates.service';
 
-export function httpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
+// export function httpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// }
 
 @NgModule({
   imports: [
-    TranslateModule.forRoot({
-        loader: {
-          provide: TranslateLoader,
-          useFactory: httpLoaderFactory,
-          deps: [HttpClient]
-        }
-      }
-    )
+    // TranslateModule.forRoot({
+    //     loader: {
+    //       provide: TranslateLoader,
+    //       useFactory: httpLoaderFactory,
+    //       deps: [HttpClient]
+    //     }
+    //   }
+    // )
   ],
   providers: [TranslatesService]
 })

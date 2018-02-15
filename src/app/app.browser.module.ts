@@ -1,35 +1,52 @@
-import { CookieStorage } from './../forStorage/browser.storage';
-import { AppStorage } from './../forStorage/universal.inject';
-import { BrowserTransferStateModule } from '@angular/platform-browser';
+// angular
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule, TransferState } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+// libs
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+// shared
+import { CookieStorage } from '../forStorage/browser.storage';
+import { AppStorage } from '../forStorage/universal.inject';
+// components
+import { TranslateBrowserLoader } from './translate-browser-loader.service';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
-import { REQUEST } from '@nguniversal/express-engine/tokens';
+
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
+// the Request object only lives on the server
 export function getRequest(): any {
-  // the Request object only lives on the server
-  const result = { headers: { cookie: document.cookie } };
+  return { headers: { cookie: document.cookie } };
+}
 
-  return result;
+export function exportTranslateStaticLoader(http: HttpClient, transferState: TransferState): TranslateBrowserLoader {
+  return new TranslateBrowserLoader('/assets/i18n/', '.json', transferState, http);
 }
 
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({
-      appId: 'my-app'
-    }),
+    BrowserModule.withServerTransition({ appId: 'my-app' }),
+    TransferHttpCacheModule,
     BrowserTransferStateModule,
+    TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: exportTranslateStaticLoader,
+          deps: [HttpClient, TransferState]
+        }
+      }
+    ),
     // ServiceWorkerModule.register('/ngsw-worker.js'),
     AppModule,
   ],
   providers: [
-     {
-        // The server provides these in main.server
-        provide: REQUEST,
-        useFactory: (getRequest)
+    {
+      // The server provides these in main.server
+      provide: REQUEST,
+      useFactory: (getRequest)
     },
     { provide: AppStorage, useClass: CookieStorage },
     {
@@ -38,4 +55,5 @@ export function getRequest(): any {
     }
   ]
 })
-export class BrowserAppModule {}
+export class AppBrowserModule {
+}
