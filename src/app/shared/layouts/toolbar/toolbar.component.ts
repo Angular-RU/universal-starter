@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TranslatesService } from '@shared/translates/translates.service';
+import { TranslatesService } from '@shared/translates';
 
 const LANGUAGES: any[] = [
   { value: 'ru', name: 'Русский' },

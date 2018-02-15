@@ -8,9 +8,9 @@ const DEFAULT_LANG: string = 'en';
 @Injectable()
 export class TranslatesService {
   constructor(private _translateService: TranslateService,
-    @Inject(AppStorage) private appStorage: Storage) {
-    // this._translateService.addLangs(LANG_LIST);
-    // this._translateService.setDefaultLang(DEFAULT_LANG);
+              @Inject(AppStorage) private appStorage: Storage) {
+    this._translateService.addLangs(LANG_LIST);
+    this._translateService.setDefaultLang(DEFAULT_LANG);
     this._translateService.use(this.appStorage.getItem('lang') || DEFAULT_LANG);
   }
 
