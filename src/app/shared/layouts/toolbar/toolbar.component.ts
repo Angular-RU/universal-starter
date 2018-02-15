@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TranslatesService } from '@shared/translates';
-
-const LANGUAGES: any[] = [
-  { value: 'ru', name: 'Русский' },
-  { value: 'en', name: 'English' }
-];
+import { TranslatesService, ITranslatesLanguage } from '@shared/translates';
 
 @Component({
   selector: 'app-toolbar',

@@ -5,6 +5,7 @@ import { TransferState } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { TranslatesService } from '@shared/translates/translates.service';
+
 import { TranslatesBrowserLoaderService } from './translates-browser-loader.service';
 
 export function translateStaticLoader(http: HttpClient, transferState: TransferState): TranslatesBrowserLoaderService {
