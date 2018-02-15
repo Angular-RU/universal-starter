@@ -11,8 +11,8 @@
 
 **Resurse**:
 - chat public https://t.me/angular_universal_ru
-- http://master-ssr.gorniv.com/ - rendering pe server master
-- http://master-csr.gorniv.com/ - rendering pe client master
+- http://ssr.angular.su/ - rendering pe server master
+- http://csr.angular.su/ - rendering pe client master
 
 # Planuri: 
 - [x] Angular 5

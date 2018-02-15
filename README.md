@@ -11,8 +11,8 @@
 
 **Resources**:
 - public chat https://t.me/angular_universal_ru
-- http://master-ssr.gorniv.com/ - server-side rendering of the master
-- http://master-csr.gorniv.com/ - client rendering master
+- http://ssr.angular.su/ - server-side rendering of the master
+- http://csr.angular.su/ - client rendering master
 
 # Plans:
 - [x] Angular 5
