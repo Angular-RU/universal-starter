@@ -12,13 +12,14 @@ const LANGUAGES: any[] = [
   templateUrl: './toolbar.component.html'
 })
 export class ToolbarComponent implements OnInit {
-  public languages: any[] = LANGUAGES;
-  public currentLang;
+  public languages: ITranslatesLanguage[];
+  public currentLang: string;
 
   constructor(private _translatesService: TranslatesService) {
   }
 
   ngOnInit() {
+    this.languages = this._translatesService.getLanguages();
     this.currentLang = this._translatesService.getCurrentLang();
   }
 
