@@ -1,12 +1,10 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { LayoutsModule } from './layouts/layouts.module';
-import { TranslatesModule } from './translates';
 
 @NgModule({
   exports: [
     LayoutsModule,
-    TranslatesModule
   ],
   providers: []
 })

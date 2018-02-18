@@ -1,35 +1,39 @@
-import { CookieStorage } from './../forStorage/browser.storage';
-import { AppStorage } from './../forStorage/universal.inject';
-import { BrowserTransferStateModule } from '@angular/platform-browser';
+// angular
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+// libs
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+// shared
+import { CookieStorage } from '../forStorage/browser.storage';
+import { AppStorage } from '../forStorage/universal.inject';
+// components
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
-import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
+
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
+// the Request object only lives on the server
 export function getRequest(): any {
-  // the Request object only lives on the server
-  const result = { headers: { cookie: document.cookie } };
-
-  return result;
+  return { headers: { cookie: document.cookie } };
 }
 
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({
-      appId: 'my-app'
-    }),
+    BrowserModule.withServerTransition({ appId: 'my-app' }),
+    TransferHttpCacheModule,
     BrowserTransferStateModule,
     // ServiceWorkerModule.register('/ngsw-worker.js'),
     AppModule,
+    TranslatesBrowserModule
   ],
   providers: [
-     {
-        // The server provides these in main.server
-        provide: REQUEST,
-        useFactory: (getRequest)
+    {
+      // The server provides these in main.server
+      provide: REQUEST,
+      useFactory: (getRequest)
     },
     { provide: AppStorage, useClass: CookieStorage },
     {
@@ -38,4 +42,5 @@ export function getRequest(): any {
     }
   ]
 })
-export class BrowserAppModule {}
+export class AppBrowserModule {
+}

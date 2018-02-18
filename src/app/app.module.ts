@@ -1,18 +1,19 @@
-import { AppRoutes } from './app.routing';
-import { RouterModule } from '@angular/router';
-import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+// angular
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { CookieService } from 'ngx-cookie-service';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { MetaModule, MetaSettings } from '@ngx-meta/core';
-import { MetaLoader } from '@ngx-meta/core';
-import { MetaStaticLoader } from '@ngx-meta/core';
-import { PageTitlePositioning } from '@ngx-meta/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// libs
+import { CookieService } from 'ngx-cookie-service';
+import { MetaLoader, MetaModule, MetaSettings, MetaStaticLoader, PageTitlePositioning, } from '@ngx-meta/core';
 import { PrebootModule } from 'preboot';
+// shared
+import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 import { SharedModule } from '@shared/shared.module';
+// components
+import { AppRoutes } from './app.routing';
+import { AppComponent } from './app.component';
 
 export function metaFactory(): MetaLoader {
   const setting: MetaSettings = {
@@ -50,9 +51,10 @@ export function metaFactory(): MetaLoader {
       provide: MetaLoader,
       useFactory: metaFactory,
       deps: []
-    })
+    }),
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
