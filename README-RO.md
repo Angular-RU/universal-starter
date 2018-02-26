@@ -1,16 +1,16 @@
-# Angular RU Universal Starter [![Angular-RU](https://img.shields.io/badge/Telegram_chat:-Angular_RU-216bc1.svg?style=flat)](https://t.me/angular_ru) [![Angular-RU Universal](https://img.shields.io/badge/Telegram_chat:-Angular_RU_Universal-14b102.svg?style=flat)](https://t.me/angular_universal_ru) [![Angular-RO](https://img.shields.io/badge/Telegram_chat:-Angular_RO-14b102.svg?style=flat)](https://t.me/angular_ro) [![JS-RO](https://img.shields.io/badge/Telegram:-JS_RO-14b102.svg?style=flat)](https://t.me/js_ro)
-
-[![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
+# Angular RU Universal Starter
+[![Angular-RU](https://img.shields.io/badge/Telegram_chat:-Angular_RU-216bc1.svg?style=flat)](https://t.me/angular_ru) [![Angular-RU Universal](https://img.shields.io/badge/Telegram_chat:-Angular_RU_Universal-14b102.svg?style=flat)](https://t.me/angular_universal_ru) [![Angular-RO](https://img.shields.io/badge/Telegram_chat:-Angular_RO-14b102.svg?style=flat)](https://t.me/angular_ro) [![JS-RO](https://img.shields.io/badge/Telegram:-JS_RO-14b102.svg?style=flat)](https://t.me/js_ro) [![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
 > Repozitoriul Angular CLI și Angular Universal
 
 **Traduceri**:
 - [Rusă](./README-RU.md)
 - [Engleză](./README.md)
-- [Românesc](./README-RO.md)
+- [Română](./README-RO.md)
 
 **Resurse**:
-- chat public https://t.me/angular_universal_ru
+- chat public rusesc https://t.me/angular_universal_ru
+- chat public Angular românesc https://t.me/angular_ro
 - http://ssr.angular.su/ - rendering pe server master
 - http://csr.angular.su/ - rendering pe client master
 
@@ -35,7 +35,11 @@
 - `yarn build:universal` sau `npm run build:universal` - pentru production
 - `yarn server` sau `npm run server` - pentru a porni serverul
 - `yarn build:prerender` sau `npm run build:prerender` - pentru a genera statica pe `static.paths.ts`
-- cum pornim watch: odată: `yarn ssr:cw` sau `npm run ssr:cw`, odată: `yarn ssr:sw` sau `npm run ssr:sw`, după fiecare modificare: `yarn ssr:server` sau `npm run ssr:server`
+- pentru a porni regimul watch, în ssr folosiți:
+  - `npm run ssr:cw` - înpachetăm pentru client
+  - `npm run ssr:sw` - înpachetăm pentru server
+  - `npm run ssr:webpack` - înpachetăm `server.js`
+  - `npm run ssr:server` - server cu watch
 
 ## Cum să folosesc repozitoriul în proiectul meu?
 Pentru a adăuga ssr în proiectul dumneavoastră e nevoie de următoarele fișiere:
