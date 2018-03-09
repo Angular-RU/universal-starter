@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 // libs
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { REQUEST } from '@nguniversal/express-engine';
 // shared
 import { CookieStorage } from '../forStorage/browser.storage';
 import { AppStorage } from '../forStorage/universal.inject';

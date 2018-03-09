@@ -1,6 +1,6 @@
 
 import { Inject, Injectable } from '@angular/core';
-import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
+import { REQUEST, RESPONSE } from '@nguniversal/express-engine';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()

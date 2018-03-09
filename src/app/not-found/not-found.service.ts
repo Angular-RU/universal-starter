@@ -1,4 +1,4 @@
-import {RESPONSE} from '@nguniversal/express-engine/tokens';
+import {RESPONSE} from '@nguniversal/express-engine';
 import {Inject, Injectable, Optional} from '@angular/core';
 
 @Injectable()

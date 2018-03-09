@@ -45,7 +45,7 @@ import { ROUTES } from './static.paths';
 const mainFiles = files.filter(file => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}.bundle`);
-import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
+import { REQUEST, RESPONSE } from '@nguniversal/express-engine';
 
 const BROWSER_FOLDER = join(process.cwd(), 'static');
 
