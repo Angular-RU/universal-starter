@@ -1,17 +1,17 @@
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { TransferState } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/fromPromise';
 
-import { TransferState } from '@angular/platform-browser';
-
 @Injectable()
-export class TransferHttp {
-  constructor(private httpClient: HttpClient, protected transferState: TransferState) {
+export class TransferHttpService {
+  constructor(protected transferState: TransferState,
+              private httpClient: HttpClient) {
   }
 
-  request(method: string, uri: string | Request, options?: {
+  public request(method: string, uri: string | Request, options?: {
     body?: any;
     headers?: HttpHeaders | {
       [header: string]: string | string[];
@@ -29,6 +29,7 @@ export class TransferHttp {
       return this.httpClient.request(method, url, options);
     });
   }
+
   /**
    * Performs a request with `get` http method.
    */
@@ -178,11 +179,10 @@ export class TransferHttp {
   }
 
   // tslint:disable-next-line:max-line-length
-  private getData(
-    method: string,
-    uri: string | Request,
-    options: any,
-    callback: (method: string, uri: string | Request, options: any) => Observable<any>) {
+  private getData(method: string,
+                  uri: string | Request,
+                  options: any,
+                  callback: (method: string, uri: string | Request, options: any) => Observable<any>) {
 
     let url = uri;
 
@@ -194,7 +194,6 @@ export class TransferHttp {
 
     try {
       return this.resolveData(key);
-
     } catch (e) {
       return callback(method, uri, options)
         .do(data => {
@@ -204,11 +203,10 @@ export class TransferHttp {
   }
 
   // tslint:disable-next-line:max-line-length
-  private getPostData(
-    method: string,
-    uri: string | Request,
-    body: any, options: any,
-    callback: (uri: string | Request, body: any, options: any) => Observable<Response>) {
+  private getPostData(method: string,
+                      uri: string | Request,
+                      body: any, options: any,
+                      callback: (uri: string | Request, body: any, options: any) => Observable<Response>) {
 
     let url = uri;
 
@@ -219,9 +217,7 @@ export class TransferHttp {
     const key = url + (body ? JSON.stringify(body) : '') + (options ? JSON.stringify(options) : '');
 
     try {
-
       return this.resolveData(key);
-
     } catch (e) {
       return callback(uri, body, options)
         .do(data => {

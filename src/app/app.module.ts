@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 import { PrebootModule } from 'preboot';
 // shared
-import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 import { SharedModule } from '@shared/shared.module';
 // components
 import { AppRoutes } from './app.routing';
@@ -21,7 +20,6 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     RouterModule,
     AppRoutes,
-    TransferHttpModule,
     BrowserAnimationsModule,
     SharedModule.forRoot(),
   ],
