@@ -5,8 +5,8 @@ import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-bro
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { REQUEST } from '@nguniversal/express-engine';
 // shared
-import { CookieStorage } from '../forStorage/browser.storage';
-import { AppStorage } from '../forStorage/universal.inject';
+import { CookieStorage } from '@shared/for-storage/browser.storage';
+import { AppStorage } from '@shared/for-storage/universal.inject';
 // components
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';

@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-import { AppStorage } from 'forStorage/universal.inject';
+import { AppStorage } from '@shared/for-storage/universal.inject';
 
 import { ITranslatesLanguage } from './translates.interface';
 
