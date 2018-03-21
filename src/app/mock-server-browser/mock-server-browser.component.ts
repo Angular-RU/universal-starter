@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mock-server-browser',
-  templateUrl: './mock-server-browser.component.html',
-  styleUrls: ['./mock-server-browser.component.scss']
+  templateUrl: './mock-server-browser.component.html'
 })
-export class MockServerBrowserComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class MockServerBrowserComponent {
 }

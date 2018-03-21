@@ -13,7 +13,7 @@ export class ToolbarComponent implements OnInit {
   constructor(private _translatesService: TranslatesService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.languages = this._translatesService.getLanguages();
     this.currentLang = this._translatesService.getCurrentLang();
   }

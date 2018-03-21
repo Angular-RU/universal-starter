@@ -1,13 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
 import { AppStorage } from '@shared/for-storage/universal.inject';
-
 import { TransferHttpService } from '@shared/transfer-http';
 
 @Component({
   selector: 'app-transfer-back',
-  templateUrl: './transfer-back.component.html',
-  styleUrls: ['./transfer-back.component.scss']
+  templateUrl: './transfer-back.component.html'
 })
 export class TransferBackComponent implements OnInit {
   public result: any;
@@ -19,7 +17,7 @@ export class TransferBackComponent implements OnInit {
     console.log(`ORIGIN_URL=${baseUrl}`);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
       this.result = result;
     });

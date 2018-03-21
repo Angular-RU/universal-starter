@@ -14,7 +14,7 @@ export class TranslatesBrowserLoaderService implements TranslateLoader {
 
   public getTranslation(lang: string): Observable<any> {
     const key: StateKey<number> = makeStateKey<number>(`transfer-translate-${lang}`);
-    const data = this.transferState.get(key, null);
+    const data: any = this.transferState.get(key, null);
     if (data) {
       return Observable.create(observer => {
         observer.next(data);
