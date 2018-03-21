@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { TransferState } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/observable/fromPromise';
 
 @Injectable()
 export class TransferHttpService {
@@ -182,7 +180,7 @@ export class TransferHttpService {
   private getData(method: string,
                   uri: string | Request,
                   options: any,
-                  callback: (method: string, uri: string | Request, options: any) => Observable<any>) {
+                  callback: (method: string, uri: string | Request, options: any) => Observable<any>): any {
 
     let url = uri;
 
@@ -206,7 +204,7 @@ export class TransferHttpService {
   private getPostData(method: string,
                       uri: string | Request,
                       body: any, options: any,
-                      callback: (uri: string | Request, body: any, options: any) => Observable<Response>) {
+                      callback: (uri: string | Request, body: any, options: any) => Observable<Response>): any {
 
     let url = uri;
 
@@ -226,7 +224,7 @@ export class TransferHttpService {
     }
   }
 
-  private resolveData(key: string) {
+  private resolveData(key: string): any {
     const data = this.getFromCache(key);
 
     if (!data) {
@@ -236,7 +234,7 @@ export class TransferHttpService {
     return Observable.fromPromise(Promise.resolve(data));
   }
 
-  private setCache(key, data) {
+  private setCache(key, data): any {
     return this.transferState.set(key, data);
   }
 

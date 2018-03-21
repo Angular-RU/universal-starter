@@ -13,8 +13,7 @@ const LINKS: any[] = [
 export class SidebarComponent implements OnInit {
   public links: any[] = [];
 
-  ngOnInit() {
-    // for remove sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.sidebar.home
+  ngOnInit(): void {
     const linkTemp = JSON.parse(JSON.stringify(LINKS));
     this.links = linkTemp.map(link => {
       link.name = `sidebar.${link.name}`;

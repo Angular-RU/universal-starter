@@ -4,8 +4,6 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 // libs
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/first';
 // shared
 import { UniversalStorage } from '@shared/for-storage/server.storage';
 import { AppStorage } from '@shared/for-storage/universal.inject';
@@ -25,9 +23,7 @@ import { AppModule } from './app.module';
   ],
   bootstrap: [AppComponent],
   providers: [
-    {
-      provide: AppStorage, useClass: UniversalStorage
-    }
+    { provide: AppStorage, useClass: UniversalStorage }
   ],
 })
 export class AppServerModule {

@@ -15,4 +15,5 @@ import { NotFoundService } from './not-found.service';
   providers: [NotFoundService],
   declarations: [NotFoundComponent]
 })
-export class NotFoundModule { }
+export class NotFoundModule {
+}

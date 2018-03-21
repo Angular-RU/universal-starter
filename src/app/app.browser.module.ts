@@ -7,10 +7,10 @@ import { REQUEST } from '@nguniversal/express-engine';
 // shared
 import { CookieStorage } from '@shared/for-storage/browser.storage';
 import { AppStorage } from '@shared/for-storage/universal.inject';
+import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 // components
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
-import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -32,14 +32,10 @@ export function getRequest(): any {
   providers: [
     {
       // The server provides these in main.server
-      provide: REQUEST,
-      useFactory: (getRequest)
+      provide: REQUEST, useFactory: (getRequest)
     },
     { provide: AppStorage, useClass: CookieStorage },
-    {
-      provide: 'ORIGIN_URL',
-      useValue: location.origin
-    }
+    { provide: 'ORIGIN_URL', useValue: location.origin }
   ]
 })
 export class AppBrowserModule {

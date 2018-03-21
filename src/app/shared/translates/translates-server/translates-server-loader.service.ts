@@ -13,7 +13,7 @@ export class TranslatesServerLoaderService implements TranslateLoader {
 
   public getTranslation(lang: string): Observable<any> {
     return Observable.create(observer => {
-      const jsonData = JSON.parse(fs.readFileSync(`${this.prefix}/${lang}${this.suffix}`, 'utf8'));
+      const jsonData: any = JSON.parse(fs.readFileSync(`${this.prefix}/${lang}${this.suffix}`, 'utf8'));
       const key: StateKey<number> = makeStateKey<number>(`transfer-translate-${lang}`);
       this.transferState.set(key, jsonData);
       observer.next(jsonData);
