@@ -37,7 +37,7 @@ const mainFiles = files.filter(file => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}.bundle`);
 import { ngExpressEngine } from '@nguniversal/express-engine';
-import { REQUEST, RESPONSE } from '@nguniversal/express-engine';
+import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 const PORT = 4000;
 
 enableProdMode();
@@ -118,7 +118,7 @@ app.get('*', (req, res) => {
       ]
     },
     (err, html) => {
-      if (!!err) throw err;
+      if (!!err) { throw err; }
 
       // tslint:disable-next-line:no-console
       console.timeEnd(`GET: ${req.originalUrl}`);
