@@ -3,7 +3,7 @@ import { makeStateKey, StateKey, TransferState } from '@angular/platform-browser
 
 import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 export class TranslatesBrowserLoaderService implements TranslateLoader {
   constructor(private prefix: string = 'i18n',

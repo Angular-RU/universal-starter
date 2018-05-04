@@ -49,7 +49,7 @@
  - webpack.config.js
  - main.server.ts
  - main.browser.ts
- - modules/*
+ - shared/*
  - forStorage/*
  - environments/*
  - app.browser.module.ts

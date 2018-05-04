@@ -36,7 +36,7 @@
 - `yarn server` sau `npm run server` - pentru a porni serverul
 - `yarn build:prerender` sau `npm run build:prerender` - pentru a genera statica pe `static.paths.ts`
 - pentru a porni regimul watch, în ssr folosiți:
-  - `npm run ssr:cw` - înpachetăm pentru client
+   - `npm run ssr:cw` - înpachetăm pentru client
   - `npm run ssr:sw` - înpachetăm pentru server
   - `npm run ssr:webpack` - înpachetăm `server.js`
   - `npm run ssr:server` - server cu watch
@@ -49,7 +49,7 @@ Pentru a adăuga ssr în proiectul dumneavoastră e nevoie de următoarele fiși
  - webpack.config.js
  - main.server.ts
  - main.browser.ts
- - modules/*
+ - shared/*
  - forStorage/*
  - environments/*
  - app.browser.module.ts

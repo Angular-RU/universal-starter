@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { TransferState } from '@angular/platform-browser';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { fromPromise } from 'rxjs/internal/observable/fromPromise';
 
 @Injectable()
 export class TransferHttpService {
   constructor(protected transferState: TransferState,
-              private httpClient: HttpClient) {
+    private httpClient: HttpClient) {
   }
 
   public request(method: string, uri: string | Request, options?: {
@@ -178,9 +180,9 @@ export class TransferHttpService {
 
   // tslint:disable-next-line:max-line-length
   private getData(method: string,
-                  uri: string | Request,
-                  options: any,
-                  callback: (method: string, uri: string | Request, options: any) => Observable<any>): any {
+    uri: string | Request,
+    options: any,
+    callback: (method: string, uri: string | Request, options: any) => Observable<any>): any {
 
     let url = uri;
 
@@ -194,17 +196,17 @@ export class TransferHttpService {
       return this.resolveData(key);
     } catch (e) {
       return callback(method, uri, options)
-        .do(data => {
+        .pipe(tap(data => {
           this.setCache(key, data);
-        });
+        }));
     }
   }
 
   // tslint:disable-next-line:max-line-length
   private getPostData(method: string,
-                      uri: string | Request,
-                      body: any, options: any,
-                      callback: (uri: string | Request, body: any, options: any) => Observable<Response>): any {
+    uri: string | Request,
+    body: any, options: any,
+    callback: (uri: string | Request, body: any, options: any) => Observable<Response>): any {
 
     let url = uri;
 
@@ -218,9 +220,9 @@ export class TransferHttpService {
       return this.resolveData(key);
     } catch (e) {
       return callback(uri, body, options)
-        .do(data => {
+      .pipe(tap(data => {
           this.setCache(key, data);
-        });
+        }));
     }
   }
 
@@ -231,7 +233,7 @@ export class TransferHttpService {
       throw new Error();
     }
 
-    return Observable.fromPromise(Promise.resolve(data));
+    return fromPromise(Promise.resolve(data));
   }
 
   private setCache(key, data): any {

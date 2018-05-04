@@ -15,7 +15,7 @@
 - http://csr.angular.su/ - client rendering master
 
 # Plans:
-- [x] Angular 5
+- [x] Angular 6
 - [x] `document is not defined` and `window is not defined` - [here](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI components** - [individual branch](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI components** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
@@ -49,7 +49,7 @@ To transfer ssr to your repository, you need the following files:
  - webpack.config.js
  - main.server.ts
  - main.browser.ts
- - modules/*
+ - shared/*
  - forStorage/*
  - environments/*
  - app.browser.module.ts
@@ -119,3 +119,8 @@ global['Prism'] = null;
   global['navigator'] = req['headers']['user-agent'];
 ```
 this allows you to remove some of the problems when working with `undefined`.
+
+# Migrate 5 to 6 
+- https://github.com/ReactiveX/rxjs-tslint
+- `ng update @angular/cli`
+- `preboot` is not working now

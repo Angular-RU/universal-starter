@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // libs
 import { CookieService } from 'ngx-cookie-service';
-import { PrebootModule } from 'preboot';
 // shared
 import { SharedModule } from '@shared/shared.module';
 // components
@@ -16,7 +15,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
-    PrebootModule.withConfig({ appRoot: 'app-root' }),
     HttpClientModule,
     RouterModule,
     AppRoutes,

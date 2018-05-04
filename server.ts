@@ -5,9 +5,6 @@ const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')
 const win = domino.createWindow(template);
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);
 import fetch from 'node-fetch';
-// const styleFiles = files.filter(file => file.startsWith('styles'));
-// const hashStyle = styleFiles[0].split('.')[1];
-// const style = fs.readFileSync(path.join(__dirname, '.', 'dist-server', `styles.${hashStyle}.bundle.css`)).toString();
 
 win.fetch = fetch;
 global['window'] = win;
@@ -35,7 +32,7 @@ const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader')
 
 const mainFiles = files.filter(file => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}.bundle`);
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 const PORT = 4000;

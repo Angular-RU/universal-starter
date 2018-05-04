@@ -1,7 +1,7 @@
 import { makeStateKey, StateKey, TransferState } from '@angular/platform-browser';
 
 import { TranslateLoader } from '@ngx-translate/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 const fs = require('fs');
 
