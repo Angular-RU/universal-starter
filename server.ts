@@ -35,7 +35,7 @@ const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 enableProdMode();
 
@@ -123,6 +123,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log(`listening on http://localhost:${PORT}!`);
 });
