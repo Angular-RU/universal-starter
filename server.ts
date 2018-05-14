@@ -123,6 +123,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`listening on http://localhost:${PORT}!`);
 });
