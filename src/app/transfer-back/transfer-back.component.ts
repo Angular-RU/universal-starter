@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
 import { AppStorage } from '@shared/for-storage/universal.inject';
-import { TransferHttpService } from '@shared/transfer-http';
+import { TransferHttpService } from '@gorniv/ngx-transfer-http';
 
 @Component({
   selector: 'app-transfer-back',
