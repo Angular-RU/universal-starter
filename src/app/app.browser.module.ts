@@ -11,6 +11,8 @@ import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 // components
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -26,7 +28,8 @@ export function getRequest(): any {
     TransferHttpCacheModule,
     BrowserTransferStateModule,
     AppModule,
-    TranslatesBrowserModule
+    TranslatesBrowserModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

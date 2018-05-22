@@ -25,7 +25,7 @@
 - [x] Uses **[ngx-meta](https://github.com/fulls1z3/ngx-meta)** for SEO (*title, meta tags, and Open Graph tags for social sharing*).
 - [x] uses ngx-translate to support internationalization (i18n)
 - [x] uses ORIGIN_URL - for absolute queries
-- [ ] @angular/service-worker
+- [x] @angular/service-worker(`ng add @angular/pwa --project universal-demo`)
 - [ ] Ionic - it is necessary to compile the web version while there are problems [separate branch](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## How to start

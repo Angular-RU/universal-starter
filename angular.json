@@ -19,7 +19,8 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.scss",
@@ -51,7 +52,8 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/browser/environment.prod.ts"
                 }
-              ]
+              ],
+              "serviceWorker": true
             }
           }
         },
@@ -90,7 +92,8 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/manifest.json"
             ]
           }
         },
