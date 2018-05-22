@@ -25,7 +25,6 @@ export function getRequest(): any {
     BrowserModule.withServerTransition({ appId: 'my-app' }),
     TransferHttpCacheModule,
     BrowserTransferStateModule,
-    // ServiceWorkerModule.register('/ngsw-worker.js'),
     AppModule,
     TranslatesBrowserModule
   ],
