@@ -6,5 +6,5 @@ yarn-error.log
 server.js
 prerender.js
 prerender.js
-.DS_Store
+**/.DS_Store
 static/
