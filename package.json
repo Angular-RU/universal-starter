@@ -12,7 +12,7 @@
     "ssr:webpack": "webpack --watch",
     "ssr:server": "nodemon server.js",
     "build": "ng build",
-    "build:server": "ng build --prod universal-demo:server:production",
+    "build:server": "ng run universal-demo:server:production",
     "build:prod": "ng build --prod",
     "build:universal": "ng build --prod && ng run universal-demo:server:production && webpack --progress --colors",
     "server": "node server.js",
