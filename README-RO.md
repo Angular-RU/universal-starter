@@ -11,8 +11,8 @@
 **Resurse**:
 - chat public rusesc https://t.me/angular_universal_ru
 - chat public Angular românesc https://t.me/angular_ro
-- http://ssr.angular.su/ - rendering pe server master
-- http://csr.angular.su/ - rendering pe client master
+- https://ssr.angular.su/ - rendering pe server master
+- https://csr.angular.su/ - rendering pe client master
 
 # Planuri: 
 - [x] Angular 5

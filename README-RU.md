@@ -11,8 +11,8 @@
 
 **Ресурсы**:
 - публичный чат https://t.me/angular_universal_ru
-- http://ssr.angular.su/ - серверный рендеринг master
-- http://csr.angular.su/ - клиенский рендеринг master
+- https://ssr.angular.su/ - серверный рендеринг master
+- https://csr.angular.su/ - клиенский рендеринг master
 
 # Планы:
 - [x] Angular 5
