@@ -26,22 +26,26 @@ export class AppComponent implements OnDestroy {
 
     this.translate.onLangChange.pipe(
       takeWhile(() => this.alive)
-    ).subscribe((change: LangChangeEvent) => {
-      const { meta } = this.getRouteData();
-      this.titleService.setTitle(this.translate.instant(meta.title));
-    });
+    ).subscribe(this.setTitleAndMeta);
 
     this.router.events.pipe(
       takeWhile(() => this.alive),
       filter((event: RouterEvent) => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      const { meta } = this.getRouteData();
-      this.titleService.setTitle(this.translate.instant(meta.title));
-    });
+    ).subscribe(this.setTitleAndMeta);
   }
 
   public ngOnDestroy(): void {
     this.alive = false;
+  }
+
+  private setTitleAndMeta = (): void => {
+    const { meta } = this.getRouteData();
+    const title = this.translate.instant(meta.title);
+    const description = this.translate.instant(meta.description);
+    this.titleService.setTitle(title);
+    this.meta.setTag('og:title', title);
+    this.meta.setTag('og:description', description);
+    this.meta.setTag('description', description);
   }
 
   private getRouteData(): Data {

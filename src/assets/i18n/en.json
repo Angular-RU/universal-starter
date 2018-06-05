@@ -1,5 +1,8 @@
 {
   "loading": "Loading",
+  "default": {
+    "title": "Angular Universal"  
+  },
   "sidebar": {
     "home": "Home",
     "mock": "Mock",

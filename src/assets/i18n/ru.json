@@ -1,5 +1,8 @@
 {
   "loading": "Загрузка",
+  "default": {
+    "title": "Angular Universal"  
+  },
   "sidebar": {
     "home": "Главная",
     "mock": "Мокап",
