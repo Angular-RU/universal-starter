@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     RouterModule,
     AppRoutes,
     BrowserAnimationsModule,
-    SharedModule.forRoot(),
+    SharedModule.forRoot()
   ],
   declarations: [AppComponent],
   providers: [CookieService],

@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '', component: TransferBackComponent,
     data: {
       meta: {
-        title: 'Back title',
+        title: 'back-http.title',
         description: 'Back description'
       }
     },

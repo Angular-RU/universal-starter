@@ -8,7 +8,7 @@ export function metaFactory(): MetaLoader {
     pageTitleSeparator: ' | ',
     applicationName: 'App Universal',
     defaults: {
-      title: 'Default page title',
+      title: 'default.title',
       description: 'Default description',
       'og:site_name': 'App site Universal',
       'og:type': 'website',
