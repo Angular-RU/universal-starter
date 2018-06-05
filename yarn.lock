@@ -7121,10 +7121,6 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-rxjs-compat@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.2.0.tgz#2eb49cc6ac20d0d7057c6887d1895beaab0966f9"
-
 rxjs-tslint@0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/rxjs-tslint/-/rxjs-tslint-0.1.4.tgz#40e6700b8445c1f37df8a739639b9ba5397450a5"

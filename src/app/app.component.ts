@@ -5,10 +5,8 @@ import { Title } from '@angular/platform-browser';
 import { MetaService } from '@ngx-meta/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { takeWhile } from 'rxjs/operators/takeWhile';
-import { filter } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { filter, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',

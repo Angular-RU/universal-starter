@@ -47,7 +47,6 @@
     "ngx-cookie-service": "1.0.10",
     "node-fetch": "2.1.2",
     "rxjs": "6.2.0",
-    "rxjs-compat": "6.2.0",
     "rxjs-tslint": "0.1.4",
     "zone.js": "0.8.26"
   },
