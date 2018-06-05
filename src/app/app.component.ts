@@ -34,8 +34,8 @@ export class AppComponent implements OnDestroy {
     });
 
     this.router.events.pipe(
-        takeWhile(() => this.alive),
-        filter((event: RouterEvent) => event instanceof NavigationEnd)
+      takeWhile(() => this.alive),
+      filter((event: RouterEvent) => event instanceof NavigationEnd)
     ).subscribe(() => {
       const { meta } = this.getRouteData();
       this.titleService.setTitle(this.translate.instant(meta.title));
