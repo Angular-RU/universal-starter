@@ -6,9 +6,9 @@ const routes: Routes = [
     path: '', component: HomeComponent,
     data: {
       meta: {
-        title: 'Home title',
+        title: 'home.title',
         override: true,
-        description: 'Home description'
+        description: 'home.description'
       }
     },
   },

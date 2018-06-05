@@ -7,11 +7,13 @@
   },
   "home": {
     "title": "Home page",
-    "text": "This is some text in English at home page"
+    "text": "This is some text in English at home page",
+    "description": "Home description"
   },
   "mock": {
     "title": "Mock page",
-    "text": "This is some text in English at mock page"
+    "text": "This is some text in English at mock page",
+    "description": "Mock description"
   },
   "back-http": {
     "title": "Http request page",
