@@ -6,8 +6,8 @@ const routes: Routes = [
     path: '', component: NotFoundComponent,
     data: {
       meta: {
-        title: 'Not Found',
-        description: 'Page not found'
+        title: 'not-found.title',
+        description: 'not-found.text'
       }
     },
   },

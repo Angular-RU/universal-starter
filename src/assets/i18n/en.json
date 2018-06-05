@@ -21,6 +21,7 @@
     "original-url": "Origin URL:"
   },
   "not-found": {
-    "title": "Not Found"
+    "title": "Not Found",
+    "text": "Page Not Found"
   }
 }

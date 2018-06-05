@@ -1,8 +1,9 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
+import { TransferHttpModule } from '@gorniv/ngx-transfer-http';
+
 import { LayoutsModule } from './layouts/layouts.module';
 import { SharedMetaModule } from './shared-meta';
-import { TransferHttpModule } from '@gorniv/ngx-transfer-http';
 
 @NgModule({
   exports: [
