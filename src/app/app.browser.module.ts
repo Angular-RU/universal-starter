@@ -11,10 +11,6 @@ import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 // components
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-
-// import { ServiceWorkerModule } from '@angular/service-worker';
 
 // the Request object only lives on the server
 export function getRequest(): any {
@@ -28,8 +24,7 @@ export function getRequest(): any {
     TransferHttpCacheModule,
     BrowserTransferStateModule,
     AppModule,
-    TranslatesBrowserModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    TranslatesBrowserModule
   ],
   providers: [
     {
