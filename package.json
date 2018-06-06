@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "ssr": "npm run build:universal && npm run server",
+    "ssr": "npm run build:universal && npm run generate:prerender && npm run server",
     "ssr:debug": "ng build --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true  && ng run universal-demo:server:dev && webpack && node server.js",
     "ssr:cw": "ng build --aot=true --output-hashing=all --named-chunks=false --build-optimizer=true --watch",
     "ssr:sw": "ng run universal-demo:server:dev --watch",

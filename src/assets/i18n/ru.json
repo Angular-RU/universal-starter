@@ -3,7 +3,8 @@
   "sidebar": {
     "home": "Главная",
     "mock": "Мокап",
-    "back-http": "Http на бэк"
+    "back-http": "Http на бэк",
+    "static-back-http": "Статическая `Http на бэк`"
   },
   "home": {
     "title": "Главная страница",

@@ -35,6 +35,7 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/mai
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 const PORT = process.env.PORT || 4000;
+import { ROUTES } from './static.paths';
 
 enableProdMode();
 
@@ -88,6 +89,7 @@ app.set('view engine', 'html');
 app.set('views', 'src');
 
 app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
+app.get(ROUTES, express.static(path.join(__dirname, '.', 'static')));
 
 app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];

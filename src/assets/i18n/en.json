@@ -3,7 +3,8 @@
   "sidebar": {
     "home": "Home",
     "mock": "Mock",
-    "back-http": "Back http"
+    "back-http": "Back http",
+    "static-back-http": "Static `Back http`"
   },
   "home": {
     "title": "Home page",

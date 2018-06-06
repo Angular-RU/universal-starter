@@ -4,6 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN npm install
 RUN npm run build:universal
+RUN npm run generate:prerender
 
 FROM node:8-alpine
 

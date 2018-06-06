@@ -10,6 +10,7 @@ const routes: Routes = [
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
       { path: 'mock', loadChildren: './mock-server-browser/mock-server-browser.module#MockServerBrowserModule' },
       { path: 'back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule' },
+      { path: 'static/back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule' },
       { path: '**', loadChildren: './not-found/not-found.module#NotFoundModule' },
     ]
   }

@@ -57,7 +57,11 @@ ROUTES.forEach(route => {
 
     // Make sure the directory structure is there
     if (!existsSync(fullPath)) {
-        mkdirSync(fullPath);
+        let syncpath = BROWSER_FOLDER;
+        route.split('/').forEach(element => {
+            syncpath = syncpath + '/' + element;
+            mkdirSync(syncpath);
+        });
     }
 
     // Writes rendered HTML to index.html, replacing the file if it already exists.

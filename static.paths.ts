@@ -1,4 +1,3 @@
 export const ROUTES = [
-  '/',
-  '/back',
+  '/static/back',
 ];
