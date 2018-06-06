@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
     const linkTemp = JSON.parse(JSON.stringify(LINKS));
     this.links = linkTemp.map(link => {
-      link.name = `sidebar.${link.name}`;
+      link.name = `${link.name}`;
       return link;
     });
   }

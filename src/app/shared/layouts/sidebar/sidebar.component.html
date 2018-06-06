@@ -3,7 +3,7 @@
         <li *ngFor="let item of links">
             <a [routerLink]="[item.link]" [routerLinkActive]="['active']">
                 <i class="material-icons">{{ item.icon }}</i>
-                {{ item.name | translate }}
+                {{ item.name }}
             </a>
         </li>
     </ul>

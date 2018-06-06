@@ -40,8 +40,6 @@
     "@nguniversal/express-engine": "6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "6.0.0",
     "@ngx-meta/core": "6.0.0-rc.1",
-    "@ngx-translate/core": "10.0.2",
-    "@ngx-translate/http-loader": "3.0.1",
     "cookie-parser": "1.4.3",
     "core-js": "2.5.7",
     "ngx-cookie-service": "1.0.10",
