@@ -29,7 +29,6 @@ import * as compression from 'compression';
 import * as cookieparser from 'cookie-parser';
 const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
 
-
 const mainFiles = files.filter(file => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
@@ -44,7 +43,7 @@ app.use(compression());
 app.use(cookieparser());
 
 const redirectowww = false;
-const redirectohttps = false;
+const redirectohttps = true;
 const wwwredirecto = true;
 app.use((req, res, next) => {
   // for domain/index.html
