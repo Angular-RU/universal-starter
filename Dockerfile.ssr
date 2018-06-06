@@ -2,7 +2,7 @@ FROM node:8-alpine as buildContainer
 
 COPY . /app
 WORKDIR /app
-RUN yarn install
+RUN npm install
 RUN npm run build:universal
 
 FROM node:8-alpine
