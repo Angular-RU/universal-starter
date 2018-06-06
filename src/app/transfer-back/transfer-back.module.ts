@@ -9,7 +9,7 @@ import { TransferBackComponent } from './transfer-back.component';
   imports: [
     CommonModule,
     TransferBackRoutes,
-    TranslateModule.forChild()
+    TranslateModule
   ],
   declarations: [TransferBackComponent]
 })

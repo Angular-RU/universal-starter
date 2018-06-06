@@ -12,7 +12,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
   imports: [
     CommonModule,
     RouterModule,
-    TranslateModule.forChild()
+    TranslateModule
   ],
   declarations: [
     FooterComponent,

@@ -10,7 +10,7 @@ import { NotFoundService } from './not-found.service';
   imports: [
     CommonModule,
     NotFoundRoutes,
-    TranslateModule.forChild()
+    TranslateModule
   ],
   providers: [NotFoundService],
   declarations: [NotFoundComponent]

@@ -9,7 +9,7 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     HomeRoutes,
-    TranslateModule.forChild()
+    TranslateModule
   ],
   declarations: [HomeComponent]
 })

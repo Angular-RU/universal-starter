@@ -15,7 +15,7 @@ import { MockServerModule } from './mock-server/mock-server.module';
     CommonModule,
     MockServerBrowserRoutes,
     environment.isServer ? [MockServerModule] : [MockBrowserModule],
-    TranslateModule.forChild()
+    TranslateModule
   ],
   declarations: [MockServerBrowserComponent]
 })
