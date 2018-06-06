@@ -1,2 +1,2 @@
 export { TranslatesService } from './translates.service';
-export { ITranslatesLanguage } from './translates.interface';
+export { ILang } from './translates.interface';

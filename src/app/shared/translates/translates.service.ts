@@ -1,36 +1,87 @@
-import { Injectable, Inject } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { TranslateService as NGXTranslateService } from '@ngx-translate/core';
+import { MetaService } from '@ngx-meta/core';
+import { Observable, of } from 'rxjs';
 
 import { AppStorage } from '@shared/for-storage/universal.inject';
 
-import { ITranslatesLanguage } from './translates.interface';
+import { ILang } from './translates.interface';
 
-const LANGUAGES: ITranslatesLanguage[] = [
-  { value: 'ru', name: 'Русский' },
-  { value: 'en', name: 'English' }
+const LANG_LIST: ILang[] = [
+  { 'code': 'ru', 'name': 'Русский', 'culture': 'ru-RU' },
+  { 'code': 'en', 'name': 'English', 'culture': 'en-US' }
 ];
-const LANG_LIST: string[] = ['en', 'ru'];
-const DEFAULT_LANG: string = 'en';
+const LANG_DEFAULT: ILang = LANG_LIST[0];
+const STORAGE_LANG_NAME: string = 'langCode';
 
 @Injectable()
 export class TranslatesService {
-  constructor(private _translateService: TranslateService,
-              @Inject(AppStorage) private _appStorage: Storage) {
-    this._translateService.addLangs(LANG_LIST);
-    this._translateService.setDefaultLang(DEFAULT_LANG);
-    this._translateService.use(this._appStorage.getItem('lang') || DEFAULT_LANG);
+  constructor(@Inject(PLATFORM_ID) private _platformId: Object,
+              @Inject(DOCUMENT) private _document: any,
+              @Inject(REQUEST) private _request: Request,
+              @Inject(NGXTranslateService) private _translate: NGXTranslateService,
+              @Inject(MetaService) private _meta: MetaService,
+              @Inject(AppStorage) private _appStorage: Storage
+  ) { }
+
+  public initLanguage(): Promise<any> {
+    return new Promise((resolve: Function) => {
+      this._translate.addLangs(LANG_LIST.map((lang: ILang) => lang.code));
+      this._translate.setDefaultLang(LANG_DEFAULT.code);
+      const language: ILang = this._getLanguage();
+      this._setLanguage(language);
+      resolve();
+    });
   }
 
-  public getLanguages(): ITranslatesLanguage[] {
-    return LANGUAGES;
+  private _getLanguage(): ILang {
+    let language: ILang = this._getFindLang(this._appStorage.getItem(STORAGE_LANG_NAME));
+    if (language) {
+      return language;
+    }
+    if (isPlatformBrowser(this._platformId)) {
+      language = this._getFindLang(this._translate.getBrowserLang());
+    }
+    if (isPlatformServer(this._platformId)) {
+      try {
+        const reqLangList: string[] = this._request.headers['accept-language'].split(';')[0].split(',');
+        language = LANG_LIST.find((lang: ILang) => reqLangList.indexOf(lang.code) !== -1 || reqLangList.indexOf(lang.culture) !== -1);
+      } catch (err) {
+        language = LANG_DEFAULT;
+      }
+    }
+    language = language || LANG_DEFAULT;
+    this._appStorage.setItem(STORAGE_LANG_NAME, language.code);
+    return language;
+  }
+
+  private _getFindLang(code: string): ILang | null {
+    return code ? LANG_LIST.find((lang: ILang) => lang.code === code) : null;
+  }
+
+  private _setLanguage(lang: ILang): void {
+    this._translate.use(lang.code).subscribe(() => {
+      this._meta.setTag('og:locale', lang.culture);
+      this._document.documentElement.lang = lang.code;
+    });
+  }
+
+  public changeLang(code: string): void {
+    const lang: ILang = this._getFindLang(code);
+    if (!lang || lang.code === this._translate.currentLang) {
+      return;
+    }
+    this._appStorage.setItem(STORAGE_LANG_NAME, lang.code);
+    window.location.reload();
+  }
+
+  public getLangList(): Observable<ILang[]> {
+    return of(LANG_LIST);
   }
 
   public getCurrentLang(): string {
-    return this._translateService.currentLang;
-  }
-
-  public changeLang(lang: string): void {
-    this._appStorage.setItem('lang', lang);
-    this._translateService.use(lang);
+    return this._translate.currentLang;
   }
 }
