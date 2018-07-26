@@ -73,6 +73,7 @@
     "ssri": "6.0.0",
     "tslint": "5.10.0",
     "typescript": "2.7.2",
-    "webpack-cli": "3.0.8"
+    "webpack-cli": "3.0.8",
+    "webpack-node-externals": "^1.7.2"
   }
 }
