@@ -4,9 +4,7 @@ const path = require('path');
 const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 const win = domino.createWindow(template);
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);
-import fetch from 'node-fetch';
 
-win.fetch = fetch;
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
@@ -95,8 +93,9 @@ app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];
   const http = req.headers['x-forwarded-proto'] === undefined ? 'http' : req.headers['x-forwarded-proto'];
 
+  const url = req.originalUrl;
   // tslint:disable-next-line:no-console
-  console.time(`GET: ${req.originalUrl}`);
+  console.time(`GET: ${url}`);
   res.render(
     '../dist/index',
     {
@@ -119,7 +118,7 @@ app.get('*', (req, res) => {
       if (!!err) { throw err; }
 
       // tslint:disable-next-line:no-console
-      console.timeEnd(`GET: ${req.originalUrl}`);
+      console.timeEnd(`GET: ${url}`);
       res.send(html);
     });
 });

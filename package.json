@@ -45,7 +45,6 @@
     "cookie-parser": "1.4.3",
     "core-js": "2.5.7",
     "ngx-cookie-service": "1.0.10",
-    "node-fetch": "2.2.0",
     "rxjs": "6.2.2",
     "rxjs-tslint": "0.1.5",
     "zone.js": "0.8.26"
