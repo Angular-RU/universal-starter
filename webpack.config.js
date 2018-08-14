@@ -1,19 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
+
 /**
  * This is a server config which should be merged on top of common config
  */
 module.exports = {
   mode: 'development',
-  externals: [
-    nodeExternals({ whitelist: [
-      /\.(?!(?:jsx?|json)$).{1,5}$/i,
-      /ngx-cookie-service/
-    ] }),
-    /main\..*\.js/
-  ],
-
+  externals: [/(node_modules|main\..*\.js)/],
   entry: {
     // This is our Express server for Dynamic universal
     server: './server.ts',

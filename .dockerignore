@@ -1,0 +1,17 @@
+dist
+tmp
+out-tsc
+dist-server
+static
+server.js
+prerender.js
+node_modules
+npm-debug.log
+Dockerfile*
+docker-compose*
+.dockerignore
+.git
+.gitignore
+README.md
+LICENSE
+.vscode

@@ -1,3 +1,6 @@
+import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
+
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');

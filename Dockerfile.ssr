@@ -1,8 +1,8 @@
 FROM node:8-alpine as buildContainer
-
-COPY . /app
 WORKDIR /app
+COPY ./package.json ./package-lock.json /app/
 RUN npm install
+COPY . /app
 RUN npm run build:universal
 RUN npm run generate:prerender
 
