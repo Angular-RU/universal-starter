@@ -9,8 +9,8 @@ export class DelayBack {
   static readonly type = '[App] DelayBack';
   constructor() { }
   apply(ctx: StateContext<AppStateModel>, http: TransferHttpService): Observable<any> {
-    // http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
-    return http.get('http://localhost:5000/api/simple').pipe(
+    return http.get('https://reqres.in/api/users?delay=3').pipe(
+      // return http.get('http://localhost:5000/api/simple').pipe(
       map((result) => {
         ctx.patchState(
           { resultGet: result }
