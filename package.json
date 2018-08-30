@@ -48,6 +48,9 @@
     "reflect-metadata": "0.1.12",
     "rxjs": "6.2.2",
     "rxjs-tslint": "0.1.5",
+    "@ngxs/store": "3.2.0",
+    "@ngxs/devtools-plugin": "3.2.0",
+    "@ngxs/logger-plugin": "3.2.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {

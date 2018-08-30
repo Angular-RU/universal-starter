@@ -4,16 +4,12 @@
 <hr>
 
 <strong>{{ "back-http.delay" | translate }}</strong>
-<pre *ngIf="result; else noResult">
-    {{ result | json }}
+<pre *ngIf="( resultGet$ | async); else noResult">
+    {{ resultGet$ | async | json }}
 </pre>
 <ng-template #noResult>
-    <p>{{ "loading" | translate }}...</p>
+  <p>{{ "loading" | translate }}...</p>
 </ng-template>
-<br/>
-<strong>{{ "back-http.post" | translate }}</strong>
-<pre>
-    {{ resultPost | json }}
-</pre>
-<br/>
+<br />
+<br />
 <strong>{{ "back-http.original-url" | translate }}</strong> {{ baseUrl }}

@@ -9,9 +9,16 @@ import { CookieService } from 'ngx-cookie-service';
 // shared
 import { SharedModule } from '@shared/shared.module';
 import { TranslatesService } from '@shared/translates';
+
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+
 // components
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
+import { AppState } from './app.state';
+import { environment } from 'environments/environment';
 
 export function initLanguage(translateService: TranslatesService): Function {
   return (): Promise<any> => translateService.initLanguage();
@@ -25,6 +32,16 @@ export function initLanguage(translateService: TranslatesService): Function {
     AppRoutes,
     BrowserAnimationsModule,
     SharedModule.forRoot(),
+    NgxsModule.forRoot([
+      AppState,
+    ]),
+    NgxsLoggerPluginModule.forRoot({
+      collapsed: false,
+      disabled: environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      disabled: environment.production,
+    }),
   ],
   declarations: [AppComponent],
   providers: [
