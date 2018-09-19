@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // libs
 import { CookieService } from 'ngx-cookie-service';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 // shared
 import { SharedModule } from '@shared/shared.module';
 import { TranslatesService } from '@shared/translates';
@@ -20,6 +21,7 @@ export function initLanguage(translateService: TranslatesService): Function {
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
+    TransferHttpCacheModule,
     HttpClientModule,
     RouterModule,
     AppRoutes,

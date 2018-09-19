@@ -7,6 +7,9 @@
 <pre *ngIf="result; else noResult">
     {{ result | json }}
 </pre>
+<pre *ngIf="resultHttpClient; else noResult">
+  {{ resultHttpClient | json }}
+</pre>
 <ng-template #noResult>
     <p>{{ "loading" | translate }}...</p>
 </ng-template>
