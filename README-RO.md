@@ -59,7 +59,7 @@ Pentru a adăuga ssr în proiectul dumneavoastră e nevoie de următoarele fiși
 Exemplu oficial în engleză: https://github.com/angular/universal-starter 
 Module folosite pentru universal:
 - https://github.com/angular/universal/tree/master/modules/aspnetcore-engine - motorul pentru .net core
-- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule, la acest moment nu-l folosesc, dar dacă știți pentru ce și unde se poate de-l pus - deschideți o issue sau pull request
+- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule
 - https://github.com/angular/universal/tree/master/modules/express-engine - Express Engine pentru a porni renderingul pe node, folosim în repozitoriul nostru. Fiți atenți, versiunea acutală nu mai mică de 5.0.0-beta.5
 - https://github.com/angular/universal/tree/master/modules/hapi-engine -  Hapi Engine un motor alternativă. În exemplu nu folosim, în principui nu-i mare diferența în conectare față de express-engine
 - https://github.com/angular/universal/tree/master/modules/module-map-ngfactory-loader - modul pentru LazyLoading - e ceva folositor. Fiți atenți, versiunea actuală nu mai mică de 5.0.0-beta.5

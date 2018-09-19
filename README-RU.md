@@ -59,7 +59,7 @@
 Официальный пример на анлийиском: https://github.com/angular/universal-starter 
 Модули используемые для universal:
 - https://github.com/angular/universal/tree/master/modules/aspnetcore-engine -движок для .net core
-- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule, на данный момент мной не используется, если знаете куда и зачем его встаить - напишите мне или в issue, pull request
+- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule для синхронизации запросов сервера и клиента
 - https://github.com/angular/universal/tree/master/modules/express-engine - Express Engine для запуска рендеринга в node, в нашем приложении используется. Обратите внимание, что актуальная версия  не ниже 5.0.0-beta.5
 - https://github.com/angular/universal/tree/master/modules/hapi-engine -  Hapi Engine альтернативный движок для рендеринга. В примере не используется, принципиально в схеме подключения не отличается от express-engine
 - https://github.com/angular/universal/tree/master/modules/module-map-ngfactory-loader - модуль поиска модулей для LazyLoading - вещь нужная и  используемая. Обратите внимание, что актуальная версия  не ниже 5.0.0-beta.5
