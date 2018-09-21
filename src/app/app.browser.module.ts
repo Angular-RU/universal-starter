@@ -11,7 +11,6 @@ import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -23,7 +22,6 @@ export function getRequest(): any {
 @NgModule({
   bootstrap: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app' }),
     BrowserTransferStateModule,
     AppModule,
     TranslatesBrowserModule,

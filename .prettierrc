@@ -1,7 +1,9 @@
 {
-    "printWidth": 100,
-    "parser": "flow",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all"
+  "printWidth": 100,
+  "parser": "typescript",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "prettier-tslint": true,
+  "arrowParens": "always"
 }
