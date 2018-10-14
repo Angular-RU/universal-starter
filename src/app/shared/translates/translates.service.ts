@@ -1,7 +1,11 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
-import { TranslateService as NGXTranslateService } from '@ngx-translate/core';
+import {
+  TranslateService as NGXTranslateService,
+  MissingTranslationHandler,
+  MissingTranslationHandlerParams,
+} from '@ngx-translate/core';
 import { MetaService } from '@ngx-meta/core';
 import { Observable, of } from 'rxjs';
 
@@ -10,21 +14,22 @@ import { AppStorage } from '@shared/for-storage/universal.inject';
 import { ILang } from './translates.interface';
 
 const LANG_LIST: ILang[] = [
-  { 'code': 'ru', 'name': 'Русский', 'culture': 'ru-RU' },
-  { 'code': 'en', 'name': 'English', 'culture': 'en-US' }
+  { code: 'ru', name: 'Русский', culture: 'ru-RU' },
+  { code: 'en', name: 'English', culture: 'en-US' },
 ];
 const LANG_DEFAULT: ILang = LANG_LIST[0];
 const STORAGE_LANG_NAME: string = 'langCode';
 
 @Injectable()
 export class TranslatesService {
-  constructor(@Inject(PLATFORM_ID) private _platformId: Object,
-              @Inject(DOCUMENT) private _document: any,
-              @Inject(REQUEST) private _request: Request,
-              @Inject(NGXTranslateService) private _translate: NGXTranslateService,
-              @Inject(MetaService) private _meta: MetaService,
-              @Inject(AppStorage) private _appStorage: Storage
-  ) { }
+  constructor(
+    @Inject(PLATFORM_ID) private _platformId: Object,
+    @Inject(DOCUMENT) private _document: any,
+    @Inject(REQUEST) private _request: Request,
+    @Inject(NGXTranslateService) private _translate: NGXTranslateService,
+    @Inject(MetaService) private _meta: MetaService,
+    @Inject(AppStorage) private _appStorage: Storage,
+  ) {}
 
   public initLanguage(): Promise<any> {
     return new Promise((resolve: Function) => {
@@ -46,8 +51,13 @@ export class TranslatesService {
     }
     if (isPlatformServer(this._platformId)) {
       try {
-        const reqLangList: string[] = this._request.headers['accept-language'].split(';')[0].split(',');
-        language = LANG_LIST.find((lang: ILang) => reqLangList.indexOf(lang.code) !== -1 || reqLangList.indexOf(lang.culture) !== -1);
+        const reqLangList: string[] = this._request.headers['accept-language']
+          .split(';')[0]
+          .split(',');
+        language = LANG_LIST.find(
+          (lang: ILang) =>
+            reqLangList.indexOf(lang.code) !== -1 || reqLangList.indexOf(lang.culture) !== -1,
+        );
       } catch (err) {
         language = LANG_DEFAULT;
       }
@@ -83,5 +93,14 @@ export class TranslatesService {
 
   public getCurrentLang(): string {
     return this._translate.currentLang;
+  }
+}
+
+export class CommonMissingTranslationHandler implements MissingTranslationHandler {
+  handle(params: MissingTranslationHandlerParams) {
+    if (params.key.match(/\w+\.\w+/) && !params.translateService.translations['ru'][params.key]) {
+      console.warn(`Нехватает перевода для "${params.key}"`);
+    }
+    return params.key;
   }
 }
