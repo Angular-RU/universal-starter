@@ -24,8 +24,8 @@ export function getRequest(): any {
 @NgModule({
   bootstrap: [AppComponent, InlineStyleComponent],
   imports: [
-    BrowserTransferStateModule,
     AppModule,
+    BrowserTransferStateModule,
     TranslatesBrowserModule,
     InlineStyleModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: false })

@@ -22,8 +22,6 @@ global['CSS'] = null;
 // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
 global['Prism'] = null;
 
-import 'reflect-metadata';
-import 'zone.js/dist/zone-node';
 import { enableProdMode } from '@angular/core';
 import * as express from 'express';
 import * as compression from 'compression';

@@ -33,7 +33,6 @@ export function initLanguage(translateService: TranslatesService): Function {
     CookieService,
     { provide: APP_INITIALIZER, useFactory: initLanguage, multi: true, deps: [TranslatesService] },
   ],
-  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

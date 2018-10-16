@@ -16,10 +16,11 @@ import { InlineStyleModule } from './inline-style/inline-style.module';
 
 @NgModule({
   imports: [
+    // AppModule - FIRST!!!
     AppModule,
+    ServerModule,
     NoopAnimationsModule,
     ServerTransferStateModule,
-    ServerModule,
     InlineStyleModule,
     ModuleMapLoaderModule,
     TranslatesServerModule
