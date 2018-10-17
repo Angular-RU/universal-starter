@@ -28,16 +28,16 @@ export function getRequest(): any {
     BrowserTransferStateModule,
     TranslatesBrowserModule,
     InlineStyleModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: false })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: false }),
   ],
   providers: [
     {
       // The server provides these in main.server
-      provide: REQUEST, useFactory: (getRequest)
+      provide: REQUEST,
+      useFactory: getRequest,
     },
     { provide: AppStorage, useClass: CookieStorage },
-    { provide: 'ORIGIN_URL', useValue: location.origin }
-  ]
+    { provide: 'ORIGIN_URL', useValue: location.origin },
+  ],
 })
-export class AppBrowserModule {
-}
+export class AppBrowserModule {}

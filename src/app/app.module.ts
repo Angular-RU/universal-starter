@@ -34,5 +34,4 @@ export function initLanguage(translateService: TranslatesService): Function {
     { provide: APP_INITIALIZER, useFactory: initLanguage, multi: true, deps: [TranslatesService] },
   ],
 })
-export class AppModule {
-}
+export class AppModule {}

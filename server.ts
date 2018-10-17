@@ -13,7 +13,7 @@ Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
     return {
       enumerable: true,
-      configurable: true
+      configurable: true,
     };
   },
 });
@@ -28,7 +28,7 @@ import * as compression from 'compression';
 import * as cookieparser from 'cookie-parser';
 const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader');
 
-const mainFiles = files.filter(file => file.startsWith('main'));
+const mainFiles = files.filter((file) => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
 import { ngExpressEngine } from '@nguniversal/express-engine';
@@ -53,7 +53,11 @@ app.use((req, res, next) => {
 
   // check if it is a secure (https) request
   // if not redirect to the equivalent https url
-  if (redirectohttps && req.headers['x-forwarded-proto'] !== 'https' && req.hostname !== 'localhost') {
+  if (
+    redirectohttps &&
+    req.headers['x-forwarded-proto'] !== 'https' &&
+    req.hostname !== 'localhost'
+  ) {
     // special for robots.txt
     if (req.url === '/robots.txt') {
       next();
@@ -74,15 +78,15 @@ app.use((req, res, next) => {
   }
 
   next();
-}
-);
+});
 
-app.engine('html', ngExpressEngine({
-  bootstrap: AppServerModuleNgFactory,
-  providers: [
-    provideModuleMap(LAZY_MODULE_MAP)
-  ]
-}));
+app.engine(
+  'html',
+  ngExpressEngine({
+    bootstrap: AppServerModuleNgFactory,
+    providers: [provideModuleMap(LAZY_MODULE_MAP)],
+  }),
+);
 
 app.set('view engine', 'html');
 app.set('views', 'src');
@@ -92,7 +96,8 @@ app.get(ROUTES, express.static(path.join(__dirname, '.', 'static')));
 
 app.get('*', (req, res) => {
   global['navigator'] = req['headers']['user-agent'];
-  const http = req.headers['x-forwarded-proto'] === undefined ? 'http' : req.headers['x-forwarded-proto'];
+  const http =
+    req.headers['x-forwarded-proto'] === undefined ? 'http' : req.headers['x-forwarded-proto'];
 
   const url = req.originalUrl;
   // tslint:disable-next-line:no-console
@@ -104,24 +109,29 @@ app.get('*', (req, res) => {
       res: res,
       providers: [
         {
-          provide: REQUEST, useValue: (req)
+          provide: REQUEST,
+          useValue: req,
         },
         {
-          provide: RESPONSE, useValue: (res)
+          provide: RESPONSE,
+          useValue: res,
         },
         {
           provide: 'ORIGIN_URL',
-          useValue: (`${http}://${req.headers.host}`)
-        }
-      ]
+          useValue: `${http}://${req.headers.host}`,
+        },
+      ],
     },
     (err, html) => {
-      if (!!err) { throw err; }
+      if (!!err) {
+        throw err;
+      }
 
       // tslint:disable-next-line:no-console
       console.timeEnd(`GET: ${url}`);
       res.send(html);
-    });
+    },
+  );
 });
 
 app.listen(PORT, () => {
