@@ -15,7 +15,7 @@
 - https://csr.angular.su/ - клиенский рендеринг master
 
 # Планы:
-- [x] Angular 5
+- [x] Angular 7
 - [x] `document is not defined` и `window is not defined` - [тут](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI компоненты** - [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI компоненты** - [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
