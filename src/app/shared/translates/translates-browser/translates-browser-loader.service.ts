@@ -6,17 +6,18 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Observable } from 'rxjs';
 
 export class TranslatesBrowserLoaderService implements TranslateLoader {
-  constructor(private prefix: string = 'i18n',
-              private suffix: string = '.json',
-              private transferState: TransferState,
-              private http: HttpClient) {
-  }
+  constructor(
+    private prefix: string = 'i18n',
+    private suffix: string = '.json',
+    private transferState: TransferState,
+    private http: HttpClient,
+  ) {}
 
   public getTranslation(lang: string): Observable<any> {
     const key: StateKey<number> = makeStateKey<number>(`transfer-translate-${lang}`);
     const data: any = this.transferState.get(key, null);
     if (data) {
-      return Observable.create(observer => {
+      return Observable.create((observer) => {
         observer.next(data);
         observer.complete();
       });

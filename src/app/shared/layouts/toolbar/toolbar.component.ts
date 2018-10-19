@@ -5,14 +5,13 @@ import { TranslatesService, ILang } from '@shared/translates';
 
 @Component({
   selector: 'app-toolbar',
-  templateUrl: './toolbar.component.html'
+  templateUrl: './toolbar.component.html',
 })
 export class ToolbarComponent implements OnInit {
   public langList$: Observable<ILang[]>;
   public currentLang: string;
 
-  constructor(private _translatesService: TranslatesService) {
-  }
+  constructor(private _translatesService: TranslatesService) {}
 
   ngOnInit(): void {
     this.langList$ = this._translatesService.getLangList();

@@ -7,13 +7,8 @@ import { NotFoundRoutes } from './not-found.routing';
 import { NotFoundService } from './not-found.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NotFoundRoutes,
-    TranslateModule
-  ],
+  imports: [CommonModule, NotFoundRoutes, TranslateModule],
   providers: [NotFoundService],
-  declarations: [NotFoundComponent]
+  declarations: [NotFoundComponent],
 })
-export class NotFoundModule {
-}
+export class NotFoundModule {}

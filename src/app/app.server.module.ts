@@ -23,12 +23,9 @@ import { InlineStyleModule } from './inline-style/inline-style.module';
     ServerTransferStateModule,
     InlineStyleModule,
     ModuleMapLoaderModule,
-    TranslatesServerModule
+    TranslatesServerModule,
   ],
   bootstrap: [AppComponent, InlineStyleComponent],
-  providers: [
-    { provide: AppStorage, useClass: UniversalStorage }
-  ],
+  providers: [{ provide: AppStorage, useClass: UniversalStorage }],
 })
-export class AppServerModule {
-}
+export class AppServerModule {}

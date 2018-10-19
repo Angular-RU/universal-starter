@@ -6,13 +6,8 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { environment } from '../../../environments/environment';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MockServerRoutes
-  ],
+  imports: [CommonModule, MockServerRoutes],
   declarations: [MockServerComponent],
-  exports: [MockServerComponent]
+  exports: [MockServerComponent],
 })
-export class MockServerModule {
-
-}
+export class MockServerModule {}

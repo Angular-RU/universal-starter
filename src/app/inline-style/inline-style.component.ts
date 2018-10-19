@@ -4,8 +4,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-inline-style',
   template: '',
   styleUrls: ['./inline-style.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-
-export class InlineStyleComponent {
-}
+export class InlineStyleComponent {}

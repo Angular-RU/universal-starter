@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', component: TransferBackComponent,
+    path: '',
+    component: TransferBackComponent,
     data: {
       meta: {
         title: 'back-http.title',
-        description: 'back-http.text'
-      }
+        description: 'back-http.text',
+      },
     },
   },
 ];

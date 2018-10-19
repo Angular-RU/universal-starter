@@ -7,8 +7,7 @@ export class CookieStorage implements Storage {
   [key: string]: any;
   length: number;
 
-  constructor(private cookieService: CookieService) {
-  }
+  constructor(private cookieService: CookieService) {}
 
   public clear(): void {
     this.cookieService.deleteAll();

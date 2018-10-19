@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { TransferState } from '@angular/platform-browser';
 
-import {
-  TranslateLoader,
-  TranslateModule,
-  MissingTranslationHandler,
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, MissingTranslationHandler } from '@ngx-translate/core';
 
 import {
   TranslatesService,

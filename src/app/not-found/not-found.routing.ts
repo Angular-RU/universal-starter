@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', component: NotFoundComponent,
+    path: '',
+    component: NotFoundComponent,
     data: {
       meta: {
         title: 'not-found.title',
-        description: 'not-found.text'
-      }
+        description: 'not-found.text',
+      },
     },
   },
 ];

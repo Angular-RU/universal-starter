@@ -8,7 +8,8 @@ app-toolbar {
   height: $toolbar-height;
   background-color: $color-primary;
   color: #fafafa;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+    0 1px 18px 0 rgba(0, 0, 0, 0.12);
   padding: 0 10px;
   z-index: 10;
   .toolbar__logo {
@@ -18,7 +19,7 @@ app-toolbar {
   }
   .toolbar__lang {
     background: inherit;
-    border: 1px solid rgba(255, 255, 255, .5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 2px;
     padding: 5px 10px;
   }
@@ -39,7 +40,7 @@ app-toolbar {
     vertical-align: baseline;
     padding: 0 16px;
     margin: 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     &:hover {
       background-color: #394c9f;
     }

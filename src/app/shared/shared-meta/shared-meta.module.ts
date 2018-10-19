@@ -16,10 +16,12 @@ export function metaFactory(translate: TranslateService): MetaLoader {
       'og:type': 'website',
       'og:locale': 'ru_RU',
       'og:locale:alternate': [
-        { 'code': 'en', 'name': 'English', 'culture': 'en-US' },
-        { 'code': 'ru', 'name': 'Русский', 'culture': 'ru-RU' },
-      ].map((lang: any) => lang.culture).toString()
-    }
+        { code: 'en', name: 'English', culture: 'en-US' },
+        { code: 'ru', name: 'Русский', culture: 'ru-RU' },
+      ]
+        .map((lang: any) => lang.culture)
+        .toString(),
+    },
   });
 }
 
@@ -28,9 +30,8 @@ export function metaFactory(translate: TranslateService): MetaLoader {
     MetaModule.forRoot({
       provide: MetaLoader,
       useFactory: metaFactory,
-      deps: [TranslateService]
-    })
-  ]
+      deps: [TranslateService],
+    }),
+  ],
 })
-export class SharedMetaModule {
-}
+export class SharedMetaModule {}

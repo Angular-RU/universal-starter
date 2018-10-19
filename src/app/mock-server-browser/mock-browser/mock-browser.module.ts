@@ -5,12 +5,8 @@ import { MockBrowserRoutes } from './mock-browser.routing';
 import { environment } from '../../../environments/environment';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MockBrowserRoutes
-  ],
+  imports: [CommonModule, MockBrowserRoutes],
   declarations: [MockBrowserComponent],
-  exports: [MockBrowserComponent]
+  exports: [MockBrowserComponent],
 })
-export class MockBrowserModule {
-}
+export class MockBrowserModule {}
