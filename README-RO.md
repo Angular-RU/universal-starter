@@ -15,7 +15,7 @@
 - https://csr.angular.su/ - rendering pe client master
 
 # Planuri: 
-- [x] Angular 5
+- [x] Angular 7
 - [x] `document is not defined` și `window is not defined` - [aici](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI componente** - [branch aparte](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI компоненты** - [branch aparte](https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
