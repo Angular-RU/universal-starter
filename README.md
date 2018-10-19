@@ -15,7 +15,7 @@
 - https://csr.angular.su/ - client rendering master
 
 # Plans:
-- [x] Angular 6
+- [x] Angular 7
 - [x] `document is not defined` and `window is not defined` - [here](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI components** - [individual branch](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI components** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
