@@ -35,11 +35,7 @@
 - `yarn build:universal` sau `npm run build:universal` - pentru production
 - `yarn server` sau `npm run server` - pentru a porni serverul
 - `yarn build:prerender` sau `npm run build:prerender` - pentru a genera statica pe `static.paths.ts`
-- pentru a porni regimul watch, în ssr folosiți:
-   - `npm run ssr:cw` - înpachetăm pentru client
-  - `npm run ssr:sw` - înpachetăm pentru server
-  - `npm run ssr:webpack` - înpachetăm `server.js`
-  - `npm run ssr:server` - server cu watch
+- pentru a porni regimul watch, în ssr folosiți `npm run ssr:watch`
 
 ## Cum să folosesc repozitoriul în proiectul meu?
 Pentru a adăuga ssr în proiectul dumneavoastră e nevoie de următoarele fișiere:
