@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/Angular-RU/angular-universal-starter/compare/v6.1.0...v7.0.0) (2018-10-24)
+
+
+### Bug Fixes
+
+* build webpack and docker.ssr ([575ae52](https://github.com/Angular-RU/angular-universal-starter/commit/575ae52))
+* change lang without reload page ([7501bc9](https://github.com/Angular-RU/angular-universal-starter/commit/7501bc9))
+* remove node fetch ([d96bd4d](https://github.com/Angular-RU/angular-universal-starter/commit/d96bd4d))
+* TransferHttpCacheModule - work! ([9197b6c](https://github.com/Angular-RU/angular-universal-starter/commit/9197b6c))
+* update [@gorniv](https://github.com/gorniv)/ngx-transfer-http ([dc632fb](https://github.com/Angular-RU/angular-universal-starter/commit/dc632fb))
+* **script:** add delay for watch script ([56d8470](https://github.com/Angular-RU/angular-universal-starter/commit/56d8470))
+* **watch:** use bash for terminal on windows ([5732dd2](https://github.com/Angular-RU/angular-universal-starter/commit/5732dd2))
+
+
+### Features
+
+* add watch script ([2b1151e](https://github.com/Angular-RU/angular-universal-starter/commit/2b1151e))
+* include style to inline style server render ([dbb413b](https://github.com/Angular-RU/angular-universal-starter/commit/dbb413b))
+* inline style browser ([029df7d](https://github.com/Angular-RU/angular-universal-starter/commit/029df7d))
+* update to Angular 7 ([1301091](https://github.com/Angular-RU/angular-universal-starter/commit/1301091))
+
+
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/Angular-RU/angular-universal-starter/compare/v6.0.0...v6.1.0) (2018-06-06)
 
