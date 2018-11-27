@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie';
 
 @Injectable()
-export class CookieStorage implements Storage {
+export class UniversalStorage implements Storage {
   [index: number]: string;
   [key: string]: any;
   length: number;
+  cookies: any;
 
   constructor(private cookieService: CookieService) {}
 
   public clear(): void {
-    this.cookieService.deleteAll();
+    this.cookieService.removeAll();
   }
 
   public getItem(key: string): string {
@@ -22,10 +23,10 @@ export class CookieStorage implements Storage {
   }
 
   public removeItem(key: string): void {
-    this.cookieService.delete(key);
+    this.cookieService.remove(key);
   }
 
   public setItem(key: string, data: string): void {
-    this.cookieService.set(key, data);
+    this.cookieService.put(key, data);
   }
 }

@@ -74,11 +74,11 @@ ROUTES.forEach((route) => {
           provideModuleMap(LAZY_MODULE_MAP),
           {
             provide: REQUEST,
-            useValue: null,
+            useValue: {},
           },
           {
             provide: RESPONSE,
-            useValue: null,
+            useValue: {},
           },
           {
             provide: 'ORIGIN_URL',

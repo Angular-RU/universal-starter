@@ -9,9 +9,8 @@ import {
 import { MetaService } from '@ngx-meta/core';
 import { Observable, of } from 'rxjs';
 
-import { AppStorage } from '@shared/for-storage/universal.inject';
-
 import { ILang } from './translates.interface';
+import { UniversalStorage } from '@shared/storage/universal.storage';
 
 const LANG_LIST: ILang[] = [
   { code: 'ru', name: 'Русский', culture: 'ru-RU' },
@@ -28,7 +27,7 @@ export class TranslatesService {
     @Inject(REQUEST) private _request: Request,
     @Inject(NGXTranslateService) private _translate: NGXTranslateService,
     @Inject(MetaService) private _meta: MetaService,
-    @Inject(AppStorage) private _appStorage: Storage,
+    @Inject(UniversalStorage) private _appStorage: Storage,
   ) {}
 
   public initLanguage(): Promise<any> {

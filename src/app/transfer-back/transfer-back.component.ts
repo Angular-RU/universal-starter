@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { AppStorage } from '@shared/for-storage/universal.inject';
 import { TransferHttpService } from '@gorniv/ngx-transfer-http';
 import { HttpClient } from '@angular/common/http';
 
@@ -16,7 +15,6 @@ export class TransferBackComponent implements OnInit {
   constructor(
     private http: TransferHttpService,
     private httpClient: HttpClient,
-    @Inject(AppStorage) private appStorage: Storage,
     @Inject('ORIGIN_URL') public baseUrl: string,
   ) {
     console.log(`ORIGIN_URL=${baseUrl}`);

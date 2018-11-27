@@ -1,8 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 
-import { AppStorage } from '@shared/for-storage/universal.inject';
 import { TransferHttpService } from '@gorniv/ngx-transfer-http';
 import { MetaService } from '@ngx-meta/core';
+import { UniversalStorage } from '@shared/storage/universal.storage';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -10,16 +11,21 @@ import { MetaService } from '@ngx-meta/core';
 })
 export class HomeComponent implements OnInit {
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private http: TransferHttpService,
     private readonly meta: MetaService,
-    @Inject(AppStorage) private appStorage: Storage,
+    private universalStorage: UniversalStorage,
   ) {}
 
   ngOnInit(): void {
-    this.appStorage.setItem('test', 'test2');
-    const resultCookie = this.appStorage.getItem('test');
-    const t = window;
-    const t1 = document;
-    this.meta.setTag('description', 'Meta update from init');
+      let resultCookie = this.universalStorage.getItem('test');
+      console.log('home resultCookie 0:', resultCookie);
+
+      this.universalStorage.setItem('test', 'test2');
+      resultCookie = this.universalStorage.getItem('test');
+      console.log('home resultCookie 1:', resultCookie);
+      const t = window;
+      const t1 = document;
+      this.meta.setTag('description', 'Meta update from init');
   }
 }

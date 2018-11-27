@@ -4,8 +4,6 @@ import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-bro
 // libs
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 // shared
-import { CookieStorage } from '@shared/for-storage/browser.storage';
-import { AppStorage } from '@shared/for-storage/universal.inject';
 import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 // components
 import { AppComponent } from './app.component';
@@ -36,7 +34,6 @@ export function getRequest(): any {
       provide: REQUEST,
       useFactory: getRequest,
     },
-    { provide: AppStorage, useClass: CookieStorage },
     { provide: 'ORIGIN_URL', useValue: location.origin },
   ],
 })
