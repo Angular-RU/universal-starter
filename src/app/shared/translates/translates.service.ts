@@ -27,6 +27,7 @@ export class TranslatesService {
     @Inject(REQUEST) private _request: Request,
     @Inject(NGXTranslateService) private _translate: NGXTranslateService,
     @Inject(MetaService) private _meta: MetaService,
+    @Inject(REQUEST) private _req: any,
     @Inject(UniversalStorage) private _appStorage: Storage,
   ) {}
 
@@ -41,6 +42,9 @@ export class TranslatesService {
   }
 
   private _getLanguage(): ILang {
+    // fix init cookie
+    this._req.cookie = this._req.headers['cookie'];
+
     let language: ILang = this._getFindLang(this._appStorage.getItem(STORAGE_LANG_NAME));
     if (language) {
       return language;
