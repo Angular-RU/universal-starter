@@ -5,7 +5,7 @@ import { NotFoundService } from './not-found.service';
 describe('NotFoundService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NotFoundService]
+      providers: [NotFoundService],
     });
   });
 

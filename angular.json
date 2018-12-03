@@ -23,8 +23,6 @@
               "src/manifest.json"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/styles/main.scss"
             ],
             "scripts": []
           },
@@ -86,8 +84,6 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.scss",
-              "src/styles/main.scss"
             ],
             "assets": [
               "src/assets",

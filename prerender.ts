@@ -9,12 +9,12 @@ const files = fs.readdirSync(`${process.cwd()}/dist-server`);
 
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
-    value: () => {
-        return {
-            enumerable: true,
-            configurable: true
-        };
-    },
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true,
+    };
+  },
 });
 global['document'] = win.document;
 global['CSS'] = null;
@@ -39,7 +39,7 @@ import { renderModuleFactory } from '@angular/platform-server';
 import { ROUTES } from './static.paths';
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const mainFiles = files.filter(file => file.startsWith('main'));
+const mainFiles = files.filter((file) => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
@@ -52,34 +52,40 @@ const index = readFileSync(join('dist', 'index.html'), 'utf8');
 let previousRender = Promise.resolve();
 
 // Iterate each route path
-ROUTES.forEach(route => {
-    const fullPath = join(BROWSER_FOLDER, route);
+ROUTES.forEach((route) => {
+  const fullPath = join(BROWSER_FOLDER, route);
 
-    // Make sure the directory structure is there
-    if (!existsSync(fullPath)) {
-        let syncpath = BROWSER_FOLDER;
-        route.split('/').forEach(element => {
-            syncpath = syncpath + '/' + element;
-            mkdirSync(syncpath);
-        });
-    }
+  // Make sure the directory structure is there
+  if (!existsSync(fullPath)) {
+    let syncpath = BROWSER_FOLDER;
+    route.split('/').forEach((element) => {
+      syncpath = syncpath + '/' + element;
+      mkdirSync(syncpath);
+    });
+  }
 
-    // Writes rendered HTML to index.html, replacing the file if it already exists.
-    previousRender = previousRender.then(_ => renderModuleFactory(AppServerModuleNgFactory, {
+  // Writes rendered HTML to index.html, replacing the file if it already exists.
+  previousRender = previousRender
+    .then((_) =>
+      renderModuleFactory(AppServerModuleNgFactory, {
         document: index,
         url: route,
         extraProviders: [
-            provideModuleMap(LAZY_MODULE_MAP),
-            {
-                provide: REQUEST, useValue: null
-            },
-            {
-                provide: RESPONSE, useValue: null
-            },
-            {
-                provide: 'ORIGIN_URL',
-                useValue: environment.host
-            }
-        ]
-    })).then(html => writeFileSync(join(fullPath, 'index.html'), html));
+          provideModuleMap(LAZY_MODULE_MAP),
+          {
+            provide: REQUEST,
+            useValue: {},
+          },
+          {
+            provide: RESPONSE,
+            useValue: {},
+          },
+          {
+            provide: 'ORIGIN_URL',
+            useValue: environment.host,
+          },
+        ],
+      }),
+    )
+    .then((html) => writeFileSync(join(fullPath, 'index.html'), html));
 });

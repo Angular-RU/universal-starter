@@ -9,17 +9,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    TranslateModule
-  ],
-  declarations: [
-    FooterComponent,
-    SidebarComponent,
-    ToolbarComponent,
-    WrapperComponent
-  ]
+  imports: [CommonModule, RouterModule, TranslateModule],
+  declarations: [FooterComponent, SidebarComponent, ToolbarComponent, WrapperComponent],
 })
-export class LayoutsModule {
-}
+export class LayoutsModule {}

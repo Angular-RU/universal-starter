@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  &:active, &:hover, &:focus {
+  &:active,
+  &:hover,
+  &:focus {
     outline: 0;
   }
 }
@@ -16,7 +18,7 @@ body {
   height: 100%;
   background-color: $body-color-bg;
   color: $body-color-text;
-  font: 14px Roboto, "Helvetica Neue", sans-serif;
+  font: 14px Roboto, 'Helvetica Neue', sans-serif;
   font-weight: 400;
   padding: 0;
   margin: 0;

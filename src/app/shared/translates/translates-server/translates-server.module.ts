@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { TransferState } from '@angular/platform-browser';
 
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, MissingTranslationHandler } from '@ngx-translate/core';
 
-import { TranslatesService } from '@shared/translates/translates.service';
+import {
+  TranslatesService,
+  CommonMissingTranslationHandler,
+} from '@shared/translates/translates.service';
 
 import { TranslatesServerLoaderService } from './translates-server-loader.service';
 
@@ -14,14 +17,17 @@ export function translateFactory(transferState: TransferState): TranslatesServer
 @NgModule({
   imports: [
     TranslateModule.forRoot({
+      missingTranslationHandler: {
+        provide: MissingTranslationHandler,
+        useClass: CommonMissingTranslationHandler,
+      },
       loader: {
         provide: TranslateLoader,
         useFactory: translateFactory,
-        deps: [TransferState]
-      }
+        deps: [TransferState],
+      },
     }),
   ],
-  providers: [TranslatesService]
+  providers: [TranslatesService],
 })
-export class TranslatesServerModule {
-}
+export class TranslatesServerModule {}

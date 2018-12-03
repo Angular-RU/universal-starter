@@ -6,11 +6,7 @@ import { TransferBackRoutes } from './transfer-back.routing';
 import { TransferBackComponent } from './transfer-back.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TransferBackRoutes,
-    TranslateModule
-  ],
-  declarations: [TransferBackComponent]
+  imports: [CommonModule, TransferBackRoutes, TranslateModule],
+  declarations: [TransferBackComponent],
 })
-export class TransferBackModule { }
+export class TransferBackModule {}

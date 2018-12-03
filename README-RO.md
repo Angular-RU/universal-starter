@@ -15,7 +15,7 @@
 - https://csr.angular.su/ - rendering pe client master
 
 # Planuri: 
-- [x] Angular 5
+- [x] Angular 7
 - [x] `document is not defined` și `window is not defined` - [aici](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI componente** - [branch aparte](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI компоненты** - [branch aparte](https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
@@ -35,11 +35,7 @@
 - `yarn build:universal` sau `npm run build:universal` - pentru production
 - `yarn server` sau `npm run server` - pentru a porni serverul
 - `yarn build:prerender` sau `npm run build:prerender` - pentru a genera statica pe `static.paths.ts`
-- pentru a porni regimul watch, în ssr folosiți:
-   - `npm run ssr:cw` - înpachetăm pentru client
-  - `npm run ssr:sw` - înpachetăm pentru server
-  - `npm run ssr:webpack` - înpachetăm `server.js`
-  - `npm run ssr:server` - server cu watch
+- pentru a porni regimul watch, în ssr folosiți `npm run ssr:watch`
 
 ## Cum să folosesc repozitoriul în proiectul meu?
 Pentru a adăuga ssr în proiectul dumneavoastră e nevoie de următoarele fișiere:
@@ -59,7 +55,7 @@ Pentru a adăuga ssr în proiectul dumneavoastră e nevoie de următoarele fiși
 Exemplu oficial în engleză: https://github.com/angular/universal-starter 
 Module folosite pentru universal:
 - https://github.com/angular/universal/tree/master/modules/aspnetcore-engine - motorul pentru .net core
-- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule, la acest moment nu-l folosesc, dar dacă știți pentru ce și unde se poate de-l pus - deschideți o issue sau pull request
+- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule
 - https://github.com/angular/universal/tree/master/modules/express-engine - Express Engine pentru a porni renderingul pe node, folosim în repozitoriul nostru. Fiți atenți, versiunea acutală nu mai mică de 5.0.0-beta.5
 - https://github.com/angular/universal/tree/master/modules/hapi-engine -  Hapi Engine un motor alternativă. În exemplu nu folosim, în principui nu-i mare diferența în conectare față de express-engine
 - https://github.com/angular/universal/tree/master/modules/module-map-ngfactory-loader - modul pentru LazyLoading - e ceva folositor. Fiți atenți, versiunea actuală nu mai mică de 5.0.0-beta.5

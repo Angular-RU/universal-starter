@@ -15,7 +15,7 @@
 - https://csr.angular.su/ - клиенский рендеринг master
 
 # Планы:
-- [x] Angular 5
+- [x] Angular 7
 - [x] `document is not defined` и `window is not defined` - [тут](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI компоненты** - [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI компоненты** - [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
@@ -35,11 +35,7 @@
 - `yarn build:universal` или `npm run build:universal` - для сборки в релиз
 - `yarn server` или `npm run server` - для запуска сервера
 - `yarn build:prerender` или `npm run build:prerender` - для генерации статики по `static.paths.ts`
-- для запуска отслеживания изменения кода при ssr запустите:
-  - `npm run ssr:cw` - сборка client
-  - `npm run ssr:sw` - сборка server
-  - `npm run ssr:webpack` -сборка `server.js`
-  - `npm run ssr:server` - server с watch
+- для запуска отслеживания изменения кода при ssr запустите `npm run ssr:watch`
 
 ## Как использовать этот репозиторий в своем проекте:
 Для переноса ssr в свой репозиторий вам необходимы файлы:
@@ -59,7 +55,7 @@
 Официальный пример на анлийиском: https://github.com/angular/universal-starter 
 Модули используемые для universal:
 - https://github.com/angular/universal/tree/master/modules/aspnetcore-engine -движок для .net core
-- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule, на данный момент мной не используется, если знаете куда и зачем его встаить - напишите мне или в issue, pull request
+- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule для синхронизации запросов сервера и клиента
 - https://github.com/angular/universal/tree/master/modules/express-engine - Express Engine для запуска рендеринга в node, в нашем приложении используется. Обратите внимание, что актуальная версия  не ниже 5.0.0-beta.5
 - https://github.com/angular/universal/tree/master/modules/hapi-engine -  Hapi Engine альтернативный движок для рендеринга. В примере не используется, принципиально в схеме подключения не отличается от express-engine
 - https://github.com/angular/universal/tree/master/modules/module-map-ngfactory-loader - модуль поиска модулей для LazyLoading - вещь нужная и  используемая. Обратите внимание, что актуальная версия  не ниже 5.0.0-beta.5

@@ -2,17 +2,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 // libs
-import { TransferHttpCacheModule } from '@nguniversal/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 // shared
-import { CookieStorage } from '@shared/for-storage/browser.storage';
-import { AppStorage } from '@shared/for-storage/universal.inject';
 import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
 // components
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { InlineStyleModule } from './inline-style/inline-style.module';
+import { InlineStyleComponent } from './inline-style/inline-style.component';
 
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -22,23 +20,21 @@ export function getRequest(): any {
 }
 
 @NgModule({
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, InlineStyleComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app' }),
-    TransferHttpCacheModule,
-    BrowserTransferStateModule,
     AppModule,
+    BrowserTransferStateModule,
     TranslatesBrowserModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: false })
+    InlineStyleModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: false }),
   ],
   providers: [
     {
       // The server provides these in main.server
-      provide: REQUEST, useFactory: (getRequest)
+      provide: REQUEST,
+      useFactory: getRequest,
     },
-    { provide: AppStorage, useClass: CookieStorage },
-    { provide: 'ORIGIN_URL', useValue: location.origin }
-  ]
+    { provide: 'ORIGIN_URL', useValue: location.origin },
+  ],
 })
-export class AppBrowserModule {
-}
+export class AppBrowserModule {}

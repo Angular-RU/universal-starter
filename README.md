@@ -15,7 +15,7 @@
 - https://csr.angular.su/ - client rendering master
 
 # Plans:
-- [x] Angular 6
+- [x] Angular 7
 - [x] `document is not defined` and `window is not defined` - [here](./defined.md)
 - [x] [Angular Material2](https://material.angular.io/) **UI components** - [individual branch](https://github.com/Angular-RU/angular-universal-starter/tree/material2)
 - [x] [Primeng](https://www.primefaces.org/primeng/) **UI components** - [individual branch] (https://github.com/Angular-RU/angular-universal-starter/tree/primeng)
@@ -35,11 +35,7 @@
 - `yarn build:universal` or `npm run build:universal` - for assembly in release
 - `yarn server` or `npm run server` - to start the server
 - `yarn build:prerender` or `npm run build:prerender` - to generate static by `static.paths.ts`
-- for watch with ssr:
-  - `npm run ssr:cw` - build client
-  - `npm run ssr:sw` - build server
-  - `npm run ssr:webpack` -build `server.js`
-  - `npm run ssr:server` - server with watch
+- for watch with ssr - `npm run ssr:watch`
 
 ## How to use this repository in your project:
 To transfer ssr to your repository, you need the following files:
@@ -59,7 +55,7 @@ To transfer ssr to your repository, you need the following files:
 Official example in English: https://github.com/angular/universal-starter
 Modules used for universal:
 - https://github.com/angular/universal/tree/master/modules/aspnetcore-engine - web for .net core
-- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule, at the moment I do not use it if you know where and why it should be installed - write to me or in issue, pull request
+- https://github.com/angular/universal/tree/master/modules/common - TransferHttpCacheModule for http request only server side and sync with TransferHttp for browser
 - https://github.com/angular/universal/tree/master/modules/express-engine - Express Engine to run the rendering in node, in our application is used. Please note that the current version is not lower than 5.0.0-beta.5
 - https://github.com/angular/universal/tree/master/modules/hapi-engine - Hapi Engine is an alternative engine for rendering. In the example is not used, in principle in the connection scheme does not differ from express-engine
 - https://github.com/angular/universal/tree/master/modules/module-map-ngfactory-loader - the module search module for LazyLoading - the thing needed and used. Please note that the current version is not lower than 5.0.0-beta.5
