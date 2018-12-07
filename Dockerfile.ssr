@@ -1,4 +1,4 @@
-FROM node:8-alpine as buildContainer
+FROM node:10-alpine as buildContainer
 WORKDIR /app
 COPY ./package.json ./package-lock.json /app/
 RUN npm install
