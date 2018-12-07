@@ -74,7 +74,7 @@ ROUTES.forEach((route) => {
           provideModuleMap(LAZY_MODULE_MAP),
           {
             provide: REQUEST,
-            useValue: {},
+            useValue: { cookie: '', headers: {} },
           },
           {
             provide: RESPONSE,
