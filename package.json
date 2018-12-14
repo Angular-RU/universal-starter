@@ -25,7 +25,7 @@
     "test": "ng test",
     "test:ssr": "cross-env TEST=true && run-p test:ssr:*",
     "test:ssr:server": "npm run server",
-    "test:ssr:script": "node ./node_modules/npm-delay 2000 && ts-mocha test/*.spec.ts test/exit.ts",
+    "test:ssr:script": "node ./node_modules/npm-delay 2000 && ts-mocha test/*.spec.ts test/exit.ts --timeout 5000",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prerender": "npm run build:universal && npm run generate:prerender",
