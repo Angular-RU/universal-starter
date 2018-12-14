@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotFoundComponent } from './not-found.component';
+import { TranslatesService } from '@shared/translates';
+import { TranslateModule } from '@ngx-translate/core';
+import { NotFoundService } from './not-found.service';
+import { TranslatesBrowserModule } from '@shared/translates/translates-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
@@ -8,7 +14,16 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        BrowserTransferStateModule,
+        TranslatesBrowserModule,
+        TranslateModule,
+      ],
       declarations: [NotFoundComponent],
+      providers: [
+        NotFoundService,
+      ],
     }).compileComponents();
   }));
 

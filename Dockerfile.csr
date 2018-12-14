@@ -4,6 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN npm install
 RUN npm run build:prod
+RUN npm run test
 
 FROM nginx:alpine
 COPY --from=buildContainer /app/dist /app

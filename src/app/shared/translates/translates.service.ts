@@ -101,7 +101,11 @@ export class TranslatesService {
 
 export class CommonMissingTranslationHandler implements MissingTranslationHandler {
   handle(params: MissingTranslationHandlerParams) {
-    if (params.key.match(/\w+\.\w+/) && !params.translateService.translations['ru'][params.key]) {
+    if (
+      params.key.match(/\w+\.\w+/) &&
+      params.translateService.translations['ru'] &&
+      !params.translateService.translations['ru'][params.key]
+    ) {
       console.warn(`Нехватает перевода для "${params.key}"`);
     }
     return params.key;

@@ -5,6 +5,7 @@ RUN npm install
 COPY . /app
 RUN npm run build:universal
 RUN npm run generate:prerender
+RUN npm run test:ssr
 
 FROM node:8-alpine
 
