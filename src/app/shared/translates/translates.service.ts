@@ -24,7 +24,7 @@ export class TranslatesService {
   constructor(
     @Inject(PLATFORM_ID) private _platformId: Object,
     @Inject(DOCUMENT) private _document: any,
-    @Inject(REQUEST) private _request: Request,
+    @Inject(REQUEST) private _request: any,
     @Inject(NGXTranslateService) private _translate: NGXTranslateService,
     @Inject(MetaService) private _meta: MetaService,
     @Inject(REQUEST) private _req: any,
