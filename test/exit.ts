@@ -1,6 +1,6 @@
 const request = require('./request-service');
 
-describe('exit node server', () => {
+describe('exit from server', () => {
   it('Should be exit', async () => {
     await request('http://localhost:4000/test/exit');
   });
