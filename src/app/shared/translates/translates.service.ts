@@ -24,7 +24,7 @@ export class TranslatesService {
   constructor(
     @Inject(PLATFORM_ID) private _platformId: Object,
     @Inject(DOCUMENT) private _document: any,
-    @Inject(REQUEST) private _request: Request,
+    @Inject(REQUEST) private _request: any,
     @Inject(NGXTranslateService) private _translate: NGXTranslateService,
     @Inject(MetaService) private _meta: MetaService,
     @Inject(REQUEST) private _req: any,
@@ -101,7 +101,11 @@ export class TranslatesService {
 
 export class CommonMissingTranslationHandler implements MissingTranslationHandler {
   handle(params: MissingTranslationHandlerParams) {
-    if (params.key.match(/\w+\.\w+/) && !params.translateService.translations['ru'][params.key]) {
+    if (
+      params.key.match(/\w+\.\w+/) &&
+      params.translateService.translations['ru'] &&
+      !params.translateService.translations['ru'][params.key]
+    ) {
       console.warn(`Нехватает перевода для "${params.key}"`);
     }
     return params.key;

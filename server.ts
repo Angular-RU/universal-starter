@@ -1,6 +1,8 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
+const test = process.env['TEST'] === 'true';
+
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');
@@ -35,6 +37,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 const PORT = process.env.PORT || 4000;
 import { ROUTES } from './static.paths';
+import { exit } from 'process';
 
 enableProdMode();
 
@@ -75,6 +78,13 @@ app.use((req, res, next) => {
   if (wwwredirecto && req.hostname.startsWith('www.')) {
     const host = req.hostname.slice(4, req.hostname.length);
     res.redirect(301, 'https://' + host + req.url);
+  }
+
+  // for test
+  if (test && req.url === '/test/exit') {
+    res.send('exit');
+    exit(0);
+    return;
   }
 
   next();
