@@ -34,8 +34,12 @@ export class TranslatesService {
   public initLanguage(): Promise<any> {
     return new Promise((resolve: Function) => {
       this._translate.addLangs(LANG_LIST.map((lang: ILang) => lang.code));
-      this._translate.setDefaultLang(LANG_DEFAULT.code);
       const language: ILang = this._getLanguage();
+      if (language) {
+        this._translate.setDefaultLang(language.code);
+      } else {
+        this._translate.setDefaultLang(LANG_DEFAULT.code);
+      }
       this._setLanguage(language);
       resolve();
     });
