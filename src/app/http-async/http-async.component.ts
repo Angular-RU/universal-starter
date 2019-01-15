@@ -12,7 +12,7 @@ export class HttpAsyncComponent implements OnInit {
   todosAsync: Promise<any>;
 
   async ngOnInit() {
-    this.photos = await this.httpAsyncService.get('http://jsonplaceholder.typicode.com/photos');
-    this.todosAsync = this.httpAsyncService.get('http://jsonplaceholder.typicode.com/todos');
+    this.photos = await this.httpAsyncService.get('https://jsonplaceholder.typicode.com/photos');
+    this.todosAsync = this.httpAsyncService.get('https://jsonplaceholder.typicode.com/todos');
   }
 }
