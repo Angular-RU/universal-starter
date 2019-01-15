@@ -4,7 +4,8 @@
     "home": "Home",
     "mock": "Mock",
     "back-http": "Back http",
-    "static-back-http": "Static `Back http`"
+    "static-back-http": "Static `Back http`",
+    "async-http": "http async"
   },
   "home": {
     "title": "Home page",

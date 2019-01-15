@@ -20,6 +20,7 @@ const routes: Routes = [
         path: 'static/back',
         loadChildren: './transfer-back/transfer-back.module#TransferBackModule',
       },
+      { path: 'async', loadChildren: './http-async/http-async.module#HttpAsyncModule' },
       { path: '**', loadChildren: './not-found/not-found.module#NotFoundModule' },
     ],
   },

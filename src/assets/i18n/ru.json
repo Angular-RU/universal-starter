@@ -4,7 +4,8 @@
     "home": "Главная",
     "mock": "Мокап",
     "back-http": "Http на бэк",
-    "static-back-http": "Статическая `Http на бэк`"
+    "static-back-http": "Статическая `Http на бэк`",
+    "async-http": "http async"
   },
   "home": {
     "title": "Главная страница",

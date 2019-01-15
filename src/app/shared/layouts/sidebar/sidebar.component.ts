@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 const LINKS: any[] = [
   { link: '/home', name: 'home', icon: 'home' },
   { link: '/mock', name: 'mock', icon: 'info_outline' },
+  { link: '/async', name: 'async-http', icon: 'swap_vert' },
   { link: '/back', name: 'back-http', icon: 'swap_vert' },
   { link: '/static/back', name: 'static-back-http', icon: 'swap_vert' },
 ];
