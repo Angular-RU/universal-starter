@@ -1,6 +1,6 @@
 // angular
 import { NgModule } from '@angular/core';
-import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 // libs
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 // shared
@@ -11,6 +11,7 @@ import { AppModule } from './app.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { InlineStyleModule } from './inline-style/inline-style.module';
 import { InlineStyleComponent } from './inline-style/inline-style.component';
+import { StateTransferInitializerModule } from '@nguniversal/common';
 
 // import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -23,6 +24,7 @@ export function getRequest(): any {
   bootstrap: [AppComponent, InlineStyleComponent],
   imports: [
     AppModule,
+    StateTransferInitializerModule,
     BrowserTransferStateModule,
     TranslatesBrowserModule,
     InlineStyleModule,
