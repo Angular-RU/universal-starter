@@ -11,31 +11,32 @@ module.exports = {
     // This is our Express server for Dynamic universal
     server: './server.ts',
     // This is an example of Static prerendering (generative)
-    prerender: './prerender.ts'
+    prerender: './prerender.ts',
   },
-  resolve: { extensions: [".js", ".ts"] },
+  resolve: { extensions: ['.js', '.ts'] },
   output: {
     // Puts the output at the root of the dist folder
     path: path.join(__dirname),
-    filename: '[name].js'
+    filename: '[name].js',
   },
 
+  devtool: 'source-map',
   plugins: [
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
       /(.+)?angular(\\|\/)core(.+)?/,
       path.join(__dirname, 'src'), // location of your src
-      {} // a map of your routes
+      {}, // a map of your routes
     ),
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
       /(.+)?express(\\|\/)(.+)?/,
       path.join(__dirname, 'src'),
-      {}
-    )
+      {},
+    ),
   ],
   target: 'node',
   node: {
-    __dirname: false
+    __dirname: false,
   },
 };

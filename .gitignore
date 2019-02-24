@@ -41,3 +41,5 @@ testem.log
 # System Files
 **/.DS_Store
 Thumbs.db
+prerender.js.map
+server.js.map
