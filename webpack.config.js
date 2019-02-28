@@ -20,7 +20,6 @@ module.exports = {
     filename: '[name].js',
   },
 
-  devtool: 'source-map',
   plugins: [
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression

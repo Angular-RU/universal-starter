@@ -1,5 +1,8 @@
 import { environment } from './src/environments/environment';
 
+// for debug
+require('source-map-support').install();
+
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');
