@@ -66,7 +66,7 @@ app.use(cookieparser());
 
 // redirects!
 const redirectowww = false;
-const redirectohttps = true;
+const redirectohttps = false;
 const wwwredirecto = true;
 app.use((req, res, next) => {
   // for domain/index.html
