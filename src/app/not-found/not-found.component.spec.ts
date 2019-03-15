@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotFoundComponent } from './not-found.component';
-import { TranslatesService } from '@shared/translates';
 import { TranslateModule } from '@ngx-translate/core';
 import { NotFoundService } from './not-found.service';
 import { TranslatesBrowserModule } from '@shared/translates/translates-browser';

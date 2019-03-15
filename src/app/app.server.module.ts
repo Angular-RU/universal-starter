@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { InlineStyleComponent } from './inline-style/inline-style.component';
 import { InlineStyleModule } from './inline-style/inline-style.module';
-import { CookieService, CookieBackendService } from 'ngx-cookie';
+import { CookieService, CookieBackendService, CookieModule } from '@gorniv/ngx-universal';
 
 @NgModule({
   imports: [

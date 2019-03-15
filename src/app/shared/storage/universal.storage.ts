@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie';
+import { CookieService } from '@gorniv/ngx-universal';
 
 @Injectable()
 export class UniversalStorage implements Storage {

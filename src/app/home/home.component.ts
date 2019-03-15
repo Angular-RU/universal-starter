@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 
-import { TransferHttpService } from '@gorniv/ngx-transfer-http';
+import { TransferHttpService } from '@gorniv/ngx-universal';
 import { MetaService } from '@ngx-meta/core';
 import { UniversalStorage } from '@shared/storage/universal.storage';
 import { DOCUMENT } from '@angular/common';

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { TransferHttpService } from '@gorniv/ngx-transfer-http';
+import { TransferHttpService } from '@gorniv/ngx-universal';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
