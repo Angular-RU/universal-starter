@@ -1,0 +1,7 @@
+<form class="form-group">
+  <div class="form-control" *ngFor="let control of controls">
+    <label [for]="control.id">{{'auth.' + control.label | translate}}</label>
+    <input [id]="control.id" type="text" [formControlName]="control.name">
+  </div>
+  <button type="submit">{{'auth.login' | translate}}</button>
+</form>

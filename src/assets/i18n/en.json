@@ -25,5 +25,9 @@
   "not-found": {
     "title": "Not Found",
     "text": "Page Not Found"
+  },
+  "auth": {
+    "login": "Log in",
+    "enter-your-email": "Enter your email to login"
   }
 }
