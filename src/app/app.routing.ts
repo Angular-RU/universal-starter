@@ -2,13 +2,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 
 import { WrapperComponent } from '@shared/layouts/wrapper/wrapper.component';
+import { AuthGuard } from '@shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '',
     component: WrapperComponent,
-    canActivateChild: [MetaGuard],
+    canActivateChild: [MetaGuard, AuthGuard],
     children: [
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
       {

@@ -6,29 +6,46 @@ import { CookieService } from '@gorniv/ngx-universal';
   providedIn: 'root'
 })
 export class AuthService {
-  private authToken: string;
-  private authState: BehaviorSubject<boolean>;
+  private _authToken: string;
+  private _authState: BehaviorSubject<boolean>;
+  private _interruptedUrl: string;
+
+  public get interruptedUrl(): string {
+    return this._interruptedUrl;
+  }
+
+  public set interruptedUrl(url: string) {
+    this._interruptedUrl = url;
+  }
 
   public get token(): string {
-    return this.authToken;
+    return this._authToken;
   }
 
   public set token(token: string) {
-    this.authToken = token;
+    this._authToken = token;
+    if (!token) {
+      this._authState.next(false);
+    }
   }
 
   set changeAuthState(newState: boolean) {
-    this.authState.next(newState);
+    this._authState.next(newState);
   }
 
   constructor(private cookie: CookieService) {
-    this.authToken = this.cookie.get('token');
-    this.authState = new BehaviorSubject(!!this.authToken);
+    this.cookie.put('token', 'token');
+    this.token = this.cookie.get('token');
+    this._authState = new BehaviorSubject(!!this.token);
+    setTimeout(() => {
+      this.changeAuthState = false;
+      console.count('1');
+    }, 3000);
   }
 
   isAuthenticated(): Observable<boolean> {
     // This method is required to implement authentication.
-    return this.authState.asObservable();
+    return this._authState.asObservable();
   }
 
   logOut() {
