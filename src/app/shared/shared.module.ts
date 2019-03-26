@@ -4,9 +4,10 @@ import { TransferHttpModule } from '@gorniv/ngx-universal';
 
 import { LayoutsModule } from './layouts/layouts.module';
 import { SharedMetaModule } from './shared-meta';
+import { SharedFormsModule } from '@shared/shared-forms/shared-forms.module';
 
 @NgModule({
-  exports: [LayoutsModule, SharedMetaModule, TransferHttpModule],
+  exports: [LayoutsModule, SharedMetaModule, TransferHttpModule, SharedFormsModule],
   providers: [],
 })
 export class SharedModule {

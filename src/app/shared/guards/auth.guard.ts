@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateChild, Router, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from '@shared/services/auth.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthGuard implements CanActivateChild {
   constructor(private router: Router,
-              private auth: AuthService) {}
-  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+              private auth: AuthService) {
+  }
+
+  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    console.log('AuthGuard', this.auth.isAuthenticated());
+    if (!this.auth.isAuthenticated()) {
+      this.router.navigate(['/auth', 'login'])
+        .then(() => {
+          this.auth.interruptedUrl = state.url;
+          // TODO: If Notification (toast) service is present we can show warning message
+        });
+    }
     return this.auth.isAuthenticated();
   }
 }

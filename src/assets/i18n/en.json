@@ -7,6 +7,16 @@
     "static-back-http": "Static `Back http`",
     "async-http": "http async"
   },
+  "auth": {
+    "login": {
+      "title": "Login page",
+      "text": "Enter your correct credentials"
+    },
+    "registration": {
+      "title": "Registration page",
+      "text": "Some text about registration"
+    }
+  },
   "home": {
     "title": "Home page",
     "text": "This is some text in English at home page"

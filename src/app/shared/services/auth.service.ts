@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { CookieService } from '@gorniv/ngx-universal';
+import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
   private _authToken: string;
   private _authState: BehaviorSubject<boolean>;
@@ -19,37 +18,45 @@ export class AuthService {
   }
 
   public get token(): string {
-    return this._authToken;
+    return this._authToken ? this._authToken : '';
   }
 
   public set token(token: string) {
     this._authToken = token;
-    if (!token) {
-      this._authState.next(false);
-    }
+    this._authState.next(!!token);
   }
 
-  set changeAuthState(newState: boolean) {
+  public set changeAuthState(newState: boolean) {
     this._authState.next(newState);
   }
 
-  constructor(private cookie: CookieService) {
-    this.cookie.put('token', 'token');
-    this.token = this.cookie.get('token');
-    this._authState = new BehaviorSubject(!!this.token);
-    setTimeout(() => {
-      this.changeAuthState = false;
-      console.count('1');
-    }, 3000);
+  constructor(private _cookie: CookieService, private router: Router) {
+    this._authState = new BehaviorSubject(!1);
+    // this.saveTokenInCookieStorage('token plug');
+    this.token = this._cookie.get('token');
   }
 
-  isAuthenticated(): Observable<boolean> {
+  isAuthenticated(): boolean {
     // This method is required to implement authentication.
-    return this._authState.asObservable();
+    return !!this.token;
+  }
+
+  saveTokenInCookieStorage(token: string): void {
+    // For saving auth token in Cookie storage.
+    this._cookie.put('token', token);
+  }
+
+  logIn() {
+    if (this.interruptedUrl && this.interruptedUrl.length) {
+      this.router.navigate([this.interruptedUrl])
+        .then(() => {
+          // TODO: If Notification (toast) service is present we can show successfully Logged in message
+        });
+    }
   }
 
   logOut() {
     this.changeAuthState = false;
-    this.cookie.removeAll();
+    this._cookie.removeAll();
   }
 }

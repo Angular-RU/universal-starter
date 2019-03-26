@@ -20,11 +20,12 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // Add auth-token to http-header if available
-    const currentToken = this.auth.token;
-    if (currentToken) {
+    console.log(this.auth);
+    const tokenExists = this.auth && this.auth.token && this.auth.token.length;
+    if (tokenExists) {
       request = request.clone({
         setHeaders: {
-          'Authorization': `${this.authPrefix} ${currentToken}`
+          'Authorization': `${this.authPrefix} ${this.auth.token}`
         }
       });
     }
