@@ -41,7 +41,7 @@ export class AuthService {
 
   public set token(token: string) {
     this._authToken = token;
-    this._authState.next(!!token);
+    this.changeAuthState = !!token;
   }
 
   public set changeAuthState(newState: boolean) {
