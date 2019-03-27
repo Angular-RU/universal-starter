@@ -32,7 +32,7 @@ export class AuthService {
 
   constructor(private _cookie: CookieService, private router: Router) {
     this._authState = new BehaviorSubject(!1);
-    // this.saveTokenInCookieStorage('token plug');
+    this.saveTokenInCookieStorage('token plug');
     this.token = this._cookie.get('token');
   }
 
