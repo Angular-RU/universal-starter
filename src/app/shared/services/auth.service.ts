@@ -15,7 +15,7 @@ export class AuthService {
 
   constructor(@Inject(UniversalStorage) private _appStorage: Storage,
               // private _http: HttpClient,
-              private router: Router) {
+              private _router: Router) {
     this._authState = new BehaviorSubject(!1);
     this._initialData.forEach((value) => {
       this[value] = this._getStoredItems(value);
@@ -59,7 +59,7 @@ export class AuthService {
     // });
 
     // If the entrance url was interrupted.
-    this.router.navigate([this.interruptedUrl && this.interruptedUrl.length ? this.interruptedUrl : '/home'])
+    this._router.navigate([this.interruptedUrl && this.interruptedUrl.length ? this.interruptedUrl : '/home'])
       .then(() => {
         this.interruptedUrl = '';
         // TODO: If Notification (toast) service is present can show successfully Logged in message
@@ -69,7 +69,7 @@ export class AuthService {
   public logOut() {
     this.token = '';
     this._appStorage.clear();
-    this.router.navigate(['/auth', 'login']).then(() => {
+    this._router.navigate(['/auth', 'login']).then(() => {
       // TODO: If Notification (toast) service is present can show successfully Logged out message
     });
   }

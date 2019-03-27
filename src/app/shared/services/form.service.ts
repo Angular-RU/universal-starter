@@ -11,7 +11,6 @@ export class FormService {
     if (this._isArray(controls)) {
       controls.forEach((control: ICustomControl) => {
         control.label = control.label ? control.label : `${prefix}${control.id}.label`;
-        console.log(control.label);
         control.type = control.type ? control.type : `${prefix}${control.id}`;
         group[control.id] = this.configureControl(control);
       });
