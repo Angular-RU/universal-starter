@@ -9,6 +9,7 @@ import { FormService } from '@shared/services/form.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+  button: string = 'buttons.registration';
   private _prefix: string = 'auth.registration.form.';
   controls: ICustomControl[] = [
     {
@@ -60,7 +61,7 @@ export class RegistrationComponent implements OnInit {
     this.form = this._formBuilder.group(this._formService.configureControls(this.controls, this._prefix));
   }
 
-  onRegistrationSubmit() {
+  onSubmit() {
     console.log(this.form.value);
   }
 }

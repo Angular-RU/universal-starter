@@ -5,7 +5,9 @@
     "mock": "Mock",
     "back-http": "Back http",
     "static-back-http": "Static `Back http`",
-    "async-http": "http async"
+    "async-http": "http async",
+    "nonexistent": "404: Page not found",
+    "logout": "Log Out"
   },
   "auth": {
     "login": {
@@ -81,6 +83,7 @@
     "text": "Page Not Found"
   },
   "buttons": {
-    "login": "Login"
+    "login": "Login",
+    "registration": "Registration"
   }
 }

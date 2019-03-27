@@ -5,7 +5,9 @@
     "mock": "Мокап",
     "back-http": "Http на бэк",
     "static-back-http": "Статическая `Http на бэк`",
-    "async-http": "http async"
+    "async-http": "http async",
+    "nonexistent": "404: Страница не найдена",
+    "logout": "Выйти"
   },
   "auth": {
     "login": {
@@ -80,6 +82,7 @@
     "title": "Не найдено"
   },
   "buttons": {
-    "login": "Войти"
+    "login": "Войти",
+    "registration": "Регистрация"
   }
 }

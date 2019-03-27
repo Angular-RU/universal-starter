@@ -14,8 +14,7 @@ export class UnAuthGuard implements CanLoad {
 
   condition(isAuthenticated: boolean): boolean {
     if (!isAuthenticated) {
-      const interruptedUrl = !!this.auth.interruptedUrl;
-      this.router.navigate([interruptedUrl ? this.auth.interruptedUrl : ''])
+      this.router.navigate([!!this.auth.interruptedUrl ? this.auth.interruptedUrl : ''])
         .then(() => {
           this.auth.interruptedUrl = '';
         });

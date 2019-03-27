@@ -1,10 +1,16 @@
 <nav>
-    <ul>
-        <li *ngFor="let item of links">
-            <a [routerLink]="[item.link]" [routerLinkActive]="['active']">
-                <i class="material-icons">{{ item.icon }}</i>
-                {{ item.name | translate }}
-            </a>
-        </li>
-    </ul>
+  <ul>
+    <li *ngFor="let item of links">
+      <a [routerLink]="[item.link]" [routerLinkActive]="['active']">
+        <i class="material-icons">{{ item.icon }}</i>
+        {{ item.name | translate }}
+      </a>
+    </li>
+    <li>
+      <a (click)="logout()">
+        <i class="material-icons">lock</i>
+        {{ 'sidebar.logout' | translate }}
+      </a>
+    </li>
+  </ul>
 </nav>

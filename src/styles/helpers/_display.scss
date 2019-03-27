@@ -1,0 +1,121 @@
+$cols: 24;
+// @MIXIN
+@mixin order($order) {
+  order: $order;
+}
+
+@for $i from 0 to $cols {
+  .o-#{$i} {
+    @include order($i);
+  }
+}
+@mixin z-index($z) {
+  z-index: $z;
+}
+
+@for $i from 0 to $cols {
+  .o-#{$i} {
+    @include order($i);
+  }
+  .z-#{$i} {
+    @include z-index($i);
+  }
+}
+
+// DISPLAYS
+
+.d-b {
+  display: block;
+}
+
+.d-i-b {
+  display: inline-block;
+}
+
+.d-f {
+  display: flex;
+}
+
+.d-i-f {
+  display: inline-flex;
+}
+
+// FLEX
+
+.f-a {
+  flex: auto;
+}
+
+// FLEX DIRECTIONS
+
+.f-d {
+  flex-direction: row;
+}
+
+.f-d-r {
+  flex-direction: row-reverse;
+}
+
+.f-d-c {
+  flex-direction: column;
+}
+
+.f-d-c-r {
+  flex-direction: column-reverse;
+}
+
+.f-g {
+  flex-grow: 1;
+}
+
+// JUSTIFY-CONTENTS
+
+.j-c-c {
+  justify-content: center;
+}
+
+.j-c-s-b {
+  justify-content: space-between;
+}
+
+.j-c-s-a {
+  justify-content: space-around;
+}
+
+.j-c-f-e {
+  justify-content: flex-end;
+}
+
+.j-c-f-s {
+  justify-content: flex-start;
+}
+
+.a-i-c {
+  align-items: center;
+}
+
+.a-i-e {
+  align-items: flex-end;
+}
+
+.a-i-s {
+  align-items: flex-start;
+}
+
+.a-i-stretch {
+  align-items: stretch;
+}
+
+// POSITION
+.p-r {
+  position: relative;
+}
+.p-a {
+  position: absolute;
+}
+.p-f {
+  position: fixed;
+}
+.p-i {
+  position: inherit;
+}

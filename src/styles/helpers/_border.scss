@@ -1,0 +1,23 @@
+$border-color: #424242;
+$default-border-width: 3px;
+$default-border-type: solid;
+$default-border-edge: both;
+
+
+@mixin border($edge: $default-border-edge, $border-width: $default-border-width, $border-color: $border-color, $border-type: $default-border-type) {
+  @if $edge == both {
+    border: $border-width $border-type $border-color;
+  }
+  @if $edge == top {
+    border-top: $border-width $border-type $border-color;
+  }
+  @if $edge == right {
+    border-right: $border-width $border-type $border-color;
+  }
+  @if $edge == bottom {
+    border-bottom: $border-width $border-type $border-color;
+  }
+  @if $edge == left {
+    border-left: $border-width $border-type $border-color;
+  }
+}

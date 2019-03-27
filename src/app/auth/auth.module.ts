@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutes } from './auth.routing';
 import { AuthComponent } from './auth.component';
+import { LayoutsModule } from '@shared/layouts/layouts.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { AuthComponent } from './auth.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutes
+    AuthRoutes,
+    LayoutsModule
   ]
 })
 export class AuthModule {

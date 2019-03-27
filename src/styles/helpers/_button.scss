@@ -1,0 +1,16 @@
+button {
+  width: 100%;
+  height: 42px;
+  padding: 0;
+  margin: 0;
+  background: $color-primary;
+  color: $body-color-bg;
+  border: none;
+  &:disabled {
+    background: $color-primary-50;
+  }
+}
+
+.form-submit {
+
+}

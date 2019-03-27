@@ -1,0 +1,130 @@
+$grid: 8;
+$points: 12;
+
+// PADDING
+@mixin padding-gap($grid, $multiplier) {
+  padding: $multiplier * $grid + px;
+}
+
+@mixin padding-side-gap($grid, $multiplier, $sides...) {
+  @each $side in ($sides) {
+    @if $side == top {
+      padding-top: $multiplier * $grid + px;
+    }
+    @if $side == right {
+      padding-right: $multiplier * $grid + px;
+    }
+    @if $side == bottom {
+      padding-bottom: $multiplier * $grid + px;
+    }
+    @if $side == left {
+      padding-left: $multiplier * $grid + px;
+    }
+  }
+}
+
+// MARGIN
+@mixin margin-gap($grid, $multiplier) {
+  margin: $multiplier * $grid + px;
+}
+
+@mixin margin-side-gap($grid, $multiplier, $sides...) {
+  @each $side in ($sides) {
+    @if $side == top {
+      margin-top: $multiplier * $grid + px;
+    }
+    @if $side == right {
+      margin-right: $multiplier * $grid + px;
+    }
+    @if $side == bottom {
+      margin-bottom: $multiplier * $grid + px;
+    }
+    @if $side == left {
+      margin-left: $multiplier * $grid + px;
+    }
+  }
+}
+
+// ABSOLUTE & FIXED
+
+@mixin gap($grid, $multiplier, $side) {
+  @if $side == top {
+    top: $multiplier * $grid + px;
+  }
+  @if $side == right {
+    right: $multiplier * $grid + px;
+  }
+  @if $side == bottom {
+    bottom: $multiplier * $grid + px;
+  }
+  @if $side == left {
+    left: $multiplier * $grid + px;
+  }
+}
+
+@for $i from 0 to $points {
+  // ---------- PADDING ------------
+  .p-#{$i} {
+    @include padding-gap($grid, $i);
+  }
+
+  //  @each $side in top, right, bottom, left
+  //  @if $side == top
+  .p-t-#{$i} {
+    @include padding-side-gap($grid, $i, top);
+  }
+  //@if $side == right
+  .p-r-#{$i} {
+    @include padding-side-gap($grid, $i, right);
+  }
+  //@if $side == bottom
+  .p-b-#{$i} {
+    @include padding-side-gap($grid, $i, bottom);
+  }
+  //@if $side == left
+  .p-l-#{$i} {
+    @include padding-side-gap($grid, $i, left);
+  }
+  // ---------- MARGIN ------------
+  .m-#{$i} {
+    @include margin-gap($grid, $i);
+  }
+  //  @each $side in top, right, bottom, left
+  //  @if $side == top
+  .m-t-#{$i} {
+    @include margin-side-gap($grid, $i, top);
+  }
+  //@if $side == right
+  .m-r-#{$i} {
+    @include margin-side-gap($grid, $i, right);
+  }
+  //@if $side == bottom
+  .m-b-#{$i} {
+    @include margin-side-gap($grid, $i, bottom);
+  }
+  //@if $side == left
+  .m-l-#{$i} {
+    @include margin-side-gap($grid, $i, left);
+  }
+
+  .m-#{$i} {
+    @include margin-gap($grid, $i);
+  }
+  //  @each $side in top, right, bottom, left
+  //  @if $side == top
+  .t-#{$i} {
+    @include gap($grid, $i, top);
+  }
+  //@if $side == right
+  .r-#{$i} {
+    @include gap($grid, $i, right);
+  }
+  //@if $side == bottom
+  .b-#{$i} {
+    @include gap($grid, $i, bottom);
+  }
+  //@if $side == left
+  .l-#{$i} {
+    @include gap($grid, $i, left);
+  }
+}

@@ -1,13 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CookieService } from '@gorniv/ngx-universal';
 import { Router } from '@angular/router';
+// import { HttpClient } from '@angular/common/http';
+import { UniversalStorage } from '@shared/storage/universal.storage';
 
 @Injectable()
 export class AuthService {
   private _authToken: string;
   private _authState: BehaviorSubject<boolean>;
   private _interruptedUrl: string;
+  private _initialData: string[] = [
+    'token', 'interruptedUrl',
+  ];
+
+  constructor(@Inject(UniversalStorage) private _appStorage: Storage,
+              // private _http: HttpClient,
+              private router: Router) {
+    this._authState = new BehaviorSubject(!1);
+    this._initialData.forEach((value) => {
+      this[value] = this._getStoredItems(value);
+    });
+  }
 
   public get interruptedUrl(): string {
     return this._interruptedUrl;
@@ -15,6 +28,11 @@ export class AuthService {
 
   public set interruptedUrl(url: string) {
     this._interruptedUrl = url;
+    if (!url) {
+      this._appStorage.removeItem('interruptedUrl');
+    } else {
+      this._saveValueInCookieStorage('interruptedUrl', url);
+    }
   }
 
   public get token(): string {
@@ -30,33 +48,41 @@ export class AuthService {
     this._authState.next(newState);
   }
 
-  constructor(private _cookie: CookieService, private router: Router) {
-    this._authState = new BehaviorSubject(!1);
-    this.saveTokenInCookieStorage('token plug');
-    this.token = this._cookie.get('token');
-  }
-
-  isAuthenticated(): boolean {
+  public isAuthenticated(): boolean {
     // This method is required to implement authentication.
     return !!this.token;
   }
 
-  saveTokenInCookieStorage(token: string): void {
+  public logIn(formValue: { email: string, password: string }) {
+    // this._http.post('', formValue).subscribe((response: string) => {
+    this._saveValueInCookieStorage('token', formValue.email);
+    // });
+
+    // If the entrance url was interrupted.
+    this.router.navigate([this.interruptedUrl && this.interruptedUrl.length ? this.interruptedUrl : '/'])
+      .then(() => {
+        this.interruptedUrl = '';
+        // TODO: If Notification (toast) service is present can show successfully Logged in message
+      });
+  }
+
+  public logOut() {
+    this.token = '';
+    this._appStorage.clear();
+    this.router.navigate(['/auth', 'login']).then(() => {
+      // TODO: If Notification (toast) service is present can show successfully Logged out message
+    });
+  }
+
+  private _getStoredItems(key: string): any {
+    return this._appStorage.getItem(key);
+  }
+
+  private _saveValueInCookieStorage(key: string, value: string): void {
     // For saving auth token in Cookie storage.
-    this._cookie.put('token', token);
-  }
-
-  logIn() {
-    if (this.interruptedUrl && this.interruptedUrl.length) {
-      this.router.navigate([this.interruptedUrl])
-        .then(() => {
-          // TODO: If Notification (toast) service is present we can show successfully Logged in message
-        });
+    this._appStorage.setItem(key, value);
+    if (key === 'token') {
+      this.token = value;
     }
-  }
-
-  logOut() {
-    this.changeAuthState = false;
-    this._cookie.removeAll();
   }
 }

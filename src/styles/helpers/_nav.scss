@@ -1,0 +1,18 @@
+.nav-link {
+  a {
+    transition: $transition-all;
+    color: $color-primary-50;
+  }
+  &.active {
+    a {
+      color: $color-primary;
+    }
+    background: $grey;
+  }
+  &:hover:not(.active) {
+    a {
+      color: $color-primary;
+    }
+
+  }
+}
