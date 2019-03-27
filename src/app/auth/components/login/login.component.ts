@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ICustomControl } from '@shared/models/form.model';
+import { FormService } from '@shared/services/form.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +9,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  private _prefix: string = 'auth.login.form.';
+  controls: ICustomControl[] = [
+    {
+      id: 'email',
+      type: 'email',
+      validators: ['required', 'email'],
+      errors: {
+        required: 'required',
+        email: 'email'
+      }
+    },
+    {
+      id: 'password',
+      type: 'password',
+      validators: ['required', 'pattern', 'minLength'],
+      minLength: 6,
+      // pattern: '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})',
+      errors: {
+        required: 'required',
+        pattern: 'pattern',
+        minLength: 'minLength'
+      }
+    }
+  ];
+  form: FormGroup;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private _formBuilder: FormBuilder,
+              private _formService: FormService) {
   }
 
+  ngOnInit() {
+    this.form = this._formBuilder.group(this._formService.configureControls(this.controls, this._prefix));
+  }
+
+  onLoginSubmit() {
+    console.log(this.form.value);
+  }
 }

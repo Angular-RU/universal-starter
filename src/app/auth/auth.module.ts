@@ -10,7 +10,7 @@ import { AuthComponent } from './auth.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutes,
+    AuthRoutes
   ]
 })
 export class AuthModule {

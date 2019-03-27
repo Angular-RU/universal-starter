@@ -7,7 +7,7 @@ import { SharedMetaModule } from './shared-meta';
 import { SharedFormsModule } from '@shared/shared-forms/shared-forms.module';
 
 @NgModule({
-  exports: [LayoutsModule, SharedMetaModule, TransferHttpModule, SharedFormsModule],
+  exports: [LayoutsModule, SharedMetaModule, TransferHttpModule],
   providers: [],
 })
 export class SharedModule {

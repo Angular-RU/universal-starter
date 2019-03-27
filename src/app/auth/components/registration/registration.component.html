@@ -1,3 +1,17 @@
-<p>
-  registration works!
-</p>
+<div class="form" *ngIf="form">
+  <form class="form-group" [formGroup]="form" (ngSubmit)="onRegistrationSubmit()">
+    <div class="form-control" *ngFor="let control of controls">
+      <label [for]="control.id">
+        {{control.label}}
+        <span class="asterisk"> *</span>
+      </label>
+      <input [type]="control.type"
+             [formControlName]="control.id"
+             [id]="control.id"/>
+      <!--<span class="validation error"></span>-->
+    </div>
+    <div class="form-submit">
+      <button type="submit" [disabled]="form.invalid">{{'buttons.login'}}</button>
+    </div>
+  </form>
+</div>
