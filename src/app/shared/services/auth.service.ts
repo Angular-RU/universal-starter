@@ -55,11 +55,11 @@ export class AuthService {
 
   public logIn(formValue: { email: string, password: string }) {
     // this._http.post('', formValue).subscribe((response: string) => {
-    this._saveValueInCookieStorage('token', formValue.email);
+    this._saveValueInCookieStorage('token', formValue.email + formValue.password);
     // });
 
     // If the entrance url was interrupted.
-    this.router.navigate([this.interruptedUrl && this.interruptedUrl.length ? this.interruptedUrl : '/'])
+    this.router.navigate([this.interruptedUrl && this.interruptedUrl.length ? this.interruptedUrl : '/home'])
       .then(() => {
         this.interruptedUrl = '';
         // TODO: If Notification (toast) service is present can show successfully Logged in message

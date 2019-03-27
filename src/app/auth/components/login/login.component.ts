@@ -46,8 +46,7 @@ export class LoginComponent implements OnInit {
     this.form = this._formBuilder.group(this._formService.configureControls(this.controls, this._prefix));
   }
 
-
   onSubmit() {
-    console.log(this.form.value);
+    this._auth.logIn(this.form.value);
   }
 }
