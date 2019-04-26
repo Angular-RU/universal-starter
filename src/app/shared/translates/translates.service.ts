@@ -46,9 +46,6 @@ export class TranslatesService {
   }
 
   private _getLanguage(): ILang {
-    // fix init cookie
-    this._req.cookie = this._req.headers['cookie'];
-
     let language: ILang = this._getFindLang(this._appStorage.getItem(STORAGE_LANG_NAME));
     if (language) {
       return language;
