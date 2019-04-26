@@ -2,13 +2,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 
 import { WrapperComponent } from '@shared/layouts/wrapper/wrapper.component';
+import { AuthGuard } from '@shared/guards/auth.guard';
+import { UnAuthGuard } from '@shared/guards/un-auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
+    path: 'auth',
+    loadChildren: './auth/auth.module#AuthModule',
+    canLoad: [UnAuthGuard],
+  },
+  {
     path: '',
     component: WrapperComponent,
-    canActivateChild: [MetaGuard],
+    canActivateChild: [
+      MetaGuard,
+      AuthGuard,
+    ],
     children: [
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
       {

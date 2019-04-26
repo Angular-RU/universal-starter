@@ -5,7 +5,63 @@
     "mock": "Mock",
     "back-http": "Back http",
     "static-back-http": "Static `Back http`",
-    "async-http": "http async"
+    "async-http": "http async",
+    "nonexistent": "404: Page not found",
+    "logout": "Log Out"
+  },
+  "auth": {
+    "login": {
+      "title": "Login page",
+      "text": "Enter your correct credentials",
+      "form": {
+        "email": {
+          "label": "Email",
+          "errors": {
+            "required": "Email is required.",
+            "email": "Incorrect email format."
+          }
+        },
+        "password": {
+          "label": "Password",
+          "errors": {
+            "required": "Password field can't be empty.",
+            "pattern": "Incorrect password format. Please, use uppercase, lowercase characters ant numbers",
+            "minLength": "Incorrect password format. It's not safe!"
+          }
+        }
+      }
+    },
+    "registration": {
+      "title": "Registration page",
+      "text": "Some text about registration",
+      "form": {
+        "email": {
+          "label": "Email",
+          "errors": {
+            "required": "Email is required.",
+            "email": "Incorrect email format."
+          }
+        },
+        "login": {
+          "label": "Login"
+        },
+        "password": {
+          "label": "Password",
+          "errors": {
+            "required": "Password field can't be empty.",
+            "pattern": "Incorrect password format. Please, use uppercase, lowercase characters ant numbers.",
+            "minLength": "Incorrect password format. It's not safe!"
+          }
+        },
+        "confirm": {
+          "label": "Confirm password",
+          "errors": {
+            "required": "Confirm password field can't be empty.",
+            "email": "Passwords do not match.  Enter the same password in the \"Password\" and \"Confirm Password\" fields."
+          }
+        }
+      }
+    }
   },
   "home": {
     "title": "Home page",
@@ -25,5 +81,9 @@
   "not-found": {
     "title": "Not Found",
     "text": "Page Not Found"
+  },
+  "buttons": {
+    "login": "Login",
+    "registration": "Registration"
   }
 }

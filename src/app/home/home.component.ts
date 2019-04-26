@@ -11,23 +11,23 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
-    private http: TransferHttpService,
-    private readonly meta: MetaService,
-    private universalStorage: UniversalStorage,
-    // instead window.documet
+    @Inject(PLATFORM_ID) private _platformId: Object,
+    private _http: TransferHttpService,
+    private readonly _meta: MetaService,
+    private _universalStorage: UniversalStorage,
+    // instead window.document
     @Inject(DOCUMENT) private _document: Document,
   ) {}
 
   ngOnInit(): void {
-    let resultCookie = this.universalStorage.getItem('test');
+    let resultCookie = this._universalStorage.getItem('test');
     console.log('home resultCookie 0:', resultCookie);
 
-    this.universalStorage.setItem('test', 'test2');
-    resultCookie = this.universalStorage.getItem('test');
+    this._universalStorage.setItem('test', 'test2');
+    resultCookie = this._universalStorage.getItem('test');
     console.log('home resultCookie 1:', resultCookie);
     const t = window;
     const t1 = document;
-    this.meta.setTag('description', 'Meta update from init');
+    this._meta.setTag('description', 'Meta update from init');
   }
 }

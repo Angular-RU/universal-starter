@@ -1,0 +1,38 @@
+$default-font-family: Roboto, 'Helvetica Neue', sans-serif;
+
+@mixin font($size, $weight: normal, $family: $default-font-family) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+}
+
+@for $i from 8 to 32 {
+  .sz-#{$i} {
+    @include font($i + px);
+  }
+
+  .sz-b-#{$i} {
+    @include font($i + px, 700);
+  }
+
+  .sz-l-#{$i} {
+    @include font($i + px, 100);
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+
+.t-a-c {
+  text-align: center;
+}
+.t-a-l {
+  text-align: left;
+}
+.t-a-r {
+  text-align: right;
+}

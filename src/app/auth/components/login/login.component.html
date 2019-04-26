@@ -1,0 +1,19 @@
+<div *ngIf="form">
+  <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="form-control p-0" *ngFor="let control of controls">
+      <label [for]="control.id"
+             class="p-0 p-t-1 p-b-1 m-0 d-f a-i-c z-1 sz-l-12">
+        {{control.label | translate}}
+        <span class="asterisk">* </span>
+      </label>
+      <input [type]="control.type"
+             class="p-1 p-r-8 bg-trans z-2 sz-12"
+             [formControlName]="control.id"
+             [id]="control.id"/>
+      <!--<span class="validation error"></span>-->
+    </div>
+    <div class="form-submit m-t-2">
+      <button type="submit" [disabled]="form.invalid">{{button | translate}}</button>
+    </div>
+  </form>
+</div>

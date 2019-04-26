@@ -11,5 +11,6 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 @NgModule({
   imports: [CommonModule, RouterModule, TranslateModule],
   declarations: [FooterComponent, SidebarComponent, ToolbarComponent, WrapperComponent],
+  exports: [FooterComponent, SidebarComponent, ToolbarComponent, WrapperComponent],
 })
 export class LayoutsModule {}

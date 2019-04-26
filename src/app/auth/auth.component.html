@@ -1,0 +1,17 @@
+<app-toolbar></app-toolbar>
+
+<div class="auth-wrapper p-t-9 d-f f-d-c a-i-c">
+  <nav>
+    <ul class="p-0 m-0 l-s-n d-f j-c-s-b f-g">
+      <li class="nav-link p-0 b-b-2 w-100 t-a-c"
+          [routerLinkActive]="'active'"
+          *ngFor="let route of routes">
+        <a class="w-100 d-i-b p-2" [routerLink]="route.link">{{route.text}}</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="form auth-form p-2 p-t-0 w-100">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
