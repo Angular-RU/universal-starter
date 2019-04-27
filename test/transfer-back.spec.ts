@@ -13,6 +13,6 @@ describe(`test work http request ${page} with ssr`, () => {
 
   it('Should be exist "createdAt"', async () => {
     body = await request(url);
-    expect(body.includes('createdAt')).to.equal(true);
+    return expect(body.includes('createdAt')).to.equal(true);
   });
 });
