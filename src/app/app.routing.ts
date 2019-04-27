@@ -15,10 +15,7 @@ const routes: Routes = [
   {
     path: '',
     component: WrapperComponent,
-    canActivateChild: [
-      MetaGuard,
-      AuthGuard,
-    ],
+    canActivateChild: [MetaGuard, AuthGuard],
     children: [
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
       {
@@ -26,13 +23,25 @@ const routes: Routes = [
         loadChildren: './mock-server-browser/mock-server-browser.module#MockServerBrowserModule',
       },
       { path: 'back', loadChildren: './transfer-back/transfer-back.module#TransferBackModule' },
+      { path: 'async', loadChildren: './http-async/http-async.module#HttpAsyncModule' },
+    ],
+  },
+  {
+    path: '',
+    component: WrapperComponent,
+    canActivateChild: [MetaGuard],
+    children: [
       {
         path: 'static/back',
         loadChildren: './transfer-back/transfer-back.module#TransferBackModule',
       },
-      { path: 'async', loadChildren: './http-async/http-async.module#HttpAsyncModule' },
-      { path: '**', loadChildren: './not-found/not-found.module#NotFoundModule' },
     ],
+  },
+  {
+    path: '',
+    component: WrapperComponent,
+    canActivateChild: [MetaGuard],
+    children: [{ path: '**', loadChildren: './not-found/not-found.module#NotFoundModule' }],
   },
 ];
 // must use {initialNavigation: 'enabled'}) - for one load page, without reload
