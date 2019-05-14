@@ -62,8 +62,10 @@ ROUTES.forEach((route) => {
   if (!existsSync(fullPath)) {
     let syncpath = BROWSER_FOLDER;
     route.split('/').forEach((element) => {
-      syncpath = syncpath + '/' + element;
-      mkdirSync(syncpath);
+      syncpath = join(syncpath, element);
+      if (!existsSync(syncpath)) {
+        mkdirSync(syncpath);
+      }
     });
   }
 
