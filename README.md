@@ -2,6 +2,8 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/angularru/angular-universal-starter/branches/master/badge.svg)](https://semaphoreci.com/angularru/angular-universal-starter)
 
+If you like this project please show your support with a GitHub star. Much appreciated!
+
 > Repository with Angular CLI and Angular Universal
 
 **Translations**:
