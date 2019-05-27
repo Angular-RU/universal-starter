@@ -15,9 +15,14 @@ const routes: Routes = [
   {
     path: '',
     component: WrapperComponent,
+    canActivateChild: [MetaGuard],
+    children: [{ path: 'home', loadChildren: './home/home.module#HomeModule' }],
+  },
+  {
+    path: '',
+    component: WrapperComponent,
     canActivateChild: [MetaGuard, AuthGuard],
     children: [
-      { path: 'home', loadChildren: './home/home.module#HomeModule' },
       {
         path: 'mock',
         loadChildren: './mock-server-browser/mock-server-browser.module#MockServerBrowserModule',
