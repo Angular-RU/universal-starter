@@ -3,15 +3,11 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "module": "commonjs",
+    "module": "esnext",
     "types": ["node"],
     "typeRoots": ["../node_modules/@types"]
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts",
-    "node_modules"
-  ],
+  "exclude": ["test.ts", "**/*.spec.ts", "node_modules"],
   "angularCompilerOptions": {
     "entryModule": "app/app.server.module#AppServerModule"
   }

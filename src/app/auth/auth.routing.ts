@@ -15,11 +15,17 @@ const authRoutes: Routes = [
     children: [
       {
         path: 'login',
-        loadChildren: './components/login/login.module#LoginModule'
+        loadChildren: async () => {
+            const { LoginModule } = await import('./components/login/login.module');
+            return LoginModule;
+        }
       },
       {
         path: 'registration',
-        loadChildren: './components/registration/registration.module#RegistrationModule',
+        loadChildren: async () => {
+            const { RegistrationModule } = await import('./components/registration/registration.module');
+            return RegistrationModule;
+        },
       },
     ],
   },
