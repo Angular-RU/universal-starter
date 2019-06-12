@@ -29,7 +29,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prerender": "npm run build:universal && npm run generate:prerender",
-    "generate:prerender": "node prerender.js"
+    "generate:prerender": "node prerender.js",
+    "bundle-report": "ng build --stats-json && webpack-bundle-analyzer dist/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -90,6 +91,7 @@
     "ts-node": "8.2.0",
     "tslint": "5.16.0",
     "typescript": "3.4.5",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "3.3.2",
     "webpack-node-externals": "1.7.2"
   }
