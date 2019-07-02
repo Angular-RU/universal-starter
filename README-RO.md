@@ -26,7 +26,6 @@
 - [x] folosim ngx-translate pentru i18n
 - [x] folosim ORIGIN_URL - pentru drumuri absolute
 - [x] @angular/service-worker(`ng add @angular/pwa --project universal-demo`)
-- [ ] Ionic - e nevoie să creăm versiunea web, până când avem probleme [branch aparte](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## Cum să pornim?
 - `yarn` sau `npm install`

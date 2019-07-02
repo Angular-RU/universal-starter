@@ -28,7 +28,6 @@ If you like this project please show your support with a GitHub star. Much appre
 - [x] uses ngx-translate to support internationalization (i18n)
 - [x] uses ORIGIN_URL - for absolute queries
 - [x] @angular/service-worker(`ng add @angular/pwa --project universal-demo`)
-- [ ] Ionic - it is necessary to compile the web version while there are problems [separate branch](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## How to start
 - `yarn` or `npm install`

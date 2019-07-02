@@ -26,7 +26,6 @@
 - [x] используется ngx-translate для поддержки интернационализации (i18n)
 - [x] используется ORIGIN_URL - для абсолютных запросов
 - [x] @angular/service-worker(`ng add @angular/pwa --project universal-demo`)
-- [ ] Ionic - необходимо собрать веб версию, пока есть проблемы [отдельная ветка](https://github.com/Angular-RU/angular-universal-starter/tree/ionic)
 
 ## Как запустить
 - `yarn` или `npm install`
