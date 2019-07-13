@@ -23,6 +23,7 @@
     "build:universal": "ng run universal-demo:build:production && ng run universal-demo:server:production && webpack --progress --colors",
     "server": "node server.js",
     "test": "ng test",
+    "test:ci": "cross-env CI=true ng test",
     "test:ssr": "run-p test:ssr:*",
     "test:ssr:server": "cross-env TEST=true node server.js",
     "test:ssr:script": "node ./node_modules/npm-delay 2000 && ts-mocha test/*.spec.ts test/exit.ts --timeout 15000",
