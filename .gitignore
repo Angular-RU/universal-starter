@@ -22,6 +22,7 @@ package-lock.json
 *.launch
 .settings/
 *.sublime-workspace
+*.iml
 
 # IDE - VSCode
 .vscode/*
@@ -45,3 +46,4 @@ testem.log
 Thumbs.db
 prerender.js.map
 server.js.map
+server.js
