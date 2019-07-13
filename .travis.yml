@@ -7,7 +7,7 @@ install:
 script:
   - npm run lint
   - npm test
-  - npm run test:ssr
   - npm run build:prod
-  - npm run build:universal
   - npm run build:prerender
+  - npm run build:universal
+  - npm run test:ssr
