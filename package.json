@@ -43,7 +43,7 @@
     "@angular/forms": "8.1.2",
     "@angular/platform-browser": "8.1.2",
     "@angular/platform-browser-dynamic": "8.1.2",
-    "@angular/pwa": "0.801.1",
+    "@angular/pwa": "0.801.2",
     "@angular/router": "8.1.2",
     "@angular/service-worker": "8.1.2",
     "@nguniversal/common": "next",
@@ -61,8 +61,8 @@
     "zone.js": "0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.801.1",
-    "@angular/cli": "8.1.1",
+    "@angular-devkit/build-angular": "0.801.2",
+    "@angular/cli": "8.1.2",
     "@angular/compiler-cli": "8.1.2",
     "@angular/language-service": "8.1.2",
     "@angular/platform-server": "8.1.2",
