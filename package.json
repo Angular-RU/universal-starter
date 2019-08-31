@@ -52,7 +52,7 @@
     "@ngx-meta/core": "7.0.0",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
-    "@gorniv/ngx-universal": "1.1.5",
+    "@gorniv/ngx-universal": "1.2.1",
     "cookie-parser": "1.4.4",
     "core-js": "3.2.1",
     "reflect-metadata": "0.1.13",
