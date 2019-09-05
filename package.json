@@ -94,7 +94,7 @@
     "tslint": "5.19.0",
     "typescript": "3.5.3",
     "webpack-bundle-analyzer": "3.4.1",
-    "webpack-cli": "3.3.7",
+    "webpack-cli": "3.3.8",
     "webpack-node-externals": "1.7.2"
   }
 }
