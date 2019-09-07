@@ -46,6 +46,7 @@ const mainFiles = files.filter((file) => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
+import { NgxRequest, NgxResponce } from '@gorniv/ngx-universal';
 
 const BROWSER_FOLDER = join(process.cwd(), 'static');
 
@@ -83,6 +84,14 @@ ROUTES.forEach((route) => {
           },
           {
             provide: RESPONSE,
+            useValue: {},
+          },
+          {
+            provide: NgxRequest,
+            useValue: { cookie: '', headers: {} },
+          },
+          {
+            provide: NgxResponce,
             useValue: {},
           },
           {
