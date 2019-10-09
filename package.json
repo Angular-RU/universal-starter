@@ -66,7 +66,7 @@
     "@angular/compiler-cli": "8.2.9",
     "@angular/language-service": "8.2.9",
     "@angular/platform-server": "8.2.9",
-    "@types/jasmine": "3.4.2",
+    "@types/jasmine": "3.4.3",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "12.7.3",
     "chai": "4.2.0",
