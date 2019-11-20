@@ -6,7 +6,11 @@ import { AppBrowserModule } from 'app/app.browser.module';
 if (environment.production) {
   enableProdMode();
 }
-// not sure needed
-document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppBrowserModule).catch(err => console.log(err));
-});
+// for showing loading indicator
+platformBrowserDynamic().bootstrapModule(AppBrowserModule)
+  .then(() => {
+    console.log('LOADED');
+    // hide loading here dom.remove()
+  })
+  .catch(err => console.log(err));
+
