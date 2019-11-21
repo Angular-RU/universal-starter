@@ -128,19 +128,24 @@ app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
 app.get(ROUTES, express.static(path.join(__dirname, '.', 'static')));
 
 // cache
-const mcache = require('memory-cache');
-const cache = (duration) => {
+const NodeCache = require('node-cache');
+// stdTTL: (default: 0) the standard ttl as number in seconds for every generated cache element. 0 = unlimited
+// checkperiod: (default: 600) The period in seconds, as a number, used for the automatic delete check interval. 0 = no periodic check.
+const myCache = new NodeCache({ stdTTL: 5 * 60, checkperiod: 120 });
+
+const cache = () => {
   return (req, res, next) => {
     const key = '__express__' + req.originalUrl || req.url;
-    const cachedBody = mcache.get(key);
-    if (cachedBody) {
+    const exists = myCache.has(key);
+    if (exists) {
       console.log(`from cache: `, req.originalUrl || req.url);
+      const cachedBody = myCache.get(key);
       res.send(cachedBody);
       return;
     } else {
       res.sendResponse = res.send;
       res.send = (body) => {
-        mcache.put(key, body, duration * 1000);
+        myCache.set(key, body);
         res.sendResponse(body);
       };
       next();
@@ -149,9 +154,7 @@ const cache = (duration) => {
 };
 
 // dynamic render
-app.get('*', 
-cache(60), 
-(req, res) => {
+app.get('*', cache(), (req, res) => {
   // mock navigator from req.
   global['navigator'] = req['headers']['user-agent'];
   const http =
