@@ -126,8 +126,32 @@ app.set('views', 'src');
 app.get('*.*', express.static(path.join(__dirname, '.', 'dist')));
 // static
 app.get(ROUTES, express.static(path.join(__dirname, '.', 'static')));
+
+// cache
+const mcache = require('memory-cache');
+const cache = (duration) => {
+  return (req, res, next) => {
+    const key = '__express__' + req.originalUrl || req.url;
+    const cachedBody = mcache.get(key);
+    if (cachedBody) {
+      console.log(`from cache: `, req.originalUrl || req.url);
+      res.send(cachedBody);
+      return;
+    } else {
+      res.sendResponse = res.send;
+      res.send = (body) => {
+        mcache.put(key, body, duration * 1000);
+        res.sendResponse(body);
+      };
+      next();
+    }
+  };
+};
+
 // dynamic render
-app.get('*', (req, res) => {
+app.get('*', 
+cache(60), 
+(req, res) => {
   // mock navigator from req.
   global['navigator'] = req['headers']['user-agent'];
   const http =
