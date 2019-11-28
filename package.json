@@ -43,7 +43,7 @@
     "@angular/forms": "8.2.14",
     "@angular/platform-browser": "8.2.14",
     "@angular/platform-browser-dynamic": "8.2.14",
-    "@angular/pwa": "0.803.19",
+    "@angular/pwa": "0.803.20",
     "@angular/router": "8.2.14",
     "@angular/service-worker": "8.2.14",
     "@nguniversal/common": "8.1.1",
@@ -62,8 +62,8 @@
     "zone.js": "0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.803.19",
-    "@angular/cli": "8.3.19",
+    "@angular-devkit/build-angular": "0.803.20",
+    "@angular/cli": "8.3.20",
     "@angular/compiler-cli": "8.2.14",
     "@angular/language-service": "8.2.14",
     "@angular/platform-server": "8.2.14",
@@ -91,7 +91,7 @@
     "source-map-support": "0.5.16",
     "ssri": "6.0.1",
     "ts-mocha": "6.0.0",
-    "ts-node": "8.5.2",
+    "ts-node": "8.5.3",
     "tslint": "5.20.1",
     "typescript": "3.5.3",
     "webpack-bundle-analyzer": "3.6.0",
