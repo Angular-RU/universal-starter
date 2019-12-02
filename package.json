@@ -49,7 +49,7 @@
     "@nguniversal/common": "8.1.1",
     "@nguniversal/express-engine": "8.1.1",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
-    "@ngx-meta/core": "8.0.1",
+    "@ngx-meta/core": "8.0.2",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
     "@gorniv/ngx-universal": "2.0.1",
