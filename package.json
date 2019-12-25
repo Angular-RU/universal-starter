@@ -43,7 +43,7 @@
     "@angular/forms": "8.2.14",
     "@angular/platform-browser": "8.2.14",
     "@angular/platform-browser-dynamic": "8.2.14",
-    "@angular/pwa": "0.803.20",
+    "@angular/pwa": "0.803.21",
     "@angular/router": "8.2.14",
     "@angular/service-worker": "8.2.14",
     "@nguniversal/common": "8.2.6",
@@ -62,8 +62,8 @@
     "zone.js": "0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.803.20",
-    "@angular/cli": "8.3.20",
+    "@angular-devkit/build-angular": "0.803.21",
+    "@angular/cli": "8.3.21",
     "@angular/compiler-cli": "8.2.14",
     "@angular/language-service": "8.2.14",
     "@angular/platform-server": "8.2.14",
@@ -80,7 +80,7 @@
     "karma-cli": "2.0.0",
     "karma-coverage-istanbul-reporter": "2.1.1",
     "karma-jasmine": "2.0.1",
-    "karma-jasmine-html-reporter": "1.4.2",
+    "karma-jasmine-html-reporter": "1.5.1",
     "mocha": "6.2.2",
     "nodemon": "1.19.4",
     "npm-delay": "1.0.4",
