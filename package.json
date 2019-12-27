@@ -57,7 +57,7 @@
     "core-js": "3.6.1",
     "node-cache": "5.1.0",
     "reflect-metadata": "0.1.13",
-    "rxjs": "6.5.3",
+    "rxjs": "6.5.4",
     "rxjs-tslint": "0.1.7",
     "zone.js": "0.10.2"
   },
