@@ -80,7 +80,7 @@
     "karma-cli": "2.0.0",
     "karma-coverage-istanbul-reporter": "2.1.1",
     "karma-jasmine": "2.0.1",
-    "karma-jasmine-html-reporter": "1.5.1",
+    "karma-jasmine-html-reporter": "1.5.2",
     "mocha": "6.2.2",
     "nodemon": "1.19.4",
     "npm-delay": "1.0.4",
