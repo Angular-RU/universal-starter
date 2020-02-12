@@ -7,12 +7,10 @@
     "types": ["node"],
     "typeRoots": ["../node_modules/@types"]
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts",
-    "node_modules"
-  ],
   "angularCompilerOptions": {
     "entryModule": "app/app.server.module#AppServerModule"
-  }
+  },
+  "files": [
+    "main.server.ts"
+  ]
 }

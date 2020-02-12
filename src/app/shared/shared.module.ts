@@ -11,7 +11,7 @@ import { SharedFormsModule } from '@shared/shared-forms/shared-forms.module';
   providers: [],
 })
 export class SharedModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SharedModule> {
     return { ngModule: SharedModule };
   }
 }

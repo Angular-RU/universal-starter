@@ -3,13 +3,11 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "module": "es2015",
     "types": ["node"],
     "typeRoots": [ "../node_modules/@types" ]
   },
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts",
-    "node_modules"
+  "files": [
+    "main.browser.ts",
+    "polyfills.ts"
   ]
 }

@@ -1,6 +1,8 @@
 import { ICustomControl } from '@shared/models/form.model';
 import { Validators } from '@angular/forms';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class FormService {
   private _isArray(subject: any[] | any): boolean {
     return typeof subject === 'object' && subject.constructor === Array;
