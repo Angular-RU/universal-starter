@@ -23,8 +23,7 @@
               "src/robots.txt",
               "src/manifest.json"
             ],
-            "styles": [
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {
@@ -96,8 +95,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
-            "styles": [
-            ],
+            "styles": [],
             "assets": [
               "src/assets",
               "src/favicon.ico",
@@ -132,9 +130,9 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/server/environment.ts"
                 }
-              ]
-            ,              "optimization": true
-},
+              ],
+              "optimization": true
+            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
@@ -214,5 +212,8 @@
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": "64925903-0f96-433a-83be-7a3fb8485063"
   }
 }

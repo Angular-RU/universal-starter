@@ -55,7 +55,7 @@ const PORT = process.env.PORT || 4000;
 import { ROUTES } from './static.paths';
 // for test
 import { exit } from 'process';
-import { NgxRequest, NgxResponce } from '@gorniv/ngx-universal';
+import { NgxRequest, NgxResponse } from '@gorniv/ngx-universal';
 
 enableProdMode();
 

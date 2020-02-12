@@ -12,6 +12,6 @@
   },
   "files": [
     "main.server.ts",
-    "server.ts"
+    "../server.ts"
   ]
 }
