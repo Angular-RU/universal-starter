@@ -12,7 +12,7 @@
     "build:server": "ng run universal-demo:server:production",
     "build:prod": "ng build --prod",
     "build:universal": "ng run universal-demo:build:production && ng run universal-demo:server:production",
-    "server": "node server.js",
+    "server": "node dist-server/main.js",
     "test": "ng test",
     "test:ci": "cross-env CI=true ng test",
     "test:ssr": "run-p test:ssr:*",
