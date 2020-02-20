@@ -1,5 +1,4 @@
 const expect = require('chai');
-
 const request = require('./request-service');
 let body: string;
 const page = '/back';
