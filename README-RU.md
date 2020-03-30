@@ -69,7 +69,7 @@ this.http.get('https://reqres.in/api/users?delay=3').subscribe(result => {
 ```
 - `export const AppRoutes = RouterModule.forRoot(routes, { initialNavigation: 'enabled' });` -  чтобы не было мигания страницы!
 
-- для работы с куками написан `AppStorage`,  которыйй при помощи DI  позволяет отдавать разную реализацию для сервера и бразуера. Смотрите `server.storage.ts` и `browser.storage.ts` по реализациям. В `server.ts`  есть 
+- для работы с куками написан `AppStorage`,  который при помощи DI  позволяет отдавать разную реализацию для сервера и бразуера. Смотрите `server.storage.ts` и `browser.storage.ts` по реализациям. В `server.ts`  есть 
 ```ts
 providers: [
     {
