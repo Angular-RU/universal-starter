@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 import { InlineStyleComponent } from './inline-style/inline-style.component';
 import { InlineStyleModule } from './inline-style/inline-style.module';
-import { CookieService, CookieBackendService, CookieModule } from '@gorniv/ngx-universal';
+import { CookieService, CookieBackendService, CookieModule, NgxRequest, NgxResponse } from '@gorniv/ngx-universal';
+import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 
 @NgModule({
   imports: [
@@ -24,6 +25,22 @@ import { CookieService, CookieBackendService, CookieModule } from '@gorniv/ngx-u
   bootstrap: [AppComponent, InlineStyleComponent],
   providers: [
     { provide: CookieService, useClass: CookieBackendService },
+    {
+      provide: REQUEST,
+      useValue: { cookie: '', headers: {} },
+    },
+    {
+      provide: RESPONSE,
+      useValue: {},
+    },
+    {
+      provide: NgxRequest,
+      useValue: { cookie: '', headers: {} },
+    },
+    {
+      provide: NgxResponse,
+      useValue: {},
+    },
   ],
 })
 export class AppServerModule {}
