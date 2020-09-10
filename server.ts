@@ -12,6 +12,7 @@ import { NgxRequest, NgxResponse } from '@gorniv/ngx-universal';
 import * as compression from 'compression';
 import * as cookieparser from 'cookie-parser';
 import { exit } from 'process';
+
 // for debug
 require('source-map-support').install();
 
@@ -26,8 +27,6 @@ const path = require('path');
 const template = fs.readFileSync(path.join('.', 'dist', 'index.html')).toString();
 // for mock global window by domino
 const win = domino.createWindow(template);
-// from server build
-const files = fs.readdirSync(`${process.cwd()}/dist-server`);
 // mock
 global['window'] = win;
 // not implemented property and functions
@@ -94,11 +93,11 @@ export function app() {
     if (test && req.url === '/test/exit') {
       res.send('exit');
       exit(0);
-      return;
     }
 
     next();
   });
+
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine(
     'html',
@@ -111,7 +110,7 @@ export function app() {
   server.set('views', distFolder);
 
   // Example Express Rest API endpoints
-  // app.get('/api/**', (req, res) => { });
+  // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get(
     '*.*',
@@ -122,7 +121,7 @@ export function app() {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    global['navigator'] = req['headers']['user-agent'];
+    global['navigator'] = { userAgent: req['headers']['user-agent'] } as Navigator;
     const http =
       req.headers['x-forwarded-proto'] === undefined ? 'http' : req.headers['x-forwarded-proto'];
 

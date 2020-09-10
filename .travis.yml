@@ -8,6 +8,6 @@ script:
   - npm run lint
   - npm test
   - npm run build:prod
-  - npm run build:prerender
+  - npm run prerender
   - npm run build:universal
   - npm run test:ssr
