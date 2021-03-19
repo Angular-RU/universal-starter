@@ -86,7 +86,7 @@
     "prettier-tslint": "0.4.2",
     "protractor": "5.4.3",
     "source-map-support": "0.5.16",
-    "ssri": "6.0.1",
+    "ssri": "8.0.1",
     "ts-mocha": "6.0.0",
     "ts-node": "8.8.0",
     "tslint": "5.20.1",
