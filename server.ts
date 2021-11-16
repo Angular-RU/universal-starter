@@ -40,7 +40,11 @@ Object.defineProperty(win.document.body.style, 'transform', {
 });
 // mock documnet
 global['document'] = win.document;
-// othres mock
+
+// mock navigator
+global['navigator'] = win.navigator;
+
+// other mocks
 global['CSS'] = null;
 // global['XMLHttpRequest'] = require('xmlhttprequest').XMLHttpRequest;
 global['Prism'] = null;
