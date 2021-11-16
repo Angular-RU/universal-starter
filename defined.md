@@ -7,7 +7,6 @@ const fs = require('fs');
 const path = require('path');
 const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 const win = domino.createWindow(template);
-const files = fs.readdirSync(`${process.cwd()}/dist-server`);
 
 global['window'] = win;
 Object.defineProperty(win.document.body.style, 'transform', {
