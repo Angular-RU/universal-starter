@@ -53,51 +53,6 @@ export function app() {
     ? 'index.original.html'
     : 'index';
 
-  // redirects!
-  const redirectowww = false;
-  const redirectohttps = false;
-  const wwwredirecto = true;
-  server.use((req, res, next) => {
-    // for domain/index.html
-    if (req.url === '/index.html') {
-      res.redirect(301, 'https://' + req.hostname);
-    }
-
-    // check if it is a secure (https) request
-    // if not redirect to the equivalent https url
-    if (
-      redirectohttps &&
-      req.headers['x-forwarded-proto'] !== 'https' &&
-      req.hostname !== 'localhost'
-    ) {
-      // special for robots.txt
-      if (req.url === '/robots.txt') {
-        next();
-        return;
-      }
-      res.redirect(301, 'https://' + req.hostname + req.url);
-    }
-
-    // www or not
-    if (redirectowww && !req.hostname.startsWith('www.')) {
-      res.redirect(301, 'https://www.' + req.hostname + req.url);
-    }
-
-    // www or not
-    if (wwwredirecto && req.hostname.startsWith('www.')) {
-      const host = req.hostname.slice(4, req.hostname.length);
-      res.redirect(301, 'https://' + host + req.url);
-    }
-
-    // for test
-    if (test && req.url === '/test/exit') {
-      res.send('exit');
-      exit(0);
-    }
-
-    next();
-  });
-
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine(
     'html',
