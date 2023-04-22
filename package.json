@@ -47,7 +47,7 @@
     "@ngx-translate/http-loader": "6.0.0",
     "cookie-parser": "1.4.5",
     "core-js": "3.11.0",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "node-cache": "5.1.2",
     "reflect-metadata": "0.1.13",
     "rxjs": "6.6.7",
